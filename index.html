@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#f8eaf0" />
-  <title>LUNA'S CLOSET</title>
+  <title>LUNA'S ATELIER</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -164,6 +164,209 @@
       box-shadow: var(--shadow);
       margin-bottom: 14px;
       backdrop-filter: blur(8px);
+    }
+
+    .fabric-workshop-card {
+      background: linear-gradient(135deg, #fffdfc, #fff4df);
+    }
+
+    .atelier-workshop-list {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .atelier-workshop-card {
+      margin-bottom: 0;
+    }
+
+    .atelier-workshop-card h2 {
+      margin-bottom: 6px;
+    }
+
+    .atelier-workshop-meta,
+    .atelier-workshop-status {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #fff7e9;
+      color: var(--pink-dark);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .atelier-workshop-card.is-coming-soon {
+      background: linear-gradient(135deg, #fdfcff, #f5f0fb);
+    }
+
+    .atelier-workshop-card .primary:disabled {
+      cursor: default;
+      opacity: 0.62;
+    }
+
+    .fabric-workshop-card h2 {
+      margin-bottom: 6px;
+    }
+
+    .fabric-workshop-description {
+      margin-bottom: 12px;
+      color: var(--subtext);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.7;
+    }
+
+    .fabric-workshop-today {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #fff7e9;
+      color: var(--pink-dark);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .fabric-piece-preview {
+      display: flex;
+      gap: 6px;
+      margin: 0 0 14px;
+    }
+
+    .fabric-piece {
+      width: 24px;
+      height: 24px;
+      border: 2px solid #c97899;
+      border-radius: 5px;
+      background: #fffdfc;
+    }
+
+    .fabric-piece.is-filled {
+      background: #efb6ca;
+    }
+
+    .fabric-workshop-stages {
+      display: grid;
+      gap: 6px;
+      margin: 0 0 16px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .fabric-workshop-stages li {
+      display: flex;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .fabric-workshop-stage-label {
+      min-width: 56px;
+      color: var(--pink-dark);
+      font-weight: 900;
+    }
+
+    .fabric-workshop-visual {
+      margin: 0 0 16px;
+      padding: 14px;
+      border-radius: 16px;
+      background: #fffafc;
+      border: 1px solid #f0e1e7;
+    }
+
+    .fabric-workshop-visual-label {
+      margin: 0 0 10px;
+      color: var(--subtext);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .fabric-workshop-pieces {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .fabric-workshop-piece {
+      width: 26px;
+      height: 26px;
+      border: 2px solid #c97899;
+      border-radius: 5px;
+      background: white;
+    }
+
+    .fabric-workshop-piece.is-pink {
+      background: #efb6ca;
+    }
+
+    .fabric-workshop-piece.is-pink-light {
+      border-color: #e6b8c8;
+      background: #fdebf1;
+    }
+
+    .fabric-workshop-piece.is-cream {
+      border-color: #d6ae70;
+      background: #fff0c9;
+    }
+
+    .fabric-workshop-ratio-row {
+      display: grid;
+      grid-template-columns: 90px minmax(0, 1fr) max-content;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .fabric-workshop-ratio-row:first-child {
+      margin-top: 0;
+    }
+
+    .fabric-workshop-ratio-row .fabric-workshop-pieces {
+      min-width: 0;
+    }
+
+    .fabric-workshop-value {
+      color: var(--pink-dark);
+      white-space: nowrap;
+    }
+
+    .fabric-workshop-comparison {
+      display: grid;
+      gap: 8px;
+    }
+
+    .fabric-workshop-comparison-item {
+      padding: 10px;
+      border-radius: 12px;
+      background: white;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .fabric-workshop-comparison-label {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--subtext);
+      font-size: 11px;
+    }
+
+    .fabric-workshop-complete {
+      padding: 20px 8px 6px;
+      text-align: center;
+    }
+
+    .fabric-workshop-complete strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--pink-dark);
+      font-size: 24px;
     }
 
     .event-badge {
@@ -1811,17 +2014,42 @@
     <!-- トップ画面 -->
     <section id="homeScreen" class="screen active">
       <div class="topbar">
-        <div class="brand">LUNA'S CLOSET</div>
+        <div class="brand">LUNA'S ATELIER</div>
         <div class="points">🪙 <span id="homePoints">0</span> pt</div>
       </div>
 
-      <div class="hero">
-  <p class="eyebrow">WELCOME TO LUNA'S CLOSET</p>
-  <h1>今日もお店をのぞいてこ〜✨</h1>
+        <div class="hero">
+  <p class="eyebrow">WELCOME TO LUNA'S ATELIER</p>
+  <h1>今日はどの工房にする？✨</h1>
   <p id="homeLunaMessage" class="lead"></p>
 </div>
 
-      <div class="card">
+      <div class="atelier-workshop-list">
+        <div class="card atelier-workshop-card fabric-workshop-card">
+          <h2>生地工房</h2>
+          <p class="fabric-workshop-description">分ける・くらべる・比を、いろいろな見方で考えよう✨</p>
+          <div class="atelier-workshop-meta">1回 5問</div>
+          <button id="fabricWorkshopStartButton" class="primary" type="button">
+            生地工房をはじめる ✨
+          </button>
+        </div>
+
+        <div class="card atelier-workshop-card is-coming-soon">
+          <h2>ビーズ工房</h2>
+          <p class="fabric-workshop-description">数のならびや関係を見つけよう✨</p>
+          <div class="atelier-workshop-status">準備中</div>
+          <button class="primary" type="button" disabled>準備中</button>
+        </div>
+
+        <div class="card atelier-workshop-card">
+          <h2>ラッピング工房</h2>
+          <p class="fabric-workshop-description">式を包んで、ひとつずつほどいてみよう✨</p>
+          <div class="atelier-workshop-meta">1回 5問</div>
+          <button id="ribbonWorkshopStartButton" class="primary" type="button">ラッピング工房をはじめる ✨</button>
+        </div>
+      </div>
+
+       <div class="card">
         <h2>ルナのお店</h2>
 
         <div class="shop-image-wrap" aria-label="ショップの成長画面">
@@ -1848,7 +2076,7 @@
       </div>
 
       <button id="startButton" class="primary">
-  今日もお店を手伝う
+  今日の制作をはじめる ✨
 </button>
 
 <button
@@ -2193,6 +2421,61 @@
       </div>
     </section>
 
+    <section id="fabricWorkshopScreen" class="screen">
+      <div class="topbar">
+        <div class="brand">FABRIC WORKSHOP</div>
+        <div id="fabricWorkshopProgress" class="points">1 / 5</div>
+      </div>
+
+      <div class="card">
+        <div id="fabricWorkshopQuestionContent">
+          <div class="quiz-meta">
+            <span id="fabricWorkshopStage">Stage 1</span>
+            <span>今日の制作</span>
+          </div>
+          <h2>生地工房</h2>
+          <p id="fabricWorkshopQuestion" class="question"></p>
+          <div id="fabricWorkshopVisual" class="fabric-workshop-visual"></div>
+          <div id="fabricWorkshopAnswers" class="answers"></div>
+          <div id="fabricWorkshopFeedback" class="feedback" aria-live="polite"></div>
+          <button id="fabricWorkshopNextButton" class="primary" type="button" hidden>
+            つぎへ ▶
+          </button>
+        </div>
+
+        <div id="fabricWorkshopComplete" class="fabric-workshop-complete" hidden>
+          <strong>生地工房、完成〜✨</strong>
+          <p id="fabricWorkshopCompleteScore" class="lead"></p>
+          <button id="fabricWorkshopRetryButton" class="primary" type="button">
+            もう一度つくる ✨
+          </button>
+          <button id="fabricWorkshopHomeButton" class="secondary" type="button" style="margin-top: 10px;">
+            アトリエにもどる
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="ribbonWorkshopScreen" class="screen">
+      <div class="topbar"><div class="brand">WRAPPING WORKSHOP</div><div id="ribbonWorkshopProgress" class="points">1 / 5</div></div>
+      <div class="card">
+        <div id="ribbonWorkshopQuestionContent">
+          <div class="quiz-meta"><span id="ribbonWorkshopStage">Stage 1</span><span>ラッピング工房</span></div>
+          <h2>ラッピング工房</h2>
+          <p id="ribbonWorkshopQuestion" class="question"></p>
+          <div id="ribbonWorkshopVisual" class="fabric-workshop-visual"></div>
+          <div id="ribbonWorkshopAnswers" class="answers"></div>
+          <div id="ribbonWorkshopFeedback" class="feedback" aria-live="polite"></div>
+          <button id="ribbonWorkshopNextButton" class="primary" type="button" hidden>つぎへ ▶</button>
+        </div>
+        <div id="ribbonWorkshopComplete" class="fabric-workshop-complete" hidden>
+          <strong>ラッピング工房、完成〜✨</strong><p id="ribbonWorkshopCompleteScore" class="lead"></p>
+          <button id="ribbonWorkshopRetryButton" class="primary" type="button">もう一度つくる ✨</button>
+          <button id="ribbonWorkshopHomeButton" class="secondary" type="button" style="margin-top:10px;">アトリエにもどる</button>
+        </div>
+      </div>
+    </section>
+
     <!-- クイズ画面 -->
     <section id="quizScreen" class="screen">
       <div class="topbar">
@@ -2513,12 +2796,102 @@ lastKottaReward: null
 };
 
 const homeMessages = [
-      "ルナ「おはよ〜💕 今日もゆるっとお願いしま〜す(∩´∀｀)∩」",
-      "ルナ「今日、新作入ったんだ〜✨ ちょっと見てって〜💕」",
-      "ルナ「セールの日ってテンション上がるよね〜( *´艸｀)」",
-      "ルナ「今日もお店よろしく〜✨ 3分だけ手伝って〜💕」",
-      "ルナ「やば〜！今日はお客さん多いかも😂 いっしょにがんばろ〜✨」"
+      "ルナ「好きなところからつくってみよう〜✨」",
+      "ルナ「気になる工房をえらんでね〜💕」",
+      "ルナ「図を見ながら、ゆっくり考えてみよ〜✨」",
+      "ルナ「今日はどんな見方を見つける？💕」",
+      "ルナ「できそうな工房から、はじめよ〜✨」"
     ];
+
+    const fabricWorkshopQuestionPools = {
+      1: [
+        { id: "fabric-stage1-pink-fabric", stage: 1, type: "fraction-part", question: "ルナがバッグ用に20cmのピンクの生地を用意したよ。その3/5を使います。何cm使う？", total: 20, denominator: 5, numerator: 3, unit: "cm", choices: [12, 15, 4], answer: 12 },
+        { id: "fabric-stage1-lace", stage: 1, type: "fraction-part", question: "28cmのレースの5/7を使います。何cm？", total: 28, denominator: 7, numerator: 5, unit: "cm", choices: [20, 24, 4], answer: 20 },
+        { id: "fabric-stage1-ribbon", stage: 1, type: "fraction-part", question: "36cmのリボンの2/3を使います。何cm？", total: 36, denominator: 3, numerator: 2, unit: "cm", choices: [24, 18, 12], answer: 24 },
+        { id: "fabric-stage1-flower-fabric", stage: 1, type: "fraction-part", question: "24cmの花柄生地の3/4を使います。何cm？", total: 24, denominator: 4, numerator: 3, unit: "cm", choices: [18, 12, 6], answer: 18 },
+        { id: "fabric-stage1-beads", stage: 1, type: "fraction-part", question: "30このビーズの2/5を使います。何こ？", total: 30, denominator: 5, numerator: 2, unit: "こ", choices: [12, 18, 6], answer: 12 },
+        { id: "fabric-stage1-buttons", stage: 1, type: "fraction-part", question: "42このボタンの5/7を使います。何こ？", total: 42, denominator: 7, numerator: 5, unit: "こ", choices: [30, 35, 6], answer: 30 },
+        { id: "fabric-stage1-blue-lace", stage: 1, type: "fraction-part", question: "32cmのレースの3/4を使います。何cm？", total: 32, denominator: 4, numerator: 3, unit: "cm", choices: [24, 16, 8], answer: 24 },
+        { id: "fabric-stage1-long-ribbon", stage: 1, type: "fraction-part", question: "45cmのリボンの4/5を使います。何cm？", total: 45, denominator: 5, numerator: 4, unit: "cm", choices: [36, 40, 9], answer: 36 },
+        { id: "fabric-stage1-star-beads", stage: 1, type: "fraction-part", question: "48この星ビーズの5/6を使います。何こ？", total: 48, denominator: 6, numerator: 5, unit: "こ", choices: [40, 36, 8], answer: 40 },
+        { id: "fabric-stage1-check-fabric", stage: 1, type: "fraction-part", question: "35cmのチェック生地の3/7を使います。何cm？", total: 35, denominator: 7, numerator: 3, unit: "cm", choices: [15, 20, 5], answer: 15 }
+      ],
+      2: [
+        { id: "fabric-stage2-pink-fabric", stage: 2, type: "fraction-whole", question: "ルナが使ったピンクの生地は18cm。これは、もとの生地の3/5だよ。もとの生地は何cm？", partValue: 18, denominator: 5, numerator: 3, unit: "cm", choices: [30, 24, 15], answer: 30 },
+        { id: "fabric-stage2-lace", stage: 2, type: "fraction-whole", question: "20cmは、もとのレースの4/7。もとのレースは何cm？", partValue: 20, denominator: 7, numerator: 4, unit: "cm", choices: [35, 28, 16], answer: 35 },
+        { id: "fabric-stage2-ribbon", stage: 2, type: "fraction-whole", question: "16cmは、もとのリボンの2/3。もとのリボンは何cm？", partValue: 16, denominator: 3, numerator: 2, unit: "cm", choices: [24, 18, 8], answer: 24 },
+        { id: "fabric-stage2-flower-fabric", stage: 2, type: "fraction-whole", question: "21cmは、もとの花柄生地の3/4。もとの生地は何cm？", partValue: 21, denominator: 4, numerator: 3, unit: "cm", choices: [28, 21, 16], answer: 28 },
+        { id: "fabric-stage2-beads", stage: 2, type: "fraction-whole", question: "14このビーズは、もとのビーズの2/5。全部で何こ？", partValue: 14, denominator: 5, numerator: 2, unit: "こ", choices: [35, 28, 14], answer: 35 },
+        { id: "fabric-stage2-buttons", stage: 2, type: "fraction-whole", question: "30このボタンは、もとのボタンの5/6。全部で何こ？", partValue: 30, denominator: 6, numerator: 5, unit: "こ", choices: [36, 30, 25], answer: 36 },
+        { id: "fabric-stage2-lace-eight", stage: 2, type: "fraction-whole", question: "18cmは、もとのレースの3/8。もとのレースは何cm？", partValue: 18, denominator: 8, numerator: 3, unit: "cm", choices: [48, 24, 64], answer: 48 },
+        { id: "fabric-stage2-ribbon-five", stage: 2, type: "fraction-whole", question: "28cmは、もとのリボンの4/5。もとのリボンは何cm？", partValue: 28, denominator: 5, numerator: 4, unit: "cm", choices: [35, 28, 40], answer: 35 },
+        { id: "fabric-stage2-heart-beads", stage: 2, type: "fraction-whole", question: "25このハートビーズは、もとのビーズの5/7。全部で何こ？", partValue: 25, denominator: 7, numerator: 5, unit: "こ", choices: [35, 25, 49], answer: 35 },
+        { id: "fabric-stage2-check-fabric", stage: 2, type: "fraction-whole", question: "24cmは、もとのチェック生地の3/5。もとの生地は何cm？", partValue: 24, denominator: 5, numerator: 3, unit: "cm", choices: [40, 30, 24], answer: 40 }
+      ],
+      3: [
+        { id: "fabric-stage3-ribbons", stage: 3, type: "which-division", question: "ピンクのリボンは18cm、白いリボンは30cm。ピンクは白の何倍？", comparedLabel: "ピンクのリボン", baseLabel: "白いリボン", comparedValue: 18, baseValue: 30, unit: "cm", choices: ["18 ÷ 30", "30 ÷ 18", "30 − 18"], answer: 0, resultText: "3/5倍" },
+        { id: "fabric-stage3-beads", stage: 3, type: "which-division", question: "ピンクのビーズは24こ、白いビーズは40こ。ピンクは白の何倍？", comparedLabel: "ピンクのビーズ", baseLabel: "白いビーズ", comparedValue: 24, baseValue: 40, unit: "こ", choices: ["24 ÷ 40", "40 ÷ 24", "40 − 24"], answer: 0, resultText: "3/5倍" },
+        { id: "fabric-stage3-lace-ribbon", stage: 3, type: "which-division", question: "レースは35cm、リボンは50cm。レースはリボンの何倍？", comparedLabel: "レース", baseLabel: "リボン", comparedValue: 35, baseValue: 50, unit: "cm", choices: ["35 ÷ 50", "50 ÷ 35", "50 − 35"], answer: 0, resultText: "7/10倍" },
+        { id: "fabric-stage3-blue-fabric", stage: 3, type: "which-division", question: "青い生地は16cm、白い生地は32cm。青は白の何倍？", comparedLabel: "青い生地", baseLabel: "白い生地", comparedValue: 16, baseValue: 32, unit: "cm", choices: ["16 ÷ 32", "32 ÷ 16", "32 − 16"], answer: 0, resultText: "1/2倍" },
+        { id: "fabric-stage3-buttons", stage: 3, type: "which-division", question: "ピンクのボタンは24こ、白いボタンは36こ。ピンクは白の何倍？", comparedLabel: "ピンクのボタン", baseLabel: "白いボタン", comparedValue: 24, baseValue: 36, unit: "こ", choices: ["24 ÷ 36", "36 ÷ 24", "36 − 24"], answer: 0, resultText: "2/3倍" },
+        { id: "fabric-stage3-ribbon-decorations", stage: 3, type: "which-division", question: "リボン飾りは30こ、レース飾りは40こ。リボン飾りはレース飾りの何倍？", comparedLabel: "リボン飾り", baseLabel: "レース飾り", comparedValue: 30, baseValue: 40, unit: "こ", choices: ["30 ÷ 40", "40 ÷ 30", "40 − 30"], answer: 0, resultText: "3/4倍" },
+        { id: "fabric-stage3-star-beads", stage: 3, type: "which-division", question: "星ビーズは32こ、丸ビーズは40こ。星ビーズは丸ビーズの何倍？", comparedLabel: "星ビーズ", baseLabel: "丸ビーズ", comparedValue: 32, baseValue: 40, unit: "こ", choices: ["32 ÷ 40", "40 ÷ 32", "40 − 32"], answer: 0, resultText: "4/5倍" },
+        { id: "fabric-stage3-lace-fabric", stage: 3, type: "which-division", question: "レースは21cm、生地は35cm。レースは生地の何倍？", comparedLabel: "レース", baseLabel: "生地", comparedValue: 21, baseValue: 35, unit: "cm", choices: ["21 ÷ 35", "35 ÷ 21", "35 − 21"], answer: 0, resultText: "3/5倍" },
+        { id: "fabric-stage3-button-beads", stage: 3, type: "which-division", question: "ボタンは28こ、ビーズは42こ。ボタンはビーズの何倍？", comparedLabel: "ボタン", baseLabel: "ビーズ", comparedValue: 28, baseValue: 42, unit: "こ", choices: ["28 ÷ 42", "42 ÷ 28", "42 − 28"], answer: 0, resultText: "2/3倍" },
+        { id: "fabric-stage3-ribbon-fabric", stage: 3, type: "which-division", question: "リボンは36cm、生地は45cm。リボンは生地の何倍？", comparedLabel: "リボン", baseLabel: "生地", comparedValue: 36, baseValue: 45, unit: "cm", choices: ["36 ÷ 45", "45 ÷ 36", "45 − 36"], answer: 0, resultText: "4/5倍" }
+      ],
+      4: [
+        { id: "fabric-stage4-beads-three-two", stage: 4, type: "ratio-from-total", question: "ピンクと白のビーズの比は3：2。全部で25こ。ピンクは何こ？", labels: ["ピンクのビーズ", "白いビーズ"], ratio: [3, 2], total: 25, askIndex: 0, unit: "こ", choices: [15, 10, 20], answer: 15 },
+        { id: "fabric-stage4-buttons-two-three", stage: 4, type: "ratio-from-total", question: "ピンクと白のボタンの比は2：3。全部で30こ。ピンクは何こ？", labels: ["ピンクのボタン", "白いボタン"], ratio: [2, 3], total: 30, askIndex: 0, unit: "こ", choices: [12, 18, 20], answer: 12 },
+        { id: "fabric-stage4-beads-four-three", stage: 4, type: "ratio-from-total", question: "ピンクと白のビーズの比は4：3。全部で35こ。ピンクは何こ？", labels: ["ピンクのビーズ", "白いビーズ"], ratio: [4, 3], total: 35, askIndex: 0, unit: "こ", choices: [20, 15, 28], answer: 20 },
+        { id: "fabric-stage4-ribbons-three-five", stage: 4, type: "ratio-from-total", question: "ピンクと白のリボン飾りの比は3：5。全部で40こ。ピンクは何こ？", labels: ["ピンクのリボン飾り", "白いリボン飾り"], ratio: [3, 5], total: 40, askIndex: 0, unit: "こ", choices: [15, 25, 8], answer: 15 },
+        { id: "fabric-stage4-buttons-two-five", stage: 4, type: "ratio-from-total", question: "ピンクと白のボタンの比は2：5。全部で42こ。白は何こ？", labels: ["ピンクのボタン", "白いボタン"], ratio: [2, 5], total: 42, askIndex: 1, unit: "こ", choices: [30, 12, 35], answer: 30 },
+        { id: "fabric-stage4-beads-five-three", stage: 4, type: "ratio-from-total", question: "ピンクと白のビーズの比は5：3。全部で48こ。ピンクは何こ？", labels: ["ピンクのビーズ", "白いビーズ"], ratio: [5, 3], total: 48, askIndex: 0, unit: "こ", choices: [30, 18, 24], answer: 30 },
+        { id: "fabric-stage4-lace-four-five", stage: 4, type: "ratio-from-total", question: "ピンクと白のレース飾りの比は4：5。全部で45こ。白は何こ？", labels: ["ピンクのレース飾り", "白いレース飾り"], ratio: [4, 5], total: 45, askIndex: 1, unit: "こ", choices: [25, 20, 30], answer: 25 },
+        { id: "fabric-stage4-ribbons-three-four", stage: 4, type: "ratio-from-total", question: "ピンクと白のリボン飾りの比は3：4。全部で42こ。白は何こ？", labels: ["ピンクのリボン飾り", "白いリボン飾り"], ratio: [3, 4], total: 42, askIndex: 1, unit: "こ", choices: [24, 18, 30], answer: 24 },
+        { id: "fabric-stage4-buttons-five-two", stage: 4, type: "ratio-from-total", question: "ピンクと白のボタンの比は5：2。全部で35こ。ピンクは何こ？", labels: ["ピンクのボタン", "白いボタン"], ratio: [5, 2], total: 35, askIndex: 0, unit: "こ", choices: [25, 10, 20], answer: 25 },
+        { id: "fabric-stage4-beads-two-seven", stage: 4, type: "ratio-from-total", question: "ピンクと白のビーズの比は2：7。全部で45こ。白は何こ？", labels: ["ピンクのビーズ", "白いビーズ"], ratio: [2, 7], total: 45, askIndex: 1, unit: "こ", choices: [35, 10, 28], answer: 35 }
+      ],
+      5: [
+        { id: "fabric-stage5-bracelet", stage: 5, type: "ratio-from-part", question: "ルナがブレスレットを作ってるよ。ピンクと白のビーズは3：2。ピンクが18こなら、白は何こ？", labels: ["ピンクのビーズ", "白いビーズ"], ratio: [3, 2], knownIndex: 0, knownValue: 18, askIndex: 1, unit: "こ", choices: [12, 9, 27], answer: 12 },
+        { id: "fabric-stage5-beads-two-five", stage: 5, type: "ratio-from-part", question: "ピンクと白のビーズは2：5。ピンクが8こなら、白は何こ？", labels: ["ピンクのビーズ", "白いビーズ"], ratio: [2, 5], knownIndex: 0, knownValue: 8, askIndex: 1, unit: "こ", choices: [20, 12, 16], answer: 20 },
+        { id: "fabric-stage5-buttons-four-three", stage: 5, type: "ratio-from-part", question: "ピンクと白のボタンは4：3。白が15こなら、ピンクは何こ？", labels: ["ピンクのボタン", "白いボタン"], ratio: [4, 3], knownIndex: 1, knownValue: 15, askIndex: 0, unit: "こ", choices: [20, 15, 12], answer: 20 },
+        { id: "fabric-stage5-ribbons-three-five", stage: 5, type: "ratio-from-part", question: "ピンクと白のリボン飾りは3：5。白が25こなら、ピンクは何こ？", labels: ["ピンクのリボン飾り", "白いリボン飾り"], ratio: [3, 5], knownIndex: 1, knownValue: 25, askIndex: 0, unit: "こ", choices: [15, 20, 10], answer: 15 },
+        { id: "fabric-stage5-beads-five-two", stage: 5, type: "ratio-from-part", question: "ピンクと白のビーズは5：2。ピンクが30こなら、白は何こ？", labels: ["ピンクのビーズ", "白いビーズ"], ratio: [5, 2], knownIndex: 0, knownValue: 30, askIndex: 1, unit: "こ", choices: [12, 18, 20], answer: 12 },
+        { id: "fabric-stage5-buttons-two-three", stage: 5, type: "ratio-from-part", question: "ピンクと白のボタンは2：3。白が18こなら、ピンクは何こ？", labels: ["ピンクのボタン", "白いボタン"], ratio: [2, 3], knownIndex: 1, knownValue: 18, askIndex: 0, unit: "こ", choices: [12, 9, 15], answer: 12 },
+        { id: "fabric-stage5-lace-four-five", stage: 5, type: "ratio-from-part", question: "ピンクと白のレース飾りは4：5。ピンクが16こなら、白は何こ？", labels: ["ピンクのレース飾り", "白いレース飾り"], ratio: [4, 5], knownIndex: 0, knownValue: 16, askIndex: 1, unit: "こ", choices: [20, 16, 25], answer: 20 },
+        { id: "fabric-stage5-ribbons-three-four", stage: 5, type: "ratio-from-part", question: "ピンクと白のリボン飾りは3：4。ピンクが21こなら、白は何こ？", labels: ["ピンクのリボン飾り", "白いリボン飾り"], ratio: [3, 4], knownIndex: 0, knownValue: 21, askIndex: 1, unit: "こ", choices: [28, 21, 24], answer: 28 },
+        { id: "fabric-stage5-buttons-five-three", stage: 5, type: "ratio-from-part", question: "ピンクと白のボタンは5：3。白が12こなら、ピンクは何こ？", labels: ["ピンクのボタン", "白いボタン"], ratio: [5, 3], knownIndex: 1, knownValue: 12, askIndex: 0, unit: "こ", choices: [20, 15, 18], answer: 20 },
+        { id: "fabric-stage5-beads-two-seven", stage: 5, type: "ratio-from-part", question: "ピンクと白のビーズは2：7。白が28こなら、ピンクは何こ？", labels: ["ピンクのビーズ", "白いビーズ"], ratio: [2, 7], knownIndex: 1, knownValue: 28, askIndex: 0, unit: "こ", choices: [8, 14, 10], answer: 8 }
+      ]
+    };
+
+    const ribbonWorkshopQuestionPools = {
+      1: [
+        ...[["add8","+",8,20,12],["sub7","−",7,15,22],["add6","+",6,19,13],["sub9","−",9,14,23],["add12","+",12,30,18],["sub8","−",8,17,25],["add15","+",15,37,22],["sub13","−",13,19,32],["add17","+",17,42,25],["sub16","−",16,28,44]].map(([id, op, value, total, answer]) => ({ id: `ribbon-1-${id}`, stage: 1, type: op === "+" ? "balance-add" : "balance-sub", question: `□ ${op} ${value} = ${total}。□＝○の形にするには、左右に何をする？`, equation: `□ ${op} ${value} = ${total}`, choices: op === "+" ? [`両方から${value}をひく`, `両方に${value}をたす`, `両方を${value}でわる`] : [`両方に${value}をたす`, `両方から${value}をひく`, `両方を${value}でわる`], answer: op === "+" ? `両方から${value}をひく` : `両方に${value}をたす`, feedback: `□ ${op} ${value} = ${total}<br>□ = ${answer}✨` }))
+      ],
+      2: [
+        ...[["mul4","×",4,28,7],["div3","÷",3,8,24],["mul5","×",5,35,7],["div4","÷",4,6,24],["mul6","×",6,48,8],["div5","÷",5,7,35],["mul7","×",7,63,9],["div6","÷",6,8,48],["mul8","×",8,72,9],["div7","÷",7,6,42]].map(([id, op, value, total, answer]) => ({ id: `ribbon-2-${id}`, stage: 2, type: op === "×" ? "balance-multiply" : "balance-divide", question: `□ ${op} ${value} = ${total}。□＝○の形にするには、左右に何をする？`, equation: `□ ${op} ${value} = ${total}`, choices: op === "×" ? [`両方を${value}でわる`, `両方に${value}をかける`, `両方から${value}をひく`] : [`両方に${value}をかける`, `両方を${value}でわる`, `両方に${value}をたす`], answer: op === "×" ? `両方を${value}でわる` : `両方に${value}をかける`, feedback: `□ ${op} ${value} = ${total}<br>□ = ${answer}✨` }))
+      ],
+      3: [
+        { id: "ribbon-3-three", stage: 3, type: "group-operation", question: "🎁＝○の形にするには、左右に何をする？", equation: "□ × 3 + 5 = 26", groupEquation: "🎁 + 5 = 26", choices: ["左右から5をひく", "左右に5をたす", "左右を3でわる"], answer: "左右から5をひく", feedback: "🎁 + 5 = 26<br>🎁 = 21<br>🎁の中身は □ × 3<br>□ × 3 = 21<br>□ = 7 ✨" },
+        { id: "ribbon-3-four", stage: 3, type: "group-operation", question: "🎁＝○の形にするには、左右に何をする？", equation: "□ × 4 + 6 = 30", groupEquation: "🎁 + 6 = 30", choices: ["左右から6をひく", "左右に6をたす", "両方を4でわる"], answer: "左右から6をひく", feedback: "🎁 + 6 = 30<br>🎁 = 24<br>🎁の中身は □ × 4<br>□ × 4 = 24<br>□ = 6 ✨" },
+        { id: "ribbon-3-five", stage: 3, type: "group-operation", question: "🎁＝○の形にするには、左右に何をする？", equation: "□ × 5 + 7 = 32", groupEquation: "🎁 + 7 = 32", choices: ["左右から7をひく", "左右に7をたす", "両方を5でわる"], answer: "左右から7をひく", feedback: "🎁 + 7 = 32<br>🎁 = 25<br>🎁の中身は □ × 5<br>□ × 5 = 25<br>□ = 5 ✨" },
+        ...[[2,9,25,8],[6,5,47,7],[3,8,32,8],[7,4,46,6],[4,9,37,7],[5,6,46,8],[8,3,59,7]].map(([a,b,c,x], index) => ({ id: `ribbon-3-extra-${index + 4}`, stage: 3, type: "group-operation", question: "🎁＝○の形にするには、左右に何をする？", equation: `□ × ${a} + ${b} = ${c}`, groupEquation: `🎁 + ${b} = ${c}`, choices: [`左右から${b}をひく`, `左右に${b}をたす`, `左右を${a}でわる`], answer: `左右から${b}をひく`, feedback: `🎁 + ${b} = ${c}<br>🎁 = ${c - b}<br>🎁の中身は □ × ${a}<br>□ × ${a} = ${c - b}<br>□ = ${x} ✨` }))
+      ],
+      4: [
+        { id: "ribbon-4-four", stage: 4, type: "solve-group", question: "□ × 4 + 6 = 30。□はいくつ？", equation: "□ × 4 + 6 = 30", choices: [6, 9, 24], answer: 6, feedback: "左右から6をひく<br>□ × 4 = 24<br>左右を4でわる<br>□ = 6 ✨" },
+        { id: "ribbon-4-three", stage: 4, type: "solve-group", question: "□ × 3 + 7 = 28。□はいくつ？", equation: "□ × 3 + 7 = 28", choices: [7, 9, 21], answer: 7, feedback: "左右から7をひく<br>□ × 3 = 21<br>左右を3でわる<br>□ = 7 ✨" },
+        { id: "ribbon-4-five", stage: 4, type: "solve-group", question: "□ × 5 + 4 = 34。□はいくつ？", equation: "□ × 5 + 4 = 34", choices: [6, 7, 30], answer: 6, feedback: "左右から4をひく<br>□ × 5 = 30<br>左右を5でわる<br>□ = 6 ✨" },
+        ...[[2,11,27,8],[6,3,45,7],[4,5,37,8],[7,6,55,7],[3,10,37,9],[5,8,48,8],[8,7,63,7]].map(([a,b,c,x], index) => ({ id: `ribbon-4-extra-${index + 4}`, stage: 4, type: "solve-group", question: `□ × ${a} + ${b} = ${c}。□はいくつ？`, equation: `□ × ${a} + ${b} = ${c}`, choices: [x, c - b, c / a], answer: x, feedback: `左右から${b}をひく<br>□ × ${a} = ${c - b}<br>左右を${a}でわる<br>□ = ${x} ✨` }))
+      ],
+      5: [
+        { id: "ribbon-5-left", stage: 5, type: "solve-reordered", question: "5 + □ × 3 = 26。□はいくつ？", equation: "5 + □ × 3 = 26", choices: [7, 5, 21], answer: 7, feedback: "見た目が変わっても同じだね✨<br>左右から5をひく<br>□ × 3 = 21<br>□ = 7" },
+        { id: "ribbon-5-right", stage: 5, type: "solve-reordered", question: "30 = □ × 4 + 6。□はいくつ？", equation: "30 = □ × 4 + 6", choices: [6, 9, 24], answer: 6, feedback: "見た目が変わっても同じだね✨<br>左右から6をひく<br>□ × 4 = 24<br>□ = 6" },
+        { id: "ribbon-5-left-seven", stage: 5, type: "solve-reordered", question: "7 + □ × 5 = 32。□はいくつ？", equation: "7 + □ × 5 = 32", choices: [5, 7, 25], answer: 5, feedback: "見た目が変わっても同じだね✨<br>左右から7をひく<br>□ × 5 = 25<br>□ = 5" },
+        ...[["B",2,9,25,8],["A",6,5,47,7],["B",3,8,32,8],["A",7,4,46,6],["B",4,9,37,7],["A",5,6,46,8],["B",8,3,59,7]].map(([form,a,b,c,x], index) => ({ id: `ribbon-5-extra-${index + 4}`, stage: 5, type: "solve-reordered", question: `${form === "A" ? `${b} + □ × ${a} = ${c}` : `${c} = □ × ${a} + ${b}`}。□はいくつ？`, equation: form === "A" ? `${b} + □ × ${a} = ${c}` : `${c} = □ × ${a} + ${b}`, choices: [x, c - b, a], answer: x, feedback: `見た目が変わっても同じだね✨<br>左右から${b}をひく<br>□ × ${a} = ${c - b}<br>□ = ${x}` }))
+      ]
+    };
 
     const normalQuestionPools = {
       easy: [
@@ -4753,6 +5126,16 @@ let currentQuestionIndex = 0;
     let percentPracticeCurrentIndex = 0;
     let percentPracticePhase = "normal";
     let percentPracticeWholeQuestionIds = new Set();
+    let fabricWorkshopQuestions = [];
+    let fabricWorkshopCurrentIndex = 0;
+    let fabricWorkshopScore = 0;
+    let fabricWorkshopAnswered = false;
+    let fabricWorkshopDisplayChoices = [];
+    let ribbonWorkshopQuestions = [];
+    let ribbonWorkshopCurrentIndex = 0;
+    let ribbonWorkshopScore = 0;
+    let ribbonWorkshopAnswered = false;
+    let ribbonWorkshopDisplayChoices = [];
 
 const screens = {
   home: document.getElementById("homeScreen"),
@@ -4763,6 +5146,8 @@ const screens = {
   percentMoneyBuild: document.getElementById("percentMoneyBuildScreen"),
   percentDiscountBuild: document.getElementById("percentDiscountBuildScreen"),
   percentPractice: document.getElementById("percentPracticeScreen"),
+  fabricWorkshop: document.getElementById("fabricWorkshopScreen"),
+  ribbonWorkshop: document.getElementById("ribbonWorkshopScreen"),
   event: document.getElementById("eventScreen"),
   quiz: document.getElementById("quizScreen"),
   result: document.getElementById("resultScreen")
@@ -5065,6 +5450,327 @@ document.getElementById("rankLabel").textContent =
 
     function pickRandom(array) {
       return array[Math.floor(Math.random() * array.length)];
+    }
+
+    function buildFabricWorkshopQuestionSet() {
+      return [1, 2, 3, 4, 5].map(stage =>
+        pickRandom(fabricWorkshopQuestionPools[stage])
+      );
+    }
+
+    function buildFabricWorkshopPieces(count, style = "") {
+      return Array.from({ length: count }, () =>
+        `<span class="fabric-workshop-piece ${style}"></span>`
+      ).join("");
+    }
+
+    function renderFabricWorkshopVisual(question) {
+      if (question.type === "fraction-part") {
+        return `
+          <p class="fabric-workshop-visual-label">ぜんぶ ${question.total}${question.unit}</p>
+          <div class="fabric-workshop-pieces" aria-label="${question.denominator}こに分けたうち${question.numerator}こ分">
+            ${buildFabricWorkshopPieces(question.numerator, "is-pink")}
+            ${buildFabricWorkshopPieces(question.denominator - question.numerator, "is-pink-light")}
+          </div>
+        `;
+      }
+
+      if (question.type === "fraction-whole") {
+        return `
+          <div class="fabric-workshop-pieces" aria-label="${question.denominator}こに分けたうち${question.numerator}こ分">
+            ${buildFabricWorkshopPieces(question.numerator, "is-pink")}
+            ${buildFabricWorkshopPieces(question.denominator - question.numerator, "is-pink-light")}
+          </div>
+          <p class="fabric-workshop-visual-label" style="margin:10px 0 0;">${question.numerator}/${question.denominator}ぶん = ${question.partValue}${question.unit}<br>ぜんぶ = ？</p>
+        `;
+      }
+
+      if (question.type === "which-division") {
+        return `
+          <div class="fabric-workshop-comparison">
+            <div class="fabric-workshop-comparison-item">
+              <span class="fabric-workshop-comparison-label">もとにする量</span>
+              ${question.baseLabel}　${question.baseValue}${question.unit}
+            </div>
+            <div class="fabric-workshop-comparison-item">
+              <span class="fabric-workshop-comparison-label">比べる量</span>
+              ${question.comparedLabel}　${question.comparedValue}${question.unit}
+            </div>
+          </div>
+        `;
+      }
+
+      if (question.type === "ratio-from-total") {
+        return question.labels.map((label, index) => `
+          <div class="fabric-workshop-ratio-row">
+            <span>${label}</span>
+            <div class="fabric-workshop-pieces">${buildFabricWorkshopPieces(question.ratio[index], index === 0 ? "is-pink" : "is-cream")}</div>
+            <span class="fabric-workshop-value">${question.ratio[index]}こ分</span>
+          </div>
+        `).join("") + `<p class="fabric-workshop-visual-label" style="margin:12px 0 0;">${question.ratio.join(" : ")}　ぜんぶ ${question.total}${question.unit}</p>`;
+      }
+
+      return question.labels.map((label, index) => `
+        <div class="fabric-workshop-ratio-row">
+          <span>${label}</span>
+          <div class="fabric-workshop-pieces">${buildFabricWorkshopPieces(question.ratio[index], index === 0 ? "is-pink" : "is-cream")}</div>
+          <span class="fabric-workshop-value">${index === question.knownIndex ? `${question.knownValue}${question.unit}` : "？"}</span>
+        </div>
+      `).join("") + `<p class="fabric-workshop-visual-label" style="margin:12px 0 0;">${question.ratio.join(" : ")}</p>`;
+    }
+
+    function getFabricWorkshopCorrectChoice(question) {
+      return question.type === "which-division"
+        ? question.choices[question.answer]
+        : question.answer;
+    }
+
+    function shuffleFabricWorkshopChoices(choices) {
+      const shuffled = [...choices];
+      for (let index = shuffled.length - 1; index > 0; index -= 1) {
+        const randomIndex = Math.floor(Math.random() * (index + 1));
+        [shuffled[index], shuffled[randomIndex]] = [
+          shuffled[randomIndex],
+          shuffled[index]
+        ];
+      }
+      return shuffled;
+    }
+
+    function buildFabricWorkshopDisplayChoices(question) {
+      const correctChoice = getFabricWorkshopCorrectChoice(question);
+      return shuffleFabricWorkshopChoices(
+        question.choices.map(value => ({
+          value,
+          isCorrect: value === correctChoice
+        }))
+      );
+    }
+
+    function getFabricWorkshopFeedback(question) {
+      if (question.type === "fraction-part") {
+        const onePart = question.total / question.denominator;
+        return `${question.total} ÷ ${question.denominator} = ${onePart}<br>${onePart} × ${question.numerator} = ${question.answer}${question.unit}✨`;
+      }
+
+      if (question.type === "fraction-whole") {
+        const onePart = question.partValue / question.numerator;
+        return `${question.partValue} ÷ ${question.numerator} = ${onePart}<br>${onePart} × ${question.denominator} = ${question.answer}${question.unit}✨`;
+      }
+
+      if (question.type === "which-division") {
+        return `<strong>比べる量 ÷ もとにする量</strong><br>${question.comparedValue} ÷ ${question.baseValue} = ${question.resultText}`;
+      }
+
+      if (question.type === "ratio-from-total") {
+        const ratioTotal = question.ratio.reduce((sum, value) => sum + value, 0);
+        const onePart = question.total / ratioTotal;
+        return `${question.ratio.join(" + ")} = ${ratioTotal}こ分<br>${question.total} ÷ ${ratioTotal} = ${onePart}<br>${question.labels[question.askIndex]}は${question.ratio[question.askIndex]}こ分<br>${onePart} × ${question.ratio[question.askIndex]} = ${question.answer}${question.unit}✨`;
+      }
+
+      const onePart = question.knownValue / question.ratio[question.knownIndex];
+      return `${question.knownValue} ÷ ${question.ratio[question.knownIndex]} = ${onePart}<br>1こ分 = ${onePart}<br>${onePart} × ${question.ratio[question.askIndex]} = ${question.answer}${question.unit}✨`;
+    }
+
+    function renderFabricWorkshopQuestion() {
+      const question = fabricWorkshopQuestions[fabricWorkshopCurrentIndex];
+      if (!question) return;
+
+      fabricWorkshopAnswered = false;
+      document.getElementById("fabricWorkshopQuestionContent").hidden = false;
+      document.getElementById("fabricWorkshopComplete").hidden = true;
+      document.getElementById("fabricWorkshopProgress").textContent =
+        `${fabricWorkshopCurrentIndex + 1} / ${fabricWorkshopQuestions.length}`;
+      document.getElementById("fabricWorkshopStage").textContent =
+        `Stage ${question.stage}`;
+      document.getElementById("fabricWorkshopQuestion").textContent = question.question;
+      const visual = document.getElementById("fabricWorkshopVisual");
+      const hideVisual = question.type === "which-division" ||
+        question.type === "ratio-from-part";
+      visual.hidden = hideVisual;
+      visual.innerHTML = hideVisual ? "" : renderFabricWorkshopVisual(question);
+
+      const answers = document.getElementById("fabricWorkshopAnswers");
+      answers.innerHTML = "";
+      fabricWorkshopDisplayChoices =
+        buildFabricWorkshopDisplayChoices(question);
+      fabricWorkshopDisplayChoices.forEach((choice, index) => {
+        const button = document.createElement("button");
+        button.className = "answer";
+        button.type = "button";
+        button.textContent = question.type === "which-division"
+          ? choice.value
+          : `${choice.value}${question.unit}`;
+        button.addEventListener("click", () => answerFabricWorkshop(index));
+        answers.appendChild(button);
+      });
+
+      const feedback = document.getElementById("fabricWorkshopFeedback");
+      feedback.className = "feedback";
+      feedback.innerHTML = "";
+
+      const nextButton = document.getElementById("fabricWorkshopNextButton");
+      nextButton.hidden = true;
+      nextButton.textContent = fabricWorkshopCurrentIndex === fabricWorkshopQuestions.length - 1
+        ? "制作完了 ✨"
+        : "つぎへ ▶";
+    }
+
+    function startFabricWorkshop() {
+      fabricWorkshopQuestions = buildFabricWorkshopQuestionSet();
+      fabricWorkshopCurrentIndex = 0;
+      fabricWorkshopScore = 0;
+      fabricWorkshopAnswered = false;
+      fabricWorkshopDisplayChoices = [];
+      renderFabricWorkshopQuestion();
+      showScreen("fabricWorkshop");
+    }
+
+    function answerFabricWorkshop(selectedIndex) {
+      if (fabricWorkshopAnswered) return;
+
+      const question = fabricWorkshopQuestions[fabricWorkshopCurrentIndex];
+      const selectedChoice = fabricWorkshopDisplayChoices[selectedIndex];
+      if (!selectedChoice) return;
+
+      const isCorrect = selectedChoice.isCorrect;
+      fabricWorkshopAnswered = true;
+
+      if (isCorrect) {
+        fabricWorkshopScore += 1;
+      }
+
+      document.querySelectorAll("#fabricWorkshopAnswers .answer").forEach((button, index) => {
+        button.disabled = true;
+        if (fabricWorkshopDisplayChoices[index].isCorrect) {
+          button.classList.add("correct");
+        } else if (index === selectedIndex) {
+          button.classList.add("wrong");
+        }
+      });
+
+      const feedback = document.getElementById("fabricWorkshopFeedback");
+      feedback.className = `feedback show ${isCorrect ? "correct" : "wrong"}`;
+      feedback.innerHTML = `
+        <div class="feedback-head">
+          <div class="feedback-avatar"><img src="luna-icon.png" alt="ルナ" class="avatar-img"></div>
+          <span class="feedback-name">ルナ</span>
+        </div>
+        ${isCorrect ? "せいかい〜 いい見方してる〜✨" : "ここはこう見るよ〜✨"}<br><br>
+        ${getFabricWorkshopFeedback(question)}
+      `;
+
+      document.getElementById("fabricWorkshopNextButton").hidden = false;
+    }
+
+    function goToNextFabricWorkshopQuestion() {
+      if (!fabricWorkshopAnswered) return;
+
+      if (fabricWorkshopCurrentIndex < fabricWorkshopQuestions.length - 1) {
+        fabricWorkshopCurrentIndex += 1;
+        renderFabricWorkshopQuestion();
+        return;
+      }
+
+      document.getElementById("fabricWorkshopQuestionContent").hidden = true;
+      document.getElementById("fabricWorkshopComplete").hidden = false;
+      document.getElementById("fabricWorkshopCompleteScore").textContent =
+        `正解 ${fabricWorkshopScore} / ${fabricWorkshopQuestions.length}`;
+      document.getElementById("fabricWorkshopRetryButton").disabled = false;
+      document.getElementById("fabricWorkshopHomeButton").disabled = false;
+    }
+
+    function retryFabricWorkshop() {
+      const retryButton = document.getElementById("fabricWorkshopRetryButton");
+      if (retryButton.disabled) return;
+
+      retryButton.disabled = true;
+      startFabricWorkshop();
+    }
+
+    function returnToAtelierHome() {
+      const homeButton = document.getElementById("fabricWorkshopHomeButton");
+      if (homeButton.disabled) return;
+
+      homeButton.disabled = true;
+      showScreen("home");
+    }
+
+    function buildRibbonWorkshopQuestionSet() {
+      return [1, 2, 3, 4, 5].map(stage => pickRandom(ribbonWorkshopQuestionPools[stage]));
+    }
+
+    function shuffleRibbonWorkshopChoices(choices) {
+      const shuffled = [...choices];
+      for (let index = shuffled.length - 1; index > 0; index -= 1) {
+        const randomIndex = Math.floor(Math.random() * (index + 1));
+        [shuffled[index], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[index]];
+      }
+      return shuffled;
+    }
+
+    function renderRibbonWorkshopQuestion() {
+      const question = ribbonWorkshopQuestions[ribbonWorkshopCurrentIndex];
+      ribbonWorkshopAnswered = false;
+      document.getElementById("ribbonWorkshopQuestionContent").hidden = false;
+      document.getElementById("ribbonWorkshopComplete").hidden = true;
+      document.getElementById("ribbonWorkshopProgress").textContent = `${ribbonWorkshopCurrentIndex + 1} / 5`;
+      document.getElementById("ribbonWorkshopStage").textContent = `Stage ${question.stage}`;
+      const questionElement = document.getElementById("ribbonWorkshopQuestion");
+      questionElement.hidden = question.type === "group-operation";
+      questionElement.textContent = question.question;
+      const visual = document.getElementById("ribbonWorkshopVisual");
+      visual.hidden = false;
+      visual.innerHTML = question.type === "group-operation"
+        ? `ちょっと長い式だね。ひとまとまりにして見てみよう✨<br><br><strong>${question.equation}</strong><br><br>「${question.equation.split(" + ")[0]}」のところを🎁で包むと……<br><br>[ ${question.equation.split(" + ")[0]} ] + ${question.equation.split(" + ")[1].split(" = ")[0]} = ${question.equation.split(" = ")[1]}<br>　🎁<br><br><strong>${question.groupEquation}</strong><br><br>🎁＝○の形にするには、左右に何をする？`
+        : question.equation;
+      ribbonWorkshopDisplayChoices = shuffleRibbonWorkshopChoices(question.choices.map(value => ({ value, isCorrect: value === question.answer })));
+      const answers = document.getElementById("ribbonWorkshopAnswers");
+      answers.innerHTML = "";
+      ribbonWorkshopDisplayChoices.forEach((choice, index) => {
+        const button = document.createElement("button"); button.className = "answer"; button.type = "button"; button.textContent = choice.value;
+        button.addEventListener("click", () => answerRibbonWorkshop(index)); answers.appendChild(button);
+      });
+      const feedback = document.getElementById("ribbonWorkshopFeedback"); feedback.className = "feedback"; feedback.innerHTML = "";
+      const next = document.getElementById("ribbonWorkshopNextButton"); next.hidden = true; next.textContent = ribbonWorkshopCurrentIndex === 4 ? "制作完了 ✨" : "つぎへ ▶";
+    }
+
+    function startRibbonWorkshop() {
+      ribbonWorkshopQuestions = buildRibbonWorkshopQuestionSet(); ribbonWorkshopCurrentIndex = 0; ribbonWorkshopScore = 0; ribbonWorkshopAnswered = false; renderRibbonWorkshopQuestion(); showScreen("ribbonWorkshop");
+    }
+
+    function answerRibbonWorkshop(selectedIndex) {
+      if (ribbonWorkshopAnswered) return;
+      ribbonWorkshopAnswered = true;
+      const question = ribbonWorkshopQuestions[ribbonWorkshopCurrentIndex];
+      const selected = ribbonWorkshopDisplayChoices[selectedIndex];
+      if (selected.isCorrect) ribbonWorkshopScore += 1;
+      document.querySelectorAll("#ribbonWorkshopAnswers .answer").forEach((button, index) => { button.disabled = true; if (ribbonWorkshopDisplayChoices[index].isCorrect) button.classList.add("correct"); else if (index === selectedIndex) button.classList.add("wrong"); });
+      const feedback = document.getElementById("ribbonWorkshopFeedback"); feedback.className = `feedback show ${selected.isCorrect ? "correct" : "wrong"}`; feedback.innerHTML = `ルナ「${selected.isCorrect ? "せいかい〜 いい見方してる〜✨" : "ここはこう見るよ〜✨"}」<br><br>${question.stage <= 2 ? getRibbonBalanceFeedback(question) : question.type === "group-operation" ? getRibbonGroupFeedback(question) : question.feedback}`;
+      document.getElementById("ribbonWorkshopNextButton").hidden = false;
+    }
+
+    function getRibbonBalanceFeedback(question) {
+      const [, operator, value, total] = question.equation.match(/□ ([+−×÷]) (\d+) = (\d+)/);
+      const number = Number(value);
+      const result = Number(total);
+      if (operator === "+") return `${question.equation}<br>□ + ${number} − ${number} = ${result} − ${number}<br>□ = ${result - number}✨`;
+      if (operator === "−") return `${question.equation}<br>□ − ${number} + ${number} = ${result} + ${number}<br>□ = ${result + number}✨`;
+      if (operator === "×") return `${question.equation}<br>□ × ${number} ÷ ${number} = ${result} ÷ ${number}<br>□ = ${result / number}✨`;
+      return `${question.equation}<br>□ ÷ ${number} × ${number} = ${result} × ${number}<br>□ = ${result * number}✨`;
+    }
+
+    function getRibbonGroupFeedback(question) {
+      const [, multiplier, addend, total] = question.equation.match(/× (\d+) \+ (\d+) = (\d+)/).map(Number);
+      const groupedValue = total - addend;
+      const answer = groupedValue / multiplier;
+      return `${question.groupEquation}<br>🎁 + ${addend} − ${addend} = ${total} − ${addend}<br>🎁 = ${groupedValue}<br><br>🎁の中は「□ × ${multiplier}」だったね！<br><br>□ × ${multiplier} = ${groupedValue}<br><br>今度は、□＝○の形にしよう✨<br>□ × ${multiplier} ÷ ${multiplier} = ${groupedValue} ÷ ${multiplier}<br>□ = ${answer} ✨`;
+    }
+
+    function goToNextRibbonWorkshopQuestion() {
+      if (!ribbonWorkshopAnswered) return;
+      if (ribbonWorkshopCurrentIndex < 4) { ribbonWorkshopCurrentIndex += 1; renderRibbonWorkshopQuestion(); return; }
+      document.getElementById("ribbonWorkshopQuestionContent").hidden = true; document.getElementById("ribbonWorkshopComplete").hidden = false; document.getElementById("ribbonWorkshopCompleteScore").textContent = `正解 ${ribbonWorkshopScore} / 5`;
     }
 
     function getTodayKey() {
@@ -7267,6 +7973,27 @@ if (currentEvent?.key === catEvent.key) {
 document
   .getElementById("startButton")
   .addEventListener("click", startEvent);
+
+document
+  .getElementById("fabricWorkshopStartButton")
+  .addEventListener("click", startFabricWorkshop);
+
+document.getElementById("ribbonWorkshopStartButton").addEventListener("click", startRibbonWorkshop);
+document.getElementById("ribbonWorkshopNextButton").addEventListener("click", goToNextRibbonWorkshopQuestion);
+document.getElementById("ribbonWorkshopRetryButton").addEventListener("click", startRibbonWorkshop);
+document.getElementById("ribbonWorkshopHomeButton").addEventListener("click", () => showScreen("home"));
+
+document
+  .getElementById("fabricWorkshopNextButton")
+  .addEventListener("click", goToNextFabricWorkshopQuestion);
+
+document
+  .getElementById("fabricWorkshopRetryButton")
+  .addEventListener("click", retryFabricWorkshop);
+
+document
+  .getElementById("fabricWorkshopHomeButton")
+  .addEventListener("click", returnToAtelierHome);
 
 document
   .getElementById("homeCatTimeButton")
