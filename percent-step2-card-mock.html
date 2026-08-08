@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>％って何円？ カードモック</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #fff9fb;
+      --text: #504650;
+      --subtext: #827681;
+      --pink: #efb6ca;
+      --pink-dark: #c97899;
+      --cream: #fff2dc;
+      --line: #eadde4;
+      --shadow: 0 14px 34px rgba(130, 95, 110, 0.13);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 18px 16px 32px;
+      background:
+        radial-gradient(circle at top left, #fff0f6 0, transparent 34%),
+        radial-gradient(circle at bottom right, #f2eef9 0, transparent 30%),
+        var(--bg);
+      color: var(--text);
+      font-family: "Zen Maru Gothic", sans-serif;
+    }
+
+    .app { width: min(100%, 460px); margin: 0 auto; }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      color: var(--subtext);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .card {
+      margin-bottom: 18px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: var(--shadow);
+    }
+
+    h1 { margin: 0 0 6px; font-size: 22px; }
+    h2 { margin: 0 0 12px; font-size: 18px; }
+
+    .note {
+      margin: 0 0 14px;
+      color: var(--subtext);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .mode {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #fff7fa;
+      color: var(--pink-dark);
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .money-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 12px 0 14px;
+    }
+
+    .money-card {
+      position: relative;
+      min-height: 132px;
+      overflow: hidden;
+      border: 2px solid #e8cbd6;
+      border-radius: 18px;
+      background: #fffdfc;
+    }
+
+    .money-card::before {
+      content: "100円";
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      z-index: 2;
+      transform: translateX(-50%);
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: white;
+      color: var(--pink-dark);
+      box-shadow: 0 3px 8px rgba(130, 95, 110, 0.09);
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .amount-bar {
+      position: absolute;
+      right: 12px;
+      bottom: 14px;
+      left: 12px;
+      height: 52px;
+      overflow: hidden;
+      border: 1px solid #f0e3e8;
+      border-radius: 14px;
+      background: repeating-linear-gradient(90deg, #fff 0 9%, #f9f1f4 9% 10%);
+    }
+
+    .colored-part {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: var(--percent);
+      background: linear-gradient(135deg, #f4b8ce, #e594b6);
+      transition: width 0.25s ease;
+    }
+
+    .colored-part::after {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      border-radius: 8px;
+    }
+
+    .value {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 3;
+      display: none;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 16px;
+      font-weight: 900;
+      text-shadow: 0 1px 2px rgba(130, 65, 90, 0.22);
+      white-space: nowrap;
+    }
+
+    .after .value { display: block; }
+
+    .question {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1.65;
+    }
+
+    .feedback {
+      padding: 13px;
+      border-radius: 16px;
+      background: #edf6ea;
+      color: #536a52;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.8;
+    }
+
+    .feedback strong { color: #bd6f93; }
+
+    @media (max-width: 340px) {
+      .money-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <div class="topbar"><span>％って何円？</span><span>UI MOCK</span></div>
+
+    <section class="card before">
+      <span class="mode">正解前：数字は見せない</span>
+      <h1>カード1枚</h1>
+      <p class="note">色のついた部分は25％。答えになる円の数字は表示しません。</p>
+      <div class="money-cards">
+        <div class="money-card" style="--percent: 25%;">
+          <div class="amount-bar"><div class="colored-part"><span class="value">25円</span></div></div>
+        </div>
+      </div>
+      <p class="question">100円の25％は何円？</p>
+    </section>
+
+    <section class="card before">
+      <span class="mode">正解前：数字は見せない</span>
+      <h2>カード2枚</h2>
+      <p class="note">200円は、100円カードが2枚。両方の25％部分だけを色で見せます。</p>
+      <div class="money-cards">
+        <div class="money-card" style="--percent: 25%;">
+          <div class="amount-bar"><div class="colored-part"><span class="value">25円</span></div></div>
+        </div>
+        <div class="money-card" style="--percent: 25%;">
+          <div class="amount-bar"><div class="colored-part"><span class="value">25円</span></div></div>
+        </div>
+      </div>
+      <p class="question">200円の25％は何円？</p>
+    </section>
+
+    <section class="card after">
+      <span class="mode">正解後：数字とまとまりを表示</span>
+      <h2>カード2枚</h2>
+      <div class="money-cards">
+        <div class="money-card" style="--percent: 25%;">
+          <div class="amount-bar"><div class="colored-part"><span class="value">25円</span></div></div>
+        </div>
+        <div class="money-card" style="--percent: 25%;">
+          <div class="amount-bar"><div class="colored-part"><span class="value">25円</span></div></div>
+        </div>
+      </div>
+      <div class="feedback"><strong>ルナ：</strong>そーそー♪ 100円カードが2つあるから、色のところも<strong>25円が2つ</strong>！ ぜんぶで50円、バッチリじゃん♡</div>
+    </section>
+  </main>
+</body>
+</html>
