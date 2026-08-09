@@ -205,6 +205,181 @@
       opacity: 0.62;
     }
 
+    .atelier-home-footer {
+      margin: 18px 0 0;
+      color: var(--subtext);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    .atelier-cat-time-card {
+      background: linear-gradient(135deg, #fff8fc, #f7f0ff);
+      border-color: #ecd8ef;
+    }
+
+    .atelier-cat-time-card h2 { margin-bottom: 6px; }
+    .atelier-cat-time-card .primary { margin-top: 12px; }
+    .atelier-cat-item-result { text-align: center; background: #fff8ef; border-color: #f0d9a9; }
+    .atelier-cat-item-result strong { color: var(--pink-dark); font-size: 22px; }
+
+    #homeScreen {
+      position: relative;
+    }
+
+    #homeScreen::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 50px -8px 0;
+      border-radius: 32px;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(255, 234, 223, 0.58), transparent 28%),
+        radial-gradient(circle at 88% 28%, rgba(231, 224, 247, 0.48), transparent 30%);
+      pointer-events: none;
+    }
+
+    #homeScreen .hero {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 32px;
+      background: linear-gradient(135deg, #fdeaf1 0%, #fff5e4 58%, #f6f0fb 100%);
+      box-shadow: 0 16px 34px rgba(165, 117, 135, 0.14);
+    }
+
+    #homeScreen .hero::after {
+      content: "✦  ♡";
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      color: rgba(201, 120, 153, 0.3);
+      font-size: 17px;
+      letter-spacing: 5px;
+    }
+
+    #homeScreen .hero h1 {
+      margin-bottom: 0;
+      color: #624d58;
+      font-size: clamp(27px, 7vw, 32px);
+      letter-spacing: 0.02em;
+    }
+
+    #homeScreen .atelier-home-visual-wrap {
+      width: 100%;
+      max-width: 100%;
+      margin: 14px 0 16px;
+      overflow: hidden;
+      border: 1px solid rgba(226, 210, 218, 0.8);
+      border-radius: 23px;
+      box-shadow: 0 13px 28px rgba(125, 92, 106, 0.12);
+    }
+
+    #homeScreen .atelier-home-visual {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    #homeScreen .atelier-workshop-list {
+      gap: 12px;
+    }
+
+    #homeScreen .atelier-workshop-card {
+      border: 1px solid rgba(226, 210, 218, 0.8);
+      border-radius: 26px;
+      padding: 19px;
+      box-shadow: 0 12px 26px rgba(125, 92, 106, 0.1);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    #homeScreen .atelier-workshop-card:nth-child(1) {
+      background: linear-gradient(135deg, #fffdf8, #fff4df);
+    }
+
+    #homeScreen .atelier-workshop-card:nth-child(2) {
+      background: linear-gradient(135deg, #fffdfd, #f4f0fc);
+    }
+
+    #homeScreen .atelier-workshop-card:nth-child(3) {
+      background: linear-gradient(135deg, #fffdfc, #fff0ea);
+    }
+
+    #homeScreen .atelier-workshop-card h2 {
+      margin-bottom: 7px;
+      color: #584751;
+      font-size: 22px;
+    }
+
+    #homeScreen .fabric-workshop-description {
+      margin-bottom: 11px;
+      color: #81727b;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    #homeScreen .atelier-workshop-meta {
+      margin-bottom: 13px;
+      padding: 5px 10px;
+      background: rgba(255, 255, 255, 0.7);
+      color: #a87388;
+      font-size: 12px;
+    }
+
+    #homeScreen .atelier-workshop-card .primary {
+      min-height: 54px;
+      padding: 14px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.62);
+      border-radius: 17px;
+      background: linear-gradient(135deg, #e7a0ba, #cb829f);
+      box-shadow: 0 10px 20px rgba(191, 119, 148, 0.22);
+      font-size: 16px;
+      letter-spacing: 0.02em;
+      transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
+    }
+
+    @media (hover: hover) {
+      #homeScreen .atelier-workshop-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 30px rgba(125, 92, 106, 0.14);
+      }
+
+      #homeScreen .atelier-workshop-card .primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 13px 23px rgba(191, 119, 148, 0.28);
+        filter: brightness(1.03);
+      }
+    }
+
+    #homeScreen .atelier-workshop-card .primary:active {
+      transform: translateY(1px);
+      box-shadow: 0 7px 14px rgba(191, 119, 148, 0.2);
+    }
+
+    #homeScreen .atelier-home-footer {
+      margin-top: 17px;
+      color: #be7894;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    #homeScreen .atelier-home-footer::before {
+      content: "♡ ";
+      color: #d89bb2;
+    }
+
+    @media (max-width: 360px) {
+      #homeScreen .hero { border-radius: 27px; padding: 19px; }
+      #homeScreen .atelier-home-visual-wrap { margin: 12px 0 14px; border-radius: 20px; }
+      #homeScreen .atelier-workshop-card { border-radius: 22px; padding: 16px; }
+      #homeScreen .atelier-workshop-card h2 { font-size: 21px; }
+      #homeScreen .atelier-workshop-card .primary { min-height: 52px; padding: 13px 15px; }
+    }
+
     .fabric-workshop-card h2 {
       margin-bottom: 6px;
     }
@@ -367,6 +542,180 @@
       margin-bottom: 8px;
       color: var(--pink-dark);
       font-size: 24px;
+    }
+
+    .beads-workshop-visual {
+      display: grid;
+      gap: 10px;
+    }
+
+    .beads-set-list,
+    .beads-multiplier {
+      display: grid;
+      gap: 8px;
+    }
+
+    .beads-set,
+    .beads-multiplier-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: #fff;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .beads-badge {
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #fdebf1;
+      color: var(--pink-dark);
+      white-space: nowrap;
+    }
+
+    .beads-correspondence {
+      display: grid;
+      grid-template-columns: 76px repeat(4, minmax(0, 1fr));
+      overflow: hidden;
+      border: 1px solid #f0e1e7;
+      border-radius: 12px;
+      background: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .beads-correspondence span {
+      min-width: 0;
+      padding: 10px 4px;
+      border-right: 1px solid #f0e1e7;
+      border-bottom: 1px solid #f0e1e7;
+    }
+
+    .beads-correspondence span:nth-child(5n) {
+      border-right: 0;
+    }
+
+    .beads-correspondence span:nth-last-child(-n + 5) {
+      border-bottom: 0;
+    }
+
+    .beads-correspondence.is-three-column span {
+      border-right: 1px solid #f0e1e7;
+      border-bottom: 1px solid #f0e1e7;
+    }
+
+    .beads-correspondence.is-three-column span:nth-child(4n) {
+      border-right: 0;
+    }
+
+    .beads-correspondence.is-three-column span:nth-last-child(-n + 4) {
+      border-bottom: 0;
+    }
+
+    .beads-correspondence .beads-table-label {
+      background: #fff4df;
+      color: var(--pink-dark);
+    }
+
+    .beads-arrow {
+      color: var(--subtext);
+      font-size: 12px;
+    }
+
+    .beads-ratio-display,
+    .beads-formula-display,
+    .beads-xy-intro {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      padding: 14px;
+      border: 1px solid #f0e1e7;
+      border-radius: 12px;
+      background: #fff;
+      text-align: center;
+      font-weight: 900;
+      line-height: 1.8;
+    }
+
+    .beads-ratio-display { font-size: 24px; color: var(--pink-dark); }
+    .beads-pattern-row {
+      display: flex;
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(1px, 0.7vw, 4px);
+      white-space: nowrap;
+      font-size: clamp(12px, 4vw, 20px);
+      line-height: 1.25;
+    }
+    .beads-pattern-row--long { font-size: clamp(11px, 3.5vw, 16px); gap: clamp(1px, 0.35vw, 2px); }
+    .beads-pattern-note { margin-top: 8px; color: var(--subtext); font-size: 13px; }
+    .beads-workshop-visual > * { min-width: 0; max-width: 100%; }
+    .beads-horizontal { display: grid; gap: 8px; font-size: 17px; }
+    .beads-horizontal-row { display: grid; grid-template-columns: 1fr 72px 1fr; align-items: center; text-align: center; }
+    .beads-horizontal-arrow { color: var(--pink-dark); font-size: 14px; }
+    .beads-vertical-rule { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center; }
+    .beads-vertical-column { display: grid; gap: 4px; align-items: center; padding: 10px 4px; border-radius: 12px; background: #fff; font-weight: 900; }
+    .beads-vertical-arrow { color: var(--pink-dark); font-size: 13px; }
+    .beads-formula-display { font-size: 20px; }
+    .beads-xy-intro { color: var(--subtext); font-size: 14px; }
+
+    @media (max-width: 360px) {
+      .beads-ratio-display,
+      .beads-formula-display,
+      .beads-xy-intro { padding: 10px; }
+      .beads-pattern-row { font-size: clamp(11px, 3.8vw, 15px); }
+      .beads-pattern-row--long { font-size: clamp(10px, 3.25vw, 13px); }
+    }
+
+    .beads-correspondence-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .beads-correspondence-row {
+      display: grid;
+      grid-template-columns: 64px minmax(0, 1fr) 18px 62px;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 8px;
+      border-radius: 12px;
+      background: #fff;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .beads-set-count,
+    .beads-quantity {
+      white-space: nowrap;
+    }
+
+    .beads-set-symbols {
+      display: flex;
+      align-items: center;
+      gap: 1px;
+      min-width: 0;
+      color: var(--pink-dark);
+      font-size: 14px;
+      letter-spacing: -1px;
+      white-space: nowrap;
+    }
+
+    .beads-set-symbols.is-condensed {
+      gap: 4px;
+      letter-spacing: 0;
+    }
+
+    .beads-correspondence-arrow {
+      color: var(--pink-dark);
+      font-size: 16px;
+      text-align: center;
     }
 
     .event-badge {
@@ -2015,18 +2364,22 @@
     <section id="homeScreen" class="screen active">
       <div class="topbar">
         <div class="brand">LUNA'S ATELIER</div>
-        <div class="points">🪙 <span id="homePoints">0</span> pt</div>
+        <div class="points" hidden>🪙 <span id="homePoints">0</span> pt</div>
       </div>
 
         <div class="hero">
   <p class="eyebrow">WELCOME TO LUNA'S ATELIER</p>
-  <h1>今日はどの工房にする？✨</h1>
-  <p id="homeLunaMessage" class="lead"></p>
+  <h1>今日はなにを作る？✨</h1>
+  <p id="homeLunaMessage" class="lead" hidden></p>
 </div>
+
+      <div class="atelier-home-visual-wrap">
+        <img src="./atelier.png" alt="ルナのアトリエ" class="atelier-home-visual">
+      </div>
 
       <div class="atelier-workshop-list">
         <div class="card atelier-workshop-card fabric-workshop-card">
-          <h2>生地工房</h2>
+          <h2>🧵 生地工房</h2>
           <p class="fabric-workshop-description">分ける・くらべる・比を、いろいろな見方で考えよう✨</p>
           <div class="atelier-workshop-meta">1回 5問</div>
           <button id="fabricWorkshopStartButton" class="primary" type="button">
@@ -2034,21 +2387,39 @@
           </button>
         </div>
 
-        <div class="card atelier-workshop-card is-coming-soon">
-          <h2>ビーズ工房</h2>
-          <p class="fabric-workshop-description">数のならびや関係を見つけよう✨</p>
-          <div class="atelier-workshop-status">準備中</div>
-          <button class="primary" type="button" disabled>準備中</button>
+        <div class="card atelier-workshop-card">
+          <h2>🫧 ビーズ工房</h2>
+          <p class="fabric-workshop-description">まとまりや対応から、数の関係を見つけよう✨</p>
+          <div class="atelier-workshop-meta">1回 5問</div>
+          <button id="beadsWorkshopStartButton" class="primary" type="button">ビーズ工房をはじめる ✨</button>
         </div>
 
         <div class="card atelier-workshop-card">
-          <h2>ラッピング工房</h2>
+          <h2>🎀 ラッピング工房</h2>
           <p class="fabric-workshop-description">式を包んで、ひとつずつほどいてみよう✨</p>
           <div class="atelier-workshop-meta">1回 5問</div>
           <button id="ribbonWorkshopStartButton" class="primary" type="button">ラッピング工房をはじめる ✨</button>
         </div>
       </div>
 
+      <div id="atelierCatTimeCard" class="card atelier-cat-time-card" hidden>
+        <h2>🐾 ねこたちが遊びにきた！</h2>
+        <p class="lead">レオンとコッタが<br>アトリエに来てるみたい…✨</p>
+        <button id="atelierCatTimeStartButton" class="primary" type="button">ねこタイムで遊ぶ</button>
+      </div>
+
+      <button
+        id="openAtelierCatBookButton"
+        class="secondary"
+        type="button"
+        style="margin-top: 10px; width: 100%;"
+      >
+         ねこアイテム図鑑
+      </button>
+
+      <p class="atelier-home-footer">気になる工房から、何度でもつくってみよ〜✨</p>
+
+      <div hidden aria-hidden="true">
        <div class="card">
         <h2>ルナのお店</h2>
 
@@ -2104,6 +2475,46 @@
 >
   お店のデータをリセット
 </button>
+      </div>
+</section>
+
+<section id="atelierCatBookScreen" class="screen">
+  <div class="topbar">
+    <div class="brand">CAT ITEM BOOK</div>
+    <div class="points">
+       <span id="atelierCatBookCount">0 / 10</span>
+    </div>
+  </div>
+
+  <div class="hero">
+    <p class="eyebrow">LEON &amp; KOTTA ATELIER COLLECTION</p>
+    <h1>ねこアイテム図鑑</h1>
+    <p class="lead">
+      ねこタイムで見つけたアイテムを見てみよう〜
+    </p>
+  </div>
+
+  <div class="card">
+    <h2> 身につけるもの</h2>
+    <p id="atelierCatBookWearCount" class="lead"></p>
+    <div id="atelierCatBookWearList"></div>
+  </div>
+
+  <div class="card">
+    <h2> 遊ぶもの</h2>
+    <p id="atelierCatBookPlayCount" class="lead"></p>
+    <div id="atelierCatBookPlayList"></div>
+  </div>
+
+  <div class="card">
+    <h2> アトリエ小物</h2>
+    <p id="atelierCatBookAtelierCount" class="lead"></p>
+    <div id="atelierCatBookAtelierList"></div>
+  </div>
+
+  <button id="backFromAtelierCatBookButton" class="secondary" type="button">
+    アトリエに戻る
+  </button>
 </section>
 
     <!-- ねこファッション図鑑画面 -->
@@ -2178,6 +2589,25 @@
       <p class="footer-note">
         選んだあと、何かが起きるかも……？🐾
       </p>
+    </section>
+
+    <section id="atelierCatTimeScreen" class="screen">
+      <div class="topbar"><div class="brand">CAT TIME</div><div class="points">🐾 ねこタイム</div></div>
+      <div class="card">
+        <div class="event-badge">🐱 レオン＆コッタ</div>
+        <h2 id="atelierCatTimeTitle"></h2>
+        <p id="atelierCatTimeStory" class="speech"></p>
+      </div>
+      <div id="atelierCatTimeChoices" class="answers"></div>
+      <div id="atelierCatTimeReaction" class="card" hidden>
+        <p id="atelierCatTimeReactionText" class="speech"></p>
+        <button id="atelierCatTimeRewardButton" class="primary" type="button">アイテムを受け取る ✨</button>
+      </div>
+      <div id="atelierCatTimeReward" class="card atelier-cat-item-result" hidden>
+        <strong id="atelierCatTimeRewardLabel"></strong>
+        <p id="atelierCatTimeRewardText" class="lead"></p>
+        <button id="atelierCatTimeHomeButton" class="primary" type="button">アトリエにもどる</button>
+      </div>
     </section>
 
     <!-- イベント導入画面 -->
@@ -2476,6 +2906,26 @@
       </div>
     </section>
 
+    <section id="beadsWorkshopScreen" class="screen">
+      <div class="topbar"><div class="brand">BEADS WORKSHOP</div><div id="beadsWorkshopProgress" class="points">1 / 5</div></div>
+      <div class="card">
+        <div id="beadsWorkshopQuestionContent">
+          <div class="quiz-meta"><span id="beadsWorkshopStage">Stage 1</span><span>ビーズ工房</span></div>
+          <h2>ビーズ工房</h2>
+          <p id="beadsWorkshopQuestion" class="question"></p>
+          <div id="beadsWorkshopVisual" class="fabric-workshop-visual beads-workshop-visual"></div>
+          <div id="beadsWorkshopAnswers" class="answers"></div>
+          <div id="beadsWorkshopFeedback" class="feedback" aria-live="polite"></div>
+          <button id="beadsWorkshopNextButton" class="primary" type="button" hidden>つぎへ ▶</button>
+        </div>
+        <div id="beadsWorkshopComplete" class="fabric-workshop-complete" hidden>
+          <strong>ビーズ工房、完成〜✨</strong><p id="beadsWorkshopCompleteScore" class="lead"></p>
+          <button id="beadsWorkshopRetryButton" class="primary" type="button">もう一度つくる ✨</button>
+          <button id="beadsWorkshopHomeButton" class="secondary" type="button" style="margin-top:10px;">アトリエにもどる</button>
+        </div>
+      </div>
+    </section>
+
     <!-- クイズ画面 -->
     <section id="quizScreen" class="screen">
       <div class="topbar">
@@ -2581,6 +3031,9 @@
   <script>
     const STORAGE_KEY = "lunasAtelierSave_v1";
 
+    /* ATELIER版ねこタイムの内容確認用。falseに戻すと日次制限が有効になる。 */
+    const ATELIER_CAT_TEST_MODE = false;
+
     const defaultSaveData = {
   shopPoints: 0,
   completedCount: 0,
@@ -2604,7 +3057,11 @@ kottaItems: [],
 
 /* 今回獲得したアイテム（結果画面表示用） */
 lastLeonReward: null,
-lastKottaReward: null
+lastKottaReward: null,
+
+  /* ATELIER専用ねこタイム：旧CLOSETのねこ保存とは分離して保持 */
+  atelierCatItems: [],
+  atelierCatLastEventKey: null
 };
 
     const catFashionItems = {
@@ -2866,6 +3323,32 @@ const homeMessages = [
       ]
     };
 
+    function buildRibbonWorkshopIntegerChoices(answer, candidates) {
+      const choices = [answer];
+
+      candidates.forEach(candidate => {
+        if (
+          Number.isInteger(candidate) &&
+          candidate > 0 &&
+          candidate !== answer &&
+          !choices.includes(candidate) &&
+          choices.length < 3
+        ) {
+          choices.push(candidate);
+        }
+      });
+
+      let fallback = Math.max(1, answer + 1);
+      while (choices.length < 3) {
+        if (!choices.includes(fallback)) {
+          choices.push(fallback);
+        }
+        fallback += 1;
+      }
+
+      return choices;
+    }
+
     const ribbonWorkshopQuestionPools = {
       1: [
         ...[["add8","+",8,20,12],["sub7","−",7,15,22],["add6","+",6,19,13],["sub9","−",9,14,23],["add12","+",12,30,18],["sub8","−",8,17,25],["add15","+",15,37,22],["sub13","−",13,19,32],["add17","+",17,42,25],["sub16","−",16,28,44]].map(([id, op, value, total, answer]) => ({ id: `ribbon-1-${id}`, stage: 1, type: op === "+" ? "balance-add" : "balance-sub", question: `□ ${op} ${value} = ${total}。□＝○の形にするには、左右に何をする？`, equation: `□ ${op} ${value} = ${total}`, choices: op === "+" ? [`両方から${value}をひく`, `両方に${value}をたす`, `両方を${value}でわる`] : [`両方に${value}をたす`, `両方から${value}をひく`, `両方を${value}でわる`], answer: op === "+" ? `両方から${value}をひく` : `両方に${value}をたす`, feedback: `□ ${op} ${value} = ${total}<br>□ = ${answer}✨` }))
@@ -2883,13 +3366,76 @@ const homeMessages = [
         { id: "ribbon-4-four", stage: 4, type: "solve-group", question: "□ × 4 + 6 = 30。□はいくつ？", equation: "□ × 4 + 6 = 30", choices: [6, 9, 24], answer: 6, feedback: "左右から6をひく<br>□ × 4 = 24<br>左右を4でわる<br>□ = 6 ✨" },
         { id: "ribbon-4-three", stage: 4, type: "solve-group", question: "□ × 3 + 7 = 28。□はいくつ？", equation: "□ × 3 + 7 = 28", choices: [7, 9, 21], answer: 7, feedback: "左右から7をひく<br>□ × 3 = 21<br>左右を3でわる<br>□ = 7 ✨" },
         { id: "ribbon-4-five", stage: 4, type: "solve-group", question: "□ × 5 + 4 = 34。□はいくつ？", equation: "□ × 5 + 4 = 34", choices: [6, 7, 30], answer: 6, feedback: "左右から4をひく<br>□ × 5 = 30<br>左右を5でわる<br>□ = 6 ✨" },
-        ...[[2,11,27,8],[6,3,45,7],[4,5,37,8],[7,6,55,7],[3,10,37,9],[5,8,48,8],[8,7,63,7]].map(([a,b,c,x], index) => ({ id: `ribbon-4-extra-${index + 4}`, stage: 4, type: "solve-group", question: `□ × ${a} + ${b} = ${c}。□はいくつ？`, equation: `□ × ${a} + ${b} = ${c}`, choices: [x, c - b, c / a], answer: x, feedback: `左右から${b}をひく<br>□ × ${a} = ${c - b}<br>左右を${a}でわる<br>□ = ${x} ✨` }))
+        ...[[2,11,27,8],[6,3,45,7],[4,5,37,8],[7,6,55,7],[3,10,37,9],[5,8,48,8],[8,7,63,7]].map(([a,b,c,x], index) => ({ id: `ribbon-4-extra-${index + 4}`, stage: 4, type: "solve-group", question: `□ × ${a} + ${b} = ${c}。□はいくつ？`, equation: `□ × ${a} + ${b} = ${c}`, choices: buildRibbonWorkshopIntegerChoices(x, [c - b, c / a, a, x + a, x - 1, x + 1]), answer: x, feedback: `左右から${b}をひく<br>□ × ${a} = ${c - b}<br>左右を${a}でわる<br>□ = ${x} ✨` }))
       ],
       5: [
         { id: "ribbon-5-left", stage: 5, type: "solve-reordered", question: "5 + □ × 3 = 26。□はいくつ？", equation: "5 + □ × 3 = 26", choices: [7, 5, 21], answer: 7, feedback: "見た目が変わっても同じだね✨<br>左右から5をひく<br>□ × 3 = 21<br>□ = 7" },
         { id: "ribbon-5-right", stage: 5, type: "solve-reordered", question: "30 = □ × 4 + 6。□はいくつ？", equation: "30 = □ × 4 + 6", choices: [6, 9, 24], answer: 6, feedback: "見た目が変わっても同じだね✨<br>左右から6をひく<br>□ × 4 = 24<br>□ = 6" },
         { id: "ribbon-5-left-seven", stage: 5, type: "solve-reordered", question: "7 + □ × 5 = 32。□はいくつ？", equation: "7 + □ × 5 = 32", choices: [5, 7, 25], answer: 5, feedback: "見た目が変わっても同じだね✨<br>左右から7をひく<br>□ × 5 = 25<br>□ = 5" },
-        ...[["B",2,9,25,8],["A",6,5,47,7],["B",3,8,32,8],["A",7,4,46,6],["B",4,9,37,7],["A",5,6,46,8],["B",8,3,59,7]].map(([form,a,b,c,x], index) => ({ id: `ribbon-5-extra-${index + 4}`, stage: 5, type: "solve-reordered", question: `${form === "A" ? `${b} + □ × ${a} = ${c}` : `${c} = □ × ${a} + ${b}`}。□はいくつ？`, equation: form === "A" ? `${b} + □ × ${a} = ${c}` : `${c} = □ × ${a} + ${b}`, choices: [x, c - b, a], answer: x, feedback: `見た目が変わっても同じだね✨<br>左右から${b}をひく<br>□ × ${a} = ${c - b}<br>□ = ${x}` }))
+        ...[["B",2,9,25,8],["A",6,5,47,7],["B",3,8,32,8],["A",7,4,46,6],["B",4,9,37,7],["A",5,6,46,8],["B",8,3,59,7]].map(([form,a,b,c,x], index) => ({ id: `ribbon-5-extra-${index + 4}`, stage: 5, type: "solve-reordered", question: `${form === "A" ? `${b} + □ × ${a} = ${c}` : `${c} = □ × ${a} + ${b}`}。□はいくつ？`, equation: form === "A" ? `${b} + □ × ${a} = ${c}` : `${c} = □ × ${a} + ${b}`, choices: buildRibbonWorkshopIntegerChoices(x, [c - b, a, x + a, x - 1, x + 1]), answer: x, feedback: `見た目が変わっても同じだね✨<br>左右から${b}をひく<br>□ × ${a} = ${c - b}<br>□ = ${x}` }))
+      ]
+    };
+
+    const beadsWorkshopQuestionPools = {
+      1: [
+        { id: "beads-1-pink-white", stage: 1, type: "pattern", question: "ルナとブレスレットを作るよ✨ くり返すひとまとまりはどれ？", pattern: ["🩷", "🤍", "🩷"], answer: "🩷 🤍 🩷", choices: ["🩷 🤍 🩷", "🩷 🤍", "🩷 🤍 🩷 🩷"], feedback: "🩷 🤍 🩷 ｜ 🩷 🤍 🩷 ｜ …<br><br>この3こで1セットだったんだね✨" },
+        { id: "beads-1-blue-gold", stage: 1, type: "pattern", question: "ルナとブレスレットを作るよ✨ くり返すひとまとまりはどれ？", pattern: ["💙", "💛", "💛"], answer: "💙 💛 💛", choices: ["💙 💛 💛", "💙 💛", "💛 💛 💙 💛"], feedback: "💙 💛 💛 ｜ 💙 💛 💛 ｜ …<br><br>この3こで1セット✨" },
+        { id: "beads-1-green-purple", stage: 1, type: "pattern", question: "ルナとブレスレットを作るよ✨ くり返すひとまとまりはどれ？", pattern: ["💚", "💜", "🤍", "💜"], answer: "💚 💜 🤍 💜", choices: ["💚 💜 🤍 💜", "💚 💜 🤍", "💚 💜 🤍 💜 💚"], feedback: "💚 💜 🤍 💜 ｜ 💚 💜 🤍 💜 ｜ …<br><br>この4こで1セットだったんだね✨" },
+        { id: "beads-1-gold-blue-white", stage: 1, type: "pattern", question: "ルナとブレスレットを作るよ✨ くり返すひとまとまりはどれ？", pattern: ["💛", "💙", "🤍"], answer: "💛 💙 🤍", choices: ["💛 💙 🤍", "💛 💙", "💛 💙 🤍 💛"], feedback: "💛 💙 🤍 ｜ 💛 💙 🤍 ｜ …<br><br>この3こで1セットだったんだね✨" },
+        { id: "beads-1-purple-pink-green", stage: 1, type: "pattern", question: "ルナとブレスレットを作るよ✨ くり返すひとまとまりはどれ？", pattern: ["💜", "🩷", "💚", "🤍"], answer: "💜 🩷 💚 🤍", choices: ["💜 🩷 💚 🤍", "💜 🩷 💚", "💜 🩷 💚 🤍 💜"], feedback: "💜 🩷 💚 🤍 ｜ 💜 🩷 💚 🤍 ｜ …<br><br>この4こで1セットだったんだね✨" },
+        { id: "beads-1-white-gold-pink", stage: 1, type: "pattern", question: "ルナとブレスレットを作るよ✨ くり返すひとまとまりはどれ？", pattern: ["🤍", "💛", "🩷", "💙"], answer: "🤍 💛 🩷 💙", choices: ["🤍 💛 🩷 💙", "🤍 💛 🩷", "🤍 💛 🩷 💙 🤍"], feedback: "🤍 💛 🩷 💙 ｜ 🤍 💛 🩷 💙 ｜ …<br><br>この4こで1セットだったんだね✨" },
+        { id: "beads-1-blue-green-gold-purple", stage: 1, type: "pattern", question: "ルナとブレスレットを作るよ✨ くり返すひとまとまりはどれ？", pattern: ["💙", "💚", "💛", "💜", "🤍"], answer: "💙 💚 💛 💜 🤍", choices: ["💙 💚 💛 💜 🤍", "💙 💚 💛 💜", "💙 💚 💛 💜 🤍 💙"], feedback: "💙 💚 💛 💜 🤍 ｜ 💙 💚 💛 💜 🤍 ｜ …<br><br>この5こで1セットだったんだね✨" },
+        { id: "beads-1-pink-blue-gold", stage: 1, type: "pattern", question: "ルナとブレスレットを作るよ✨ くり返すひとまとまりはどれ？", pattern: ["🩷", "💙", "💛", "💙"], answer: "🩷 💙 💛 💙", choices: ["🩷 💙 💛 💙", "🩷 💙 💛", "🩷 💙 💛 💙 🩷"], feedback: "🩷 💙 💛 💙 ｜ 🩷 💙 💛 💙 ｜ …<br><br>この4こで1セットだったんだね✨" },
+        { id: "beads-1-green-white-gold", stage: 1, type: "pattern", question: "ルナとブレスレットを作るよ✨ くり返すひとまとまりはどれ？", pattern: ["💚", "🤍", "💛"], answer: "💚 🤍 💛", choices: ["💚 🤍 💛", "💚 🤍", "💚 🤍 💛 💚"], feedback: "💚 🤍 💛 ｜ 💚 🤍 💛 ｜ …<br><br>この3こで1セットだったんだね✨" },
+        { id: "beads-1-purple-white-pink-blue", stage: 1, type: "pattern", question: "ルナとブレスレットを作るよ✨ くり返すひとまとまりはどれ？", pattern: ["💜", "🤍", "🩷", "💙", "💛"], answer: "💜 🤍 🩷 💙 💛", choices: ["💜 🤍 🩷 💙 💛", "💜 🤍 🩷 💙", "💜 🤍 🩷 💙 💛 💜"], feedback: "💜 🤍 🩷 💙 💛 ｜ 💜 🤍 🩷 💙 💛 ｜ …<br><br>この5こで1セットだったんだね✨" }
+      ],
+      2: [
+        { id: "beads-2-three-sets", stage: 2, type: "setcount", question: "同じ模様をここまで通したよ✨ 何セットできてる？", pattern: ["🩷", "💙", "💛", "🤍"], sets: 3, answer: "3セット", choices: ["2セット", "3セット", "4セット"], feedback: "🩷 💙 💛 🤍 ｜ 🩷 💙 💛 🤍 ｜ 🩷 💙 💛 🤍<br><br>1セット4こ。12 ÷ 4 = 3<br>3セットできてるね✨" },
+        { id: "beads-2-four-sets", stage: 2, type: "setcount", question: "同じ模様をここまで通したよ✨ 何セットできてる？", pattern: ["💜", "💚", "🤍"], sets: 4, answer: "4セット", choices: ["3セット", "4セット", "5セット"], feedback: "💜 💚 🤍 ｜ 💜 💚 🤍 ｜ 💜 💚 🤍 ｜ 💜 💚 🤍<br><br>1セット3こ。12 ÷ 3 = 4<br>4セットできてるね✨" },
+        { id: "beads-2-five-three", stage: 2, type: "setcount", question: "同じ模様をここまで通したよ✨ 何セットできてる？", pattern: ["💛", "🩷", "💙", "🤍", "💜"], sets: 3, answer: "3セット", choices: ["2セット", "3セット", "4セット"], feedback: "💛 🩷 💙 🤍 💜 ｜ 💛 🩷 💙 🤍 💜 ｜ 💛 🩷 💙 🤍 💜<br><br>1セット5こ。15 ÷ 5 = 3<br>3セットできてるね✨" },
+        { id: "beads-2-three-five", stage: 2, type: "setcount", question: "同じ模様をここまで通したよ✨ 何セットできてる？", pattern: ["🩷", "💛", "🤍"], sets: 5, answer: "5セット", choices: ["4セット", "5セット", "6セット"], feedback: "🩷 💛 🤍 ｜ 🩷 💛 🤍 ｜ 🩷 💛 🤍 ｜ 🩷 💛 🤍 ｜ 🩷 💛 🤍<br><br>1セット3こ。15 ÷ 3 = 5<br>5セットできてるね✨" },
+        { id: "beads-2-four-four", stage: 2, type: "setcount", question: "同じ模様をここまで通したよ✨ 何セットできてる？", pattern: ["💙", "💚", "💛", "🤍"], sets: 4, answer: "4セット", choices: ["3セット", "4セット", "5セット"], feedback: "💙 💚 💛 🤍 ｜ 💙 💚 💛 🤍 ｜ 💙 💚 💛 🤍 ｜ 💙 💚 💛 🤍<br><br>1セット4こ。16 ÷ 4 = 4<br>4セットできてるね✨" },
+        { id: "beads-2-three-three", stage: 2, type: "setcount", question: "同じ模様をここまで通したよ✨ 何セットできてる？", pattern: ["💜", "💙", "🩷"], sets: 3, answer: "3セット", choices: ["2セット", "3セット", "4セット"], feedback: "💜 💙 🩷 ｜ 💜 💙 🩷 ｜ 💜 💙 🩷<br><br>1セット3こ。9 ÷ 3 = 3<br>3セットできてるね✨" },
+        { id: "beads-2-five-four", stage: 2, type: "setcount", question: "同じ模様をここまで通したよ✨ 何セットできてる？", pattern: ["💚", "🤍", "💛", "💜", "💙"], sets: 4, answer: "4セット", choices: ["3セット", "4セット", "5セット"], feedback: "💚 🤍 💛 💜 💙 ｜ 💚 🤍 💛 💜 💙 ｜ 💚 🤍 💛 💜 💙 ｜ 💚 🤍 💛 💜 💙<br><br>1セット5こ。20 ÷ 5 = 4<br>4セットできてるね✨" },
+        { id: "beads-2-four-three", stage: 2, type: "setcount", question: "同じ模様をここまで通したよ✨ 何セットできてる？", pattern: ["🩷", "💜", "🤍", "💛"], sets: 3, answer: "3セット", choices: ["2セット", "3セット", "4セット"], feedback: "🩷 💜 🤍 💛 ｜ 🩷 💜 🤍 💛 ｜ 🩷 💜 🤍 💛<br><br>1セット4こ。12 ÷ 4 = 3<br>3セットできてるね✨" },
+        { id: "beads-2-three-five-blue", stage: 2, type: "setcount", question: "同じ模様をここまで通したよ✨ 何セットできてる？", pattern: ["💙", "🤍", "💚"], sets: 5, answer: "5セット", choices: ["4セット", "5セット", "6セット"], feedback: "💙 🤍 💚 ｜ 💙 🤍 💚 ｜ 💙 🤍 💚 ｜ 💙 🤍 💚 ｜ 💙 🤍 💚<br><br>1セット3こ。15 ÷ 3 = 5<br>5セットできてるね✨" },
+        { id: "beads-2-four-five", stage: 2, type: "setcount", question: "同じ模様をここまで通したよ✨ 何セットできてる？", pattern: ["💛", "🩷", "💙", "💜"], sets: 5, answer: "5セット", choices: ["4セット", "5セット", "6セット"], feedback: "💛 🩷 💙 💜 ｜ 💛 🩷 💙 💜 ｜ 💛 🩷 💙 💜 ｜ 💛 🩷 💙 💜 ｜ 💛 🩷 💙 💜<br><br>1セット4こ。20 ÷ 4 = 5<br>5セットできてるね✨" }
+      ],
+      3: [
+        { id: "beads-3-23", stage: 3, type: "nth", question: "この模様をずーっと続けるよ✨ 23番目のビーズはどれ？", pattern: ["🩷", "💙", "💛", "🤍"], position: 23, answer: "💛", choices: ["💛", "🩷", "🤍"], feedback: "1セット4こ<br>23 ÷ 4 = 5 あまり3<br><br>5セットのあと、3こ進むよ。<br>1セットの3番目は 💛<br>だから答えは 💛 ✨" },
+        { id: "beads-3-20", stage: 3, type: "nth", question: "この模様をずーっと続けるよ✨ 20番目のビーズはどれ？", pattern: ["💜", "💚", "🤍"], position: 20, answer: "💚", choices: ["💚", "💜", "🤍"], feedback: "1セット3こ<br>20 ÷ 3 = 6 あまり2<br><br>1セットの2番目は 💚<br>だから答えは 💚 ✨" },
+        { id: "beads-3-17", stage: 3, type: "nth", question: "この模様をずーっと続けるよ✨ 17番目のビーズはどれ？", pattern: ["💛", "🩷", "💙", "🤍", "💜"], position: 17, answer: "🩷", choices: ["🩷", "💛", "💜"], feedback: "1セット5こ<br>17 ÷ 5 = 3 あまり2<br><br>1セットの2番目は 🩷<br>だから答えは 🩷 ✨" },
+        { id: "beads-3-29", stage: 3, type: "nth", question: "この模様をずーっと続けるよ✨ 29番目のビーズはどれ？", pattern: ["💚", "💜", "🤍", "💛"], position: 29, answer: "💚", choices: ["💚", "💜", "💛"], feedback: "1セット4こ<br>29 ÷ 4 = 7 あまり1<br><br>7セットのあと、1こ進むよ。<br>1セットの1番目は 💚<br>だから答えは 💚 ✨" },
+        { id: "beads-3-32", stage: 3, type: "nth", question: "この模様をずーっと続けるよ✨ 32番目のビーズはどれ？", pattern: ["💙", "🩷", "💛", "🤍", "💜"], position: 32, answer: "🩷", choices: ["🩷", "💙", "🤍"], feedback: "1セット5こ<br>32 ÷ 5 = 6 あまり2<br><br>6セットのあと、2こ進むよ。<br>1セットの2番目は 🩷<br>だから答えは 🩷 ✨" },
+        { id: "beads-3-25", stage: 3, type: "nth", question: "この模様をずーっと続けるよ✨ 25番目のビーズはどれ？", pattern: ["💛", "💚", "💙"], position: 25, answer: "💛", choices: ["💛", "💚", "💙"], feedback: "1セット3こ<br>25 ÷ 3 = 8 あまり1<br><br>8セットのあと、1こ進むよ。<br>1セットの1番目は 💛<br>だから答えは 💛 ✨" },
+        { id: "beads-3-34", stage: 3, type: "nth", question: "この模様をずーっと続けるよ✨ 34番目のビーズはどれ？", pattern: ["💜", "🤍", "💚", "🩷"], position: 34, answer: "🤍", choices: ["🤍", "💜", "🩷"], feedback: "1セット4こ<br>34 ÷ 4 = 8 あまり2<br><br>8セットのあと、2こ進むよ。<br>1セットの2番目は 🤍<br>だから答えは 🤍 ✨" },
+        { id: "beads-3-28", stage: 3, type: "nth", question: "この模様をずーっと続けるよ✨ 28番目のビーズはどれ？", pattern: ["🩷", "💛", "💙", "🤍", "💚"], position: 28, answer: "💙", choices: ["💙", "🩷", "💚"], feedback: "1セット5こ<br>28 ÷ 5 = 5 あまり3<br><br>5セットのあと、3こ進むよ。<br>1セットの3番目は 💙<br>だから答えは 💙 ✨" },
+        { id: "beads-3-41", stage: 3, type: "nth", question: "この模様をずーっと続けるよ✨ 41番目のビーズはどれ？", pattern: ["💚", "💙", "🩷", "🤍", "💛", "💜"], position: 41, answer: "💛", choices: ["💛", "💚", "💜"], feedback: "1セット6こ<br>41 ÷ 6 = 6 あまり5<br><br>6セットのあと、5こ進むよ。<br>1セットの5番目は 💛<br>だから答えは 💛 ✨" },
+        { id: "beads-3-27", stage: 3, type: "nth", question: "この模様をずーっと続けるよ✨ 27番目のビーズはどれ？", pattern: ["💙", "💛", "🩷", "🤍"], position: 27, answer: "🩷", choices: ["🩷", "💙", "🤍"], feedback: "1セット4こ<br>27 ÷ 4 = 6 あまり3<br><br>6セットのあと、3こ進むよ。<br>1セットの3番目は 🩷<br>だから答えは 🩷 ✨" }
+      ],
+      4: [
+        { id: "beads-4-18", stage: 4, type: "count", question: "この模様で18こまで通すよ✨ 🩷 は全部で何こ必要？", pattern: ["🩷", "🩷", "💙", "🤍"], target: "🩷", total: 18, answer: 10, choices: [10, 8, 12], feedback: "1セット4こ<br>18 ÷ 4 = 4 あまり2<br><br>4セットの中には 🩷 が2こずつ。2 × 4 = 8こ<br>残り2こは 🩷 🩷。さらに2こ<br>8 + 2 = 10こ ✨" },
+        { id: "beads-4-14", stage: 4, type: "count", question: "この模様で14こまで通すよ✨ 💛 は全部で何こ必要？", pattern: ["💛", "💙", "🤍", "💛"], target: "💛", total: 14, answer: 7, choices: [7, 6, 8], feedback: "1セット4こ<br>14 ÷ 4 = 3 あまり2<br><br>完全な3セット：2 × 3 = 6こ<br>余りは 💛 💙。さらに1こ<br>6 + 1 = 7こ ✨" },
+        { id: "beads-4-17", stage: 4, type: "count", question: "この模様で17こまで通すよ✨ 💜 は全部で何こ必要？", pattern: ["💜", "💚", "💙", "💜", "🤍"], target: "💜", total: 17, answer: 7, choices: [7, 6, 8], feedback: "1セット5こ<br>17 ÷ 5 = 3 あまり2<br><br>完全な3セット：2 × 3 = 6こ<br>余りは 💜 💚。さらに1こ<br>6 + 1 = 7こ ✨" },
+        { id: "beads-4-19", stage: 4, type: "count", question: "この模様で19こまで通すよ✨ 💚 は全部で何こ必要？", pattern: ["💚", "💙", "💚", "🤍"], target: "💚", total: 19, answer: 10, choices: [10, 8, 9], feedback: "1セット4こ<br>19 ÷ 4 = 4 あまり3<br><br>完全な4セット：💚 は2こずつ。2 × 4 = 8こ<br>余りは 💚 💙 💚。さらに2こ<br>8 + 2 = 10こ ✨" },
+        { id: "beads-4-22", stage: 4, type: "count", question: "この模様で22こまで通すよ✨ 💛 は全部で何こ必要？", pattern: ["💙", "💛", "🤍", "💛"], target: "💛", total: 22, answer: 11, choices: [11, 10, 12], feedback: "1セット4こ<br>22 ÷ 4 = 5 あまり2<br><br>完全な5セット：💛 は2こずつ。2 × 5 = 10こ<br>余りは 💙 💛。さらに1こ<br>10 + 1 = 11こ ✨" },
+        { id: "beads-4-23", stage: 4, type: "count", question: "この模様で23こまで通すよ✨ 🩷 は全部で何こ必要？", pattern: ["💙", "🩷", "💚", "🩷", "🤍"], target: "🩷", total: 23, answer: 9, choices: [9, 8, 10], feedback: "1セット5こ<br>23 ÷ 5 = 4 あまり3<br><br>完全な4セット：🩷 は2こずつ。2 × 4 = 8こ<br>余りは 💙 🩷 💚。さらに1こ<br>8 + 1 = 9こ ✨" },
+        { id: "beads-4-27", stage: 4, type: "count", question: "この模様で27こまで通すよ✨ 💜 は全部で何こ必要？", pattern: ["💜", "💙", "💚", "💜", "🤍"], target: "💜", total: 27, answer: 11, choices: [11, 10, 12], feedback: "1セット5こ<br>27 ÷ 5 = 5 あまり2<br><br>完全な5セット：💜 は2こずつ。2 × 5 = 10こ<br>余りは 💜 💙。さらに1こ<br>10 + 1 = 11こ ✨" },
+        { id: "beads-4-31", stage: 4, type: "count", question: "この模様で31こまで通すよ✨ 💛 は全部で何こ必要？", pattern: ["💛", "💙", "💚", "💛", "🤍"], target: "💛", total: 31, answer: 13, choices: [13, 12, 14], feedback: "1セット5こ<br>31 ÷ 5 = 6 あまり1<br><br>完全な6セット：💛 は2こずつ。2 × 6 = 12こ<br>余りは 💛。さらに1こ<br>12 + 1 = 13こ ✨" },
+        { id: "beads-4-29", stage: 4, type: "count", question: "この模様で29こまで通すよ✨ 🩷 は全部で何こ必要？", pattern: ["🩷", "💙", "🩷", "💚", "🤍", "💜"], target: "🩷", total: 29, answer: 10, choices: [10, 8, 9], feedback: "1セット6こ<br>29 ÷ 6 = 4 あまり5<br><br>完全な4セット：🩷 は2こずつ。2 × 4 = 8こ<br>余りは 🩷 💙 🩷 💚 🤍。さらに2こ<br>8 + 2 = 10こ ✨" },
+        { id: "beads-4-26", stage: 4, type: "count", question: "この模様で26こまで通すよ✨ 💜 は全部で何こ必要？", pattern: ["💙", "💜", "💚", "💜", "🤍"], target: "💜", total: 26, answer: 10, choices: [10, 11, 9], feedback: "1セット5こ<br>26 ÷ 5 = 5 あまり1<br><br>完全な5セット：💜 は2こずつ。2 × 5 = 10こ<br>余りは 💙。追加は0こ<br>10 + 0 = 10こ ✨" }
+      ],
+      5: [
+        { id: "beads-5-pink", stage: 5, type: "setformula", question: "この模様を □セット作るよ✨ 🩷 は全部で何こ？ 何セットでも使える式はどれ？", pattern: ["🩷", "🩷", "💙", "🤍"], target: "🩷", perSet: 2, answer: "□ × 2", choices: ["□ × 2", "□ + 2", "□ × 4"], feedback: "1セット → 2こ<br>2セット → 4こ<br>5セット → 10こ<br><br>□セット → □ × 2こ<br>何セットでも使えるレシピになった〜✨" },
+        { id: "beads-5-yellow", stage: 5, type: "setformula", question: "この模様を □セット作るよ✨ 💛 は全部で何こ？ 何セットでも使える式はどれ？", pattern: ["💛", "💙", "💛", "🤍"], target: "💛", perSet: 2, answer: "□ × 2", choices: ["□ × 2", "□ + 2", "□ × 4"], feedback: "1セット → 2こ<br>2セット → 4こ<br>5セット → 10こ<br><br>□セット → □ × 2こ<br>何セットでも使えるレシピになった〜✨" },
+        { id: "beads-5-purple", stage: 5, type: "setformula", question: "この模様を □セット作るよ✨ 💜 は全部で何こ？ 何セットでも使える式はどれ？", pattern: ["💜", "💚", "💙", "💜", "🤍"], target: "💜", perSet: 2, answer: "□ × 2", choices: ["□ × 2", "□ + 2", "□ × 5"], feedback: "1セット → 2こ<br>2セット → 4こ<br>5セット → 10こ<br><br>□セット → □ × 2こ<br>何セットでも使えるレシピになった〜✨" },
+        { id: "beads-5-green-three", stage: 5, type: "setformula", question: "この模様を □セット作るよ✨ 💚 は全部で何こ？ 何セットでも使える式はどれ？", pattern: ["💚", "💙", "💚", "🤍", "💚"], target: "💚", perSet: 3, answer: "□ × 3", choices: ["□ × 3", "□ + 3", "□ × 5"], feedback: "1セット → 3こ<br>2セット → 6こ<br>5セット → 15こ<br><br>□セット → □ × 3こ<br>何セットでも使えるレシピになった〜✨" },
+        { id: "beads-5-pink-three", stage: 5, type: "setformula", question: "この模様を □セット作るよ✨ 🩷 は全部で何こ？ 何セットでも使える式はどれ？", pattern: ["🩷", "💛", "🩷", "💙", "🤍", "🩷"], target: "🩷", perSet: 3, answer: "□ × 3", choices: ["□ × 3", "□ × 6", "□ + 3"], feedback: "1セット → 3こ<br>2セット → 6こ<br>5セット → 15こ<br><br>□セット → □ × 3こ<br>何セットでも使えるレシピになった〜✨" },
+        { id: "beads-5-yellow-three", stage: 5, type: "setformula", question: "この模様を □セット作るよ✨ 💛 は全部で何こ？ 何セットでも使える式はどれ？", pattern: ["💛", "💚", "💛", "🤍", "💙", "💛"], target: "💛", perSet: 3, answer: "□ × 3", choices: ["□ × 3", "□ + 3", "□ × 6"], feedback: "1セット → 3こ<br>2セット → 6こ<br>5セット → 15こ<br><br>□セット → □ × 3こ<br>何セットでも使えるレシピになった〜✨" },
+        { id: "beads-5-blue-three", stage: 5, type: "setformula", question: "この模様を □セット作るよ✨ 💙 は全部で何こ？ 何セットでも使える式はどれ？", pattern: ["💙", "💜", "💙", "🤍", "💙", "💚"], target: "💙", perSet: 3, answer: "□ × 3", choices: ["□ × 3", "□ × 6", "□ + 3"], feedback: "1セット → 3こ<br>2セット → 6こ<br>5セット → 15こ<br><br>□セット → □ × 3こ<br>何セットでも使えるレシピになった〜✨" },
+        { id: "beads-5-purple-three", stage: 5, type: "setformula", question: "この模様を □セット作るよ✨ 💜 は全部で何こ？ 何セットでも使える式はどれ？", pattern: ["💜", "💛", "💜", "💙", "🤍", "💜"], target: "💜", perSet: 3, answer: "□ × 3", choices: ["□ × 3", "□ + 3", "□ × 6"], feedback: "1セット → 3こ<br>2セット → 6こ<br>5セット → 15こ<br><br>□セット → □ × 3こ<br>何セットでも使えるレシピになった〜✨" },
+        { id: "beads-5-white-two", stage: 5, type: "setformula", question: "この模様を □セット作るよ✨ 🤍 は全部で何こ？ 何セットでも使える式はどれ？", pattern: ["🤍", "💙", "💚", "🤍", "💛", "💜"], target: "🤍", perSet: 2, answer: "□ × 2", choices: ["□ × 2", "□ × 6", "□ + 2"], feedback: "1セット → 2こ<br>2セット → 4こ<br>5セット → 10こ<br><br>□セット → □ × 2こ<br>何セットでも使えるレシピになった〜✨" },
+        { id: "beads-5-gold-two", stage: 5, type: "setformula", question: "この模様を □セット作るよ✨ 💛 は全部で何こ？ 何セットでも使える式はどれ？", pattern: ["💙", "💛", "💚", "💛", "🤍"], target: "💛", perSet: 2, answer: "□ × 2", choices: ["□ × 2", "□ + 2", "□ × 5"], feedback: "1セット → 2こ<br>2セット → 4こ<br>5セット → 10こ<br><br>□セット → □ × 2こ<br>何セットでも使えるレシピになった〜✨" }
       ]
     };
 
@@ -5046,6 +5592,118 @@ tip: "2：3なら、<b>2つ分と3つ分のセット</b>って考えると分か
     "今日はゆる〜く、ふたりとの時間を楽しも〜✨"
 };
 
+    /* ATELIERねこタイム。レオンは慎重で短く「〜にゃ」、コッタは積極的に「〜ですにゃ」。 */
+    const atelierCatEvents = [
+      { key: "pompon-sensor", title: "ポンポンセンサー発動！", story: "<strong>ルナ</strong><br>「レオンの腰、ポンポンしてるよ〜」<br><br>レオン「そこ、いいにゃ〜」<br><br><strong>ルナ</strong><br>「あれ？ コッタが来たよ！」<br><br>コッタ「ポンポンの気配がしたですにゃ！」", choices: [
+        ["ふたり交互にポンポンする", "<strong>ルナ</strong><br>「じゃあ、ふたり交互にポンポンするね！」<br><br><strong>レオン</strong><br>「ぼくが先だったにゃ」<br><br><strong>コッタ</strong><br>「順番なら待つですにゃ！」<br><br><strong>ルナ</strong><br>「あれ？ コッタ、レオンの番でも近づいてるよ」<br><br><strong>レオン</strong><br>「近いにゃ……」<br><br><strong>コッタ</strong><br>「次の番に備えてるですにゃ✨」"],
+        ["両手でふたりをポンポンする", "<strong>ルナ</strong><br>「両手で、ふたり同時にポンポン！」<br><br><strong>コッタ</strong><br>「最高ですにゃ〜！」<br><br><strong>レオン</strong><br>「忙しいポンポンだにゃ……」<br><br><strong>ルナ</strong><br>「コッタ、どんどんこっちに寄ってきたよ」<br><br><strong>レオン</strong><br>「ぼくのスペースが減ってるにゃ」<br><br><strong>コッタ</strong><br>「気のせいですにゃ♪」"],
+        ["コッタ、どうして分かったの？と聞く", "<strong>ルナ</strong><br>「コッタ、どうして分かったの？」<br><br><strong>コッタ</strong><br>「ぼくのポンポンセンサーはすごいですにゃ！」<br><br><strong>レオン</strong><br>「そんなセンサーあったのかにゃ」<br><br><strong>コッタ</strong><br>「家じゅう対応ですにゃ✨」<br><br><strong>レオン</strong><br>「それはすごすぎるにゃ……」"] ] },
+      { key: "leon-trap", title: "レオンについていくと…？", story: "<strong>ルナ</strong><br>「ねえ、レオンがにいにのこと、ちらちら見てるよ」<br><br><strong>にいに</strong><br>「ん？ ついて来いってこと？」<br><br>レオン「こっちにゃ」<br><br><strong>にいに</strong><br>「いつものポンポン場所だな」<br><br>レオン「ここにゃ」", choices: [
+        ["たっぷりポンポンする", "<strong>にいに</strong><br>「はいはい、頼まれたとおりにポンポンするよ」<br><br><strong>レオン</strong><br>「そこにゃ。いい感じにゃ」<br><br>しばらくして――<br><br><strong>レオン</strong><br>「もういいにゃ！」<br><br><strong>にいに</strong><br>「呼んだのそっちじゃん！」<br><br><strong>ルナ</strong><br>「あれ？ レオン、またにいにを見てるよ」<br><br><strong>にいに</strong><br>「……また呼ぶ気？」"],
+        ["ほどほどでやめてみる", "<strong>にいに</strong><br>「今日は少し早めにやめよう」<br><br><strong>レオン</strong><br>「……終わりかにゃ？」<br><br><strong>にいに</strong><br>「今日は罠にかからない」<br><br><strong>ルナ</strong><br>「レオン、またちらって見たよ」<br><br><strong>レオン</strong><br>「もう少しでもよかったにゃ」<br><br><strong>にいに</strong><br>「どっちなんだよ」"],
+        ["コッタも呼んでみる", "<strong>にいに</strong><br>「コッタも来る？」<br><br>その瞬間――<br><br><strong>コッタ</strong><br>「もう来てるですにゃ！」<br><br><strong>レオン</strong><br>「呼ぶ前からいたにゃ……」<br><br><strong>にいに</strong><br>「足もとでしっぽ、ぴんってしてるな」<br><br><strong>コッタ</strong><br>「ポンポンの場所は把握済みですにゃ✨」"] ] },
+      { key: "watching", title: "視線を感じる…", story: "<strong>ルナ</strong><br>「パパ、コッタをなでなでしてるよ」<br><br>コッタ「もっとですにゃ〜♪」<br><br><strong>ルナ</strong><br>「あれ？ レオンがずーっと見てるよ」<br><br>レオン「…………にゃ」", choices: [
+        ["レオンもおいで、と呼ぶ", "<strong>パパ</strong><br>「レオンもおいで」<br><br><strong>レオン</strong><br>「……行ってもいいのかにゃ」<br><br><strong>ルナ</strong><br>「レオン、ちょっとずつ近づいてきたよ」<br><br><strong>コッタ</strong><br>「レオンもなでなでですにゃ！」<br><br><strong>レオン</strong><br>「コッタに言われなくても行くにゃ」<br><br><strong>パパ</strong><br>「すぐ横に座ったな」"],
+        ["コッタのあとでレオンをなでる", "<strong>コッタ</strong><br>「ぼくは満足ですにゃ〜♪」<br><br><strong>パパ</strong><br>「じゃあ、次はレオンの番だな」<br><br><strong>レオン</strong><br>「……待ってたにゃ」<br><br><strong>ルナ</strong><br>「見て見て！ レオンの切ない顔、消えちゃった」<br><br><strong>コッタ</strong><br>「レオン、顔が違うですにゃ」"],
+        ["パパが両手を使う", "<strong>パパ</strong><br>「右手はレオン、左手はコッタ」<br><br><strong>コッタ</strong><br>「両手なでなでですにゃ！」<br><br><strong>レオン</strong><br>「それなら悪くないにゃ」<br><br><strong>ルナ</strong><br>「ふたりとも、パパにくっついてきたよ」<br><br><strong>パパ</strong><br>「両側から圧がすごい」"] ] },
+      { key: "washroom", title: "コッタ、侵入成功！？", story: "<strong>ルナ</strong><br>「洗面所のドア、開いたよ」<br><br>コッタ「いまだ！ですにゃ！」<br><br><strong>ルナ</strong><br>「あれ？ もう、もーりの着替えの籠に入ってる〜！」<br><br>コッタ「いいお部屋を見つけたですにゃ♪」", choices: [
+        ["そこ、コッタのお部屋じゃないよ", "<strong>ルナ</strong><br>「コッタ、そこはもーりの着替えの籠だよ」<br><br><strong>コッタ</strong><br>「ぼくにぴったりですにゃ？」<br><br><strong>レオン</strong><br>「たぶん違うにゃ」<br><br><strong>ルナ</strong><br>「コッタ、もう丸くなってるよ」<br><br><strong>コッタ</strong><br>「では少し寝るですにゃ♪」"],
+        ["ちょっとだけくつろがせる", "<strong>ルナ</strong><br>「少しだけだよ」<br><br><strong>コッタ</strong><br>「では遠慮なくですにゃ♪」<br><br><strong>ルナ</strong><br>「もう、すっかりくつろいでる〜」<br><br><strong>レオン</strong><br>「もう自分の部屋だと思ってるにゃ」<br><br><strong>コッタ</strong><br>「今日からここも別荘ですにゃ✨」"],
+        ["もっといい猫ベッドを作ってあげる", "<strong>ルナ</strong><br>「じゃあコッタ用に、もっとふかふかのベッド作ろうか」<br><br><strong>コッタ</strong><br>「ふかふか希望ですにゃ！」<br><br><strong>レオン</strong><br>「ぼくの分もあるのかにゃ？」<br><br><strong>コッタ</strong><br>「レオンは隣ですにゃ！」<br><br><strong>レオン</strong><br>「勝手に決められたにゃ……」"] ] },
+      { key: "carrier", title: "レオンが消えた！", story: "<strong>ルナ</strong><br>「アトリエのすみにキャリーを置いたよ」<br><br><strong>ルナ</strong><br>「あれ？ さっきまでいたレオンがいない！」<br><br>コッタ「レオンがものすごい速さで消えたですにゃ！」<br><br>ベッドの下から――<br><br>レオン「今日は見学にしておくにゃ……」", choices: [
+        ["今日は病院じゃないよ、と教える", "<strong>ルナ</strong><br>「今日は病院じゃないよ」<br><br><strong>ルナ</strong><br>「見て見て！ ベッドの下から顔が少し出てきたよ」<br><br><strong>レオン</strong><br>「……ほんとかにゃ？」<br><br><strong>コッタ</strong><br>「今日は大丈夫ですにゃ！」<br><br><strong>レオン</strong><br>「コッタが言うと、逆にちょっと不安にゃ」"],
+        ["キャリーを見えないところへ片づける", "<strong>ルナ</strong><br>「キャリー、見えないところへ片づけたよ」<br><br>しばらくして――<br><br><strong>ルナ</strong><br>「レオンが、そーっと出てきたよ」<br><br><strong>レオン</strong><br>「安全確認するにゃ」<br><br><strong>コッタ</strong><br>「もう大丈夫ですにゃ！」<br><br><strong>レオン</strong><br>「まずぼくが確認するにゃ」"],
+        ["コッタにキャリーへ入ってもらう", "<strong>コッタ</strong><br>「入ってみるですにゃ！」<br><br><strong>ルナ</strong><br>「コッタ、迷わず入っちゃった！」<br><br><strong>レオン</strong><br>「勇気あるにゃ……」<br><br><strong>コッタ</strong><br>「なかなか落ち着くですにゃ♪」<br><br><strong>レオン</strong><br>「ぼくは遠慮するにゃ」"] ] },
+      { key: "kotta-belly-up", title: "コッタのへそ天", story: "<strong>ルナ</strong><br>「今日はあついね〜。あれ？ 廊下のまんなかにコッタが落ちてるよ！」<br><br><strong>コッタ</strong><br>「落ちてないですにゃ。ひんやり休憩ですにゃ〜♪」<br><br><strong>ルナ</strong><br>「おなか、ぜーんぶ出てるよ」<br><br><strong>レオン</strong><br>「そこ、ぼくも通りたいにゃ」", choices: [
+        ["そのまま見守る", "<strong>ルナ</strong><br>「コッタ、ぜんぜん動く気ないね〜」<br><br><strong>コッタ</strong><br>「ここが一番ひんやりですにゃ」<br><br><strong>レオン</strong><br>「でも通り道にゃ」<br><br><strong>コッタ</strong><br>「横をどうぞですにゃ♪」<br><br><strong>レオン</strong><br>「ぜんぜんどく気ないにゃ……」"],
+        ["そっと写真を撮る", "<strong>ルナ</strong><br>「今のうちに、へそ天写真を一枚……」<br><br><strong>コッタ</strong><br>「撮るなら、かわいくですにゃ」<br><br><strong>ルナ</strong><br>「あ、起きてないのに気づいてる！」<br><br><strong>レオン</strong><br>「カメラは分かるのかにゃ」<br><br><strong>コッタ</strong><br>「モデルは休憩中もお仕事ですにゃ✨」"],
+        ["レオンにも涼しい場所をすすめる", "<strong>ルナ</strong><br>「レオンもこっち、涼しいよ」<br><br><strong>レオン</strong><br>「コッタの隣はちょっと狭いにゃ」<br><br><strong>コッタ</strong><br>「半分あけるですにゃ！」<br><br><strong>ルナ</strong><br>「あ、ちょっとだけ転がった」<br><br><strong>レオン</strong><br>「それで半分なのかにゃ」"] ] },
+      { key: "kotta-kneading", title: "コッタのふみふみ", story: "<strong>ルナ</strong><br>「今日はさむいね。コッタ、毛布をずーっとふみふみしてるよ」<br><br><strong>コッタ</strong><br>「大事な作業ですにゃ」<br><br><strong>レオン</strong><br>「ずいぶん真剣にゃ」<br><br><strong>ルナ</strong><br>「何を作ってるのかな？」", choices: [
+        ["ふみふみを見守る", "<strong>ルナ</strong><br>「まだ終わらないの？」<br><br><strong>コッタ</strong><br>「まだ仕上げ中ですにゃ」<br><br><strong>レオン</strong><br>「何が完成するのかにゃ」<br><br><strong>コッタ</strong><br>「最高の寝床ですにゃ！」<br><br><strong>ルナ</strong><br>「自分で作って、自分で寝るんだね」<br><br><strong>コッタ</strong><br>「職人ですにゃ✨」"],
+        ["もっとふわふわの毛布を足す", "<strong>ルナ</strong><br>「もう一枚、ふわふわ毛布を重ねてみようか」<br><br><strong>コッタ</strong><br>「新素材ですにゃ！」<br><br><strong>レオン</strong><br>「急にアトリエっぽくなったにゃ」<br><br><strong>コッタ</strong><br>「試作するですにゃ！」<br><br><strong>ルナ</strong><br>「あ〜、また最初からふみふみ始まった！」"],
+        ["レオンも呼んでみる", "<strong>ルナ</strong><br>「レオンも一緒にふみふみする？」<br><br><strong>レオン</strong><br>「ぼくは見てるにゃ」<br><br><strong>コッタ</strong><br>「では、ぼくがふたり分ふみふみするですにゃ！」<br><br><strong>レオン</strong><br>「頼んでないにゃ」<br><br><strong>ルナ</strong><br>「あれ？ コッタが寝たら、レオンも毛布に乗ったよ」<br><br><strong>レオン</strong><br>「見るだけの予定だったにゃ……」"] ] },
+      { key: "papa-homecoming", title: "パパ帰宅！レオン大喜び", story: "<strong>ルナ</strong><br>「玄関で音がしたよ。パパかな？」<br><br><strong>レオン</strong><br>「にゃああああー！」<br><br><strong>ルナ</strong><br>「わっ！ レオン、玄関まで走っていった！」<br><br><strong>コッタ</strong><br>「ぼくもお迎えするですにゃ！」", choices: [
+  ["玄関までついていく", "<strong>パパ</strong><br>「ただいま」<br><br><strong>レオン</strong><br>「にゃーー！」<br><br><strong>パパ</strong><br>「今日も声でかいな」<br><br><strong>ルナ</strong><br>「レオン、パパの足もとから離れないよ」<br><br><strong>レオン</strong><br>「待ってたにゃ！」<br><br><strong>ルナ</strong><br>「さっきまで静かだったのに、パパが帰ると別猫みたい！」"],
+  ["パパにポンポンしてもらう", "<strong>パパ</strong><br>「はいはい。帰ってすぐポンポンな」<br><br><strong>レオン</strong><br>「ここにゃ」<br><br><strong>コッタ</strong><br>「ポンポンセンサー反応ですにゃ！」<br><br><strong>ルナ</strong><br>「コッタまで来た〜！」<br><br><strong>パパ</strong><br>「まだ靴も脱ぎきってないんだけど」<br><br><strong>レオン</strong><br>「それはあとでいいにゃ"],
+  ["コッタの反応も見る", "<strong>コッタ</strong><br>「ぼくもパパのところに行くですにゃ！」<br><br><strong>ルナ</strong><br>「あっ、コッタがレオンとパパの間に入った！」<br><br><strong>レオン</strong><br>「今はぼくの番にゃ」<br><br><strong>パパ</strong><br>「はいはい、ふたりともただいま」<br><br><strong>コッタ</strong><br>「パパには両手があるですにゃ！」<br><br><strong>レオン</strong><br>「そういう問題じゃないにゃ……"]
+] },
+      { key: "ribbon-pull", title: "リボンを引っぱるのはだれ？", story: "<strong>ルナ</strong><br>「あれ？ さっきまで短かったリボンが、床まで伸びてるよ」<br><br><strong>コッタ</strong><br>「勝手に伸びたですにゃ」<br><br><strong>レオン</strong><br>「コッタの手が乗ってたにゃ」<br><br><strong>ルナ</strong><br>「レオン、見てたんだ！」", choices: [
+  ["コッタを止める", "<strong>ルナ</strong><br>「これは作品用だから、ここでストップね」<br><br><strong>コッタ</strong><br>「もう少しで全部出たですにゃ」<br><br><strong>レオン</strong><br>「全部出す気だったのかにゃ」<br><br><strong>ルナ</strong><br>「代わりに遊び用を持ってくるね」<br><br><strong>コッタ</strong><br>「切り替え早いですにゃ！」<br><br><strong>レオン</strong><br>「反省も早いといいにゃ"],
+  ["レオンの様子を見る", "<strong>ルナ</strong><br>「レオンはリボン、触らないの？」<br><br><strong>レオン</strong><br>「急に動くかもしれないにゃ」<br><br><strong>コッタ</strong><br>「じゃあ動かすですにゃ！」<br><br><strong>ルナ</strong><br>「コッタ、それは協力じゃないよ〜！」<br><br><strong>レオン</strong><br>「やっぱり遠くから見るにゃ」<br><br><strong>コッタ</strong><br>「ではぼくが代表ですにゃ♪"],
+  ["余りリボンで少し遊ぶ", "<strong>ルナ</strong><br>「余りリボンを持って、ちょっとだけ遊ぼう」<br><br><strong>コッタ</strong><br>「つかまえるですにゃ！」<br><br><strong>レオン</strong><br>「……少しだけなら見るにゃ」<br><br><strong>ルナ</strong><br>「あ、レオンも一歩近づいた！」<br><br><strong>コッタ</strong><br>「レオンもセンサー反応ですにゃ！」<br><br><strong>レオン</strong><br>「それはポンポン用にゃ"]
+] },
+      { key: "bead-box", title: "ビーズ箱が気になる！", story: "<strong>ルナ</strong><br>「コッタ、閉じたビーズ箱をずーっとのぞいてるよ」<br><br><strong>コッタ</strong><br>「きらきらがいっぱいですにゃ！」<br><br><strong>レオン</strong><br>「小さいものだから、ふたは閉めたままにゃ」<br><br><strong>コッタ</strong><br>「見るだけですにゃ！」", choices: [
+  ["ふたの上から一緒に見る", "<strong>ルナ</strong><br>「じゃあ、ふたの上から一緒に見よう」<br><br><strong>コッタ</strong><br>「ピンク発見ですにゃ！」<br><br><strong>レオン</strong><br>「ぼくは青がいいにゃ」<br><br><strong>ルナ</strong><br>「あれ？ コッタ、箱じゃなくてふたの留め具を触ってるよ」<br><br><strong>コッタ</strong><br>「こっちも気になるですにゃ！」<br><br><strong>レオン</strong><br>「結局そこなのかにゃ"],
+  ["箱を棚にしまう", "<strong>ルナ</strong><br>「ビーズは棚にしまっておこうね」<br><br><strong>コッタ</strong><br>「わかったですにゃ」<br><br><strong>レオン</strong><br>「これで安心にゃ」<br><br><strong>ルナ</strong><br>「……コッタ、棚の前に座ったままだよ」<br><br><strong>コッタ</strong><br>「場所は覚えたですにゃ」<br><br><strong>レオン</strong><br>「全然あきらめてないにゃ"],
+  ["キラキラボールで遊ぶ", "<strong>ルナ</strong><br>「かわりにキラキラボールはどう？」<br><br><strong>コッタ</strong><br>「追いかけるですにゃ！」<br><br><strong>ルナ</strong><br>「わっ、すごい勢いで行った！」<br><br><strong>レオン</strong><br>「作戦成功にゃ」<br><br><strong>コッタ</strong><br>「いっぱい遊んだですにゃ！」<br><br><strong>ルナ</strong><br>「……でも戻ってきた場所、ビーズ箱の棚の前だね"]
+] },
+      { key: "fabric-nap", title: "布の上でお昼寝", story: "<strong>ルナ</strong><br>「さあ、この布を広げて作業しよ〜！」<br><br><strong>コッタ</strong><br>「ふわふわ発見ですにゃ♪」<br><br><strong>ルナ</strong><br>「あっ！ コッタ、もう真ん中に寝てる！」<br><br><strong>レオン</strong><br>「ぼくは端にするにゃ」<br><br><strong>ルナ</strong><br>「レオンまで来た〜！」", choices: [
+  ["そのまま寝かせる", "<strong>ルナ</strong><br>「今日はこのまま寝かせてあげようかな」<br><br><strong>コッタ</strong><br>「品質チェックするですにゃ」<br><br><strong>レオン</strong><br>「ぼくも確認中にゃ」<br><br><strong>ルナ</strong><br>「ふたりとも目、閉じてるけど？」<br><br><strong>コッタ</strong><br>「念入りなチェックですにゃ」<br><br><strong>ルナ</strong><br>「作業、しばらく始められそうにないね〜"],
+  ["クッションへ案内する", "<strong>ルナ</strong><br>「こっちのふわふわクッションはどう？」<br><br><strong>コッタ</strong><br>「こっちもいいですにゃ！」<br><br><strong>ルナ</strong><br>「よし、布が空いた！」<br><br><strong>レオン</strong><br>「じゃあ、ぼくがここにいるにゃ」<br><br><strong>ルナ</strong><br>「レオンが真ん中に移動した〜！」<br><br><strong>コッタ</strong><br>「交代ですにゃ♪"],
+  ["そっと写真を撮る", "<strong>ルナ</strong><br>「ふたり並んでるから、一枚だけ撮ろう」<br><br><strong>コッタ</strong><br>「寝顔もかわいくですにゃ？」<br><br><strong>レオン</strong><br>「静かならいいにゃ」<br><br><strong>ルナ</strong><br>「撮れた！ じゃあ作業を……」<br><br><strong>コッタ</strong><br>「まだ撮影中ですにゃ」<br><br><strong>ルナ</strong><br>「起きる気はないんだね"]
+] },
+      { key: "wrapping-box", title: "ラッピング箱に入りたい！", story: "<strong>ルナ</strong><br>「ラッピング用の箱を出したよ」<br><br><strong>コッタ</strong><br>「入れそうですにゃ！」<br><br><strong>ルナ</strong><br>「あっ、もう前足入ってる！」<br><br><strong>レオン</strong><br>「ぼくは先に様子を見るにゃ」", choices: [
+  ["コッタを入れてみる", "<strong>ルナ</strong><br>「じゃあコッタ、入ってみる？」<br><br><strong>コッタ</strong><br>「ぴったりですにゃ！」<br><br><strong>ルナ</strong><br>「……おしり、半分出てるよ？」<br><br><strong>レオン</strong><br>「それはぴったりなのかにゃ」<br><br><strong>コッタ</strong><br>「気持ちが入ってれば大丈夫ですにゃ♪」<br><br><strong>レオン</strong><br>「箱のサイズは気持ちじゃ変わらないにゃ"],
+  ["レオンも誘う", "<strong>ルナ</strong><br>「レオンも箱、入ってみる？」<br><br><strong>レオン</strong><br>「まずにおいを確認するにゃ」<br><br><strong>コッタ</strong><br>「安全ですにゃ！」<br><br><strong>ルナ</strong><br>「わっ！ コッタが箱から飛び出した！」<br><br><strong>レオン</strong><br>「……今ので入りたくなくなったにゃ」<br><br><strong>コッタ</strong><br>「安全確認できたですにゃ？"],
+  ["箱を2つ用意する", "<strong>ルナ</strong><br>「じゃあ、箱をふたつ用意しよう！」<br><br><strong>コッタ</strong><br>「こっちがぼくのですにゃ！」<br><br><strong>レオン</strong><br>「じゃあぼくは隣にゃ」<br><br><strong>コッタ</strong><br>「こっちの箱も確認するですにゃ！」<br><br><strong>レオン</strong><br>「それはぼくの箱にゃ」<br><br><strong>ルナ</strong><br>「コッタ、ふたつとも自分のにする気だったでしょ〜"]
+] },
+      { key: "paw-print", title: "作業机に肉球スタンプ", story: "<strong>ルナ</strong><br>「あれ？ 机に広げたふわふわの布、肉球の形にへこんでるよ」<br><br><strong>コッタ</strong><br>「ぼく、歩いただけですにゃ」<br><br><strong>レオン</strong><br>「証拠がずっと並んでるにゃ」<br><br><strong>ルナ</strong><br>「ほんとだ。端から端まである〜！」", choices: [
+  ["きれいに押せたね、と言う", "<strong>ルナ</strong><br>「すごい、きれいな肉球スタンプだね！」<br><br><strong>コッタ</strong><br>「作品に参加したですにゃ」<br><br><strong>レオン</strong><br>「勝手に参加したにゃ」<br><br><strong>コッタ</strong><br>「もう一列つけるですにゃ？」<br><br><strong>ルナ</strong><br>「一列で十分だよ〜！」<br><br><strong>レオン</strong><br>「止めるなら今にゃ"],
+  ["机から降りてもらう", "<strong>ルナ</strong><br>「コッタ、作業するからこっちで待っててね」<br><br><strong>コッタ</strong><br>「わかったですにゃ」<br><br><strong>ルナ</strong><br>「ちゃんと降りてくれた！」<br><br><strong>レオン</strong><br>「でも机をずっと見てるにゃ」<br><br><strong>コッタ</strong><br>「次の参加タイミングを待つですにゃ」<br><br><strong>ルナ</strong><br>「反省してる顔じゃないね〜"],
+  ["肉球あとを作品に残す", "<strong>ルナ</strong><br>「この肉球あと、ひとつだけデザインに残そうかな」<br><br><strong>コッタ</strong><br>「ぼくのサインですにゃ！」<br><br><strong>レオン</strong><br>「コッタブランドにゃ」<br><br><strong>ルナ</strong><br>「じゃあ小さなタグにしてみよう」<br><br><strong>コッタ</strong><br>「店長になったですにゃ✨」<br><br><strong>レオン</strong><br>「ルナのアトリエだったはずにゃ"]
+] },
+      { key: "photo-bomb", title: "完成品の撮影に乱入！", story: "<strong>ルナ</strong><br>「完成した作品、写真を撮ろう！」<br><br><strong>コッタ</strong><br>「ぼくも写るですにゃ！」<br><br><strong>ルナ</strong><br>「コッタ、作品の前に来ちゃった！」<br><br><strong>レオン</strong><br>「ぼくは後ろから見てるにゃ」", choices: [
+  ["ねこたちと一緒に撮る", "<strong>ルナ</strong><br>「じゃあ、みんなで一枚撮ろう！」<br><br><strong>コッタ</strong><br>「主役はここですにゃ！」<br><br><strong>ルナ</strong><br>「コッタ、カメラに近すぎる〜！」<br><br><strong>レオン</strong><br>「ぼく、ほとんど写ってないにゃ」<br><br><strong>コッタ</strong><br>「次はもっと前に来るですにゃ！」<br><br><strong>レオン</strong><br>「これ以上前はないにゃ"],
+  ["作品だけで撮り直す", "<strong>ルナ</strong><br>「今度は作品だけで撮ってみよう」<br><br><strong>コッタ</strong><br>「ぼくは待つですにゃ」<br><br><strong>ルナ</strong><br>「よし、今度こそ……あれ？」<br><br><strong>レオン</strong><br>「コッタのしっぽが写ってるにゃ」<br><br><strong>コッタ</strong><br>「しっぽだけ参加ですにゃ♪」<br><br><strong>ルナ</strong><br>「猫なし写真、むずかしいね〜"],
+  ["レオンも前に呼ぶ", "<strong>ルナ</strong><br>「レオンも作品の横においで」<br><br><strong>レオン</strong><br>「少しだけならいいにゃ」<br><br><strong>ルナ</strong><br>「いい感じ！ そのまま、そのまま……」<br><br><strong>コッタ</strong><br>「ぼくも隣ですにゃ！」<br><br><strong>レオン</strong><br>「近いにゃ……」<br><br><strong>ルナ</strong><br>「レオンが一歩下がって、コッタが一歩前に出た。ふたりらしい写真になったね"]
+] },
+      { key: "fluffy-cat-bed", title: "ふかふか猫ベッドを作ろう", story: "<strong>ルナ</strong><br>「余り布で、ふかふか猫ベッドを作ってみたよ！」<br><br><strong>コッタ</strong><br>「すぐ試すですにゃ！」<br><br><strong>ルナ</strong><br>「あっ、まだ置いたばっかりなのに入った！」<br><br><strong>レオン</strong><br>「ぼくは先に確認するにゃ」", choices: [
+        ["コッタに先に試してもらう", "<strong>ルナ</strong><br>「コッタ、寝心地どう？」<br><br><strong>コッタ</strong><br>「ふかふかですにゃ〜♪」<br><br><strong>レオン</strong><br>「コッタが大丈夫なら安心にゃ」<br><br><strong>ルナ</strong><br>「レオンも入りたい？」<br><br><strong>レオン</strong><br>「入りたいけど、場所がないにゃ」<br><br><strong>コッタ</strong><br>「詰めれば入れるですにゃ！」"],
+        ["レオンの好みを聞く", "<strong>ルナ</strong><br>「レオンは、どんなベッドがいい？」<br><br><strong>レオン</strong><br>「静かなところで、ふかふかがいいにゃ」<br><br><strong>コッタ</strong><br>「ぼくはみんなが見える場所がいいですにゃ！」<br><br><strong>ルナ</strong><br>「あれ？ 好みがぜんぜん違うね」<br><br><strong>レオン</strong><br>「別々に作った方が早そうにゃ」<br><br><strong>コッタ</strong><br>「ぼくは両方試すですにゃ！」"],
+        ["ふたり用の大きさにする", "<strong>ルナ</strong><br>「じゃあ、ふたりで入れる大きさにしよう！」<br><br><strong>コッタ</strong><br>「ぼく、真ん中ですにゃ！」<br><br><strong>レオン</strong><br>「もう少し端に行ってほしいにゃ」<br><br><strong>コッタ</strong><br>「半分あけたですにゃ！」<br><br><strong>ルナ</strong><br>「レオン、すみっこにちょこんって入ったよ」<br><br><strong>レオン</strong><br>「それ、半分じゃないにゃ……」"] ] },
+    ];
+
+const atelierCatItems = [
+  ["pink_ribbon", "おそろいピンクリボン", "身につけるもの", "normal"],
+  ["check_bandana", "チェックのバンダナ", "身につけるもの", "normal"],
+  ["moon_charm", "お月さまチャーム", "身につけるもの", "rare"],
+  ["welcome_ribbon", "おかえりリボン", "身につけるもの", "normal"],
+  ["courage_charm", "勇気のおまもり", "身につけるもの", "rare"],
+
+  ["atelier_scarf", "アトリエスカーフ", "身につけるもの", "normal"],
+  ["flower_collar", "お花の首かざり", "身につけるもの", "normal"],
+  ["polka_bowtie", "水玉の蝶ネクタイ", "身につけるもの", "normal"],
+  ["bell_ribbon", "ちいさな鈴リボン", "身につけるもの", "normal"],
+  ["pastel_necktie", "パステルネクタイ", "身につけるもの", "normal"],
+
+  ["sparkle_ball", "キラキラボール", "遊ぶもの", "normal"],
+  ["feather_toy", "ふわふわ羽根じゃらし", "遊ぶもの", "normal"],
+  ["yarn_ball", "ころころ毛糸玉", "遊ぶもの", "normal"],
+  ["ribbon_wand", "ひらひらリボンじゃらし", "遊ぶもの", "normal"],
+  ["mouse_toy", "ちいさなねずみトイ", "遊ぶもの", "normal"],
+  ["crinkle_fish", "カシャカシャおさかな", "遊ぶもの", "normal"],
+  ["pom_ball", "ふわふわポンポンボール", "遊ぶもの", "normal"],
+  ["tunnel_toy", "ミニねこトンネル", "遊ぶもの", "normal"],
+  ["crystal_ball", "虹色クリスタルボール", "遊ぶもの", "rare"],
+  ["golden_feather", "金色の羽根じゃらし", "遊ぶもの", "rare"],
+
+  ["paw_cushion", "肉球クッション", "アトリエ小物", "normal"],
+  ["fluffy_blanket", "ふわふわミニ毛布", "アトリエ小物", "normal"],
+  ["mini_basket", "ねこ用ミニかご", "アトリエ小物", "normal"],
+  ["cat_mat", "ねこ柄ミニマット", "アトリエ小物", "normal"],
+  ["patchwork_cushion", "パッチワーククッション", "アトリエ小物", "normal"],
+  ["ribbon_box", "リボン収納ボックス", "アトリエ小物", "normal"],
+  ["bead_case", "きらきらビーズケース", "アトリエ小物", "normal"],
+  ["window_cushion", "窓辺のミニクッション", "アトリエ小物", "normal"],
+  ["star_blanket", "星空のふわふわ毛布", "アトリエ小物", "rare"],
+  ["crown_cushion", "王冠ふかふかクッション", "アトリエ小物", "rare"]
+].map(([id, name, category, rarity]) => ({
+  id,
+  name,
+  category,
+  rarity
+}));
+
     let questions = [];
     let currentEvent = null;
 
@@ -5136,10 +5794,16 @@ let currentQuestionIndex = 0;
     let ribbonWorkshopScore = 0;
     let ribbonWorkshopAnswered = false;
     let ribbonWorkshopDisplayChoices = [];
+    let beadsWorkshopQuestions = [];
+    let beadsWorkshopCurrentIndex = 0;
+    let beadsWorkshopScore = 0;
+    let beadsWorkshopAnswered = false;
+    let beadsWorkshopDisplayChoices = [];
 
 const screens = {
   home: document.getElementById("homeScreen"),
   catBook: document.getElementById("catBookScreen"),
+  atelierCatBook: document.getElementById("atelierCatBookScreen"),
   select: document.getElementById("selectScreen"),
   percentSplit: document.getElementById("percentSplitScreen"),
   percentCollect: document.getElementById("percentCollectScreen"),
@@ -5148,6 +5812,8 @@ const screens = {
   percentPractice: document.getElementById("percentPracticeScreen"),
   fabricWorkshop: document.getElementById("fabricWorkshopScreen"),
   ribbonWorkshop: document.getElementById("ribbonWorkshopScreen"),
+  beadsWorkshop: document.getElementById("beadsWorkshopScreen"),
+  atelierCatTime: document.getElementById("atelierCatTimeScreen"),
   event: document.getElementById("eventScreen"),
   quiz: document.getElementById("quizScreen"),
   result: document.getElementById("resultScreen")
@@ -5260,6 +5926,10 @@ function renderPercentSplitStep() {
       ? loadedData.kottaItems
       : [];
 
+    loadedData.atelierCatItems = Array.isArray(loadedData.atelierCatItems)
+      ? loadedData.atelierCatItems
+      : [];
+
     return loadedData;
   } catch (error) {
     console.warn(
@@ -5270,7 +5940,8 @@ function renderPercentSplitStep() {
     return {
       ...defaultSaveData,
       leonItems: [],
-      kottaItems: []
+      kottaItems: [],
+      atelierCatItems: []
     };
   }
 }
@@ -5366,6 +6037,77 @@ function updateHomeCatTimeButton() {
 
   homeCatTimeButton.style.display =
     canPlayCatTime ? "block" : "none";
+
+  const atelierCard = document.getElementById("atelierCatTimeCard");
+  const canPlayAtelierCatTime =
+    saveData.catUnlockedDate === todayKey &&
+    (ATELIER_CAT_TEST_MODE || saveData.catPlayedDate !== todayKey);
+
+  if (atelierCard) atelierCard.hidden = !canPlayAtelierCatTime;
+}
+
+function unlockAtelierCatTime() {
+  const todayKey = getTodayKey();
+  if (
+    saveData.catUnlockedDate !== todayKey &&
+    (ATELIER_CAT_TEST_MODE || saveData.catPlayedDate !== todayKey)
+  ) {
+    saveData.catUnlockedDate = todayKey;
+    saveGame();
+    updateShopDisplay();
+  }
+}
+
+let currentAtelierCatEvent = null;
+let currentAtelierCatReward = null;
+
+function startAtelierCatTime() {
+  const todayKey = getTodayKey();
+  if (
+    saveData.catUnlockedDate !== todayKey ||
+    (!ATELIER_CAT_TEST_MODE && saveData.catPlayedDate === todayKey)
+  ) return;
+  const candidates = atelierCatEvents.filter(event => event.key !== saveData.atelierCatLastEventKey);
+  currentAtelierCatEvent = candidates[Math.floor(Math.random() * candidates.length)] || atelierCatEvents[0];
+  document.getElementById("atelierCatTimeTitle").textContent = currentAtelierCatEvent.title;
+  document.getElementById("atelierCatTimeStory").innerHTML = currentAtelierCatEvent.story;
+  const choices = document.getElementById("atelierCatTimeChoices");
+  choices.innerHTML = "";
+  currentAtelierCatEvent.choices.forEach(([label, reaction]) => {
+    const button = document.createElement("button");
+    button.className = "answer";
+    button.type = "button";
+    button.textContent = label;
+    button.addEventListener("click", () => chooseAtelierCatTime(reaction), { once: true });
+    choices.appendChild(button);
+  });
+  document.getElementById("atelierCatTimeReaction").hidden = true;
+  document.getElementById("atelierCatTimeReward").hidden = true;
+  document.getElementById("atelierCatTimeRewardButton").disabled = false;
+  showScreen("atelierCatTime");
+}
+
+function chooseAtelierCatTime(reaction) {
+  document.querySelectorAll("#atelierCatTimeChoices .answer").forEach(button => button.disabled = true);
+  document.getElementById("atelierCatTimeReactionText").innerHTML = reaction;
+  document.getElementById("atelierCatTimeReaction").hidden = false;
+}
+
+function grantAtelierCatReward() {
+  if (currentAtelierCatReward) return;
+  const owned = saveData.atelierCatItems;
+  const unowned = atelierCatItems.filter(item => !owned.includes(item.id));
+  const pool = unowned.length ? unowned : atelierCatItems;
+  currentAtelierCatReward = pool[Math.floor(Math.random() * pool.length)];
+  const isNew = !owned.includes(currentAtelierCatReward.id);
+  if (isNew) owned.push(currentAtelierCatReward.id);
+  saveData.catPlayedDate = getTodayKey();
+  saveData.atelierCatLastEventKey = currentAtelierCatEvent.key;
+  saveGame();
+  document.getElementById("atelierCatTimeRewardLabel").textContent = isNew ? "NEW!" : "また見つけたよ✨";
+  document.getElementById("atelierCatTimeRewardText").textContent = `「${currentAtelierCatReward.name}」をGET！`;
+  document.getElementById("atelierCatTimeReward").hidden = false;
+  document.getElementById("atelierCatTimeRewardButton").disabled = true;
 }
 
 function updateShopDisplay() {
@@ -5676,6 +6418,7 @@ document.getElementById("rankLabel").textContent =
       document.getElementById("fabricWorkshopComplete").hidden = false;
       document.getElementById("fabricWorkshopCompleteScore").textContent =
         `正解 ${fabricWorkshopScore} / ${fabricWorkshopQuestions.length}`;
+      unlockAtelierCatTime();
       document.getElementById("fabricWorkshopRetryButton").disabled = false;
       document.getElementById("fabricWorkshopHomeButton").disabled = false;
     }
@@ -5770,7 +6513,124 @@ document.getElementById("rankLabel").textContent =
     function goToNextRibbonWorkshopQuestion() {
       if (!ribbonWorkshopAnswered) return;
       if (ribbonWorkshopCurrentIndex < 4) { ribbonWorkshopCurrentIndex += 1; renderRibbonWorkshopQuestion(); return; }
-      document.getElementById("ribbonWorkshopQuestionContent").hidden = true; document.getElementById("ribbonWorkshopComplete").hidden = false; document.getElementById("ribbonWorkshopCompleteScore").textContent = `正解 ${ribbonWorkshopScore} / 5`;
+      document.getElementById("ribbonWorkshopQuestionContent").hidden = true; document.getElementById("ribbonWorkshopComplete").hidden = false; document.getElementById("ribbonWorkshopCompleteScore").textContent = `正解 ${ribbonWorkshopScore} / 5`; unlockAtelierCatTime();
+    }
+
+    function buildBeadsWorkshopQuestionSet() {
+      return [1, 2, 3, 4, 5].map(stage => pickRandom(beadsWorkshopQuestionPools[stage]));
+    }
+
+    function shuffleBeadsWorkshopChoices(choices) {
+      const shuffled = [...choices];
+      for (let index = shuffled.length - 1; index > 0; index -= 1) {
+        const randomIndex = Math.floor(Math.random() * (index + 1));
+        [shuffled[index], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[index]];
+      }
+      return shuffled;
+    }
+
+    function renderBeadsWorkshopSetSymbols(setCount) {
+      if (setCount <= 8) {
+        return `<span class="beads-set-symbols" aria-label="セットのまとまりが${setCount}こ">${"🎀".repeat(setCount)}</span>`;
+      }
+      return `<span class="beads-set-symbols is-condensed" aria-label="セットのまとまりが${setCount}こ">🎀 × ${setCount}</span>`;
+    }
+
+    function renderBeadsWorkshopCorrespondenceRow(setCount, beadCount) {
+      return `<div class="beads-correspondence-row"><span class="beads-set-count">${setCount}セット</span>${renderBeadsWorkshopSetSymbols(setCount)}<span class="beads-correspondence-arrow">→</span><span class="beads-quantity">💎 ${beadCount === null ? "□" : beadCount}こ</span></div>`;
+    }
+
+    function renderBeadsWorkshopVisual(question) {
+      if (question.type === "pattern" || question.type === "nth" || question.type === "count") {
+        const repeats = question.type === "count" ? 1 : 2;
+        const preview = Array.from({ length: repeats }, () => question.pattern).flat();
+        const label = question.type === "pattern" ? "くり返しているひとまとまりを見つけよう" : `1セット ${question.pattern.length}こ`;
+        const ellipsis = question.type === "pattern" ? "<span>…</span>" : "";
+        return `<div class="beads-ratio-display" aria-label="くり返し模様"><div class="beads-pattern-row">${preview.map(bead => `<span>${bead}</span>`).join("")}${ellipsis}</div><div class="beads-pattern-note">${label}</div></div>`;
+      }
+      if (question.type === "setcount") {
+        const sequence = Array.from({ length: question.sets }, () => question.pattern).flat();
+        return `<div class="beads-workshop-visual"><div class="beads-xy-intro">1セットは　${question.pattern.join(" ")}</div><div class="beads-ratio-display"><div class="beads-pattern-row beads-pattern-row--long">${sequence.map(bead => `<span>${bead}</span>`).join("")}</div></div></div>`;
+      }
+      if (question.type === "setformula") {
+        return `<div class="beads-workshop-visual"><div class="beads-xy-intro">1セットは　${question.pattern.join(" ")}</div><div class="beads-formula-display">${question.target} は 1セットに ${question.perSet}こ</div></div>`;
+      }
+      return "";
+    }
+
+    function getBeadsWorkshopFeedback(question) {
+      return question.feedback;
+    }
+
+    function renderBeadsWorkshopQuestion() {
+      const question = beadsWorkshopQuestions[beadsWorkshopCurrentIndex];
+      beadsWorkshopAnswered = false;
+      document.getElementById("beadsWorkshopQuestionContent").hidden = false;
+      document.getElementById("beadsWorkshopComplete").hidden = true;
+      document.getElementById("beadsWorkshopProgress").textContent = `${beadsWorkshopCurrentIndex + 1} / 5`;
+      document.getElementById("beadsWorkshopStage").textContent = `Stage ${question.stage}`;
+      document.getElementById("beadsWorkshopQuestion").textContent = question.question;
+      document.getElementById("beadsWorkshopVisual").innerHTML = renderBeadsWorkshopVisual(question);
+      beadsWorkshopDisplayChoices = shuffleBeadsWorkshopChoices(question.choices.map(value => ({ value, isCorrect: value === question.answer })));
+      const answers = document.getElementById("beadsWorkshopAnswers");
+      answers.innerHTML = "";
+      beadsWorkshopDisplayChoices.forEach((choice, index) => {
+        const button = document.createElement("button");
+        button.className = "answer";
+        button.type = "button";
+        button.textContent = question.type === "count"
+          ? `${choice.value}こ`
+          : choice.value;
+        button.addEventListener("click", () => answerBeadsWorkshop(index));
+        answers.appendChild(button);
+      });
+      const feedback = document.getElementById("beadsWorkshopFeedback");
+      feedback.className = "feedback";
+      feedback.innerHTML = "";
+      const next = document.getElementById("beadsWorkshopNextButton");
+      next.hidden = true;
+      next.textContent = beadsWorkshopCurrentIndex === 4 ? "制作完了 ✨" : "つぎへ ▶";
+    }
+
+    function startBeadsWorkshop() {
+      beadsWorkshopQuestions = buildBeadsWorkshopQuestionSet();
+      beadsWorkshopCurrentIndex = 0;
+      beadsWorkshopScore = 0;
+      beadsWorkshopAnswered = false;
+      beadsWorkshopDisplayChoices = [];
+      renderBeadsWorkshopQuestion();
+      showScreen("beadsWorkshop");
+    }
+
+    function answerBeadsWorkshop(selectedIndex) {
+      if (beadsWorkshopAnswered) return;
+      const question = beadsWorkshopQuestions[beadsWorkshopCurrentIndex];
+      const selected = beadsWorkshopDisplayChoices[selectedIndex];
+      if (!selected) return;
+      beadsWorkshopAnswered = true;
+      if (selected.isCorrect) beadsWorkshopScore += 1;
+      document.querySelectorAll("#beadsWorkshopAnswers .answer").forEach((button, index) => {
+        button.disabled = true;
+        if (beadsWorkshopDisplayChoices[index].isCorrect) button.classList.add("correct");
+        else if (index === selectedIndex) button.classList.add("wrong");
+      });
+      const feedback = document.getElementById("beadsWorkshopFeedback");
+      feedback.className = `feedback show ${selected.isCorrect ? "correct" : "wrong"}`;
+      feedback.innerHTML = `ルナ「${selected.isCorrect ? "せいかい〜 いい見方してる〜✨" : "ここはこう見るよ〜✨"}」<br><br>${getBeadsWorkshopFeedback(question)}`;
+      document.getElementById("beadsWorkshopNextButton").hidden = false;
+    }
+
+    function goToNextBeadsWorkshopQuestion() {
+      if (!beadsWorkshopAnswered) return;
+      if (beadsWorkshopCurrentIndex < 4) {
+        beadsWorkshopCurrentIndex += 1;
+        renderBeadsWorkshopQuestion();
+        return;
+      }
+      document.getElementById("beadsWorkshopQuestionContent").hidden = true;
+      document.getElementById("beadsWorkshopComplete").hidden = false;
+      document.getElementById("beadsWorkshopCompleteScore").textContent = `正解 ${beadsWorkshopScore} / 5`;
+      unlockAtelierCatTime();
     }
 
     function getTodayKey() {
@@ -7970,6 +8830,100 @@ if (currentEvent?.key === catEvent.key) {
     );
 }
 
+function renderAtelierCatBook() {
+  const owned = Array.isArray(saveData.atelierCatItems)
+    ? saveData.atelierCatItems
+    : [];
+
+  const itemIcons = {
+    pink_ribbon: "",
+    paw_cushion: "",
+    fluffy_blanket: "",
+    sparkle_ball: "✨",
+    check_bandana: "",
+    moon_charm: "",
+    mini_basket: "",
+    feather_toy: "",
+    welcome_ribbon: "️",
+    courage_charm: "⭐"
+  };
+
+  const renderCategory = category => {
+    const items = atelierCatItems.filter(
+      item => item.category === category
+    );
+
+    return items.map(item => {
+      const isOwned = owned.includes(item.id);
+
+      return `
+        <div
+          style="
+            padding: 12px;
+            margin-top: 10px;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: ${isOwned ? "#fff8fb" : "#f5f1f3"};
+            color: ${isOwned ? "var(--text)" : "#aaa0a7"};
+            font-weight: 800;
+          "
+        >
+          ${
+            isOwned
+              ? `${itemIcons[item.id] || ""} ${item.name}${item.rarity === "rare" ? "　レア" : ""}`
+              : " ？？？"
+          }
+        </div>
+      `;
+    }).join("");
+  };
+
+  const wearItems = atelierCatItems.filter(
+    item => item.category === "身につけるもの"
+  );
+
+  const playItems = atelierCatItems.filter(
+    item => item.category === "遊ぶもの"
+  );
+
+  const atelierItems = atelierCatItems.filter(
+    item => item.category === "アトリエ小物"
+  );
+
+  const wearOwned = wearItems.filter(
+    item => owned.includes(item.id)
+  ).length;
+
+  const playOwned = playItems.filter(
+    item => owned.includes(item.id)
+  ).length;
+
+  const atelierOwned = atelierItems.filter(
+    item => owned.includes(item.id)
+  ).length;
+
+  document.getElementById("atelierCatBookCount").textContent =
+    `${owned.length} / ${atelierCatItems.length}`;
+
+  document.getElementById("atelierCatBookWearCount").textContent =
+    `${wearOwned} / ${wearItems.length} アイテム`;
+
+  document.getElementById("atelierCatBookPlayCount").textContent =
+    `${playOwned} / ${playItems.length} アイテム`;
+
+  document.getElementById("atelierCatBookAtelierCount").textContent =
+    `${atelierOwned} / ${atelierItems.length} アイテム`;
+
+  document.getElementById("atelierCatBookWearList").innerHTML =
+    renderCategory("身につけるもの");
+
+  document.getElementById("atelierCatBookPlayList").innerHTML =
+    renderCategory("遊ぶもの");
+
+  document.getElementById("atelierCatBookAtelierList").innerHTML =
+    renderCategory("アトリエ小物");
+}
+
 document
   .getElementById("startButton")
   .addEventListener("click", startEvent);
@@ -7978,10 +8932,23 @@ document
   .getElementById("fabricWorkshopStartButton")
   .addEventListener("click", startFabricWorkshop);
 
+document.getElementById("atelierCatTimeStartButton").addEventListener("click", startAtelierCatTime);
+document.getElementById("atelierCatTimeRewardButton").addEventListener("click", grantAtelierCatReward);
+document.getElementById("atelierCatTimeHomeButton").addEventListener("click", () => {
+  currentAtelierCatReward = null;
+  updateShopDisplay();
+  showScreen("home");
+});
+
 document.getElementById("ribbonWorkshopStartButton").addEventListener("click", startRibbonWorkshop);
 document.getElementById("ribbonWorkshopNextButton").addEventListener("click", goToNextRibbonWorkshopQuestion);
 document.getElementById("ribbonWorkshopRetryButton").addEventListener("click", startRibbonWorkshop);
 document.getElementById("ribbonWorkshopHomeButton").addEventListener("click", () => showScreen("home"));
+
+document.getElementById("beadsWorkshopStartButton").addEventListener("click", startBeadsWorkshop);
+document.getElementById("beadsWorkshopNextButton").addEventListener("click", goToNextBeadsWorkshopQuestion);
+document.getElementById("beadsWorkshopRetryButton").addEventListener("click", startBeadsWorkshop);
+document.getElementById("beadsWorkshopHomeButton").addEventListener("click", () => showScreen("home"));
 
 document
   .getElementById("fabricWorkshopNextButton")
@@ -8004,6 +8971,20 @@ document
   .addEventListener("click", () => {
     renderCatFashionBook();
     showScreen("catBook");
+  });
+
+document
+  .getElementById("openAtelierCatBookButton")
+  .addEventListener("click", () => {
+    renderAtelierCatBook();
+    showScreen("atelierCatBook");
+  });
+
+document
+  .getElementById("backFromAtelierCatBookButton")
+  .addEventListener("click", () => {
+    updateShopDisplay();
+    showScreen("home");
   });
 
 document
