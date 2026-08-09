@@ -2419,6 +2419,15 @@
          ねこアイテム図鑑
       </button>
 
+      <button
+        id="openAtelierCraftBookButton"
+        class="secondary"
+        type="button"
+        style="margin-top: 10px; width: 100%;"
+      >
+        ✨ アトリエ作品集
+      </button>
+
       <p class="atelier-home-footer">気になる工房から、何度でもつくってみよ〜✨</p>
 
 <button
@@ -2523,6 +2532,49 @@
   </div>
 
   <button id="backFromAtelierCatBookButton" class="secondary" type="button">
+    アトリエに戻る
+  </button>
+</section>
+
+<section id="atelierCraftBookScreen" class="screen">
+  <div class="topbar">
+    <div class="brand">ATELIER COLLECTION</div>
+    <div class="points">
+      ✨ <span id="atelierCraftBookCount">0 / 30</span>
+    </div>
+  </div>
+
+  <div class="hero">
+    <p class="eyebrow">LUNA'S HANDMADE COLLECTION</p>
+    <h1>アトリエ作品集</h1>
+    <p class="lead">
+      工房で作った作品を集めてみよう〜✨
+    </p>
+  </div>
+
+  <div class="card">
+    <h2> 生地工房</h2>
+    <p id="atelierCraftFabricCount" class="lead"></p>
+    <div id="atelierCraftFabricList"></div>
+  </div>
+
+  <div class="card">
+    <h2> ビーズ工房</h2>
+    <p id="atelierCraftBeadsCount" class="lead"></p>
+    <div id="atelierCraftBeadsList"></div>
+  </div>
+
+  <div class="card">
+    <h2> ラッピング工房</h2>
+    <p id="atelierCraftRibbonCount" class="lead"></p>
+    <div id="atelierCraftRibbonList"></div>
+  </div>
+
+  <button
+    id="backFromAtelierCraftBookButton"
+    class="secondary"
+    type="button"
+  >
     アトリエに戻る
   </button>
 </section>
@@ -2884,8 +2936,37 @@
         </div>
 
         <div id="fabricWorkshopComplete" class="fabric-workshop-complete" hidden>
-          <strong>生地工房、完成〜✨</strong>
+          <strong>生地工房の作品、完成〜✨</strong>
           <p id="fabricWorkshopCompleteScore" class="lead"></p>
+          <div
+            id="fabricWorkshopCraftReward"
+            style="
+              margin: 16px 0;
+              padding: 16px;
+              border: 1px solid var(--line);
+              border-radius: 18px;
+              background: #fff8fb;
+              text-align: center;
+            "
+          >
+            <div
+              id="fabricWorkshopCraftRewardLabel"
+              style="
+                margin-bottom: 6px;
+                color: var(--pink-dark);
+                font-size: 14px;
+                font-weight: 900;
+              "
+            ></div>
+
+            <div
+              id="fabricWorkshopCraftRewardName"
+              style="
+                font-size: 21px;
+                font-weight: 900;
+              "
+            ></div>
+          </div>
           <button id="fabricWorkshopRetryButton" class="primary" type="button">
             もう一度つくる ✨
           </button>
@@ -2909,7 +2990,36 @@
           <button id="ribbonWorkshopNextButton" class="primary" type="button" hidden>つぎへ ▶</button>
         </div>
         <div id="ribbonWorkshopComplete" class="fabric-workshop-complete" hidden>
-          <strong>ラッピング工房、完成〜✨</strong><p id="ribbonWorkshopCompleteScore" class="lead"></p>
+          <strong>ラッピング工房の作品、完成〜✨</strong><p id="ribbonWorkshopCompleteScore" class="lead"></p>
+          <div
+            id="ribbonWorkshopCraftReward"
+            style="
+              margin: 16px 0;
+              padding: 16px;
+              border: 1px solid var(--line);
+              border-radius: 18px;
+              background: #fff8fb;
+              text-align: center;
+            "
+          >
+            <div
+              id="ribbonWorkshopCraftRewardLabel"
+              style="
+                margin-bottom: 6px;
+                color: var(--pink-dark);
+                font-size: 14px;
+                font-weight: 900;
+              "
+            ></div>
+
+            <div
+              id="ribbonWorkshopCraftRewardName"
+              style="
+                font-size: 21px;
+                font-weight: 900;
+              "
+            ></div>
+          </div>
           <button id="ribbonWorkshopRetryButton" class="primary" type="button">もう一度つくる ✨</button>
           <button id="ribbonWorkshopHomeButton" class="secondary" type="button" style="margin-top:10px;">アトリエにもどる</button>
         </div>
@@ -2929,7 +3039,36 @@
           <button id="beadsWorkshopNextButton" class="primary" type="button" hidden>つぎへ ▶</button>
         </div>
         <div id="beadsWorkshopComplete" class="fabric-workshop-complete" hidden>
-          <strong>ビーズ工房、完成〜✨</strong><p id="beadsWorkshopCompleteScore" class="lead"></p>
+          <strong>ビーズ工房の作品、完成〜✨</strong><p id="beadsWorkshopCompleteScore" class="lead"></p>
+          <div
+            id="beadWorkshopCraftReward"
+            style="
+              margin: 16px 0;
+              padding: 16px;
+              border: 1px solid var(--line);
+              border-radius: 18px;
+              background: #fff8fb;
+              text-align: center;
+            "
+          >
+            <div
+              id="beadWorkshopCraftRewardLabel"
+              style="
+                margin-bottom: 6px;
+                color: var(--pink-dark);
+                font-size: 14px;
+                font-weight: 900;
+              "
+            ></div>
+
+            <div
+              id="beadWorkshopCraftRewardName"
+              style="
+                font-size: 21px;
+                font-weight: 900;
+              "
+            ></div>
+          </div>
           <button id="beadsWorkshopRetryButton" class="primary" type="button">もう一度つくる ✨</button>
           <button id="beadsWorkshopHomeButton" class="secondary" type="button" style="margin-top:10px;">アトリエにもどる</button>
         </div>
@@ -3071,6 +3210,7 @@ lastKottaReward: null,
 
   /* ATELIER専用ねこタイム：旧CLOSETのねこ保存とは分離して保持 */
   atelierCatItems: [],
+  atelierCraftOwned: [],
   atelierCatLastEventKey: null
 };
 
@@ -5714,6 +5854,47 @@ const atelierCatItems = [
   rarity
 }));
 
+const atelierCraftItems = [
+  ["fabric_mini_pouch", "ミニポーチ", "\u{1F45D}", "fabric", "normal"],
+  ["fabric_cat_mini_bag", "ねこ柄ミニバッグ", "\u{1F9FA}", "fabric", "normal"],
+  ["fabric_ribbon_drawstring", "リボン巾着", "\u{1F380}", "fabric", "normal"],
+  ["fabric_flower_handkerchief", "お花のハンカチ", "\u{1F33C}", "fabric", "normal"],
+  ["fabric_patchwork_bag", "パッチワークバッグ", "\u{1F45C}", "fabric", "normal"],
+  ["fabric_fluffy_mascot", "ふわふわマスコット", "\u{1F9F8}", "fabric", "normal"],
+  ["fabric_mini_cushion", "ミニクッション", "\u{1F6CF}\u{FE0F}", "fabric", "normal"],
+  ["fabric_check_scarf", "チェックのスカーフ", "\u{1F9E3}", "fabric", "normal"],
+  ["fabric_moon_pouch", "月夜のポーチ", "\u{1F319}", "fabric", "rare"],
+  ["fabric_princess_bag", "プリンセスバッグ", "\u{1F451}", "fabric", "rare"],
+
+  ["beads_pink_bracelet", "ピンクブレスレット", "\u{1F4FF}", "beads", "normal"],
+  ["beads_flower_bracelet", "お花のブレスレット", "\u{1F338}", "beads", "normal"],
+  ["beads_rainbow_bracelet", "虹色ブレスレット", "\u{1F308}", "beads", "normal"],
+  ["beads_star_charm", "星のチャーム", "\u{2B50}", "beads", "normal"],
+  ["beads_paw_charm", "肉球チャーム", "\u{1F43E}", "beads", "normal"],
+  ["beads_strawberry_charm", "いちごチャーム", "\u{1F353}", "beads", "normal"],
+  ["beads_butterfly_bracelet", "ちょうちょブレスレット", "\u{1F98B}", "beads", "normal"],
+  ["beads_heart_necklace", "ハートのネックレス", "\u{1F496}", "beads", "normal"],
+  ["beads_moon_star_necklace", "月と星のネックレス", "\u{1F319}", "beads", "rare"],
+  ["beads_princess_tiara", "プリンセスティアラ", "\u{1F451}", "beads", "rare"],
+
+  ["ribbon_pink_box", "ピンクリボンBOX", "\u{1F381}", "ribbon", "normal"],
+  ["ribbon_candy_wrap", "キャンディラッピング", "\u{1F36C}", "ribbon", "normal"],
+  ["ribbon_flower_box", "お花のギフトBOX", "\u{1F33C}", "ribbon", "normal"],
+  ["ribbon_gift_bag", "リボンギフトバッグ", "\u{1F6CD}\u{FE0F}", "ribbon", "normal"],
+  ["ribbon_heart_gift", "ハートのプチギフト", "\u{1F48C}", "ribbon", "normal"],
+  ["ribbon_cat_box", "ねこリボンBOX", "\u{1F43E}", "ribbon", "normal"],
+  ["ribbon_strawberry_box", "いちごギフトBOX", "\u{1F353}", "ribbon", "normal"],
+  ["ribbon_birthday_gift", "バースデーギフト", "\u{1F382}", "ribbon", "normal"],
+  ["ribbon_starry_box", "星空ギフトBOX", "\u{1F303}", "ribbon", "rare"],
+  ["ribbon_princess_box", "プリンセスギフトBOX", "\u{1F451}", "ribbon", "rare"]
+].map(([id, name, icon, workshop, rarity]) => ({
+  id,
+  name,
+  icon,
+  workshop,
+  rarity
+}));
+
     let questions = [];
     let currentEvent = null;
 
@@ -5763,6 +5944,10 @@ const atelierCatItems = [
 ];
 
     let saveData = loadSaveData();
+
+if (!Array.isArray(saveData.atelierCraftOwned)) {
+  saveData.atelierCraftOwned = [];
+}
 
 /* 初回表示にも保存済みポイントとランクを反映 */
 updateShopDisplay();
@@ -5814,6 +5999,7 @@ const screens = {
   home: document.getElementById("homeScreen"),
   catBook: document.getElementById("catBookScreen"),
   atelierCatBook: document.getElementById("atelierCatBookScreen"),
+  atelierCraftBook: document.getElementById("atelierCraftBookScreen"),
   select: document.getElementById("selectScreen"),
   percentSplit: document.getElementById("percentSplitScreen"),
   percentCollect: document.getElementById("percentCollectScreen"),
@@ -5981,6 +6167,51 @@ function renderPercentSplitStep() {
 function saveGame() {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(saveData));
     }
+
+function grantAtelierCraft(workshop) {
+  const owned = Array.isArray(saveData.atelierCraftOwned)
+    ? saveData.atelierCraftOwned
+    : [];
+
+  const workshopItems = atelierCraftItems.filter(
+    item => item.workshop === workshop
+  );
+
+  const unowned = workshopItems.filter(
+    item => !owned.includes(item.id)
+  );
+
+  const candidates = unowned.length
+    ? unowned
+    : workshopItems;
+
+  const weightedPool = [];
+
+  candidates.forEach(item => {
+    const weight = item.rarity === "rare" ? 1 : 4;
+
+    for (let i = 0; i < weight; i += 1) {
+      weightedPool.push(item);
+    }
+  });
+
+  const item =
+    weightedPool[Math.floor(Math.random() * weightedPool.length)];
+
+  const isNew = !owned.includes(item.id);
+
+  if (isNew) {
+    owned.push(item.id);
+  }
+
+  saveData.atelierCraftOwned = owned;
+  saveGame();
+
+  return {
+    item,
+    isNew
+  };
+}
 
     function resetAllData() {
   const firstConfirm = window.confirm(
@@ -6449,6 +6680,17 @@ document.getElementById("rankLabel").textContent =
       document.getElementById("fabricWorkshopComplete").hidden = false;
       document.getElementById("fabricWorkshopCompleteScore").textContent =
         `正解 ${fabricWorkshopScore} / ${fabricWorkshopQuestions.length}`;
+      const craftReward = grantAtelierCraft("fabric");
+
+      document.getElementById("fabricWorkshopCraftRewardLabel").textContent =
+        craftReward.isNew
+          ? "✨ NEW! 作品完成！"
+          : "✨ また作ったよ！";
+
+      document.getElementById("fabricWorkshopCraftRewardName").textContent =
+        `${craftReward.item.icon} ${craftReward.item.name}${
+          craftReward.item.rarity === "rare" ? "　レア" : ""
+        }`;
       unlockAtelierCatTime();
       document.getElementById("fabricWorkshopRetryButton").disabled = false;
       document.getElementById("fabricWorkshopHomeButton").disabled = false;
@@ -6544,7 +6786,19 @@ document.getElementById("rankLabel").textContent =
     function goToNextRibbonWorkshopQuestion() {
       if (!ribbonWorkshopAnswered) return;
       if (ribbonWorkshopCurrentIndex < 4) { ribbonWorkshopCurrentIndex += 1; renderRibbonWorkshopQuestion(); return; }
-      document.getElementById("ribbonWorkshopQuestionContent").hidden = true; document.getElementById("ribbonWorkshopComplete").hidden = false; document.getElementById("ribbonWorkshopCompleteScore").textContent = `正解 ${ribbonWorkshopScore} / 5`; unlockAtelierCatTime();
+      document.getElementById("ribbonWorkshopQuestionContent").hidden = true; document.getElementById("ribbonWorkshopComplete").hidden = false; document.getElementById("ribbonWorkshopCompleteScore").textContent = `正解 ${ribbonWorkshopScore} / 5`;
+      const craftReward = grantAtelierCraft("ribbon");
+
+      document.getElementById("ribbonWorkshopCraftRewardLabel").textContent =
+        craftReward.isNew
+          ? "✨ NEW! 作品完成！"
+          : "✨ また作ったよ！";
+
+      document.getElementById("ribbonWorkshopCraftRewardName").textContent =
+        `${craftReward.item.icon} ${craftReward.item.name}${
+          craftReward.item.rarity === "rare" ? "　レア" : ""
+        }`;
+      unlockAtelierCatTime();
     }
 
     function buildBeadsWorkshopQuestionSet() {
@@ -6661,6 +6915,17 @@ document.getElementById("rankLabel").textContent =
       document.getElementById("beadsWorkshopQuestionContent").hidden = true;
       document.getElementById("beadsWorkshopComplete").hidden = false;
       document.getElementById("beadsWorkshopCompleteScore").textContent = `正解 ${beadsWorkshopScore} / 5`;
+      const craftReward = grantAtelierCraft("beads");
+
+      document.getElementById("beadWorkshopCraftRewardLabel").textContent =
+        craftReward.isNew
+          ? "✨ NEW! 作品完成！"
+          : "✨ また作ったよ！";
+
+      document.getElementById("beadWorkshopCraftRewardName").textContent =
+        `${craftReward.item.icon} ${craftReward.item.name}${
+          craftReward.item.rarity === "rare" ? "　レア" : ""
+        }`;
       unlockAtelierCatTime();
     }
 
@@ -8955,6 +9220,91 @@ function renderAtelierCatBook() {
     renderCategory("アトリエ小物");
 }
 
+function renderAtelierCraftBook() {
+  const owned = Array.isArray(saveData.atelierCraftOwned)
+    ? saveData.atelierCraftOwned
+    : [];
+
+  const renderWorkshop = workshop => {
+    const items = atelierCraftItems.filter(
+      item => item.workshop === workshop
+    );
+
+    return items.map(item => {
+      const isOwned = owned.includes(item.id);
+
+      return `
+        <div
+          style="
+            padding: 12px;
+            margin-top: 10px;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: ${isOwned ? "#fff8fb" : "#f5f1f3"};
+            color: ${isOwned ? "var(--text)" : "#aaa0a7"};
+            font-weight: 800;
+          "
+        >
+          ${
+            isOwned
+              ? `${item.icon} ${item.name}${
+                  item.rarity === "rare"
+                    ? "　レア"
+                    : ""
+                }`
+              : " ？？？"
+          }
+        </div>
+      `;
+    }).join("");
+  };
+
+  const fabricItems = atelierCraftItems.filter(
+    item => item.workshop === "fabric"
+  );
+
+  const beadsItems = atelierCraftItems.filter(
+    item => item.workshop === "beads"
+  );
+
+  const ribbonItems = atelierCraftItems.filter(
+    item => item.workshop === "ribbon"
+  );
+
+  const fabricOwned = fabricItems.filter(
+    item => owned.includes(item.id)
+  ).length;
+
+  const beadsOwned = beadsItems.filter(
+    item => owned.includes(item.id)
+  ).length;
+
+  const ribbonOwned = ribbonItems.filter(
+    item => owned.includes(item.id)
+  ).length;
+
+  document.getElementById("atelierCraftBookCount").textContent =
+    `${owned.length} / ${atelierCraftItems.length}`;
+
+  document.getElementById("atelierCraftFabricCount").textContent =
+    `${fabricOwned} / ${fabricItems.length} 作品`;
+
+  document.getElementById("atelierCraftBeadsCount").textContent =
+    `${beadsOwned} / ${beadsItems.length} 作品`;
+
+  document.getElementById("atelierCraftRibbonCount").textContent =
+    `${ribbonOwned} / ${ribbonItems.length} 作品`;
+
+  document.getElementById("atelierCraftFabricList").innerHTML =
+    renderWorkshop("fabric");
+
+  document.getElementById("atelierCraftBeadsList").innerHTML =
+    renderWorkshop("beads");
+
+  document.getElementById("atelierCraftRibbonList").innerHTML =
+    renderWorkshop("ribbon");
+}
+
 document
   .getElementById("startButton")
   .addEventListener("click", startEvent);
@@ -9017,6 +9367,20 @@ document
 
 document
   .getElementById("backFromAtelierCatBookButton")
+  .addEventListener("click", () => {
+    updateShopDisplay();
+    showScreen("home");
+  });
+
+document
+  .getElementById("openAtelierCraftBookButton")
+  .addEventListener("click", () => {
+    renderAtelierCraftBook();
+    showScreen("atelierCraftBook");
+  });
+
+document
+  .getElementById("backFromAtelierCraftBookButton")
   .addEventListener("click", () => {
     updateShopDisplay();
     showScreen("home");
