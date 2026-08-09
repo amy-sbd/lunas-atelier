@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#f8eaf0" />
   <title>LUNA'S ATELIER</title>
+  <link rel="apple-touch-icon" href="./icon.png">
+  <link rel="icon" type="image/png" href="./icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -2418,6 +2420,14 @@
       </button>
 
       <p class="atelier-home-footer">気になる工房から、何度でもつくってみよ〜✨</p>
+
+<button
+  id="atelierResetDataButton"
+  class="reset-data-button"
+  type="button"
+>
+  データをクリア
+</button>
 
       <div hidden aria-hidden="true">
        <div class="card">
@@ -5993,6 +6003,27 @@ function saveGame() {
   location.reload();
 }
 
+function resetAtelierData() {
+  const firstConfirm = window.confirm(
+    "アトリエの学習記録やねこアイテムを、全部クリアしますか？"
+  );
+
+  if (!firstConfirm) {
+    return;
+  }
+
+  const finalConfirm = window.confirm(
+    "元には戻せません。本当に最初からやり直しますか？"
+  );
+
+  if (!finalConfirm) {
+    return;
+  }
+
+  localStorage.removeItem(STORAGE_KEY);
+  location.reload();
+}
+
     function showScreen(name) {
       Object.values(screens).forEach(screen => {
         screen.classList.remove("active");
@@ -8931,6 +8962,10 @@ document
 document
   .getElementById("fabricWorkshopStartButton")
   .addEventListener("click", startFabricWorkshop);
+
+document
+  .getElementById("atelierResetDataButton")
+  .addEventListener("click", resetAtelierData);
 
 document.getElementById("atelierCatTimeStartButton").addEventListener("click", startAtelierCatTime);
 document.getElementById("atelierCatTimeRewardButton").addEventListener("click", grantAtelierCatReward);
