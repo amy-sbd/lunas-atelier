@@ -6366,6 +6366,13 @@ function grantAtelierCatReward() {
   saveData.catPlayedDate = getTodayKey();
   saveData.atelierCatLastEventKey = currentAtelierCatEvent.key;
   saveGame();
+
+  if (currentAtelierCatReward.rarity === "rare") {
+    playAtelierRareSound();
+  } else {
+    playAtelierCatItemSound();
+  }
+
   document.getElementById("atelierCatTimeRewardLabel").textContent = isNew ? "NEW!" : "また見つけたよ✨";
   document.getElementById("atelierCatTimeRewardText").textContent = `「${currentAtelierCatReward.name}」をGET！`;
   document.getElementById("atelierCatTimeReward").hidden = false;
@@ -6642,6 +6649,7 @@ document.getElementById("rankLabel").textContent =
 
       if (isCorrect) {
         fabricWorkshopScore += 1;
+        playAtelierCorrectSound();
       }
 
       document.querySelectorAll("#fabricWorkshopAnswers .answer").forEach((button, index) => {
@@ -6681,6 +6689,12 @@ document.getElementById("rankLabel").textContent =
       document.getElementById("fabricWorkshopCompleteScore").textContent =
         `正解 ${fabricWorkshopScore} / ${fabricWorkshopQuestions.length}`;
       const craftReward = grantAtelierCraft("fabric");
+
+      if (craftReward.item.rarity === "rare") {
+        playAtelierRareSound();
+      } else {
+        playAtelierCraftSound();
+      }
 
       document.getElementById("fabricWorkshopCraftRewardLabel").textContent =
         craftReward.isNew
@@ -6760,7 +6774,10 @@ document.getElementById("rankLabel").textContent =
       ribbonWorkshopAnswered = true;
       const question = ribbonWorkshopQuestions[ribbonWorkshopCurrentIndex];
       const selected = ribbonWorkshopDisplayChoices[selectedIndex];
-      if (selected.isCorrect) ribbonWorkshopScore += 1;
+      if (selected.isCorrect) {
+        ribbonWorkshopScore += 1;
+        playAtelierCorrectSound();
+      }
       document.querySelectorAll("#ribbonWorkshopAnswers .answer").forEach((button, index) => { button.disabled = true; if (ribbonWorkshopDisplayChoices[index].isCorrect) button.classList.add("correct"); else if (index === selectedIndex) button.classList.add("wrong"); });
       const feedback = document.getElementById("ribbonWorkshopFeedback"); feedback.className = `feedback show ${selected.isCorrect ? "correct" : "wrong"}`; feedback.innerHTML = `ルナ「${selected.isCorrect ? "せいかい〜 いい見方してる〜✨" : "ここはこう見るよ〜✨"}」<br><br>${question.stage <= 2 ? getRibbonBalanceFeedback(question) : question.type === "group-operation" ? getRibbonGroupFeedback(question) : question.feedback}`;
       document.getElementById("ribbonWorkshopNextButton").hidden = false;
@@ -6788,6 +6805,12 @@ document.getElementById("rankLabel").textContent =
       if (ribbonWorkshopCurrentIndex < 4) { ribbonWorkshopCurrentIndex += 1; renderRibbonWorkshopQuestion(); return; }
       document.getElementById("ribbonWorkshopQuestionContent").hidden = true; document.getElementById("ribbonWorkshopComplete").hidden = false; document.getElementById("ribbonWorkshopCompleteScore").textContent = `正解 ${ribbonWorkshopScore} / 5`;
       const craftReward = grantAtelierCraft("ribbon");
+
+      if (craftReward.item.rarity === "rare") {
+        playAtelierRareSound();
+      } else {
+        playAtelierCraftSound();
+      }
 
       document.getElementById("ribbonWorkshopCraftRewardLabel").textContent =
         craftReward.isNew
@@ -6893,7 +6916,10 @@ document.getElementById("rankLabel").textContent =
       const selected = beadsWorkshopDisplayChoices[selectedIndex];
       if (!selected) return;
       beadsWorkshopAnswered = true;
-      if (selected.isCorrect) beadsWorkshopScore += 1;
+      if (selected.isCorrect) {
+        beadsWorkshopScore += 1;
+        playAtelierCorrectSound();
+      }
       document.querySelectorAll("#beadsWorkshopAnswers .answer").forEach((button, index) => {
         button.disabled = true;
         if (beadsWorkshopDisplayChoices[index].isCorrect) button.classList.add("correct");
@@ -6916,6 +6942,12 @@ document.getElementById("rankLabel").textContent =
       document.getElementById("beadsWorkshopComplete").hidden = false;
       document.getElementById("beadsWorkshopCompleteScore").textContent = `正解 ${beadsWorkshopScore} / 5`;
       const craftReward = grantAtelierCraft("beads");
+
+      if (craftReward.item.rarity === "rare") {
+        playAtelierRareSound();
+      } else {
+        playAtelierCraftSound();
+      }
 
       document.getElementById("beadWorkshopCraftRewardLabel").textContent =
         craftReward.isNew
@@ -9639,6 +9671,227 @@ function renderShopPercentBar(options = {}) {
 
   return `<div class="shop-percent-bar shop-percent-bar--${theme}" role="img" aria-label="${escapeShopPercentBarHtml(ariaLabel)}"><div class="shop-percent-bar__header"><span class="shop-percent-bar__label">${escapeShopPercentBarHtml(label)}</span>${percentHtml}</div><div class="shop-percent-bar__track" style="--shop-percent-divisions: ${divisions};">${segments}</div>${resultHtml}</div>`;
 }
+
+let atelierAudioContext = null;
+
+function playAtelierTapSound() {
+  try {
+    if (!atelierAudioContext) {
+      atelierAudioContext = new (
+        window.AudioContext ||
+        window.webkitAudioContext
+      )();
+    }
+
+    const oscillator = atelierAudioContext.createOscillator();
+    const gain = atelierAudioContext.createGain();
+
+    oscillator.type = "sine";
+    oscillator.frequency.setValueAtTime(
+      660,
+      atelierAudioContext.currentTime
+    );
+
+    gain.gain.setValueAtTime(
+      0.035,
+      atelierAudioContext.currentTime
+    );
+
+    gain.gain.exponentialRampToValueAtTime(
+      0.001,
+      atelierAudioContext.currentTime + 0.06
+    );
+
+    oscillator.connect(gain);
+    gain.connect(atelierAudioContext.destination);
+
+    oscillator.start();
+    oscillator.stop(
+      atelierAudioContext.currentTime + 0.06
+    );
+  } catch (error) {
+    console.warn("タップ音を再生できませんでした。", error);
+  }
+}
+
+function playAtelierCorrectSound() {
+  try {
+    if (!atelierAudioContext) {
+      atelierAudioContext = new (
+        window.AudioContext ||
+        window.webkitAudioContext
+      )();
+    }
+
+    const now = atelierAudioContext.currentTime;
+
+    const oscillator = atelierAudioContext.createOscillator();
+    const gain = atelierAudioContext.createGain();
+
+    oscillator.type = "sine";
+
+    oscillator.frequency.setValueAtTime(784, now);
+    oscillator.frequency.setValueAtTime(1046, now + 0.08);
+
+    gain.gain.setValueAtTime(0.05, now);
+    gain.gain.exponentialRampToValueAtTime(
+      0.001,
+      now + 0.18
+    );
+
+    oscillator.connect(gain);
+    gain.connect(atelierAudioContext.destination);
+
+    oscillator.start(now);
+    oscillator.stop(now + 0.18);
+  } catch (error) {
+    console.warn("正解音を再生できませんでした。", error);
+  }
+}
+
+function playAtelierCraftSound() {
+  try {
+    if (!atelierAudioContext) {
+      atelierAudioContext = new (
+        window.AudioContext ||
+        window.webkitAudioContext
+      )();
+    }
+
+    const now = atelierAudioContext.currentTime;
+
+    [659, 784, 988].forEach((frequency, index) => {
+      const oscillator = atelierAudioContext.createOscillator();
+      const gain = atelierAudioContext.createGain();
+
+      oscillator.type = "sine";
+      oscillator.frequency.setValueAtTime(
+        frequency,
+        now + index * 0.07
+      );
+
+      gain.gain.setValueAtTime(
+        0.045,
+        now + index * 0.07
+      );
+
+      gain.gain.exponentialRampToValueAtTime(
+        0.001,
+        now + index * 0.07 + 0.16
+      );
+
+      oscillator.connect(gain);
+      gain.connect(atelierAudioContext.destination);
+
+      oscillator.start(now + index * 0.07);
+      oscillator.stop(now + index * 0.07 + 0.16);
+    });
+  } catch (error) {
+    console.warn("作品完成音を再生できませんでした。", error);
+  }
+}
+
+function playAtelierRareSound() {
+  try {
+    if (!atelierAudioContext) {
+      atelierAudioContext = new (
+        window.AudioContext ||
+        window.webkitAudioContext
+      )();
+    }
+
+    const now = atelierAudioContext.currentTime;
+
+    [784, 988, 1175, 1568].forEach((frequency, index) => {
+      const oscillator = atelierAudioContext.createOscillator();
+      const gain = atelierAudioContext.createGain();
+
+      oscillator.type = "sine";
+      oscillator.frequency.setValueAtTime(
+        frequency,
+        now + index * 0.08
+      );
+
+      gain.gain.setValueAtTime(
+        0.05,
+        now + index * 0.08
+      );
+
+      gain.gain.exponentialRampToValueAtTime(
+        0.001,
+        now + index * 0.08 + 0.2
+      );
+
+      oscillator.connect(gain);
+      gain.connect(atelierAudioContext.destination);
+
+      oscillator.start(now + index * 0.08);
+      oscillator.stop(now + index * 0.08 + 0.2);
+    });
+  } catch (error) {
+    console.warn("レア作品音を再生できませんでした。", error);
+  }
+}
+
+function playAtelierCatItemSound() {
+  try {
+    if (!atelierAudioContext) {
+      atelierAudioContext = new (
+        window.AudioContext ||
+        window.webkitAudioContext
+      )();
+    }
+
+    const now = atelierAudioContext.currentTime;
+
+    const oscillator = atelierAudioContext.createOscillator();
+    const gain = atelierAudioContext.createGain();
+
+    oscillator.type = "triangle";
+
+    oscillator.frequency.setValueAtTime(720, now);
+    oscillator.frequency.exponentialRampToValueAtTime(
+      480,
+      now + 0.16
+    );
+    oscillator.frequency.exponentialRampToValueAtTime(
+      620,
+      now + 0.34
+    );
+
+    gain.gain.setValueAtTime(0.001, now);
+    gain.gain.exponentialRampToValueAtTime(
+      0.055,
+      now + 0.035
+    );
+    gain.gain.setValueAtTime(
+      0.05,
+      now + 0.18
+    );
+    gain.gain.exponentialRampToValueAtTime(
+      0.001,
+      now + 0.38
+    );
+
+    oscillator.connect(gain);
+    gain.connect(atelierAudioContext.destination);
+
+    oscillator.start(now);
+    oscillator.stop(now + 0.4);
+  } catch (error) {
+    console.warn("ねこアイテム音を再生できませんでした。", error);
+  }
+}
+
+document.addEventListener("click", event => {
+  const button = event.target.closest("button");
+
+  if (!button || button.disabled) {
+    return;
+  }
+
+  playAtelierTapSound();
+});
 
     setRandomHomeMessage();
     updateShopDisplay();
