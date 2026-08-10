@@ -2404,6 +2404,15 @@
         </div>
       </div>
 
+<button
+  id="designWorkshopPrototypeButton"
+  class="secondary"
+  type="button"
+  style="margin-top: 12px; width: 100%;"
+>
+   デザイン工房をためす
+</button>
+
       <div id="atelierCatTimeCard" class="card atelier-cat-time-card" hidden>
         <h2>🐾 ねこたちが遊びにきた！</h2>
         <p class="lead">レオンとコッタが<br>アトリエに来てるみたい…✨</p>
@@ -3075,6 +3084,82 @@
       </div>
     </section>
 
+<section id="designWorkshopScreen" class="screen">
+  <div class="topbar">
+    <div class="brand">DESIGN WORKSHOP</div>
+    <div class="points">
+       <span id="designWorkshopProgress">1 / 3</span>
+    </div>
+  </div>
+
+  <div class="hero">
+    <p class="eyebrow">DESIGN ATELIER</p>
+    <h1> デザイン工房</h1>
+    <p class="lead">
+      図形をそのまま動かしてみよう✨
+    </p>
+  </div>
+
+  <div class="card">
+    <div id="designWorkshopQuestionContent">
+      <h2 id="designWorkshopInstruction"></h2>
+
+      <div style="margin-top: 18px;">
+        <div style="font-size: 13px; font-weight: 900; color: #8d7b86;">
+          もとの模様
+        </div>
+        <div id="designWorkshopStartGrid"></div>
+      </div>
+
+      <div style="margin-top: 20px;">
+        <div style="font-size: 13px; font-weight: 900; color: #8d7b86;">
+          どれになる？
+        </div>
+        <div id="designWorkshopChoices"></div>
+      </div>
+
+      <div
+        id="designWorkshopFeedback"
+        class="feedback"
+        hidden
+        style="margin-top: 16px;"
+      ></div>
+
+      <button
+        id="designWorkshopNextButton"
+        class="primary"
+        type="button"
+        hidden
+        style="margin-top: 16px;"
+      >
+        つぎへ ▶
+      </button>
+    </div>
+
+    <div id="designWorkshopComplete" hidden>
+      <strong>Stage1 試作クリア〜✨</strong>
+      <p class="lead">3問の表示テスト完了！</p>
+
+      <button
+        id="designWorkshopRetryButton"
+        class="primary"
+        type="button"
+      >
+        もう一度ためす ✨
+      </button>
+
+      <button
+        id="designWorkshopHomeButton"
+        class="secondary"
+        type="button"
+        style="margin-top: 10px;"
+      >
+        アトリエにもどる
+      </button>
+    </div>
+  </div>
+</section>
+
     <!-- クイズ画面 -->
     <section id="quizScreen" class="screen">
       <div class="topbar">
@@ -3409,6 +3494,133 @@ const homeMessages = [
       "ルナ「今日はどんな見方を見つける？💕」",
       "ルナ「できそうな工房から、はじめよ〜✨」"
     ];
+
+const designWorkshopStage1Questions = [
+  {
+    id: "design_s1_01",
+    stage: 1,
+    instruction: "この模様を右に2マス、そのままずらすよ。どれになる？",
+    rows: 3,
+    cols: 5,
+    start: [
+      [1, 1, 0, 0, 0],
+      [1, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0]
+    ],
+    choices: [
+      {
+        grid: [
+          [0, 0, 1, 1, 0],
+          [0, 0, 1, 0, 0],
+          [0, 0, 0, 0, 0]
+        ],
+        correct: true
+      },
+      {
+        grid: [
+          [0, 1, 1, 0, 0],
+          [0, 1, 0, 0, 0],
+          [0, 0, 0, 0, 0]
+        ],
+        correct: false
+      },
+      {
+        grid: [
+          [0, 0, 1, 0, 0],
+          [0, 0, 1, 1, 0],
+          [0, 0, 0, 0, 0]
+        ],
+        correct: false
+      }
+    ]
+  },
+
+  {
+    id: "design_s1_02",
+    stage: 1,
+    instruction: "この模様を下に1マス、そのままずらすよ。どれになる？",
+    rows: 4,
+    cols: 4,
+    start: [
+      [0, 1, 0, 0],
+      [1, 1, 1, 0],
+      [0, 0, 0, 0],
+      [0, 0, 0, 0]
+    ],
+    choices: [
+      {
+        grid: [
+          [0, 0, 0, 0],
+          [0, 1, 0, 0],
+          [1, 1, 1, 0],
+          [0, 0, 0, 0]
+        ],
+        correct: true
+      },
+      {
+        grid: [
+          [0, 0, 0, 0],
+          [1, 1, 1, 0],
+          [0, 1, 0, 0],
+          [0, 0, 0, 0]
+        ],
+        correct: false
+      },
+      {
+        grid: [
+          [0, 1, 0, 0],
+          [1, 1, 1, 0],
+          [0, 0, 0, 0],
+          [0, 0, 0, 0]
+        ],
+        correct: false
+      }
+    ]
+  },
+
+  {
+    id: "design_s1_03",
+    stage: 1,
+    instruction: "この模様を右に1マス、下に1マスずらすよ。どれになる？",
+    rows: 4,
+    cols: 4,
+    start: [
+      [1, 1, 0, 0],
+      [0, 1, 0, 0],
+      [0, 1, 0, 0],
+      [0, 0, 0, 0]
+    ],
+    choices: [
+      {
+        grid: [
+          [0, 0, 0, 0],
+          [0, 1, 1, 0],
+          [0, 0, 1, 0],
+          [0, 0, 1, 0]
+        ],
+        correct: true
+      },
+      {
+        grid: [
+          [0, 0, 0, 0],
+          [0, 1, 0, 0],
+          [0, 1, 1, 1],
+          [0, 0, 0, 0]
+        ],
+        correct: false
+      },
+      {
+        grid: [
+          [0, 1, 1, 0],
+          [0, 0, 1, 0],
+          [0, 0, 1, 0],
+          [0, 0, 0, 0]
+        ],
+        correct: false
+      }
+    ]
+  }
+];
 
     const fabricWorkshopQuestionPools = {
       1: [
@@ -5994,6 +6206,8 @@ let currentQuestionIndex = 0;
     let beadsWorkshopScore = 0;
     let beadsWorkshopAnswered = false;
     let beadsWorkshopDisplayChoices = [];
+let designWorkshopCurrentIndex = 0;
+let designWorkshopAnswered = false;
 
 const screens = {
   home: document.getElementById("homeScreen"),
@@ -6009,6 +6223,7 @@ const screens = {
   fabricWorkshop: document.getElementById("fabricWorkshopScreen"),
   ribbonWorkshop: document.getElementById("ribbonWorkshopScreen"),
   beadsWorkshop: document.getElementById("beadsWorkshopScreen"),
+  designWorkshop: document.getElementById("designWorkshopScreen"),
   atelierCatTime: document.getElementById("atelierCatTimeScreen"),
   event: document.getElementById("eventScreen"),
   quiz: document.getElementById("quizScreen"),
@@ -6474,6 +6689,47 @@ document.getElementById("rankLabel").textContent =
         `<span class="fabric-workshop-piece ${style}"></span>`
       ).join("");
     }
+
+function renderDesignGrid(grid) {
+  if (!Array.isArray(grid) || grid.length === 0) {
+    return "";
+  }
+
+  const rows = grid.length;
+  const cols = Array.isArray(grid[0]) ? grid[0].length : 0;
+
+  if (cols === 0) {
+    return "";
+  }
+
+  return `
+    <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(${cols}, 38px);
+        grid-template-rows: repeat(${rows}, 38px);
+        justify-content: center;
+        gap: 2px;
+        margin: 10px auto;
+      "
+    >
+      ${grid.map(row =>
+        row.map(cell => `
+          <div
+            style="
+              width: 38px;
+              height: 38px;
+              box-sizing: border-box;
+              border: 1px solid #d8cfd5;
+              border-radius: 5px;
+              background: ${cell === 1 ? "#f4a8c6" : "#fffdfd"};
+            "
+          ></div>
+        `).join("")
+      ).join("")}
+    </div>
+  `;
+}
 
     function renderFabricWorkshopVisual(question) {
       if (question.type === "fraction-part") {
@@ -6966,6 +7222,107 @@ document.getElementById("rankLabel").textContent =
         }`;
       unlockAtelierCatTime();
     }
+
+function startDesignWorkshopPrototype() {
+  designWorkshopCurrentIndex = 0;
+  designWorkshopAnswered = false;
+
+  document.getElementById("designWorkshopComplete").hidden = true;
+  document.getElementById("designWorkshopQuestionContent").hidden = false;
+
+  renderDesignWorkshopPrototypeQuestion();
+  showScreen("designWorkshop");
+}
+
+function renderDesignWorkshopPrototypeQuestion() {
+  const question =
+    designWorkshopStage1Questions[designWorkshopCurrentIndex];
+
+  if (!question) {
+    return;
+  }
+
+  designWorkshopAnswered = false;
+
+  document.getElementById("designWorkshopProgress").textContent =
+    `${designWorkshopCurrentIndex + 1} / ${designWorkshopStage1Questions.length}`;
+
+  document.getElementById("designWorkshopInstruction").textContent =
+    question.instruction;
+
+  document.getElementById("designWorkshopStartGrid").innerHTML =
+    renderDesignGrid(question.start);
+
+  document.getElementById("designWorkshopFeedback").hidden = true;
+  document.getElementById("designWorkshopFeedback").textContent = "";
+  document.getElementById("designWorkshopNextButton").hidden = true;
+
+  const choices = document.getElementById("designWorkshopChoices");
+  choices.innerHTML = "";
+
+  question.choices.forEach(choice => {
+    const button = document.createElement("button");
+
+    button.type = "button";
+    button.className = "answer";
+    button.style.marginTop = "12px";
+    button.innerHTML = renderDesignGrid(choice.grid);
+
+    button.addEventListener("click", () => {
+      if (designWorkshopAnswered) {
+        return;
+      }
+
+      designWorkshopAnswered = true;
+
+      choices.querySelectorAll("button").forEach(item => {
+        item.disabled = true;
+      });
+
+      const feedback =
+        document.getElementById("designWorkshopFeedback");
+
+      if (choice.correct) {
+        feedback.textContent =
+          "正解〜✨ 形も向きもそのまま、場所だけ動いたね！";
+
+        if (typeof playAtelierCorrectSound === "function") {
+          playAtelierCorrectSound();
+        }
+      } else {
+        feedback.textContent =
+          "おしい！ 形や向きは変えずに、そのまま動かしてみよう。";
+
+        if (typeof playAtelierWrongSound === "function") {
+          playAtelierWrongSound();
+        }
+      }
+
+      feedback.hidden = false;
+      document.getElementById("designWorkshopNextButton").hidden = false;
+    });
+
+    choices.appendChild(button);
+  });
+}
+
+function goToNextDesignWorkshopPrototypeQuestion() {
+  if (!designWorkshopAnswered) {
+    return;
+  }
+
+  if (
+    designWorkshopCurrentIndex <
+    designWorkshopStage1Questions.length - 1
+  ) {
+    designWorkshopCurrentIndex += 1;
+    renderDesignWorkshopPrototypeQuestion();
+    return;
+  }
+
+  document.getElementById("designWorkshopQuestionContent").hidden = true;
+  document.getElementById("designWorkshopComplete").hidden = false;
+}
 
     function getTodayKey() {
   const today = new Date();
@@ -9372,6 +9729,33 @@ document.getElementById("beadsWorkshopStartButton").addEventListener("click", st
 document.getElementById("beadsWorkshopNextButton").addEventListener("click", goToNextBeadsWorkshopQuestion);
 document.getElementById("beadsWorkshopRetryButton").addEventListener("click", startBeadsWorkshop);
 document.getElementById("beadsWorkshopHomeButton").addEventListener("click", () => showScreen("home"));
+
+document
+  .getElementById("designWorkshopPrototypeButton")
+  .addEventListener(
+    "click",
+    startDesignWorkshopPrototype
+  );
+
+document
+  .getElementById("designWorkshopNextButton")
+  .addEventListener(
+    "click",
+    goToNextDesignWorkshopPrototypeQuestion
+  );
+
+document
+  .getElementById("designWorkshopRetryButton")
+  .addEventListener(
+    "click",
+    startDesignWorkshopPrototype
+  );
+
+document
+  .getElementById("designWorkshopHomeButton")
+  .addEventListener("click", () => {
+    showScreen("home");
+  });
 
 document
   .getElementById("fabricWorkshopNextButton")
