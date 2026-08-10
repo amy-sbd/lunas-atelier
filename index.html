@@ -6706,19 +6706,19 @@ function renderDesignGrid(grid) {
     <div
       style="
         display: grid;
-        grid-template-columns: repeat(${cols}, 26px);
-        grid-template-rows: repeat(${rows}, 26px);
+        grid-template-columns: repeat(${cols}, 20px);
+        grid-template-rows: repeat(${rows}, 20px);
         justify-content: center;
         gap: 2px;
-        margin: 6px auto;
+        margin: 4px auto;
       "
     >
       ${grid.map(row =>
         row.map(cell => `
           <div
             style="
-              width: 26px;
-              height: 26px;
+              width: 20px;
+              height: 20px;
               box-sizing: border-box;
               border: 1px solid #d8cfd5;
               border-radius: 5px;
@@ -7265,7 +7265,7 @@ function renderDesignWorkshopPrototypeQuestion() {
 
     button.type = "button";
     button.className = "answer";
-    button.style.marginTop = "12px";
+    button.style.marginTop = "6px";
     button.innerHTML = renderDesignGrid(choice.grid);
 
     button.addEventListener("click", () => {
