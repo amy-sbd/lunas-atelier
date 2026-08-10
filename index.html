@@ -5749,7 +5749,7 @@ tip: "2：3なら、<b>2つ分と3つ分のセット</b>って考えると分か
         ["両手でふたりをポンポンする", "<strong>ルナ</strong><br>「両手で、ふたり同時にポンポン！」<br><br><strong>コッタ</strong><br>「最高ですにゃ〜！」<br><br><strong>レオン</strong><br>「忙しいポンポンだにゃ……」<br><br><strong>ルナ</strong><br>「コッタ、どんどんこっちに寄ってきたよ」<br><br><strong>レオン</strong><br>「ぼくのスペースが減ってるにゃ」<br><br><strong>コッタ</strong><br>「気のせいですにゃ♪」"],
         ["コッタ、どうして分かったの？と聞く", "<strong>ルナ</strong><br>「コッタ、どうして分かったの？」<br><br><strong>コッタ</strong><br>「ぼくのポンポンセンサーはすごいですにゃ！」<br><br><strong>レオン</strong><br>「そんなセンサーあったのかにゃ」<br><br><strong>コッタ</strong><br>「家じゅう対応ですにゃ✨」<br><br><strong>レオン</strong><br>「それはすごすぎるにゃ……」"] ] },
       { key: "leon-trap", title: "レオンについていくと…？", story: "<strong>ルナ</strong><br>「ねえ、レオンがにいにのこと、ちらちら見てるよ」<br><br><strong>にいに</strong><br>「ん？ ついて来いってこと？」<br><br>レオン「こっちにゃ」<br><br><strong>にいに</strong><br>「いつものポンポン場所だな」<br><br>レオン「ここにゃ」", choices: [
-        ["たっぷりポンポンする", "<strong>にいに</strong><br>「はいはい、頼まれたとおりにポンポンするよ」<br><br><strong>レオン</strong><br>「そこにゃ。いい感じにゃ」<br><br>しばらくして――<br><br><strong>レオン</strong><br>「もういいにゃ！」<br><br><strong>にいに</strong><br>「呼んだのそっちじゃん！」<br><br><strong>ルナ</strong><br>「あれ？ レオン、またにいにを見てるよ」<br><br><strong>にいに</strong><br>「……また呼ぶ気？」"],
+        ["たっぷりポンポンする", "<strong>にいに</strong><br>「はいはい、頼まれたとおりにポンポンするよ」<br><br><strong>レオン</strong><br>「そこにゃ。いい感じにゃ」<br><br>しばらくして――<br><br><strong>レオン</strong><br>「もういいにゃ💢！」<br><br><strong>にいに</strong><br>「呼んだのそっちじゃん！」<br><br><strong>ルナ</strong><br>「あれ？ レオン、またにいにを見てるよ」<br><br><strong>にいに</strong><br>「……また呼ぶ気？」"],
         ["ほどほどでやめてみる", "<strong>にいに</strong><br>「今日は少し早めにやめよう」<br><br><strong>レオン</strong><br>「……終わりかにゃ？」<br><br><strong>にいに</strong><br>「今日は罠にかからない」<br><br><strong>ルナ</strong><br>「レオン、またちらって見たよ」<br><br><strong>レオン</strong><br>「もう少しでもよかったにゃ」<br><br><strong>にいに</strong><br>「どっちなんだよ」"],
         ["コッタも呼んでみる", "<strong>にいに</strong><br>「コッタも来る？」<br><br>その瞬間――<br><br><strong>コッタ</strong><br>「もう来てるですにゃ！」<br><br><strong>レオン</strong><br>「呼ぶ前からいたにゃ……」<br><br><strong>にいに</strong><br>「足もとでしっぽ、ぴんってしてるな」<br><br><strong>コッタ</strong><br>「ポンポンの場所は把握済みですにゃ✨」"] ] },
       { key: "watching", title: "視線を感じる…", story: "<strong>ルナ</strong><br>「パパ、コッタをなでなでしてるよ」<br><br>コッタ「もっとですにゃ〜♪」<br><br><strong>ルナ</strong><br>「あれ？ レオンがずーっと見てるよ」<br><br>レオン「…………にゃ」", choices: [
@@ -6650,6 +6650,8 @@ document.getElementById("rankLabel").textContent =
       if (isCorrect) {
         fabricWorkshopScore += 1;
         playAtelierCorrectSound();
+      } else {
+        playAtelierWrongSound();
       }
 
       document.querySelectorAll("#fabricWorkshopAnswers .answer").forEach((button, index) => {
@@ -6777,6 +6779,8 @@ document.getElementById("rankLabel").textContent =
       if (selected.isCorrect) {
         ribbonWorkshopScore += 1;
         playAtelierCorrectSound();
+      } else {
+        playAtelierWrongSound();
       }
       document.querySelectorAll("#ribbonWorkshopAnswers .answer").forEach((button, index) => { button.disabled = true; if (ribbonWorkshopDisplayChoices[index].isCorrect) button.classList.add("correct"); else if (index === selectedIndex) button.classList.add("wrong"); });
       const feedback = document.getElementById("ribbonWorkshopFeedback"); feedback.className = `feedback show ${selected.isCorrect ? "correct" : "wrong"}`; feedback.innerHTML = `ルナ「${selected.isCorrect ? "せいかい〜 いい見方してる〜✨" : "ここはこう見るよ〜✨"}」<br><br>${question.stage <= 2 ? getRibbonBalanceFeedback(question) : question.type === "group-operation" ? getRibbonGroupFeedback(question) : question.feedback}`;
@@ -6919,6 +6923,8 @@ document.getElementById("rankLabel").textContent =
       if (selected.isCorrect) {
         beadsWorkshopScore += 1;
         playAtelierCorrectSound();
+      } else {
+        playAtelierWrongSound();
       }
       document.querySelectorAll("#beadsWorkshopAnswers .answer").forEach((button, index) => {
         button.disabled = true;
@@ -9749,6 +9755,44 @@ function playAtelierCorrectSound() {
   }
 }
 
+function playAtelierWrongSound() {
+  try {
+    if (!atelierAudioContext) {
+      atelierAudioContext = new (
+        window.AudioContext ||
+        window.webkitAudioContext
+      )();
+    }
+
+    const now = atelierAudioContext.currentTime;
+
+    const oscillator = atelierAudioContext.createOscillator();
+    const gain = atelierAudioContext.createGain();
+
+    oscillator.type = "sine";
+
+    oscillator.frequency.setValueAtTime(330, now);
+    oscillator.frequency.exponentialRampToValueAtTime(
+      260,
+      now + 0.13
+    );
+
+    gain.gain.setValueAtTime(0.04, now);
+    gain.gain.exponentialRampToValueAtTime(
+      0.001,
+      now + 0.16
+    );
+
+    oscillator.connect(gain);
+    gain.connect(atelierAudioContext.destination);
+
+    oscillator.start(now);
+    oscillator.stop(now + 0.16);
+  } catch (error) {
+    console.warn("不正解音を再生できませんでした。", error);
+  }
+}
+
 function playAtelierCraftSound() {
   try {
     if (!atelierAudioContext) {
@@ -9835,49 +9879,11 @@ function playAtelierRareSound() {
 
 function playAtelierCatItemSound() {
   try {
-    if (!atelierAudioContext) {
-      atelierAudioContext = new (
-        window.AudioContext ||
-        window.webkitAudioContext
-      )();
-    }
-
-    const now = atelierAudioContext.currentTime;
-
-    const oscillator = atelierAudioContext.createOscillator();
-    const gain = atelierAudioContext.createGain();
-
-    oscillator.type = "triangle";
-
-    oscillator.frequency.setValueAtTime(720, now);
-    oscillator.frequency.exponentialRampToValueAtTime(
-      480,
-      now + 0.16
-    );
-    oscillator.frequency.exponentialRampToValueAtTime(
-      620,
-      now + 0.34
-    );
-
-    gain.gain.setValueAtTime(0.001, now);
-    gain.gain.exponentialRampToValueAtTime(
-      0.055,
-      now + 0.035
-    );
-    gain.gain.setValueAtTime(
-      0.05,
-      now + 0.18
-    );
-    gain.gain.exponentialRampToValueAtTime(
-      0.001,
-      now + 0.38
-    );
-
-    oscillator.connect(gain);
-    gain.connect(atelierAudioContext.destination);
-
-    oscillator.start(now);
-    oscillator.stop(now + 0.4);
+    const meow = new Audio("./meow.mp3");
+    meow.volume = 0.15;
+    meow.play().catch(error => {
+      console.warn("ねこアイテム音を再生できませんでした。", error);
+    });
   } catch (error) {
     console.warn("ねこアイテム音を再生できませんでした。", error);
   }
