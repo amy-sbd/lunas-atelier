@@ -2402,13 +2402,20 @@
           <div class="atelier-workshop-meta">1回 5問</div>
           <button id="ribbonWorkshopStartButton" class="primary" type="button">ラッピング工房をはじめる ✨</button>
         </div>
+
+        <div class="card atelier-workshop-card">
+          <h2>✨ デザイン工房</h2>
+          <p class="fabric-workshop-description">図形を動かして、かたちのひみつを見つけよう</p>
+          <div class="atelier-workshop-meta">1回 5問</div>
+          <button id="openDesignWorkshopButton" class="primary" type="button">デザイン工房をはじめる ✨</button>
+        </div>
       </div>
 
 <button
   id="designWorkshopPrototypeButton"
   class="secondary"
   type="button"
-  style="margin-top: 12px; width: 100%;"
+  style="display: none;"
 >
    デザイン工房をためす
 </button>
@@ -2549,7 +2556,7 @@
   <div class="topbar">
     <div class="brand">ATELIER COLLECTION</div>
     <div class="points">
-      ✨ <span id="atelierCraftBookCount">0 / 30</span>
+      ✨ <span id="atelierCraftBookCount">0 / 40</span>
     </div>
   </div>
 
@@ -2577,6 +2584,12 @@
     <h2> ラッピング工房</h2>
     <p id="atelierCraftRibbonCount" class="lead"></p>
     <div id="atelierCraftRibbonList"></div>
+  </div>
+
+  <div class="card">
+    <h2> デザイン工房</h2>
+    <p id="atelierCraftDesignCount" class="lead"></p>
+    <div id="atelierCraftDesignList"></div>
   </div>
 
   <button
@@ -3101,55 +3114,6 @@
   </div>
 
   <div class="card">
-    <div
-      style="
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 6px;
-        margin-bottom: 14px;
-      "
-    >
-      <button
-        id="designWorkshopStage1TestButton"
-        class="secondary"
-        type="button"
-      >
-        Stage1 ずらす
-      </button>
-
-      <button
-        id="designWorkshopStage2TestButton"
-        class="secondary"
-        type="button"
-      >
-        Stage2 回す
-      </button>
-
-      <button
-        id="designWorkshopStage3TestButton"
-        class="secondary"
-        type="button"
-      >
-        Stage3 鏡
-      </button>
-
-      <button
-        id="designWorkshopStage4TestButton"
-        class="secondary"
-        type="button"
-      >
-        Stage4 重ねる
-      </button>
-
-      <button
-        id="designWorkshopStage5TestButton"
-        class="secondary"
-        type="button"
-      >
-        Stage5 チャレンジ
-      </button>
-    </div>
-
     <div id="designWorkshopQuestionContent">
       <h2 id="designWorkshopInstruction"></h2>
 
@@ -3186,8 +3150,38 @@
     </div>
 
     <div id="designWorkshopComplete" hidden>
-      <strong>Stage1 試作クリア〜✨</strong>
-      <p class="lead">3問の表示テスト完了！</p>
+      <strong>デザイン完成〜✨</strong>
+      <p class="lead">5つのチャレンジ、クリア！</p>
+
+      <div
+        id="designWorkshopCraftReward"
+        style="
+          margin: 16px 0;
+          padding: 16px;
+          border: 1px solid var(--line);
+          border-radius: 18px;
+          background: #fff8fb;
+          text-align: center;
+        "
+      >
+        <div
+          id="designWorkshopCraftRewardLabel"
+          style="
+            margin-bottom: 6px;
+            color: var(--pink-dark);
+            font-size: 14px;
+            font-weight: 900;
+          "
+        ></div>
+
+        <div
+          id="designWorkshopCraftRewardName"
+          style="
+            font-size: 21px;
+            font-weight: 900;
+          "
+        ></div>
+      </div>
 
       <button
         id="designWorkshopRetryButton"
@@ -3668,7 +3662,42 @@ const designWorkshopStage1Questions = [
         correct: false
       }
     ]
-  }
+  },
+  { id: "design_s1_04", stage: 1, instruction: "この模様を左に2マス、そのままずらすよ。どれになる？", rows: 3, cols: 5, start: [[0,0,1,1,0],[0,0,0,1,0],[0,0,0,0,0]], choices: [
+    { grid: [[1,1,0,0,0],[0,1,0,0,0],[0,0,0,0,0]], correct: true },
+    { grid: [[0,1,1,0,0],[0,0,1,0,0],[0,0,0,0,0]], correct: false },
+    { grid: [[1,0,0,0,0],[1,1,0,0,0],[0,0,0,0,0]], correct: false }
+  ]},
+  { id: "design_s1_05", stage: 1, instruction: "この模様を上に1マス、そのままずらすよ。どれになる？", rows: 4, cols: 4, start: [[0,0,0,0],[1,1,1,0],[0,1,0,0],[0,0,0,0]], choices: [
+    { grid: [[1,1,1,0],[0,1,0,0],[0,0,0,0],[0,0,0,0]], correct: true },
+    { grid: [[0,1,0,0],[1,1,1,0],[0,0,0,0],[0,0,0,0]], correct: false },
+    { grid: [[1,1,1,0],[1,0,0,0],[0,0,0,0],[0,0,0,0]], correct: false }
+  ]},
+  { id: "design_s1_06", stage: 1, instruction: "この模様を左に1マス、下に1マスずらすよ。どれになる？", rows: 5, cols: 5, start: [[0,0,1,1,0],[0,0,1,0,0],[0,0,1,0,0],[0,0,0,0,0],[0,0,0,0,0]], choices: [
+    { grid: [[0,0,0,0,0],[0,1,1,0,0],[0,1,0,0,0],[0,1,0,0,0],[0,0,0,0,0]], correct: true },
+    { grid: [[0,1,1,0,0],[0,1,0,0,0],[0,1,0,0,0],[0,0,0,0,0],[0,0,0,0,0]], correct: false },
+    { grid: [[0,0,0,0,0],[0,1,0,0,0],[0,1,1,0,0],[0,0,1,0,0],[0,0,0,0,0]], correct: false }
+  ]},
+  { id: "design_s1_07", stage: 1, instruction: "この模様を右に2マス、上に1マスずらすよ。どれになる？", rows: 5, cols: 5, start: [[0,0,0,0,0],[1,0,0,0,0],[1,1,0,0,0],[0,1,0,0,0],[0,0,0,0,0]], choices: [
+    { grid: [[0,0,1,0,0],[0,0,1,1,0],[0,0,0,1,0],[0,0,0,0,0],[0,0,0,0,0]], correct: true },
+    { grid: [[0,0,0,0,0],[0,0,1,0,0],[0,0,1,1,0],[0,0,0,1,0],[0,0,0,0,0]], correct: false },
+    { grid: [[0,0,1,1,0],[0,0,1,0,0],[0,0,1,0,0],[0,0,0,0,0],[0,0,0,0,0]], correct: false }
+  ]},
+  { id: "design_s1_08", stage: 1, instruction: "この模様を左に1マス、上に2マスずらすよ。どれになる？", rows: 5, cols: 5, start: [[0,0,0,0,0],[0,0,0,0,0],[0,1,1,0,0],[0,0,1,0,0],[0,0,1,0,0]], choices: [
+    { grid: [[1,1,0,0,0],[0,1,0,0,0],[0,1,0,0,0],[0,0,0,0,0],[0,0,0,0,0]], correct: true },
+    { grid: [[0,0,0,0,0],[1,1,0,0,0],[0,1,0,0,0],[0,1,0,0,0],[0,0,0,0,0]], correct: false },
+    { grid: [[0,1,0,0,0],[0,1,0,0,0],[1,1,0,0,0],[0,0,0,0,0],[0,0,0,0,0]], correct: false }
+  ]},
+  { id: "design_s1_09", stage: 1, instruction: "この模様を右に1マス、下に2マスずらすよ。どれになる？", rows: 6, cols: 5, start: [[1,1,0,0,0],[1,0,0,0,0],[1,1,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]], choices: [
+    { grid: [[0,0,0,0,0],[0,0,0,0,0],[0,1,1,0,0],[0,1,0,0,0],[0,1,1,0,0],[0,0,0,0,0]], correct: true },
+    { grid: [[0,0,0,0,0],[0,1,1,0,0],[0,1,0,0,0],[0,1,1,0,0],[0,0,0,0,0],[0,0,0,0,0]], correct: false },
+    { grid: [[0,0,0,0,0],[0,0,0,0,0],[0,1,1,0,0],[0,0,1,0,0],[0,1,1,0,0],[0,0,0,0,0]], correct: false }
+  ]},
+  { id: "design_s1_10", stage: 1, instruction: "この模様を左に2マス、下に1マスずらすよ。どれになる？", rows: 5, cols: 6, start: [[0,0,1,1,0,0],[0,0,0,1,0,0],[0,0,1,1,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0]], choices: [
+    { grid: [[0,0,0,0,0,0],[1,1,0,0,0,0],[0,1,0,0,0,0],[1,1,0,0,0,0],[0,0,0,0,0,0]], correct: true },
+    { grid: [[1,1,0,0,0,0],[0,1,0,0,0,0],[1,1,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0]], correct: false },
+    { grid: [[0,0,0,0,0,0],[1,0,0,0,0,0],[1,1,0,0,0,0],[1,0,0,0,0,0],[0,0,0,0,0,0]], correct: false }
+  ]}
 ];
 
 const designWorkshopStage2Questions = [
@@ -6678,7 +6707,18 @@ const atelierCraftItems = [
   ["ribbon_strawberry_box", "いちごギフトBOX", "\u{1F353}", "ribbon", "normal"],
   ["ribbon_birthday_gift", "バースデーギフト", "\u{1F382}", "ribbon", "normal"],
   ["ribbon_starry_box", "星空ギフトBOX", "\u{1F303}", "ribbon", "rare"],
-  ["ribbon_princess_box", "プリンセスギフトBOX", "\u{1F451}", "ribbon", "rare"]
+  ["ribbon_princess_box", "プリンセスギフトBOX", "\u{1F451}", "ribbon", "rare"],
+
+  ["design_flower_frame", "お花のミニフレーム", "\u{1F5BC}\u{FE0F}", "design", "normal"],
+  ["design_colorful_mosaic", "カラフルモザイク", "\u{1F9E9}", "design", "normal"],
+  ["design_flower_tile", "フラワータイル", "\u{1F338}", "design", "normal"],
+  ["design_star_coaster", "星のコースター", "\u{2B50}", "design", "normal"],
+  ["design_rainbow_mobile", "虹色モビール", "\u{1F308}", "design", "normal"],
+  ["design_house_wall_art", "おうちの壁かざり", "\u{1F3E0}", "design", "normal"],
+  ["design_paw_plate", "肉球プレート", "\u{1F43E}", "design", "normal"],
+  ["design_sparkle_tile", "キラキラタイル", "\u{1F4A0}", "design", "normal"],
+  ["design_moon_mosaic", "月夜のモザイク", "\u{1F319}", "design", "rare"],
+  ["design_princess_mirror", "プリンセスミラー", "\u{1F451}", "design", "rare"]
 ].map(([id, name, icon, workshop, rarity]) => ({
   id,
   name,
@@ -6789,6 +6829,7 @@ let currentQuestionIndex = 0;
 let designWorkshopCurrentIndex = 0;
 let designWorkshopAnswered = false;
 let designWorkshopTestStage = 1;
+let designWorkshopQuestions = [];
 
 const screens = {
   home: document.getElementById("homeScreen"),
@@ -7349,6 +7390,21 @@ function renderDesignParts(parts) {
   `;
 }
 
+function shuffleAtelierChoices(items) {
+  const shuffled = [...items];
+
+  for (let i = shuffled.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+
+    [shuffled[i], shuffled[j]] = [
+      shuffled[j],
+      shuffled[i]
+    ];
+  }
+
+  return shuffled;
+}
+
     function renderFabricWorkshopVisual(question) {
       if (question.type === "fraction-part") {
         return `
@@ -7852,6 +7908,24 @@ function startDesignWorkshopPrototype() {
   showScreen("designWorkshop");
 }
 
+function startDesignWorkshop() {
+  designWorkshopCurrentIndex = 0;
+  designWorkshopAnswered = false;
+  designWorkshopQuestions = [
+    designWorkshopStage1Questions[Math.floor(Math.random() * designWorkshopStage1Questions.length)],
+    designWorkshopStage2Questions[Math.floor(Math.random() * designWorkshopStage2Questions.length)],
+    designWorkshopStage3Questions[Math.floor(Math.random() * designWorkshopStage3Questions.length)],
+    designWorkshopStage4Questions[Math.floor(Math.random() * designWorkshopStage4Questions.length)],
+    designWorkshopStage5Questions[Math.floor(Math.random() * designWorkshopStage5Questions.length)]
+  ];
+
+  document.getElementById("designWorkshopComplete").hidden = true;
+  document.getElementById("designWorkshopQuestionContent").hidden = false;
+
+  renderDesignWorkshopPrototypeQuestion();
+  showScreen("designWorkshop");
+}
+
 function getDesignWorkshopTestQuestions() {
   if (designWorkshopTestStage === 5) {
     return designWorkshopStage5Questions;
@@ -7873,8 +7947,8 @@ function getDesignWorkshopTestQuestions() {
 }
 
 function renderDesignWorkshopPrototypeQuestion() {
-  const questions = getDesignWorkshopTestQuestions();
-  const question = questions[designWorkshopCurrentIndex];
+  const question = designWorkshopQuestions[designWorkshopCurrentIndex];
+  const activeStage = question?.stage;
 
   if (!question) {
     return;
@@ -7883,16 +7957,16 @@ function renderDesignWorkshopPrototypeQuestion() {
   designWorkshopAnswered = false;
 
   document.getElementById("designWorkshopProgress").textContent =
-    `${designWorkshopCurrentIndex + 1} / ${questions.length}`;
+    `${designWorkshopCurrentIndex + 1} / ${designWorkshopQuestions.length}`;
 
   document.getElementById("designWorkshopLead").textContent =
-    designWorkshopTestStage === 5
+    activeStage === 5
       ? "今までの変身を使ってチャレンジしよう✨"
-      : designWorkshopTestStage === 4
+      : activeStage === 4
       ? "2つの模様を同じ位置で重ねてみよう✨"
-      : designWorkshopTestStage === 3
+      : activeStage === 3
       ? "鏡にうつした形を見つけてみよう✨"
-      : designWorkshopTestStage === 2
+      : activeStage === 2
         ? "図形をくるっと回してみよう✨"
         : "図形をそのまま動かしてみよう✨";
 
@@ -7900,25 +7974,25 @@ function renderDesignWorkshopPrototypeQuestion() {
     question.instruction;
 
   document.getElementById("designWorkshopStartLabel").textContent =
-    designWorkshopTestStage === 4
+    activeStage === 4
       ? "完成した形"
-      : designWorkshopTestStage === 5
+      : activeStage === 5
         ? ""
         : "もとの模様";
 
   document.getElementById("designWorkshopChoicesLabel").textContent =
-    designWorkshopTestStage === 5
+    activeStage === 5
       ? question.type === "twoSteps"
         ? "最後の形はどれ？"
         : "？に入る形はどれ？"
       : "どれになる？";
 
   let startGridHtml =
-    designWorkshopTestStage === 4
+    activeStage === 4
       ? renderDesignGrid(question.target)
       : renderDesignGrid(question.start);
 
-  if (designWorkshopTestStage === 5 && question.type === "twoSteps") {
+  if (activeStage === 5 && question.type === "twoSteps") {
     let stage5ReferenceGridHtml = renderDesignGrid(question.start);
 
     if (question.steps.some(step => step.includes("回す"))) {
@@ -7952,7 +8026,7 @@ function renderDesignWorkshopPrototypeQuestion() {
     `;
   }
 
-  if (designWorkshopTestStage === 5 && question.type === "findRule") {
+  if (activeStage === 5 && question.type === "findRule") {
     let stage5ExampleStartHtml = renderDesignGrid(question.exampleStart);
 
     if (question.id === "design_s5_05") {
@@ -8005,7 +8079,7 @@ function renderDesignWorkshopPrototypeQuestion() {
     `;
   }
 
-  if (designWorkshopTestStage === 2) {
+  if (activeStage === 2) {
     startGridHtml = `
       <div style="position: relative; display: inline-block; left: 50%; transform: translateX(-50%);">
         ${renderDesignGrid(question.start)}
@@ -8018,7 +8092,7 @@ function renderDesignWorkshopPrototypeQuestion() {
     `;
   }
 
-  if (designWorkshopTestStage === 3 && question.mirror === "vertical") {
+  if (activeStage === 3 && question.mirror === "vertical") {
     startGridHtml = `
       <div style="position: relative; display: inline-block; left: 50%; transform: translateX(-50%); padding-right: 24px;">
         ${renderDesignGrid(question.start)}
@@ -8028,7 +8102,7 @@ function renderDesignWorkshopPrototypeQuestion() {
     `;
   }
 
-  if (designWorkshopTestStage === 3 && question.mirror === "horizontal") {
+  if (activeStage === 3 && question.mirror === "horizontal") {
     startGridHtml = `
       <div style="position: relative; display: inline-block; left: 50%; transform: translateX(-50%); padding-bottom: 24px;">
         ${renderDesignGrid(question.start)}
@@ -8047,14 +8121,17 @@ function renderDesignWorkshopPrototypeQuestion() {
   const choices = document.getElementById("designWorkshopChoices");
   choices.innerHTML = "";
 
-  question.choices.forEach(choice => {
+  const shuffledChoices =
+    shuffleAtelierChoices(question.choices);
+
+  shuffledChoices.forEach(choice => {
     const button = document.createElement("button");
 
     button.type = "button";
     button.className = "answer";
     button.style.marginTop = "6px";
     button.innerHTML =
-      designWorkshopTestStage === 4
+      activeStage === 4
         ? renderDesignParts(choice.parts)
         : renderDesignGrid(choice.grid);
 
@@ -8074,9 +8151,9 @@ function renderDesignWorkshopPrototypeQuestion() {
 
       if (choice.correct) {
         feedback.textContent =
-          designWorkshopTestStage === 5
+          activeStage === 5
             ? "正解〜✨ 変身のルールを見抜けたね！"
-            : designWorkshopTestStage === 4
+            : activeStage === 4
             ? "正解〜✨ 2つの方眼を重ねると、完成した形になったね！"
             : "正解〜✨ 形も向きもそのまま、場所だけ動いたね！";
 
@@ -8085,9 +8162,9 @@ function renderDesignWorkshopPrototypeQuestion() {
         }
       } else {
         feedback.textContent =
-          designWorkshopTestStage === 5
+          activeStage === 5
             ? "おしい！ 1つずつ順番に考えてみよう。"
-            : designWorkshopTestStage === 4
+            : activeStage === 4
             ? "おしい！ 同じ場所どうしを重ねて見てみよう。"
             : "おしい！ 形や向きは変えずに、そのまま動かしてみよう。";
 
@@ -8105,15 +8182,13 @@ function renderDesignWorkshopPrototypeQuestion() {
 }
 
 function goToNextDesignWorkshopPrototypeQuestion() {
-  const questions = getDesignWorkshopTestQuestions();
-
   if (!designWorkshopAnswered) {
     return;
   }
 
   if (
     designWorkshopCurrentIndex <
-    questions.length - 1
+    4
   ) {
     designWorkshopCurrentIndex += 1;
     renderDesignWorkshopPrototypeQuestion();
@@ -8122,6 +8197,24 @@ function goToNextDesignWorkshopPrototypeQuestion() {
 
   document.getElementById("designWorkshopQuestionContent").hidden = true;
   document.getElementById("designWorkshopComplete").hidden = false;
+
+  const craftReward = grantAtelierCraft("design");
+
+  document.getElementById("designWorkshopCraftRewardLabel").textContent =
+    craftReward.isNew
+      ? "✨ NEW! 作品完成！"
+      : "✨ また作ったよ！";
+
+  document.getElementById("designWorkshopCraftRewardName").textContent =
+    `${craftReward.item.icon} ${craftReward.item.name}${
+      craftReward.item.rarity === "rare" ? "　レア" : ""
+    }`;
+
+  if (craftReward.item.rarity === "rare") {
+    playAtelierRareSound();
+  } else {
+    playAtelierCraftSound();
+  }
 }
 
     function getTodayKey() {
@@ -10466,6 +10559,10 @@ function renderAtelierCraftBook() {
     item => item.workshop === "ribbon"
   );
 
+  const designItems = atelierCraftItems.filter(
+    item => item.workshop === "design"
+  );
+
   const fabricOwned = fabricItems.filter(
     item => owned.includes(item.id)
   ).length;
@@ -10475,6 +10572,10 @@ function renderAtelierCraftBook() {
   ).length;
 
   const ribbonOwned = ribbonItems.filter(
+    item => owned.includes(item.id)
+  ).length;
+
+  const designOwned = designItems.filter(
     item => owned.includes(item.id)
   ).length;
 
@@ -10490,6 +10591,9 @@ function renderAtelierCraftBook() {
   document.getElementById("atelierCraftRibbonCount").textContent =
     `${ribbonOwned} / ${ribbonItems.length} 作品`;
 
+  document.getElementById("atelierCraftDesignCount").textContent =
+    `${designOwned} / ${designItems.length} 作品`;
+
   document.getElementById("atelierCraftFabricList").innerHTML =
     renderWorkshop("fabric");
 
@@ -10498,6 +10602,9 @@ function renderAtelierCraftBook() {
 
   document.getElementById("atelierCraftRibbonList").innerHTML =
     renderWorkshop("ribbon");
+
+  document.getElementById("atelierCraftDesignList").innerHTML =
+    renderWorkshop("design");
 }
 
 document
@@ -10538,39 +10645,8 @@ document
   );
 
 document
-  .getElementById("designWorkshopStage1TestButton")
-  .addEventListener("click", () => {
-    designWorkshopTestStage = 1;
-    startDesignWorkshopPrototype();
-  });
-
-document
-  .getElementById("designWorkshopStage2TestButton")
-  .addEventListener("click", () => {
-    designWorkshopTestStage = 2;
-    startDesignWorkshopPrototype();
-  });
-
-document
-  .getElementById("designWorkshopStage3TestButton")
-  .addEventListener("click", () => {
-    designWorkshopTestStage = 3;
-    startDesignWorkshopPrototype();
-  });
-
-document
-  .getElementById("designWorkshopStage4TestButton")
-  .addEventListener("click", () => {
-    designWorkshopTestStage = 4;
-    startDesignWorkshopPrototype();
-  });
-
-document
-  .getElementById("designWorkshopStage5TestButton")
-  .addEventListener("click", () => {
-    designWorkshopTestStage = 5;
-    startDesignWorkshopPrototype();
-  });
+  .getElementById("openDesignWorkshopButton")
+  .addEventListener("click", startDesignWorkshop);
 
 document
   .getElementById("designWorkshopNextButton")
@@ -10583,7 +10659,7 @@ document
   .getElementById("designWorkshopRetryButton")
   .addEventListener(
     "click",
-    startDesignWorkshopPrototype
+    startDesignWorkshop
   );
 
 document
