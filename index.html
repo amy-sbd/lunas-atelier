@@ -3140,6 +3140,14 @@
       >
         Stage4 重ねる
       </button>
+
+      <button
+        id="designWorkshopStage5TestButton"
+        class="secondary"
+        type="button"
+      >
+        Stage5 チャレンジ
+      </button>
     </div>
 
     <div id="designWorkshopQuestionContent">
@@ -3153,7 +3161,7 @@
       </div>
 
       <div style="margin-top: 20px;">
-        <div style="font-size: 13px; font-weight: 900; color: #8d7b86;">
+        <div id="designWorkshopChoicesLabel" style="font-size: 13px; font-weight: 900; color: #8d7b86;">
           どれになる？
         </div>
         <div id="designWorkshopChoices"></div>
@@ -4112,6 +4120,86 @@ const designWorkshopStage4Questions = [
     { parts: [[[1,0,0,1],[0,1,0,0],[1,0,1,0],[0,1,0,0]],[[0,1,0,1],[0,1,1,0],[0,0,1,0],[0,0,0,0]]], correct: false },
     { parts: [[[1,0,0,1],[0,1,0,0],[1,0,1,0],[0,1,0,0]],[[0,1,0,1],[0,1,1,0],[0,0,1,1],[1,0,0,0]]], correct: false }
   ]}
+];
+
+const designWorkshopStage5Questions = [
+  { id: "design_s5_01", stage: 5, type: "twoSteps", instruction: "2回変身させるよ。最後の形はどれ？", rows: 4, cols: 4,
+    start: [[1,0,0,0],[1,1,0,0],[0,0,0,0],[0,0,0,0]], steps: ["右に90°回す","右に1マスずらす"], choices: [
+      { grid: [[0,0,1,1],[0,0,1,0],[0,0,0,0],[0,0,0,0]], correct: false },
+      { grid: [[0,1,1,0],[0,1,0,0],[0,0,0,0],[0,0,0,0]], correct: true },
+      { grid: [[0,0,1,0],[0,0,1,1],[0,0,0,0],[0,0,0,0]], correct: false }
+    ]},
+  { id: "design_s5_02", stage: 5, type: "twoSteps", instruction: "順番に2回変身させるよ。最後はどれ？", rows: 4, cols: 4,
+    start: [[0,1,0,0],[0,1,1,0],[0,0,0,0],[0,0,0,0]], steps: ["たての鏡にうつす","下に1マスずらす"], choices: [
+      { grid: [[0,0,0,0],[0,0,1,0],[0,1,1,0],[0,0,0,0]], correct: true },
+      { grid: [[0,0,1,0],[0,1,1,0],[0,0,0,0],[0,0,0,0]], correct: false },
+      { grid: [[0,0,0,0],[0,1,0,0],[0,1,1,0],[0,0,0,0]], correct: false }
+    ]},
+  { id: "design_s5_03", stage: 5, type: "twoSteps", instruction: "2つの変身を順番にやってみよう。最後はどれ？", rows: 4, cols: 4,
+    start: [[1,1,0,0],[1,0,0,0],[0,0,0,0],[0,0,0,0]], steps: ["180°回す","上に1マスずらす"], choices: [
+      { grid: [[0,0,0,0],[0,0,0,1],[0,0,1,1],[0,0,0,0]], correct: true },
+      { grid: [[0,0,0,0],[0,0,0,0],[0,0,0,1],[0,0,1,1]], correct: false },
+      { grid: [[0,0,0,0],[0,0,0,0],[0,0,1,1],[0,0,1,0]], correct: false }
+    ]},
+  {
+    id: "design_s5_04",
+    stage: 5,
+    type: "findRule",
+    instruction: "上と同じ変身を、下の模様にもしてみよう。？はどれ？",
+    rows: 3,
+    cols: 3,
+    exampleStart: [[1,0,0],[1,1,0],[0,0,0]],
+    exampleEnd: [[0,1,1],[0,1,0],[0,0,0]],
+    start: [[0,1,0],[0,1,1],[0,0,0]],
+    choices: [
+      { grid: [[0,0,0],[0,1,1],[0,1,0]], correct: true },
+      { grid: [[0,1,0],[1,1,0],[0,0,0]], correct: false },
+      { grid: [[0,0,0],[1,1,0],[0,1,0]], correct: false }
+    ],
+    ruleHint: "rotateRight90"
+  },
+  {
+    id: "design_s5_05",
+    stage: 5,
+    type: "findRule",
+    instruction: "上の変身のルールを見つけてね。同じことをすると？",
+    rows: 4,
+    cols: 4,
+    exampleStart: [[1,1,0,0],[0,1,0,0],[0,0,0,0],[0,0,0,0]],
+    exampleEnd: [[0,0,0,0],[0,0,0,0],[0,0,1,0],[0,0,1,1]],
+    start: [[0,1,1,0],[0,1,0,0],[0,0,0,0],[0,0,0,0]],
+    choices: [
+      { grid: [[0,0,0,0],[0,0,0,0],[0,0,1,0],[0,1,1,0]], correct: true },
+      { grid: [[0,0,0,0],[0,0,0,0],[0,1,1,0],[0,0,1,0]], correct: false },
+      { grid: [[0,1,1,0],[0,1,0,0],[0,0,0,0],[0,0,0,0]], correct: false }
+    ],
+    ruleHint: "rotate180"
+  },
+  { id: "design_s5_06", stage: 5, type: "twoSteps", instruction: "2回変身させるよ。最後の形はどれ？", rows: 4, cols: 4, start: [[1,0,0,0],[1,1,0,0],[0,1,0,0],[0,0,0,0]], steps: ["右に90°回す","下に1マスずらす"], choices: [
+    { grid: [[0,0,0,0],[0,0,1,1],[0,1,1,0],[0,0,0,0]], correct: true },
+    { grid: [[0,0,1,1],[0,1,1,0],[0,0,0,0],[0,0,0,0]], correct: false },
+    { grid: [[0,0,0,0],[0,1,1,0],[0,0,1,1],[0,0,0,0]], correct: false }
+  ]},
+  { id: "design_s5_07", stage: 5, type: "twoSteps", instruction: "鏡にうつしてから、もう1回変身するよ。最後はどれ？", rows: 4, cols: 4, start: [[0,0,1,0],[0,1,1,0],[0,0,1,0],[0,0,0,0]], steps: ["たての鏡にうつす","左に1マスずらす"], choices: [
+    { grid: [[1,0,0,0],[1,1,0,0],[1,0,0,0],[0,0,0,0]], correct: true },
+    { grid: [[0,1,0,0],[0,1,1,0],[0,1,0,0],[0,0,0,0]], correct: false },
+    { grid: [[0,0,1,0],[0,1,1,0],[0,0,1,0],[0,0,0,0]], correct: false }
+  ]},
+  { id: "design_s5_08", stage: 5, type: "twoSteps", instruction: "2つの変身を順番にやってみよう。最後はどれ？", rows: 4, cols: 4, start: [[1,1,0,0],[0,1,1,0],[0,0,1,0],[0,0,0,0]], steps: ["左に90°回す","よこの鏡にうつす"], choices: [
+    { grid: [[1,0,0,0],[1,1,0,0],[0,1,1,0],[0,0,0,0]], correct: true },
+    { grid: [[0,0,0,0],[0,1,1,0],[1,1,0,0],[1,0,0,0]], correct: false },
+    { grid: [[0,0,0,0],[0,1,1,0],[0,0,1,1],[0,0,0,1]], correct: false }
+  ]},
+  { id: "design_s5_09", stage: 5, type: "findRule", instruction: "上の変身のルールを見つけてね。同じことをすると？", rows: 4, cols: 4, exampleStart: [[1,0,0,0],[1,1,0,0],[0,1,0,0],[0,0,0,0]], exampleEnd: [[0,0,0,1],[0,0,1,1],[0,0,1,0],[0,0,0,0]], start: [[0,1,1,0],[0,1,0,0],[0,1,0,0],[0,0,0,0]], choices: [
+    { grid: [[0,1,1,0],[0,0,1,0],[0,0,1,0],[0,0,0,0]], correct: true },
+    { grid: [[0,1,1,0],[0,1,0,0],[0,1,0,0],[0,0,0,0]], correct: false },
+    { grid: [[0,0,0,0],[0,0,1,0],[0,0,1,0],[0,1,1,0]], correct: false }
+  ], ruleHint: "mirrorVertical"},
+  { id: "design_s5_10", stage: 5, type: "findRule", instruction: "最後のチャレンジ！ 上と同じ変身をすると、？はどれ？", rows: 4, cols: 4, exampleStart: [[0,1,0,0],[0,1,1,0],[0,0,0,0],[0,0,0,0]], exampleEnd: [[0,0,0,0],[0,1,0,0],[1,1,0,0],[0,0,0,0]], start: [[1,1,0,0],[0,1,0,0],[0,1,0,0],[0,0,0,0]], choices: [
+    { grid: [[0,0,0,0],[0,0,0,0],[1,1,1,0],[1,0,0,0]], correct: true },
+    { grid: [[0,0,0,0],[1,0,0,0],[1,1,1,0],[0,0,0,0]], correct: false },
+    { grid: [[0,0,0,0],[0,0,0,0],[0,1,1,1],[0,0,0,1]], correct: false }
+  ], ruleHint: "rotateLeft90"}
 ];
 
     const fabricWorkshopQuestionPools = {
@@ -7765,6 +7853,10 @@ function startDesignWorkshopPrototype() {
 }
 
 function getDesignWorkshopTestQuestions() {
+  if (designWorkshopTestStage === 5) {
+    return designWorkshopStage5Questions;
+  }
+
   if (designWorkshopTestStage === 4) {
     return designWorkshopStage4Questions;
   }
@@ -7794,7 +7886,9 @@ function renderDesignWorkshopPrototypeQuestion() {
     `${designWorkshopCurrentIndex + 1} / ${questions.length}`;
 
   document.getElementById("designWorkshopLead").textContent =
-    designWorkshopTestStage === 4
+    designWorkshopTestStage === 5
+      ? "今までの変身を使ってチャレンジしよう✨"
+      : designWorkshopTestStage === 4
       ? "2つの模様を同じ位置で重ねてみよう✨"
       : designWorkshopTestStage === 3
       ? "鏡にうつした形を見つけてみよう✨"
@@ -7806,12 +7900,110 @@ function renderDesignWorkshopPrototypeQuestion() {
     question.instruction;
 
   document.getElementById("designWorkshopStartLabel").textContent =
-    designWorkshopTestStage === 4 ? "完成した形" : "もとの模様";
+    designWorkshopTestStage === 4
+      ? "完成した形"
+      : designWorkshopTestStage === 5
+        ? ""
+        : "もとの模様";
+
+  document.getElementById("designWorkshopChoicesLabel").textContent =
+    designWorkshopTestStage === 5
+      ? question.type === "twoSteps"
+        ? "最後の形はどれ？"
+        : "？に入る形はどれ？"
+      : "どれになる？";
 
   let startGridHtml =
     designWorkshopTestStage === 4
       ? renderDesignGrid(question.target)
       : renderDesignGrid(question.start);
+
+  if (designWorkshopTestStage === 5 && question.type === "twoSteps") {
+    let stage5ReferenceGridHtml = renderDesignGrid(question.start);
+
+    if (question.steps.some(step => step.includes("回す"))) {
+      stage5ReferenceGridHtml = `
+        <div style="position: relative; display: inline-block; left: 50%; transform: translateX(-50%);">
+          ${renderDesignGrid(question.start)}
+          <span aria-hidden="true" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #7b6570; font-size: 12px; line-height: 1; pointer-events: none;">●</span>
+        </div>
+        <p style="margin: 6px 0 0; color: #8d7b86; font-size: 12px; font-weight: 800;">●を中心に回すよ</p>
+      `;
+    }
+
+    if (
+      question.steps.some(step => step.includes("鏡")) &&
+      !question.steps.some(step => step.includes("回す"))
+    ) {
+      stage5ReferenceGridHtml = `
+        <div style="position: relative; display: inline-block; left: 50%; transform: translateX(-50%); padding-right: 24px;">
+          ${renderDesignGrid(question.start)}
+          <span aria-hidden="true" style="position: absolute; top: 4px; right: 10px; bottom: 4px; border-left: 2px solid #9b8d96; pointer-events: none;"></span>
+          <span aria-hidden="true" style="position: absolute; top: 50%; right: 0; transform: translateY(-50%); color: #8d7b86; font-size: 11px; font-weight: 800; pointer-events: none;">鏡</span>
+        </div>
+      `;
+    }
+
+    startGridHtml = `
+      ${stage5ReferenceGridHtml}
+      <div style="margin-top: 12px; color: #8d7b86; font-size: 14px; font-weight: 900; text-align: center;">① ${question.steps[0]}</div>
+      <div style="margin: 4px 0; color: #b7839b; font-size: 18px; font-weight: 900; text-align: center;">↓</div>
+      <div style="color: #8d7b86; font-size: 14px; font-weight: 900; text-align: center;">② ${question.steps[1]}</div>
+    `;
+  }
+
+  if (designWorkshopTestStage === 5 && question.type === "findRule") {
+    let stage5ExampleStartHtml = renderDesignGrid(question.exampleStart);
+
+    if (question.id === "design_s5_05") {
+      stage5ExampleStartHtml = `
+        <div style="position: relative; display: inline-block; left: 50%; transform: translateX(-50%);">
+          ${renderDesignGrid(question.exampleStart)}
+          <span aria-hidden="true" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #7b6570; font-size: 12px; line-height: 1; pointer-events: none;">●</span>
+        </div>
+      `;
+    }
+
+    if (question.id === "design_s5_04") {
+      stage5ExampleStartHtml = `
+        <div style="position: relative; display: inline-block; left: 50%; transform: translateX(-50%);">
+          ${renderDesignGrid(question.exampleStart)}
+          <span aria-hidden="true" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #7b6570; font-size: 12px; line-height: 1; pointer-events: none;">●</span>
+        </div>
+        <p style="margin: 6px 0 0; color: #8d7b86; font-size: 12px; font-weight: 800; text-align: center;">●を中心に変身するよ</p>
+      `;
+    }
+
+    if (question.id === "design_s5_09") {
+      stage5ExampleStartHtml = `
+        <div style="position: relative; display: inline-block; left: 50%; transform: translateX(-50%); padding-right: 24px;">
+          ${renderDesignGrid(question.exampleStart)}
+          <span aria-hidden="true" style="position: absolute; top: 4px; right: 10px; bottom: 4px; border-left: 2px solid #9b8d96; pointer-events: none;"></span>
+          <span aria-hidden="true" style="position: absolute; top: 50%; right: 0; transform: translateY(-50%); color: #8d7b86; font-size: 11px; font-weight: 800; pointer-events: none;">鏡</span>
+        </div>
+      `;
+    }
+
+    if (question.id === "design_s5_10") {
+      stage5ExampleStartHtml = `
+        <div style="position: relative; display: inline-block; left: 50%; transform: translateX(-50%);">
+          ${renderDesignGrid(question.exampleStart)}
+          <span aria-hidden="true" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #7b6570; font-size: 12px; line-height: 1; pointer-events: none;">●</span>
+        </div>
+      `;
+    }
+
+    startGridHtml = `
+      <div style="color: #8d7b86; font-size: 14px; font-weight: 900; text-align: center;">お手本</div>
+      ${stage5ExampleStartHtml}
+      <div style="margin: 4px 0; color: #b7839b; font-size: 18px; font-weight: 900; text-align: center;">↓</div>
+      ${renderDesignGrid(question.exampleEnd)}
+      <div style="margin-top: 14px; color: #8d7b86; font-size: 14px; font-weight: 900; text-align: center;">同じルールで</div>
+      ${renderDesignGrid(question.start)}
+      <div style="margin: 4px 0; color: #b7839b; font-size: 18px; font-weight: 900; text-align: center;">↓</div>
+      <div style="height: 88px; display: flex; align-items: center; justify-content: center; color: #b7839b; font-size: 42px; font-weight: 900;">？</div>
+    `;
+  }
 
   if (designWorkshopTestStage === 2) {
     startGridHtml = `
@@ -7882,7 +8074,9 @@ function renderDesignWorkshopPrototypeQuestion() {
 
       if (choice.correct) {
         feedback.textContent =
-          designWorkshopTestStage === 4
+          designWorkshopTestStage === 5
+            ? "正解〜✨ 変身のルールを見抜けたね！"
+            : designWorkshopTestStage === 4
             ? "正解〜✨ 2つの方眼を重ねると、完成した形になったね！"
             : "正解〜✨ 形も向きもそのまま、場所だけ動いたね！";
 
@@ -7891,7 +8085,9 @@ function renderDesignWorkshopPrototypeQuestion() {
         }
       } else {
         feedback.textContent =
-          designWorkshopTestStage === 4
+          designWorkshopTestStage === 5
+            ? "おしい！ 1つずつ順番に考えてみよう。"
+            : designWorkshopTestStage === 4
             ? "おしい！ 同じ場所どうしを重ねて見てみよう。"
             : "おしい！ 形や向きは変えずに、そのまま動かしてみよう。";
 
@@ -10366,6 +10562,13 @@ document
   .getElementById("designWorkshopStage4TestButton")
   .addEventListener("click", () => {
     designWorkshopTestStage = 4;
+    startDesignWorkshopPrototype();
+  });
+
+document
+  .getElementById("designWorkshopStage5TestButton")
+  .addEventListener("click", () => {
+    designWorkshopTestStage = 5;
     startDesignWorkshopPrototype();
   });
 
