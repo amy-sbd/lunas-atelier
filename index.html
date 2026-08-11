@@ -8150,23 +8150,20 @@ function renderDesignWorkshopPrototypeQuestion() {
         document.getElementById("designWorkshopFeedback");
 
       if (choice.correct) {
-        feedback.textContent =
-          activeStage === 5
-            ? "正解〜✨ 変身のルールを見抜けたね！"
-            : activeStage === 4
-            ? "正解〜✨ 2つの方眼を重ねると、完成した形になったね！"
-            : "正解〜✨ 形も向きもそのまま、場所だけ動いたね！";
+        button.classList.add("correct");
+        feedback.textContent = "せいかい！✨";
 
         if (typeof playAtelierCorrectSound === "function") {
           playAtelierCorrectSound();
         }
       } else {
-        feedback.textContent =
-          activeStage === 5
-            ? "おしい！ 1つずつ順番に考えてみよう。"
-            : activeStage === 4
-            ? "おしい！ 同じ場所どうしを重ねて見てみよう。"
-            : "おしい！ 形や向きは変えずに、そのまま動かしてみよう。";
+        button.classList.add("wrong");
+        choices.querySelectorAll("button").forEach((item, index) => {
+          if (shuffledChoices[index].correct) {
+            item.classList.add("correct");
+          }
+        });
+        feedback.textContent = "おしい！";
 
         if (typeof playAtelierWrongSound === "function") {
           playAtelierWrongSound();
