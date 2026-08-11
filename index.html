@@ -3095,17 +3095,58 @@
   <div class="hero">
     <p class="eyebrow">DESIGN ATELIER</p>
     <h1> デザイン工房</h1>
-    <p class="lead">
+    <p id="designWorkshopLead" class="lead">
       図形をそのまま動かしてみよう✨
     </p>
   </div>
 
   <div class="card">
+    <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+        margin-bottom: 14px;
+      "
+    >
+      <button
+        id="designWorkshopStage1TestButton"
+        class="secondary"
+        type="button"
+      >
+        Stage1 ずらす
+      </button>
+
+      <button
+        id="designWorkshopStage2TestButton"
+        class="secondary"
+        type="button"
+      >
+        Stage2 回す
+      </button>
+
+      <button
+        id="designWorkshopStage3TestButton"
+        class="secondary"
+        type="button"
+      >
+        Stage3 鏡
+      </button>
+
+      <button
+        id="designWorkshopStage4TestButton"
+        class="secondary"
+        type="button"
+      >
+        Stage4 重ねる
+      </button>
+    </div>
+
     <div id="designWorkshopQuestionContent">
       <h2 id="designWorkshopInstruction"></h2>
 
       <div style="margin-top: 18px;">
-        <div style="font-size: 13px; font-weight: 900; color: #8d7b86;">
+        <div id="designWorkshopStartLabel" style="font-size: 13px; font-weight: 900; color: #8d7b86;">
           もとの模様
         </div>
         <div id="designWorkshopStartGrid"></div>
@@ -3620,6 +3661,457 @@ const designWorkshopStage1Questions = [
       }
     ]
   }
+];
+
+const designWorkshopStage2Questions = [
+  {
+    id: "design_s2_01",
+    stage: 2,
+    instruction: "この模様を右に90°くるっと回すよ。どれになる？",
+    rows: 3,
+    cols: 3,
+    start: [
+      [1, 0, 0],
+      [1, 1, 0],
+      [0, 0, 0]
+    ],
+    choices: [
+      {
+        grid: [
+          [0, 1, 1],
+          [0, 1, 0],
+          [0, 0, 0]
+        ],
+        correct: true
+      },
+      {
+        grid: [
+          [0, 0, 0],
+          [0, 1, 0],
+          [1, 1, 0]
+        ],
+        correct: false
+      },
+      {
+        grid: [
+          [0, 0, 0],
+          [0, 1, 1],
+          [0, 0, 1]
+        ],
+        correct: false
+      }
+    ]
+  },
+
+  {
+    id: "design_s2_02",
+    stage: 2,
+    instruction: "この模様を右に90°回すよ。どれになる？",
+    rows: 3,
+    cols: 3,
+    start: [
+      [1, 1, 1],
+      [0, 1, 0],
+      [0, 0, 0]
+    ],
+    choices: [
+      {
+        grid: [
+          [0, 0, 1],
+          [0, 1, 1],
+          [0, 0, 1]
+        ],
+        correct: true
+      },
+      {
+        grid: [
+          [1, 0, 0],
+          [1, 1, 0],
+          [1, 0, 0]
+        ],
+        correct: false
+      },
+      {
+        grid: [
+          [0, 0, 0],
+          [0, 1, 0],
+          [1, 1, 1]
+        ],
+        correct: false
+      }
+    ]
+  },
+
+  {
+    id: "design_s2_03",
+    stage: 2,
+    instruction: "今度は左に90°回すよ。どれになる？",
+    rows: 3,
+    cols: 3,
+    start: [
+      [0, 1, 0],
+      [0, 1, 1],
+      [0, 0, 0]
+    ],
+    choices: [
+      {
+        grid: [
+          [0, 1, 0],
+          [1, 1, 0],
+          [0, 0, 0]
+        ],
+        correct: true
+      },
+      {
+        grid: [
+          [0, 0, 0],
+          [0, 1, 1],
+          [0, 1, 0]
+        ],
+        correct: false
+      },
+      {
+        grid: [
+          [0, 0, 0],
+          [1, 1, 0],
+          [0, 1, 0]
+        ],
+        correct: false
+      }
+    ]
+  },
+
+  {
+    id: "design_s2_04",
+    stage: 2,
+    instruction: "この模様を180°回すよ。どれになる？",
+    rows: 3,
+    cols: 3,
+    start: [
+      [1, 1, 0],
+      [0, 1, 0],
+      [0, 1, 0]
+    ],
+    choices: [
+      {
+        grid: [
+          [0, 1, 0],
+          [0, 1, 0],
+          [0, 1, 1]
+        ],
+        correct: true
+      },
+      {
+        grid: [
+          [0, 0, 1],
+          [1, 1, 1],
+          [0, 0, 0]
+        ],
+        correct: false
+      },
+      {
+        grid: [
+          [0, 0, 0],
+          [1, 1, 1],
+          [1, 0, 0]
+        ],
+        correct: false
+      }
+    ]
+  },
+
+  {
+    id: "design_s2_05",
+    stage: 2,
+    instruction: "この模様を右に90°回すよ。どれになる？",
+    rows: 3,
+    cols: 3,
+    start: [
+      [1, 0, 0],
+      [1, 1, 0],
+      [0, 1, 0]
+    ],
+    choices: [
+      {
+        grid: [
+          [0, 1, 1],
+          [1, 1, 0],
+          [0, 0, 0]
+        ],
+        correct: true
+      },
+      {
+        grid: [
+          [0, 0, 0],
+          [0, 1, 1],
+          [1, 1, 0]
+        ],
+        correct: false
+      },
+      {
+        grid: [
+          [0, 1, 0],
+          [0, 1, 1],
+          [0, 0, 1]
+        ],
+        correct: false
+      }
+    ]
+  },
+  {
+    id: "design_s2_06",
+    stage: 2,
+    instruction: "この模様を左に90°回すよ。どれになる？",
+    rows: 4,
+    cols: 4,
+    start: [[0, 1, 0, 0], [0, 1, 1, 0], [0, 0, 1, 0], [0, 0, 0, 0]],
+    choices: [
+      { grid: [[0, 0, 0, 0], [0, 1, 1, 0], [1, 1, 0, 0], [0, 0, 0, 0]], correct: true },
+      { grid: [[0, 0, 0, 0], [0, 0, 1, 1], [0, 1, 1, 0], [0, 0, 0, 0]], correct: false },
+      { grid: [[0, 0, 0, 0], [0, 1, 0, 0], [0, 1, 1, 0], [0, 0, 1, 0]], correct: false }
+    ]
+  },
+
+  {
+    id: "design_s2_07",
+    stage: 2,
+    instruction: "この模様を180°回すよ。どれになる？",
+    rows: 4,
+    cols: 4,
+    start: [[1, 1, 0, 0], [1, 0, 0, 0], [1, 1, 0, 0], [0, 0, 0, 0]],
+    choices: [
+      { grid: [[0, 0, 0, 0], [0, 0, 1, 1], [0, 0, 0, 1], [0, 0, 1, 1]], correct: true },
+      { grid: [[0, 1, 1, 1], [0, 1, 0, 1], [0, 0, 0, 0], [0, 0, 0, 0]], correct: false },
+      { grid: [[0, 0, 0, 0], [0, 0, 0, 0], [1, 0, 1, 0], [1, 1, 1, 0]], correct: false }
+    ]
+  },
+
+  {
+    id: "design_s2_08",
+    stage: 2,
+    instruction: "この模様を右に90°回すよ。どれになる？",
+    rows: 4,
+    cols: 4,
+    start: [[1, 0, 0, 0], [1, 1, 1, 0], [0, 0, 1, 0], [0, 0, 0, 0]],
+    choices: [
+      { grid: [[0, 0, 1, 1], [0, 0, 1, 0], [0, 1, 1, 0], [0, 0, 0, 0]], correct: true },
+      { grid: [[0, 0, 0, 0], [0, 1, 1, 0], [0, 1, 0, 0], [1, 1, 0, 0]], correct: false },
+      { grid: [[0, 0, 0, 0], [0, 1, 0, 0], [0, 1, 1, 1], [0, 0, 0, 1]], correct: false }
+    ]
+  },
+
+  {
+    id: "design_s2_09",
+    stage: 2,
+    instruction: "この模様を左に90°回すよ。どれになる？",
+    rows: 4,
+    cols: 4,
+    start: [[0, 1, 1, 0], [0, 1, 0, 0], [1, 1, 0, 0], [0, 0, 0, 0]],
+    choices: [
+      { grid: [[0, 0, 0, 0], [1, 0, 0, 0], [1, 1, 1, 0], [0, 0, 1, 0]], correct: true },
+      { grid: [[0, 1, 0, 0], [0, 1, 1, 1], [0, 0, 0, 1], [0, 0, 0, 0]], correct: false },
+      { grid: [[0, 0, 0, 0], [0, 0, 1, 1], [0, 0, 1, 0], [0, 1, 1, 0]], correct: false }
+    ]
+  },
+
+  {
+    id: "design_s2_10",
+    stage: 2,
+    instruction: "この模様を180°回すよ。どれになる？",
+    rows: 4,
+    cols: 4,
+    start: [[1, 1, 1, 0], [0, 0, 1, 0], [0, 1, 1, 0], [0, 0, 0, 0]],
+    choices: [
+      { grid: [[0, 0, 0, 0], [0, 1, 1, 0], [0, 1, 0, 0], [0, 1, 1, 1]], correct: true },
+      { grid: [[0, 0, 0, 1], [0, 1, 0, 1], [0, 1, 1, 1], [0, 0, 0, 0]], correct: false },
+      { grid: [[0, 0, 0, 0], [1, 1, 1, 0], [1, 0, 1, 0], [1, 0, 0, 0]], correct: false }
+    ]
+  }
+];
+
+const designWorkshopStage3Questions = [
+  {
+    id: "design_s3_01",
+    stage: 3,
+    instruction: "たての鏡にうつすよ。どれになる？",
+    mirror: "vertical",
+    rows: 3,
+    cols: 3,
+    start: [[1, 0, 0], [1, 1, 0], [0, 0, 0]],
+    choices: [
+      { grid: [[0, 0, 1], [0, 1, 1], [0, 0, 0]], correct: true },
+      { grid: [[0, 0, 0], [0, 1, 1], [0, 0, 1]], correct: false },
+      { grid: [[1, 0, 0], [1, 1, 0], [0, 0, 0]], correct: false }
+    ]
+  },
+
+  {
+    id: "design_s3_02",
+    stage: 3,
+    instruction: "たての鏡にうつすよ。どれになる？",
+    mirror: "vertical",
+    rows: 3,
+    cols: 3,
+    start: [[1, 1, 1], [0, 1, 0], [0, 0, 0]],
+    choices: [
+      { grid: [[1, 1, 1], [0, 1, 0], [0, 0, 0]], correct: true },
+      { grid: [[0, 0, 0], [0, 1, 0], [1, 1, 1]], correct: false },
+      { grid: [[1, 0, 0], [1, 1, 0], [1, 0, 0]], correct: false }
+    ]
+  },
+
+  {
+    id: "design_s3_03",
+    stage: 3,
+    instruction: "よこの鏡にうつすよ。どれになる？",
+    mirror: "horizontal",
+    rows: 3,
+    cols: 3,
+    start: [[0, 1, 0], [0, 1, 1], [0, 0, 0]],
+    choices: [
+      { grid: [[0, 0, 0], [0, 1, 1], [0, 1, 0]], correct: true },
+      { grid: [[0, 0, 0], [1, 1, 0], [0, 1, 0]], correct: false },
+      { grid: [[0, 1, 0], [0, 1, 1], [0, 0, 0]], correct: false }
+    ]
+  },
+
+  {
+    id: "design_s3_04",
+    stage: 3,
+    instruction: "たての鏡にうつすよ。どれになる？",
+    mirror: "vertical",
+    rows: 3,
+    cols: 3,
+    start: [[1, 1, 0], [0, 1, 0], [0, 1, 0]],
+    choices: [
+      { grid: [[0, 1, 1], [0, 1, 0], [0, 1, 0]], correct: true },
+      { grid: [[0, 1, 0], [0, 1, 0], [0, 1, 1]], correct: false },
+      { grid: [[1, 1, 0], [0, 1, 0], [0, 1, 0]], correct: false }
+    ]
+  },
+
+  {
+    id: "design_s3_05",
+    stage: 3,
+    instruction: "よこの鏡にうつすよ。どれになる？",
+    mirror: "horizontal",
+    rows: 4,
+    cols: 4,
+    start: [[1, 0, 0, 0], [1, 1, 1, 0], [0, 0, 1, 0], [0, 0, 0, 0]],
+    choices: [
+      { grid: [[0, 0, 0, 0], [0, 0, 1, 0], [1, 1, 1, 0], [1, 0, 0, 0]], correct: true },
+      { grid: [[0, 0, 0, 0], [1, 0, 0, 0], [1, 1, 1, 0], [0, 0, 1, 0]], correct: false },
+      { grid: [[0, 0, 0, 0], [0, 1, 0, 0], [0, 1, 1, 1], [0, 0, 1, 0]], correct: false }
+    ]
+  },
+  {
+    id: "design_s3_06", stage: 3, instruction: "たての鏡にうつすよ。どれになる？", mirror: "vertical", rows: 4, cols: 4,
+    start: [[0,0,1,0],[0,1,1,0],[0,1,0,0],[0,0,0,0]],
+    choices: [
+      { grid: [[0,1,0,0],[0,1,1,0],[0,0,1,0],[0,0,0,0]], correct: true },
+      { grid: [[0,0,0,0],[0,1,1,0],[0,1,0,0],[0,0,1,0]], correct: false },
+      { grid: [[0,0,1,0],[0,1,1,0],[0,1,0,0],[0,0,0,0]], correct: false }
+    ]
+  },
+  {
+    id: "design_s3_07", stage: 3, instruction: "よこの鏡にうつすよ。どれになる？", mirror: "horizontal", rows: 5, cols: 5,
+    start: [[0,0,0,0,0],[0,1,1,0,0],[0,0,1,0,0],[0,0,1,1,0],[0,0,0,0,0]],
+    choices: [
+      { grid: [[0,0,0,0,0],[0,0,1,1,0],[0,0,1,0,0],[0,1,1,0,0],[0,0,0,0,0]], correct: true },
+      { grid: [[0,0,0,0,0],[0,1,1,0,0],[0,0,1,0,0],[0,0,1,1,0],[0,0,0,0,0]], correct: false },
+      { grid: [[0,0,0,0,0],[0,1,1,0,0],[0,1,0,0,0],[0,1,1,0,0],[0,0,0,0,0]], correct: false }
+    ]
+  },
+  {
+    id: "design_s3_08", stage: 3, instruction: "たての鏡にうつすよ。どれになる？", mirror: "vertical", rows: 4, cols: 4,
+    start: [[0,1,0,0],[1,1,1,0],[0,0,1,0],[0,0,0,0]],
+    choices: [
+      { grid: [[0,0,1,0],[0,1,1,1],[0,1,0,0],[0,0,0,0]], correct: true },
+      { grid: [[0,0,0,0],[0,0,1,0],[0,1,1,1],[0,0,1,0]], correct: false },
+      { grid: [[0,1,0,0],[1,1,1,0],[0,0,1,0],[0,0,0,0]], correct: false }
+    ]
+  },
+  {
+    id: "design_s3_09", stage: 3, instruction: "よこの鏡にうつすよ。どれになる？", mirror: "horizontal", rows: 5, cols: 5,
+    start: [[0,0,1,1,0],[0,1,1,0,0],[0,0,1,0,0],[0,0,0,0,0],[0,0,0,0,0]],
+    choices: [
+      { grid: [[0,0,0,0,0],[0,0,0,0,0],[0,0,1,0,0],[0,1,1,0,0],[0,0,1,1,0]], correct: true },
+      { grid: [[0,0,0,0,0],[0,0,0,0,0],[0,0,1,0,0],[0,0,1,1,0],[0,1,1,0,0]], correct: false },
+      { grid: [[0,0,1,1,0],[0,1,1,0,0],[0,0,1,0,0],[0,0,0,0,0],[0,0,0,0,0]], correct: false }
+    ]
+  },
+  {
+    id: "design_s3_10", stage: 3, instruction: "たての鏡にうつすよ。どれになる？", mirror: "vertical", rows: 5, cols: 5,
+    start: [[0,1,1,0,0],[0,1,0,0,0],[0,1,1,1,0],[0,0,0,1,0],[0,0,0,0,0]],
+    choices: [
+      { grid: [[0,0,1,1,0],[0,0,0,1,0],[0,1,1,1,0],[0,1,0,0,0],[0,0,0,0,0]], correct: true },
+      { grid: [[0,1,1,0,0],[0,1,0,0,0],[0,1,1,1,0],[0,0,0,1,0],[0,0,0,0,0]], correct: false },
+      { grid: [[0,0,0,0,0],[0,1,0,0,0],[0,1,1,1,0],[0,0,0,1,0],[0,0,1,1,0]], correct: false }
+    ]
+  }
+];
+
+const designWorkshopStage4Questions = [
+  { id: "design_s4_01", stage: 4, instruction: "2つの模様を同じ位置で重ねるよ。完成した形になるのはどれ？", rows: 3, cols: 3,
+    target: [[1,1,0],[1,1,1],[0,0,0]], choices: [
+      { parts: [[[1,1,0],[0,0,1],[0,0,0]],[[0,0,0],[1,1,0],[0,0,0]]], correct: true },
+      { parts: [[[1,1,0],[0,0,0],[0,0,0]],[[0,0,0],[1,1,0],[0,0,0]]], correct: false },
+      { parts: [[[1,0,0],[0,1,1],[0,0,0]],[[0,1,0],[1,0,0],[0,1,0]]], correct: false }
+    ]
+  },
+  { id: "design_s4_02", stage: 4, instruction: "2つの模様を同じ位置で重ねるよ。完成した形になるのはどれ？", rows: 3, cols: 3,
+    target: [[1,1,1],[0,1,0],[0,1,0]], choices: [
+      { parts: [[[1,0,1],[0,1,0],[0,0,0]],[[0,1,0],[0,0,0],[0,1,0]]], correct: true },
+      { parts: [[[1,0,1],[0,1,0],[0,0,0]],[[0,1,0],[0,0,0],[0,0,0]]], correct: false },
+      { parts: [[[1,0,1],[0,0,0],[0,1,0]],[[0,1,0],[1,1,0],[0,0,0]]], correct: false }
+    ]
+  },
+  { id: "design_s4_03", stage: 4, instruction: "2つの模様を同じ位置で重ねるよ。完成した形になるのはどれ？", rows: 4, cols: 4,
+    target: [[1,1,0,0],[0,1,1,0],[0,0,1,0],[0,0,0,0]], choices: [
+      { parts: [[[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,0]],[[0,1,0,0],[0,0,1,0],[0,0,0,0],[0,0,0,0]]], correct: true },
+      { parts: [[[1,0,0,0],[0,1,0,0],[0,0,0,0],[0,0,0,0]],[[0,1,0,0],[0,0,1,0],[0,0,0,0],[0,0,0,0]]], correct: false },
+      { parts: [[[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,0]],[[0,1,0,0],[0,0,0,0],[0,1,0,0],[0,0,0,0]]], correct: false }
+    ]
+  },
+  { id: "design_s4_04", stage: 4, instruction: "少しバラバラに見えるよ。重ねると完成するのはどれ？", rows: 4, cols: 4,
+    target: [[1,0,1,0],[1,1,1,0],[0,1,0,0],[0,0,0,0]], choices: [
+      { parts: [[[1,0,0,0],[0,1,0,0],[0,1,0,0],[0,0,0,0]],[[0,0,1,0],[1,0,1,0],[0,0,0,0],[0,0,0,0]]], correct: true },
+      { parts: [[[1,0,0,0],[0,1,0,0],[0,1,0,0],[0,0,0,0]],[[0,0,1,0],[1,0,0,0],[0,0,0,0],[0,0,0,0]]], correct: false },
+      { parts: [[[1,0,0,0],[0,1,0,0],[0,1,0,0],[0,0,0,0]],[[0,0,1,0],[1,0,1,0],[0,0,0,1],[0,0,0,0]]], correct: false }
+    ]
+  },
+  { id: "design_s4_05", stage: 4, instruction: "離れたマスもよく見てね。完成する組み合わせはどれ？", rows: 4, cols: 4,
+    target: [[0,1,1,0],[1,1,0,0],[0,1,1,0],[0,0,0,0]], choices: [
+      { parts: [[[0,1,0,0],[1,0,0,0],[0,0,1,0],[0,0,0,0]],[[0,0,1,0],[0,1,0,0],[0,1,0,0],[0,0,0,0]]], correct: true },
+      { parts: [[[0,1,0,0],[1,0,0,0],[0,0,1,0],[0,0,0,0]],[[0,0,1,0],[0,1,0,0],[0,0,0,0],[0,0,0,0]]], correct: false },
+      { parts: [[[0,1,0,0],[1,0,0,0],[0,0,1,0],[0,0,0,0]],[[0,0,1,0],[0,1,0,0],[1,1,0,0],[0,0,0,0]]], correct: false }
+    ]
+  },
+  { id: "design_s4_06", stage: 4, instruction: "2つともバラバラの模様だよ。重ねると完成するのはどれ？", rows: 4, cols: 4, target: [[1,0,0,1],[0,1,1,0],[1,0,1,0],[0,1,0,0]], choices: [
+    { parts: [[[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,0]],[[0,0,0,1],[0,0,1,0],[1,0,0,0],[0,1,0,0]]], correct: true },
+    { parts: [[[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,0]],[[0,0,0,1],[0,0,1,0],[1,0,0,0],[0,0,0,0]]], correct: false },
+    { parts: [[[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,0]],[[0,0,0,1],[0,0,1,0],[1,0,0,0],[0,1,0,1]]], correct: false }
+  ]},
+  { id: "design_s4_07", stage: 4, instruction: "位置を1マスずつ確かめよう。ぴったり完成するのはどれ？", rows: 4, cols: 4, target: [[1,0,1,0],[0,1,0,1],[1,0,1,0],[0,1,0,1]], choices: [
+    { parts: [[[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]],[[0,0,1,0],[0,0,0,1],[1,0,0,0],[0,1,0,0]]], correct: true },
+    { parts: [[[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]],[[0,0,1,0],[0,0,0,1],[1,0,0,0],[0,0,0,0]]], correct: false },
+    { parts: [[[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]],[[0,0,1,0],[1,0,0,1],[1,0,0,0],[0,1,0,0]]], correct: false }
+  ]},
+  { id: "design_s4_08", stage: 4, instruction: "同じマスに色が重なってもOK。完成するのはどれ？", rows: 4, cols: 4, target: [[0,1,1,0],[1,1,0,1],[0,1,1,0],[1,0,0,1]], choices: [
+    { parts: [[[0,1,0,0],[1,1,0,0],[0,0,1,0],[1,0,0,0]],[[0,1,1,0],[0,1,0,1],[0,1,0,0],[0,0,0,1]]], correct: true },
+    { parts: [[[0,1,0,0],[1,1,0,0],[0,0,1,0],[1,0,0,0]],[[0,1,1,0],[0,1,0,1],[0,0,0,0],[0,0,0,1]]], correct: false },
+    { parts: [[[0,1,0,0],[1,1,0,0],[0,0,1,0],[1,0,0,0]],[[0,1,1,0],[0,1,0,1],[0,1,0,0],[0,0,1,1]]], correct: false }
+  ]},
+  { id: "design_s4_09", stage: 4, instruction: "重なるマスもあるよ。全部の位置をよく見てね。", rows: 4, cols: 4, target: [[1,0,1,1],[0,1,1,0],[1,1,0,1],[0,0,1,0]], choices: [
+    { parts: [[[1,0,1,0],[0,1,0,0],[1,0,0,1],[0,0,1,0]],[[0,0,1,1],[0,0,1,0],[0,1,0,0],[0,0,1,0]]], correct: true },
+    { parts: [[[1,0,1,0],[0,1,0,0],[1,0,0,1],[0,0,1,0]],[[0,0,1,1],[0,0,1,0],[0,0,0,0],[0,0,1,0]]], correct: false },
+    { parts: [[[1,0,1,0],[0,1,0,0],[1,0,0,1],[0,0,1,0]],[[0,0,1,1],[0,0,1,0],[0,1,0,0],[1,0,1,0]]], correct: false }
+  ]},
+  { id: "design_s4_10", stage: 4, instruction: "最後はじっくり見よう。重ねてぴったり完成するのはどれ？", rows: 4, cols: 4, target: [[1,1,0,1],[0,1,1,0],[1,0,1,1],[0,1,0,0]], choices: [
+    { parts: [[[1,0,0,1],[0,1,0,0],[1,0,1,0],[0,1,0,0]],[[0,1,0,1],[0,1,1,0],[0,0,1,1],[0,0,0,0]]], correct: true },
+    { parts: [[[1,0,0,1],[0,1,0,0],[1,0,1,0],[0,1,0,0]],[[0,1,0,1],[0,1,1,0],[0,0,1,0],[0,0,0,0]]], correct: false },
+    { parts: [[[1,0,0,1],[0,1,0,0],[1,0,1,0],[0,1,0,0]],[[0,1,0,1],[0,1,1,0],[0,0,1,1],[1,0,0,0]]], correct: false }
+  ]}
 ];
 
     const fabricWorkshopQuestionPools = {
@@ -6208,6 +6700,7 @@ let currentQuestionIndex = 0;
     let beadsWorkshopDisplayChoices = [];
 let designWorkshopCurrentIndex = 0;
 let designWorkshopAnswered = false;
+let designWorkshopTestStage = 1;
 
 const screens = {
   home: document.getElementById("homeScreen"),
@@ -6731,6 +7224,43 @@ function renderDesignGrid(grid) {
   `;
 }
 
+function renderDesignParts(parts) {
+  if (!Array.isArray(parts) || parts.length !== 2) {
+    return "";
+  }
+
+  return `
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin: 4px auto;
+      "
+    >
+      <div>
+        ${renderDesignGrid(parts[0])}
+      </div>
+
+      <div
+        style="
+          font-size: 20px;
+          font-weight: 900;
+          color: #b7839b;
+          flex: 0 0 auto;
+        "
+      >
+        ＋
+      </div>
+
+      <div>
+        ${renderDesignGrid(parts[1])}
+      </div>
+    </div>
+  `;
+}
+
     function renderFabricWorkshopVisual(question) {
       if (question.type === "fraction-part") {
         return `
@@ -7234,9 +7764,25 @@ function startDesignWorkshopPrototype() {
   showScreen("designWorkshop");
 }
 
+function getDesignWorkshopTestQuestions() {
+  if (designWorkshopTestStage === 4) {
+    return designWorkshopStage4Questions;
+  }
+
+  if (designWorkshopTestStage === 3) {
+    return designWorkshopStage3Questions;
+  }
+
+  if (designWorkshopTestStage === 2) {
+    return designWorkshopStage2Questions;
+  }
+
+  return designWorkshopStage1Questions;
+}
+
 function renderDesignWorkshopPrototypeQuestion() {
-  const question =
-    designWorkshopStage1Questions[designWorkshopCurrentIndex];
+  const questions = getDesignWorkshopTestQuestions();
+  const question = questions[designWorkshopCurrentIndex];
 
   if (!question) {
     return;
@@ -7245,13 +7791,62 @@ function renderDesignWorkshopPrototypeQuestion() {
   designWorkshopAnswered = false;
 
   document.getElementById("designWorkshopProgress").textContent =
-    `${designWorkshopCurrentIndex + 1} / ${designWorkshopStage1Questions.length}`;
+    `${designWorkshopCurrentIndex + 1} / ${questions.length}`;
+
+  document.getElementById("designWorkshopLead").textContent =
+    designWorkshopTestStage === 4
+      ? "2つの模様を同じ位置で重ねてみよう✨"
+      : designWorkshopTestStage === 3
+      ? "鏡にうつした形を見つけてみよう✨"
+      : designWorkshopTestStage === 2
+        ? "図形をくるっと回してみよう✨"
+        : "図形をそのまま動かしてみよう✨";
 
   document.getElementById("designWorkshopInstruction").textContent =
     question.instruction;
 
-  document.getElementById("designWorkshopStartGrid").innerHTML =
-    renderDesignGrid(question.start);
+  document.getElementById("designWorkshopStartLabel").textContent =
+    designWorkshopTestStage === 4 ? "完成した形" : "もとの模様";
+
+  let startGridHtml =
+    designWorkshopTestStage === 4
+      ? renderDesignGrid(question.target)
+      : renderDesignGrid(question.start);
+
+  if (designWorkshopTestStage === 2) {
+    startGridHtml = `
+      <div style="position: relative; display: inline-block; left: 50%; transform: translateX(-50%);">
+        ${renderDesignGrid(question.start)}
+        <span
+          aria-hidden="true"
+          style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #7b6570; font-size: 12px; line-height: 1; pointer-events: none;"
+        >●</span>
+      </div>
+      <p style="margin: 6px 0 0; color: #8d7b86; font-size: 12px; font-weight: 800;">●を中心に、方眼ごと回すよ</p>
+    `;
+  }
+
+  if (designWorkshopTestStage === 3 && question.mirror === "vertical") {
+    startGridHtml = `
+      <div style="position: relative; display: inline-block; left: 50%; transform: translateX(-50%); padding-right: 24px;">
+        ${renderDesignGrid(question.start)}
+        <span aria-hidden="true" style="position: absolute; top: 4px; right: 10px; bottom: 4px; border-left: 2px solid #9b8d96; pointer-events: none;"></span>
+        <span aria-hidden="true" style="position: absolute; top: 50%; right: 0; transform: translateY(-50%); color: #8d7b86; font-size: 11px; font-weight: 800; pointer-events: none;">鏡</span>
+      </div>
+    `;
+  }
+
+  if (designWorkshopTestStage === 3 && question.mirror === "horizontal") {
+    startGridHtml = `
+      <div style="position: relative; display: inline-block; left: 50%; transform: translateX(-50%); padding-bottom: 24px;">
+        ${renderDesignGrid(question.start)}
+        <span aria-hidden="true" style="position: absolute; right: 0; bottom: 10px; left: 0; border-top: 2px solid #9b8d96; pointer-events: none;"></span>
+        <span aria-hidden="true" style="position: absolute; right: 0; bottom: 0; color: #8d7b86; font-size: 11px; font-weight: 800; pointer-events: none;">鏡</span>
+      </div>
+    `;
+  }
+
+  document.getElementById("designWorkshopStartGrid").innerHTML = startGridHtml;
 
   document.getElementById("designWorkshopFeedback").hidden = true;
   document.getElementById("designWorkshopFeedback").textContent = "";
@@ -7266,7 +7861,10 @@ function renderDesignWorkshopPrototypeQuestion() {
     button.type = "button";
     button.className = "answer";
     button.style.marginTop = "6px";
-    button.innerHTML = renderDesignGrid(choice.grid);
+    button.innerHTML =
+      designWorkshopTestStage === 4
+        ? renderDesignParts(choice.parts)
+        : renderDesignGrid(choice.grid);
 
     button.addEventListener("click", () => {
       if (designWorkshopAnswered) {
@@ -7284,14 +7882,18 @@ function renderDesignWorkshopPrototypeQuestion() {
 
       if (choice.correct) {
         feedback.textContent =
-          "正解〜✨ 形も向きもそのまま、場所だけ動いたね！";
+          designWorkshopTestStage === 4
+            ? "正解〜✨ 2つの方眼を重ねると、完成した形になったね！"
+            : "正解〜✨ 形も向きもそのまま、場所だけ動いたね！";
 
         if (typeof playAtelierCorrectSound === "function") {
           playAtelierCorrectSound();
         }
       } else {
         feedback.textContent =
-          "おしい！ 形や向きは変えずに、そのまま動かしてみよう。";
+          designWorkshopTestStage === 4
+            ? "おしい！ 同じ場所どうしを重ねて見てみよう。"
+            : "おしい！ 形や向きは変えずに、そのまま動かしてみよう。";
 
         if (typeof playAtelierWrongSound === "function") {
           playAtelierWrongSound();
@@ -7307,13 +7909,15 @@ function renderDesignWorkshopPrototypeQuestion() {
 }
 
 function goToNextDesignWorkshopPrototypeQuestion() {
+  const questions = getDesignWorkshopTestQuestions();
+
   if (!designWorkshopAnswered) {
     return;
   }
 
   if (
     designWorkshopCurrentIndex <
-    designWorkshopStage1Questions.length - 1
+    questions.length - 1
   ) {
     designWorkshopCurrentIndex += 1;
     renderDesignWorkshopPrototypeQuestion();
@@ -9736,6 +10340,34 @@ document
     "click",
     startDesignWorkshopPrototype
   );
+
+document
+  .getElementById("designWorkshopStage1TestButton")
+  .addEventListener("click", () => {
+    designWorkshopTestStage = 1;
+    startDesignWorkshopPrototype();
+  });
+
+document
+  .getElementById("designWorkshopStage2TestButton")
+  .addEventListener("click", () => {
+    designWorkshopTestStage = 2;
+    startDesignWorkshopPrototype();
+  });
+
+document
+  .getElementById("designWorkshopStage3TestButton")
+  .addEventListener("click", () => {
+    designWorkshopTestStage = 3;
+    startDesignWorkshopPrototype();
+  });
+
+document
+  .getElementById("designWorkshopStage4TestButton")
+  .addEventListener("click", () => {
+    designWorkshopTestStage = 4;
+    startDesignWorkshopPrototype();
+  });
 
 document
   .getElementById("designWorkshopNextButton")
