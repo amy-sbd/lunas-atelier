@@ -1240,6 +1240,27 @@
       border-color: #e5b9c1;
     }
 
+    .magic-operation-card {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #fffdfd, #fff4fa 55%, #f8f3ff) !important;
+      border: 1px solid #e5cddb !important;
+      box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.72), 0 2px 5px rgba(150, 105, 130, 0.1);
+      overflow: visible;
+    }
+
+    .magic-operation-card-sparkle {
+      position: absolute;
+      top: -9px;
+      right: -7px;
+      color: #c38aa9;
+      font-size: 15px;
+      line-height: 1;
+      pointer-events: none;
+    }
+
     .answer.cat-selected {
   background: #fff7fa;
   border-color: var(--pink);
@@ -2404,10 +2425,17 @@
         </div>
 
         <div class="card atelier-workshop-card">
-          <h2>✨ デザイン工房</h2>
+          <h2>🏳️‍🌈 デザイン工房</h2>
           <p class="fabric-workshop-description">図形を動かして、かたちのひみつを見つけよう</p>
           <div class="atelier-workshop-meta">1回 5問</div>
           <button id="openDesignWorkshopButton" class="primary" type="button">デザイン工房をはじめる ✨</button>
+        </div>
+
+        <div class="card atelier-workshop-card">
+          <h2>✨ まほう工房</h2>
+          <p class="fabric-workshop-description">まほうのルールを見つけよう✨</p>
+          <div class="atelier-workshop-meta">1回 5問</div>
+          <button id="magicWorkshopStartButton" class="primary" type="button">まほう工房をはじめる ✨</button>
         </div>
       </div>
 
@@ -2418,15 +2446,6 @@
   style="display: none;"
 >
    デザイン工房をためす
-</button>
-
-<button
-  id="magicWorkshopPrototypeButton"
-  class="secondary"
-  type="button"
-  style="margin-top: 10px; width: 100%; font-size: 14px;"
->
-  ✨ まほう工房をためす
 </button>
 
       <div id="atelierCatTimeCard" class="card atelier-cat-time-card" hidden>
@@ -2565,7 +2584,7 @@
   <div class="topbar">
     <div class="brand">ATELIER COLLECTION</div>
     <div class="points">
-      ✨ <span id="atelierCraftBookCount">0 / 40</span>
+      ✨ <span id="atelierCraftBookCount">0 / 50</span>
     </div>
   </div>
 
@@ -2599,6 +2618,12 @@
     <h2> デザイン工房</h2>
     <p id="atelierCraftDesignCount" class="lead"></p>
     <div id="atelierCraftDesignList"></div>
+  </div>
+
+  <div class="card">
+    <h2>✨ まほう工房</h2>
+    <p id="atelierCraftMagicCount" class="lead"></p>
+    <div id="atelierCraftMagicList"></div>
   </div>
 
   <button
@@ -3215,7 +3240,7 @@
 <section id="magicWorkshopScreen" class="screen">
   <div class="topbar">
     <div class="brand">MAGIC WORKSHOP</div>
-    <div class="points"><span id="magicWorkshopProgress">1 / 3</span></div>
+    <div class="points"><span id="magicWorkshopProgress">1 / 5</span></div>
   </div>
 
   <div class="hero">
@@ -3227,13 +3252,19 @@
   <div class="card">
     <div id="magicWorkshopQuestionContent">
       <div class="quiz-meta">
-        <span>Stage1</span>
-        <span>ひみつのまほう</span>
+        <span id="magicWorkshopStageLabel">Stage1</span>
+        <span id="magicWorkshopStageTitle">ひみつのまほう</span>
       </div>
-      <h2 style="margin-top: 12px;">数字がまほうで変身するよ。<br>どんなまほうか見つけてね✨</h2>
+      <h2 id="magicWorkshopInstruction" style="margin-top: 12px;">数字がまほうで変身するよ。<br>どんなまほうか見つけてね✨</h2>
       <div id="magicWorkshopExamples" style="display: grid; gap: 10px; margin-top: 18px;"></div>
-      <p style="margin: 22px 0 8px; color: #8d7b86; font-size: 14px; font-weight: 900;">同じまほうがかかっているのはどれ？✨</p>
+      <p id="magicWorkshopChoicePrompt" style="margin: 22px 0 8px; color: #8d7b86; font-size: 14px; font-weight: 900;">同じまほうがかかっているのはどれ？✨</p>
+      <p id="magicWorkshopStageNote" hidden style="margin: 8px 0; color: #8d7b86; font-size: 14px; font-weight: 800;">□は変身する前の数字。どんな数字でも入るよ</p>
       <div id="magicWorkshopChoices" class="answers"></div>
+      <div id="magicWorkshopStage5Check" hidden style="margin-top: 14px; padding: 14px; border: 1px solid #eadce4; border-radius: 16px; background: #fffafd;">
+        <p style="margin: 0 0 10px; color: #8d7b86; font-size: 14px; font-weight: 900;">このレシピをためしてみよう</p>
+        <div id="magicWorkshopStage5Inputs" class="answers"></div>
+        <button id="magicWorkshopStage5DecideButton" class="primary" type="button" disabled style="margin-top: 12px; width: 100%;">このレシピにする！</button>
+      </div>
       <div id="magicWorkshopFeedback" class="feedback" hidden style="margin-top: 16px;"></div>
       <button id="magicWorkshopNextButton" class="primary" type="button" hidden style="margin-top: 16px;">つぎへ ▶</button>
     </div>
@@ -3241,7 +3272,34 @@
     <div id="magicWorkshopComplete" hidden>
       <strong>まほう成功〜✨</strong>
       <p class="lead">ひみつのルール、見つけられたね！</p>
-      <button id="magicWorkshopRetryButton" class="primary" type="button">もう一度ためす ✨</button>
+
+      <div
+        id="magicWorkshopCraftReward"
+        style="
+          margin: 16px 0;
+          padding: 16px;
+          border: 1px solid var(--line);
+          border-radius: 18px;
+          background: #fff8fb;
+          text-align: center;
+        "
+      >
+        <div
+          id="magicWorkshopCraftRewardLabel"
+          style="
+            margin-bottom: 6px;
+            color: var(--pink-dark);
+            font-size: 14px;
+            font-weight: 900;
+          "
+        ></div>
+        <div
+          id="magicWorkshopCraftRewardName"
+          style="font-size: 21px; font-weight: 900;"
+        ></div>
+      </div>
+
+      <button id="magicWorkshopRetryButton" class="primary" type="button">もう一度あそぶ ✨</button>
       <button id="magicWorkshopHomeButton" class="secondary" type="button" style="margin-top: 10px;">アトリエにもどる</button>
     </div>
   </div>
@@ -3674,7 +3732,18 @@ const atelierCraftItems = [
   ["design_paw_plate", "肉球プレート", "\u{1F43E}", "design", "normal"],
   ["design_sparkle_tile", "キラキラタイル", "\u{1F4A0}", "design", "normal"],
   ["design_moon_mosaic", "月夜のモザイク", "\u{1F319}", "design", "rare"],
-  ["design_princess_mirror", "プリンセスミラー", "\u{1F451}", "design", "rare"]
+  ["design_princess_mirror", "プリンセスミラー", "\u{1F451}", "design", "rare"],
+
+  ["magic_potion_bottle", "きらめきポーション", "\u{1F9EA}", "magic", "normal"],
+  ["magic_star_charm", "星のまほうチャーム", "\u{2B50}", "magic", "normal"],
+  ["magic_moon_lamp", "月あかりランプ", "\u{1F319}", "magic", "normal"],
+  ["magic_flower_wand", "お花のまほうステッキ", "\u{1F338}", "magic", "normal"],
+  ["magic_crystal_box", "クリスタルボックス", "\u{1F48E}", "magic", "normal"],
+  ["magic_ribbon_spellbook", "リボンのまほうノート", "\u{1F4D6}", "magic", "normal"],
+  ["magic_sparkle_mobile", "きらめきモビール", "\u{1F4A0}", "magic", "normal"],
+  ["magic_magic_circle_tile", "まほう陣タイル", "\u{1F537}", "magic", "normal"],
+  ["magic_princess_wand", "プリンセスステッキ", "\u{1F451}", "magic", "rare"],
+  ["magic_starlight_castle", "星あかりのお城", "\u{1F3F0}", "magic", "rare"]
 ].map(([id, name, icon, workshop, rarity]) => ({
   id,
   name,
@@ -3788,7 +3857,12 @@ let designWorkshopTestStage = 1;
 let designWorkshopQuestions = [];
 let magicWorkshopCurrentIndex = 0;
 let magicWorkshopAnswered = false;
-const magicWorkshopPrototypeQuestions = magicWorkshopStage1Questions.slice(0, 3);
+let magicWorkshopStage = 1;
+let magicWorkshopStage5SelectedChoice = null;
+let magicWorkshopStage5Checks = [];
+let magicWorkshopStage5Finalized = false;
+let magicWorkshopSelectedQuestions = [];
+let magicWorkshopCompleted = false;
 
 const screens = {
   home: document.getElementById("homeScreen"),
@@ -5178,6 +5252,15 @@ function goToNextDesignWorkshopPrototypeQuestion() {
 function startMagicWorkshopPrototype() {
   magicWorkshopCurrentIndex = 0;
   magicWorkshopAnswered = false;
+  magicWorkshopStage = 1;
+  magicWorkshopCompleted = false;
+  magicWorkshopSelectedQuestions = [
+    magicWorkshopStage1Questions[Math.floor(Math.random() * magicWorkshopStage1Questions.length)],
+    magicWorkshopStage2Questions[Math.floor(Math.random() * magicWorkshopStage2Questions.length)],
+    magicWorkshopStage3Questions[Math.floor(Math.random() * magicWorkshopStage3Questions.length)],
+    magicWorkshopStage4Questions[Math.floor(Math.random() * magicWorkshopStage4Questions.length)],
+    magicWorkshopStage5Questions[Math.floor(Math.random() * magicWorkshopStage5Questions.length)]
+  ];
   document.getElementById("magicWorkshopComplete").hidden = true;
   document.getElementById("magicWorkshopQuestionContent").hidden = false;
   renderMagicWorkshopPrototypeQuestion();
@@ -5185,15 +5268,80 @@ function startMagicWorkshopPrototype() {
 }
 
 function renderMagicWorkshopPrototypeQuestion() {
-  const question = magicWorkshopPrototypeQuestions[magicWorkshopCurrentIndex];
+  const question = magicWorkshopSelectedQuestions[magicWorkshopCurrentIndex];
   if (!question) return;
 
   magicWorkshopAnswered = false;
   document.getElementById("magicWorkshopProgress").textContent =
-    `${magicWorkshopCurrentIndex + 1} / ${magicWorkshopPrototypeQuestions.length}`;
+    `${magicWorkshopCurrentIndex + 1} / ${magicWorkshopSelectedQuestions.length}`;
+
+  const isStage2 = magicWorkshopStage === 2;
+  const isStage3 = magicWorkshopStage === 3;
+  const isStage4 = magicWorkshopStage === 4;
+  const isStage5 = magicWorkshopStage === 5;
+  const magicOperationMarkers = {
+    add: String.fromCodePoint(0x1F338),
+    subtract: String.fromCodePoint(0x1F319),
+    multiply: String.fromCodePoint(0x2B50),
+    divide: String.fromCodePoint(0x1F4A7)
+  };
+  const magicCardSparkle = String.fromCodePoint(0x2728);
+  document.getElementById("magicWorkshopStageLabel").textContent = `Stage${magicWorkshopStage}`;
+  document.getElementById("magicWorkshopStageTitle").textContent =
+    isStage2 ? "ニセモノ発見！" : isStage3 ? "まほうを巻き戻せ！" : isStage4 ? "まほうの順番" : isStage5 ? "まほうのレシピ" : "ひみつのまほう";
+  document.getElementById("magicWorkshopInstruction").innerHTML = isStage5
+    ? "3つ全部に使える<br>まほうのレシピはどれ？"
+    : isStage4
+    ? "同じまほうでも、順番で変身が変わるよ。<br>ゴールできる順番はどっち？✨"
+    : isStage3
+    ? "できあがった数字から、<br>まほうを逆にたどってみよう✨"
+    : isStage2
+      ? "ひとつだけ、ちがうまほうがまざってる！<br>見つけられるかな？✨"
+      : "数字がまほうで変身するよ。<br>どんなまほうか見つけてね✨";
+  const stageNote = document.getElementById("magicWorkshopStageNote");
+  stageNote.hidden = !isStage5;
+  stageNote.textContent = "□は変身する前の数字。どんな数字でも入るよ";
+  const choicePrompt = document.getElementById("magicWorkshopChoicePrompt");
+  choicePrompt.hidden = isStage5;
+  choicePrompt.textContent = isStage2
+    ? "ちがうまほうのカードはどれ？✨"
+    : isStage3
+      ? "入口に入る数字はどれ？✨"
+      : isStage4
+        ? "どっちの順番ならゴールできる？"
+        : isStage5
+          ? ""
+          : "同じまほうがかかっているのはどれ？✨";
 
   const examples = document.getElementById("magicWorkshopExamples");
-  examples.innerHTML = question.examples.map(example => `
+  examples.innerHTML = isStage5 ? question.examples.map(example => `
+    <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+      <span style="min-width: 48px; padding: 10px 12px; border: 1px solid #eadce4; border-radius: 14px; background: #fff8fb; color: #624d58; font-size: 20px; font-weight: 900; text-align: center;">${example.before}</span>
+      <span aria-hidden="true" style="color: #b7839b; font-size: 18px; font-weight: 900;">→ ${magicCardSparkle} →</span>
+      <span style="min-width: 48px; padding: 10px 12px; border: 1px solid #eadce4; border-radius: 14px; background: #fff8fb; color: #624d58; font-size: 20px; font-weight: 900; text-align: center;">${example.after}</span>
+    </div>
+  `).join("") : isStage4 ? `
+    <div style="display: flex; justify-content: center; gap: 22px; margin-top: 18px;">
+      <div style="display: grid; justify-items: center; gap: 6px;">
+        <span style="color: #8d7b86; font-size: 13px; font-weight: 900;">スタート</span>
+        <span style="min-width: 52px; padding: 10px 12px; border: 1px solid #eadce4; border-radius: 14px; background: #fff8fb; color: #624d58; font-size: 20px; font-weight: 900; text-align: center;">${question.start}</span>
+      </div>
+      <div style="display: grid; justify-items: center; gap: 6px;">
+        <span style="color: #8d7b86; font-size: 13px; font-weight: 900;">ゴール</span>
+        <span style="min-width: 52px; padding: 10px 12px; border: 1px solid #eadce4; border-radius: 14px; background: #fff8fb; color: #624d58; font-size: 20px; font-weight: 900; text-align: center;">${question.goal}</span>
+      </div>
+    </div>
+  ` : isStage3 ? `
+    <div style="display: grid; justify-items: center; gap: 8px; margin-top: 18px;">
+      <span style="min-width: 52px; padding: 10px 12px; border: 1px solid #eadce4; border-radius: 14px; background: #fff8fb; color: #624d58; font-size: 20px; font-weight: 900; text-align: center;">？</span>
+      ${question.steps.map(step => `
+        <span aria-hidden="true" style="color: #b7839b; font-size: 18px; font-weight: 900;">↓</span>
+        <span class="magic-operation-card" style="min-width: 92px; padding: 9px 12px; border: 1px solid #eadce4; border-radius: 14px; background: #fff4fa; color: #9a5878; font-size: 18px; font-weight: 900; text-align: center;"><span class="magic-operation-card-sparkle">${magicCardSparkle}</span>${magicOperationMarkers[step.type]} ${step.type === "multiply" ? "×" : step.type === "add" ? "＋" : step.type === "subtract" ? "−" : "÷"}${step.value}</span>
+      `).join("")}
+      <span aria-hidden="true" style="color: #b7839b; font-size: 18px; font-weight: 900;">↓</span>
+      <span style="min-width: 52px; padding: 10px 12px; border: 1px solid #eadce4; border-radius: 14px; background: #fff8fb; color: #624d58; font-size: 20px; font-weight: 900; text-align: center;">${question.result}</span>
+    </div>
+  ` : isStage2 ? "" : question.examples.map(example => `
     <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
       <span style="min-width: 48px; padding: 10px 12px; border: 1px solid #eadce4; border-radius: 14px; background: #fff8fb; color: #624d58; font-size: 20px; font-weight: 900; text-align: center;">${example.before}</span>
       <span aria-hidden="true" style="color: #b7839b; font-size: 18px; font-weight: 900;">→ ✨ →</span>
@@ -5203,30 +5351,177 @@ function renderMagicWorkshopPrototypeQuestion() {
 
   const choices = document.getElementById("magicWorkshopChoices");
   choices.innerHTML = "";
+  const stage5Check = document.getElementById("magicWorkshopStage5Check");
+  stage5Check.hidden = true;
+  if (isStage5) {
+    magicWorkshopStage5SelectedChoice = null;
+    magicWorkshopStage5Checks = Array(question.examples.length).fill(null);
+    magicWorkshopStage5Finalized = false;
+  }
   const feedback = document.getElementById("magicWorkshopFeedback");
   feedback.className = "feedback";
   feedback.hidden = true;
   feedback.textContent = "";
   document.getElementById("magicWorkshopNextButton").hidden = true;
 
-  question.choices.forEach((choice, index) => {
+  const displayedChoices = [...question.choices];
+  for (let index = displayedChoices.length - 1; index > 0; index -= 1) {
+    const randomIndex = Math.floor(Math.random() * (index + 1));
+    [displayedChoices[index], displayedChoices[randomIndex]] = [displayedChoices[randomIndex], displayedChoices[index]];
+  }
+
+  displayedChoices.forEach((choice, index) => {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "answer";
     button.style.marginTop = "7px";
-    button.innerHTML = `
+    button.innerHTML = isStage5 ? `
+      <span class="magic-operation-card" style="min-width: 152px; padding: 10px 16px; border: 1px solid #eadce4; border-radius: 14px; background: #fff4fa; color: #9a5878; font-size: 20px; font-weight: 900; text-align: center;">
+        <span class="magic-operation-card-sparkle">${magicCardSparkle}</span>□ × ${choice.multiplier} ${choice.operation === "add" ? "＋" : "−"} ${choice.value}
+      </span>
+    ` : isStage4 ? `
+      <span style="display: inline-flex; align-items: center; justify-content: center; gap: 7px; width: 100%;">
+        <span style="min-width: 38px; padding: 8px; border: 1px solid #eadce4; border-radius: 12px; background: #fff8fb; color: #624d58; font-size: 17px; font-weight: 900; text-align: center;">${question.start}</span>
+        ${choice.steps.map(step => `<span aria-hidden="true" style="color: #b7839b; font-size: 15px; font-weight: 900;">→</span><span class="magic-operation-card" style="min-width: 54px; padding: 8px; border: 1px solid #eadce4; border-radius: 12px; background: #fff4fa; color: #9a5878; font-size: 17px; font-weight: 900; text-align: center;"><span class="magic-operation-card-sparkle">${magicCardSparkle}</span>${magicOperationMarkers[step.type]} ${step.type === "multiply" ? "×" : step.type === "add" ? "＋" : step.type === "subtract" ? "−" : "÷"}${step.value}</span>`).join("")}
+        <span aria-hidden="true" style="color: #b7839b; font-size: 15px; font-weight: 900;">→</span>
+        <span style="min-width: 38px; padding: 8px; border: 1px solid #eadce4; border-radius: 12px; background: #fff8fb; color: #624d58; font-size: 17px; font-weight: 900; text-align: center;">？</span>
+      </span>
+    ` : isStage3 ? `
+      <span style="display: inline-flex; align-items: center; justify-content: center; min-width: 48px; padding: 8px 10px; border: 1px solid #eadce4; border-radius: 12px; background: #fff8fb; color: #624d58; font-size: 18px; font-weight: 900; text-align: center;">${choice.value}</span>
+    ` : `
       <span style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%;">
         <span style="min-width: 44px; padding: 8px 10px; border: 1px solid #eadce4; border-radius: 12px; background: #fff8fb; color: #624d58; font-size: 18px; font-weight: 900; text-align: center;">${choice.before}</span>
         <span aria-hidden="true" style="color: #b7839b; font-size: 16px; font-weight: 900;">→ ✨ →</span>
         <span style="min-width: 44px; padding: 8px 10px; border: 1px solid #eadce4; border-radius: 12px; background: #fff8fb; color: #624d58; font-size: 18px; font-weight: 900; text-align: center;">${choice.after}</span>
       </span>
     `;
-    button.addEventListener("click", () => answerMagicWorkshopPrototype(choice, button));
+    button.addEventListener("click", () => {
+      if (isStage5) {
+        selectMagicWorkshopStage5Recipe(choice, index);
+        return;
+      }
+      answerMagicWorkshopPrototype(choice, button, displayedChoices);
+    });
     choices.appendChild(button);
   });
 }
 
-function answerMagicWorkshopPrototype(choice, button) {
+function getMagicWorkshopStage5Result(input, choice) {
+  const transformed = input * choice.multiplier;
+  return choice.operation === "add"
+    ? transformed + choice.value
+    : transformed - choice.value;
+}
+
+function selectMagicWorkshopStage5Recipe(choice, choiceIndex) {
+  const question = magicWorkshopSelectedQuestions[magicWorkshopCurrentIndex];
+  const choices = document.getElementById("magicWorkshopChoices");
+  const feedback = document.getElementById("magicWorkshopFeedback");
+
+  magicWorkshopStage5SelectedChoice = choice;
+  magicWorkshopStage5Checks = Array(question.examples.length).fill(null);
+  magicWorkshopStage5Finalized = false;
+  magicWorkshopAnswered = false;
+
+  choices.querySelectorAll("button").forEach((button, index) => {
+    button.classList.remove("cat-selected", "correct", "wrong");
+    if (index === choiceIndex) button.classList.add("cat-selected");
+  });
+  feedback.hidden = true;
+  feedback.textContent = "";
+  renderMagicWorkshopStage5Check();
+}
+
+function renderMagicWorkshopStage5Check() {
+  const question = magicWorkshopSelectedQuestions[magicWorkshopCurrentIndex];
+  const checkArea = document.getElementById("magicWorkshopStage5Check");
+  const inputs = document.getElementById("magicWorkshopStage5Inputs");
+  const decideButton = document.getElementById("magicWorkshopStage5DecideButton");
+
+  if (!magicWorkshopStage5SelectedChoice) {
+    checkArea.hidden = true;
+    return;
+  }
+
+  checkArea.hidden = false;
+  inputs.innerHTML = "";
+  question.examples.forEach((example, index) => {
+    const checked = magicWorkshopStage5Checks[index];
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "answer";
+    button.disabled = checked !== null || magicWorkshopStage5Finalized;
+    button.style.width = "100%";
+    button.style.minHeight = "52px";
+    button.style.padding = "12px 14px";
+    button.style.textAlign = "center";
+    if (checked === null) {
+      button.textContent = example.before;
+    } else {
+      const choice = magicWorkshopStage5SelectedChoice;
+      const actual = getMagicWorkshopStage5Result(example.before, choice);
+      const operator = choice.operation === "add" ? "＋" : "−";
+      button.classList.add(checked ? "correct" : "wrong");
+      button.innerHTML = `
+        <span style="display: block; font-size: 18px; font-weight: 900; line-height: 1.35; white-space: normal;">${example.before} × ${choice.multiplier} ${operator} ${choice.value} ＝ ${actual}　${checked ? "○" : "×"}</span>
+        ${checked ? "" : `<span style="display: block; margin-top: 3px; font-size: 13px; font-weight: 800;">目標：${example.after}</span>`}
+      `;
+    }
+    button.addEventListener("click", () => tryMagicWorkshopStage5Example(index));
+    inputs.appendChild(button);
+  });
+
+  decideButton.disabled = magicWorkshopStage5Checks.some(check => check === null) || magicWorkshopStage5Finalized;
+}
+
+function tryMagicWorkshopStage5Example(index) {
+  if (!magicWorkshopStage5SelectedChoice || magicWorkshopStage5Checks[index] !== null) return;
+
+  const question = magicWorkshopSelectedQuestions[magicWorkshopCurrentIndex];
+  const example = question.examples[index];
+  const actual = getMagicWorkshopStage5Result(example.before, magicWorkshopStage5SelectedChoice);
+  const matches = actual === example.after;
+
+  magicWorkshopStage5Checks[index] = matches;
+  renderMagicWorkshopStage5Check();
+}
+
+function decideMagicWorkshopStage5Recipe() {
+  if (
+    !magicWorkshopStage5SelectedChoice ||
+    magicWorkshopStage5Checks.some(check => check === null)
+  ) return;
+
+  const choices = document.getElementById("magicWorkshopChoices");
+  const feedback = document.getElementById("magicWorkshopFeedback");
+  const selectedButton = choices.querySelector(".cat-selected");
+
+  if (magicWorkshopStage5SelectedChoice.correct) {
+    magicWorkshopAnswered = true;
+    magicWorkshopStage5Finalized = true;
+    selectedButton.classList.add("correct");
+    choices.querySelectorAll("button").forEach(button => { button.disabled = true; });
+    feedback.className = "feedback show correct";
+    feedback.textContent = "せいかい！✨";
+    feedback.hidden = false;
+    if (typeof playAtelierCorrectSound === "function") playAtelierCorrectSound();
+    document.getElementById("magicWorkshopNextButton").hidden = false;
+    renderMagicWorkshopStage5Check();
+    return;
+  }
+
+  selectedButton.classList.add("wrong");
+  feedback.className = "feedback show wrong";
+  feedback.textContent = "おしい！ ほかのレシピもためしてみよう";
+  feedback.hidden = false;
+  if (typeof playAtelierWrongSound === "function") playAtelierWrongSound();
+
+  magicWorkshopStage5SelectedChoice = null;
+  magicWorkshopStage5Checks = [];
+  document.getElementById("magicWorkshopStage5Check").hidden = true;
+}
+
+function answerMagicWorkshopPrototype(choice, button, displayedChoices) {
   if (magicWorkshopAnswered) return;
 
   magicWorkshopAnswered = true;
@@ -5242,7 +5537,7 @@ function answerMagicWorkshopPrototype(choice, button) {
   } else {
     button.classList.add("wrong");
     feedback.className = "feedback show wrong";
-    magicWorkshopPrototypeQuestions[magicWorkshopCurrentIndex].choices.forEach((item, index) => {
+    displayedChoices.forEach((item, index) => {
       if (item.correct) choices.children[index].classList.add("correct");
     });
     feedback.textContent = "おしい！";
@@ -5254,16 +5549,35 @@ function answerMagicWorkshopPrototype(choice, button) {
 }
 
 function goToNextMagicWorkshopPrototypeQuestion() {
-  if (!magicWorkshopAnswered) return;
+  if (!magicWorkshopAnswered || magicWorkshopCompleted) return;
 
-  if (magicWorkshopCurrentIndex < magicWorkshopPrototypeQuestions.length - 1) {
+  if (magicWorkshopCurrentIndex < magicWorkshopSelectedQuestions.length - 1) {
     magicWorkshopCurrentIndex += 1;
+    magicWorkshopStage = magicWorkshopSelectedQuestions[magicWorkshopCurrentIndex].stage;
     renderMagicWorkshopPrototypeQuestion();
     return;
   }
 
+  magicWorkshopCompleted = true;
   document.getElementById("magicWorkshopQuestionContent").hidden = true;
   document.getElementById("magicWorkshopComplete").hidden = false;
+
+  const craftReward = grantAtelierCraft("magic");
+  document.getElementById("magicWorkshopCraftRewardLabel").textContent =
+    craftReward.isNew
+      ? "✨ NEW! 作品完成！"
+      : "✨ また作ったよ！";
+  document.getElementById("magicWorkshopCraftRewardName").textContent =
+    `${craftReward.item.icon} ${craftReward.item.name}${
+      craftReward.item.rarity === "rare" ? "　レア" : ""
+    }`;
+
+  if (craftReward.item.rarity === "rare") {
+    playAtelierRareSound();
+  } else {
+    playAtelierCraftSound();
+  }
+  unlockAtelierCatTime();
 }
 
     function getTodayKey() {
@@ -7612,6 +7926,10 @@ function renderAtelierCraftBook() {
     item => item.workshop === "design"
   );
 
+  const magicItems = atelierCraftItems.filter(
+    item => item.workshop === "magic"
+  );
+
   const fabricOwned = fabricItems.filter(
     item => owned.includes(item.id)
   ).length;
@@ -7625,6 +7943,10 @@ function renderAtelierCraftBook() {
   ).length;
 
   const designOwned = designItems.filter(
+    item => owned.includes(item.id)
+  ).length;
+
+  const magicOwned = magicItems.filter(
     item => owned.includes(item.id)
   ).length;
 
@@ -7643,6 +7965,9 @@ function renderAtelierCraftBook() {
   document.getElementById("atelierCraftDesignCount").textContent =
     `${designOwned} / ${designItems.length} 作品`;
 
+  document.getElementById("atelierCraftMagicCount").textContent =
+    `${magicOwned} / ${magicItems.length} 作品`;
+
   document.getElementById("atelierCraftFabricList").innerHTML =
     renderWorkshop("fabric");
 
@@ -7654,6 +7979,9 @@ function renderAtelierCraftBook() {
 
   document.getElementById("atelierCraftDesignList").innerHTML =
     renderWorkshop("design");
+
+  document.getElementById("atelierCraftMagicList").innerHTML =
+    renderWorkshop("magic");
 }
 
 document
@@ -7718,12 +8046,16 @@ document
   });
 
 document
-  .getElementById("magicWorkshopPrototypeButton")
+  .getElementById("magicWorkshopStartButton")
   .addEventListener("click", startMagicWorkshopPrototype);
 
 document
   .getElementById("magicWorkshopNextButton")
   .addEventListener("click", goToNextMagicWorkshopPrototypeQuestion);
+
+document
+  .getElementById("magicWorkshopStage5DecideButton")
+  .addEventListener("click", decideMagicWorkshopStage5Recipe);
 
 document
   .getElementById("magicWorkshopRetryButton")

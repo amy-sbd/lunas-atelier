@@ -3283,3 +3283,615 @@ const magicWorkshopStage1Questions = [
     ]
   }
 ];
+
+const magicWorkshopStage2Questions = [
+  {
+    id: "magic_s2_01",
+    stage: 2,
+    choices: [
+      { before: 2, after: 7, correct: false },
+      { before: 5, after: 13, correct: false },
+      { before: 8, after: 18, correct: true },
+      { before: 11, after: 25, correct: false }
+    ]
+  },
+  {
+    id: "magic_s2_02",
+    stage: 2,
+    choices: [
+      { before: 2, after: 7, correct: false },
+      { before: 4, after: 13, correct: false },
+      { before: 7, after: 22, correct: false },
+      { before: 9, after: 29, correct: true }
+    ]
+  },
+  {
+    id: "magic_s2_03",
+    stage: 2,
+    choices: [
+      { before: 2, after: 7, correct: false },
+      { before: 5, after: 19, correct: false },
+      { before: 8, after: 31, correct: false },
+      { before: 11, after: 42, correct: true }
+    ]
+  },
+  {
+    id: "magic_s2_04",
+    stage: 2,
+    choices: [
+      { before: 3, after: 7, correct: false },
+      { before: 6, after: 13, correct: false },
+      { before: 9, after: 18, correct: true },
+      { before: 12, after: 25, correct: false }
+    ]
+  },
+  {
+    id: "magic_s2_05",
+    stage: 2,
+    choices: [
+      { before: 2, after: 4, correct: false },
+      { before: 5, after: 14, correct: true },
+      { before: 8, after: 22, correct: false },
+      { before: 11, after: 31, correct: false }
+    ]
+  },
+  {
+    id: "magic_s2_06",
+    stage: 2,
+    choices: [
+      { before: 2, after: 9, correct: false },
+      { before: 4, after: 17, correct: false },
+      { before: 7, after: 29, correct: false },
+      { before: 10, after: 40, correct: true }
+    ]
+  },
+  {
+    id: "magic_s2_07",
+    stage: 2,
+    choices: [
+      { before: 1, after: 5, correct: true },
+      { before: 4, after: 12, correct: false },
+      { before: 7, after: 18, correct: false },
+      { before: 10, after: 24, correct: false }
+    ]
+  },
+  {
+    id: "magic_s2_08",
+    stage: 2,
+    choices: [
+      { before: 2, after: 8, correct: false },
+      { before: 6, after: 20, correct: false },
+      { before: 9, after: 28, correct: true },
+      { before: 12, after: 38, correct: false }
+    ]
+  },
+  {
+    id: "magic_s2_09",
+    stage: 2,
+    choices: [
+      { before: 3, after: 11, correct: false },
+      { before: 5, after: 20, correct: true },
+      { before: 8, after: 31, correct: false },
+      { before: 11, after: 43, correct: false }
+    ]
+  },
+  {
+    id: "magic_s2_10",
+    stage: 2,
+    choices: [
+      { before: 4, after: 7, correct: false },
+      { before: 7, after: 13, correct: false },
+      { before: 10, after: 19, correct: false },
+      { before: 13, after: 26, correct: true }
+    ]
+  }
+];
+
+const magicWorkshopStage3Questions = [
+  {
+    id: "magic_s3_01",
+    stage: 3,
+    steps: [
+      { type: "multiply", value: 2 },
+      { type: "add", value: 3 }
+    ],
+    result: 17,
+    choices: [
+      { value: 7, correct: true },
+      { value: 8, correct: false },
+      { value: 10, correct: false }
+    ]
+  },
+  {
+    id: "magic_s3_02",
+    stage: 3,
+    steps: [
+      { type: "multiply", value: 3 },
+      { type: "subtract", value: 2 }
+    ],
+    result: 19,
+    choices: [
+      { value: 7, correct: true },
+      { value: 6, correct: false },
+      { value: 8, correct: false }
+    ]
+  },
+  {
+    id: "magic_s3_03",
+    stage: 3,
+    steps: [
+      { type: "add", value: 4 },
+      { type: "multiply", value: 3 }
+    ],
+    result: 27,
+    choices: [
+      { value: 5, correct: true },
+      { value: 7, correct: false },
+      { value: 9, correct: false }
+    ]
+  },
+  {
+    id: "magic_s3_04",
+    stage: 3,
+    steps: [
+      { type: "multiply", value: 2 },
+      { type: "add", value: 5 }
+    ],
+    result: 19,
+    choices: [
+      { value: 7, correct: true },
+      { value: 6, correct: false },
+      { value: 9, correct: false }
+    ]
+  },
+  {
+    id: "magic_s3_05",
+    stage: 3,
+    steps: [
+      { type: "multiply", value: 4 },
+      { type: "subtract", value: 3 }
+    ],
+    result: 21,
+    choices: [
+      { value: 6, correct: true },
+      { value: 5, correct: false },
+      { value: 7, correct: false }
+    ]
+  },
+  {
+    id: "magic_s3_06",
+    stage: 3,
+    steps: [
+      { type: "add", value: 3 },
+      { type: "multiply", value: 2 }
+    ],
+    result: 20,
+    choices: [
+      { value: 7, correct: true },
+      { value: 8, correct: false },
+      { value: 10, correct: false }
+    ]
+  },
+  {
+    id: "magic_s3_07",
+    stage: 3,
+    steps: [
+      { type: "subtract", value: 2 },
+      { type: "multiply", value: 3 }
+    ],
+    result: 24,
+    choices: [
+      { value: 10, correct: true },
+      { value: 8, correct: false },
+      { value: 6, correct: false }
+    ]
+  },
+  {
+    id: "magic_s3_08",
+    stage: 3,
+    steps: [
+      { type: "add", value: 5 },
+      { type: "multiply", value: 3 }
+    ],
+    result: 36,
+    choices: [
+      { value: 7, correct: true },
+      { value: 9, correct: false },
+      { value: 12, correct: false }
+    ]
+  },
+  {
+    id: "magic_s3_09",
+    stage: 3,
+    steps: [
+      { type: "multiply", value: 3 },
+      { type: "add", value: 4 }
+    ],
+    result: 31,
+    choices: [
+      { value: 9, correct: true },
+      { value: 7, correct: false },
+      { value: 11, correct: false }
+    ]
+  },
+  {
+    id: "magic_s3_10",
+    stage: 3,
+    steps: [
+      { type: "subtract", value: 4 },
+      { type: "multiply", value: 4 }
+    ],
+    result: 32,
+    choices: [
+      { value: 12, correct: true },
+      { value: 10, correct: false },
+      { value: 8, correct: false }
+    ]
+  }
+];
+
+const magicWorkshopStage4Questions = [
+  {
+    id: "magic_s4_01",
+    stage: 4,
+    start: 4,
+    goal: 14,
+    choices: [
+      {
+        steps: [
+          { type: "add", value: 3 },
+          { type: "multiply", value: 2 }
+        ],
+        correct: true
+      },
+      {
+        steps: [
+          { type: "multiply", value: 2 },
+          { type: "add", value: 3 }
+        ],
+        correct: false
+      }
+    ]
+  },
+  {
+    id: "magic_s4_02",
+    stage: 4,
+    start: 5,
+    goal: 18,
+    choices: [
+      {
+        steps: [
+          { type: "add", value: 4 },
+          { type: "multiply", value: 2 }
+        ],
+        correct: true
+      },
+      {
+        steps: [
+          { type: "multiply", value: 2 },
+          { type: "add", value: 4 }
+        ],
+        correct: false
+      }
+    ]
+  },
+  {
+    id: "magic_s4_03",
+    stage: 4,
+    start: 6,
+    goal: 25,
+    choices: [
+      {
+        steps: [
+          { type: "multiply", value: 4 },
+          { type: "add", value: 1 }
+        ],
+        correct: true
+      },
+      {
+        steps: [
+          { type: "add", value: 1 },
+          { type: "multiply", value: 4 }
+        ],
+        correct: false
+      }
+    ]
+  },
+  {
+    id: "magic_s4_04",
+    stage: 4,
+    start: 3,
+    goal: 20,
+    choices: [
+      {
+        steps: [
+          { type: "add", value: 2 },
+          { type: "multiply", value: 4 }
+        ],
+        correct: true
+      },
+      {
+        steps: [
+          { type: "multiply", value: 4 },
+          { type: "add", value: 2 }
+        ],
+        correct: false
+      }
+    ]
+  },
+  {
+    id: "magic_s4_05",
+    stage: 4,
+    start: 5,
+    goal: 28,
+    choices: [
+      {
+        steps: [
+          { type: "multiply", value: 4 },
+          { type: "add", value: 8 }
+        ],
+        correct: true
+      },
+      {
+        steps: [
+          { type: "add", value: 8 },
+          { type: "multiply", value: 4 }
+        ],
+        correct: false
+      }
+    ]
+  },
+  {
+    id: "magic_s4_06",
+    stage: 4,
+    start: 8,
+    goal: 18,
+    choices: [
+      {
+        steps: [
+          { type: "subtract", value: 2 },
+          { type: "multiply", value: 3 }
+        ],
+        correct: true
+      },
+      {
+        steps: [
+          { type: "multiply", value: 3 },
+          { type: "subtract", value: 2 }
+        ],
+        correct: false
+      }
+    ]
+  },
+  {
+    id: "magic_s4_07",
+    stage: 4,
+    start: 4,
+    goal: 15,
+    choices: [
+      {
+        steps: [
+          { type: "multiply", value: 3 },
+          { type: "add", value: 3 }
+        ],
+        correct: true
+      },
+      {
+        steps: [
+          { type: "add", value: 3 },
+          { type: "multiply", value: 3 }
+        ],
+        correct: false
+      }
+    ]
+  },
+  {
+    id: "magic_s4_08",
+    stage: 4,
+    start: 10,
+    goal: 24,
+    choices: [
+      {
+        steps: [
+          { type: "subtract", value: 4 },
+          { type: "multiply", value: 4 }
+        ],
+        correct: true
+      },
+      {
+        steps: [
+          { type: "multiply", value: 4 },
+          { type: "subtract", value: 4 }
+        ],
+        correct: false
+      }
+    ]
+  },
+  {
+    id: "magic_s4_09",
+    stage: 4,
+    start: 6,
+    goal: 25,
+    choices: [
+      {
+        steps: [
+          { type: "multiply", value: 4 },
+          { type: "add", value: 1 }
+        ],
+        correct: true
+      },
+      {
+        steps: [
+          { type: "add", value: 1 },
+          { type: "multiply", value: 4 }
+        ],
+        correct: false
+      }
+    ]
+  },
+  {
+    id: "magic_s4_10",
+    stage: 4,
+    start: 9,
+    goal: 28,
+    choices: [
+      {
+        steps: [
+          { type: "add", value: 5 },
+          { type: "multiply", value: 2 }
+        ],
+        correct: true
+      },
+      {
+        steps: [
+          { type: "multiply", value: 2 },
+          { type: "add", value: 5 }
+        ],
+        correct: false
+      }
+    ]
+  }
+];
+
+const magicWorkshopStage5Questions = [
+  {
+    id: "magic_s5_01",
+    stage: 5,
+    examples: [
+      { before: 2, after: 8 },
+      { before: 4, after: 14 },
+      { before: 7, after: 23 }
+    ],
+    choices: [
+      { multiplier: 3, operation: "add", value: 2, correct: true },
+      { multiplier: 2, operation: "add", value: 4, correct: false },
+      { multiplier: 2, operation: "add", value: 6, correct: false }
+    ]
+  },
+  {
+    id: "magic_s5_02",
+    stage: 5,
+    examples: [
+      { before: 2, after: 5 },
+      { before: 5, after: 14 },
+      { before: 8, after: 23 }
+    ],
+    choices: [
+      { multiplier: 3, operation: "subtract", value: 1, correct: true },
+      { multiplier: 2, operation: "add", value: 1, correct: false },
+      { multiplier: 2, operation: "add", value: 4, correct: false }
+    ]
+  },
+  {
+    id: "magic_s5_03",
+    stage: 5,
+    examples: [
+      { before: 3, after: 14 },
+      { before: 6, after: 26 },
+      { before: 10, after: 42 }
+    ],
+    choices: [
+      { multiplier: 4, operation: "add", value: 2, correct: true },
+      { multiplier: 3, operation: "add", value: 5, correct: false },
+      { multiplier: 3, operation: "add", value: 8, correct: false }
+    ]
+  },
+  {
+    id: "magic_s5_04",
+    stage: 5,
+    examples: [
+      { before: 3, after: 9 },
+      { before: 6, after: 15 },
+      { before: 10, after: 23 }
+    ],
+    choices: [
+      { multiplier: 2, operation: "add", value: 3, correct: true },
+      { multiplier: 3, operation: "add", value: 0, correct: false },
+      { multiplier: 3, operation: "subtract", value: 3, correct: false }
+    ]
+  },
+  {
+    id: "magic_s5_05",
+    stage: 5,
+    examples: [
+      { before: 2, after: 7 },
+      { before: 5, after: 16 },
+      { before: 9, after: 28 }
+    ],
+    choices: [
+      { multiplier: 3, operation: "add", value: 1, correct: true },
+      { multiplier: 2, operation: "add", value: 3, correct: false },
+      { multiplier: 2, operation: "add", value: 6, correct: false }
+    ]
+  },
+  {
+    id: "magic_s5_06",
+    stage: 5,
+    examples: [
+      { before: 2, after: 7 },
+      { before: 5, after: 19 },
+      { before: 8, after: 31 }
+    ],
+    choices: [
+      { multiplier: 4, operation: "subtract", value: 1, correct: true },
+      { multiplier: 3, operation: "add", value: 1, correct: false },
+      { multiplier: 3, operation: "add", value: 4, correct: false }
+    ]
+  },
+  {
+    id: "magic_s5_07",
+    stage: 5,
+    examples: [
+      { before: 4, after: 13 },
+      { before: 7, after: 19 },
+      { before: 11, after: 27 }
+    ],
+    choices: [
+      { multiplier: 2, operation: "add", value: 5, correct: true },
+      { multiplier: 3, operation: "add", value: 1, correct: false },
+      { multiplier: 3, operation: "subtract", value: 2, correct: false }
+    ]
+  },
+  {
+    id: "magic_s5_08",
+    stage: 5,
+    examples: [
+      { before: 3, after: 7 },
+      { before: 6, after: 16 },
+      { before: 10, after: 28 }
+    ],
+    choices: [
+      { multiplier: 3, operation: "subtract", value: 2, correct: true },
+      { multiplier: 2, operation: "add", value: 1, correct: false },
+      { multiplier: 2, operation: "add", value: 4, correct: false }
+    ]
+  },
+  {
+    id: "magic_s5_09",
+    stage: 5,
+    examples: [
+      { before: 2, after: 10 },
+      { before: 5, after: 22 },
+      { before: 9, after: 38 }
+    ],
+    choices: [
+      { multiplier: 4, operation: "add", value: 2, correct: true },
+      { multiplier: 3, operation: "add", value: 4, correct: false },
+      { multiplier: 3, operation: "add", value: 7, correct: false }
+    ]
+  },
+  {
+    id: "magic_s5_10",
+    stage: 5,
+    examples: [
+      { before: 5, after: 9 },
+      { before: 8, after: 15 },
+      { before: 12, after: 23 }
+    ],
+    choices: [
+      { multiplier: 2, operation: "subtract", value: 1, correct: true },
+      { multiplier: 3, operation: "subtract", value: 6, correct: false },
+      { multiplier: 3, operation: "subtract", value: 9, correct: false }
+    ]
+  }
+];
