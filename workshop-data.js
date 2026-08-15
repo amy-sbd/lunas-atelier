@@ -3895,3 +3895,603 @@ const magicWorkshopStage5Questions = [
     ]
   }
 ];
+
+const balanceWorkshopStage1Questions = [
+  {
+    id: "balance_s1_01",
+    type: "same-balance",
+    sampleLeft: [{ icon: "\u{1F338}", count: 2 }],
+    sampleRight: [{ icon: "\u{2B50}", count: 1 }],
+    question: "右には、どれを飾る？",
+    targetSide: "right",
+    fixedLeft: [{ icon: "\u{1F338}", count: 2 }],
+    choices: [
+      { parts: [{ icon: "\u{2B50}", count: 1 }], correct: true, balance: "equal" },
+      { parts: [{ icon: "\u{2B50}", count: 2 }], correct: false, balance: "heavy" },
+      { parts: [{ icon: "\u{2B50}", count: 3 }], correct: false, balance: "heavy" }
+    ]
+  },
+  {
+    id: "balance_s1_02",
+    type: "complete-left",
+    sampleLeft: [{ icon: "\u{1F48E}", count: 3 }],
+    sampleRight: [{ icon: "\u{1F380}", count: 1 }],
+    question: "左には、どれを飾る？",
+    targetSide: "left",
+    fixedRight: [{ icon: "\u{1F380}", count: 1 }],
+    choices: [
+      { parts: [{ icon: "\u{1F48E}", count: 1 }], correct: false, balance: "light" },
+      { parts: [{ icon: "\u{1F48E}", count: 2 }], correct: false, balance: "light" },
+      { parts: [{ icon: "\u{1F48E}", count: 3 }], correct: true, balance: "equal" }
+    ]
+  },
+  {
+    id: "balance_s1_03",
+    type: "complete-right",
+    sampleLeft: [{ icon: "\u{1FA77}", count: 2 }],
+    sampleRight: [{ icon: "\u{1F319}", count: 3 }],
+    question: "右には、どれを飾る？",
+    targetSide: "right",
+    fixedLeft: [{ icon: "\u{1F319}", count: 3 }],
+    choices: [
+      { parts: [{ icon: "\u{1FA77}", count: 1 }], correct: false, balance: "light" },
+      { parts: [{ icon: "\u{1FA77}", count: 2 }], correct: true, balance: "equal" },
+      { parts: [{ icon: "\u{1FA77}", count: 3 }], correct: false, balance: "heavy" }
+    ]
+  },
+  {
+    id: "balance_s1_04", type: "same-balance",
+    sampleLeft: [{ icon: "\u{1F380}", count: 2 }], sampleRight: [{ icon: "\u{1F48E}", count: 3 }],
+    question: "右には、どれを飾る？", targetSide: "right", fixedLeft: [{ icon: "\u{1F380}", count: 2 }],
+    choices: [
+      { parts: [{ icon: "\u{1F48E}", count: 2 }], correct: false, balance: "light" },
+      { parts: [{ icon: "\u{1F48E}", count: 3 }], correct: true, balance: "equal" },
+      { parts: [{ icon: "\u{1F48E}", count: 4 }], correct: false, balance: "heavy" }
+    ]
+  },
+  {
+    id: "balance_s1_05", type: "complete-left",
+    sampleLeft: [{ icon: "\u{2B50}", count: 2 }], sampleRight: [{ icon: "\u{1F338}", count: 3 }],
+    question: "左には、どれを飾る？", targetSide: "left", fixedRight: [{ icon: "\u{1F338}", count: 3 }],
+    choices: [
+      { parts: [{ icon: "\u{2B50}", count: 1 }], correct: false, balance: "light" },
+      { parts: [{ icon: "\u{2B50}", count: 2 }], correct: true, balance: "equal" },
+      { parts: [{ icon: "\u{2B50}", count: 3 }], correct: false, balance: "heavy" }
+    ]
+  },
+  {
+    id: "balance_s1_06", type: "complete-right",
+    sampleLeft: [{ icon: "\u{1F48E}", count: 2 }], sampleRight: [{ icon: "\u{1F319}", count: 1 }],
+    question: "右には、どれを飾る？", targetSide: "right", fixedLeft: [{ icon: "\u{1F319}", count: 1 }],
+    choices: [
+      { parts: [{ icon: "\u{1F48E}", count: 1 }], correct: false, balance: "light" },
+      { parts: [{ icon: "\u{1F48E}", count: 2 }], correct: true, balance: "equal" },
+      { parts: [{ icon: "\u{1F48E}", count: 3 }], correct: false, balance: "heavy" }
+    ]
+  },
+  {
+    id: "balance_s1_07", type: "complete-left",
+    sampleLeft: [{ icon: "\u{1FA77}", count: 3 }], sampleRight: [{ icon: "\u{1F380}", count: 2 }],
+    question: "左には、どれを飾る？", targetSide: "left", fixedRight: [{ icon: "\u{1F380}", count: 2 }],
+    choices: [
+      { parts: [{ icon: "\u{1FA77}", count: 2 }], correct: false, balance: "light" },
+      { parts: [{ icon: "\u{1FA77}", count: 3 }], correct: true, balance: "equal" },
+      { parts: [{ icon: "\u{1FA77}", count: 4 }], correct: false, balance: "heavy" }
+    ]
+  },
+  {
+    id: "balance_s1_08", type: "complete-right",
+    sampleLeft: [{ icon: "\u{1F338}", count: 3 }], sampleRight: [{ icon: "\u{1F381}", count: 1 }],
+    question: "右には、どれを飾る？", targetSide: "right", fixedLeft: [{ icon: "\u{1F381}", count: 1 }],
+    choices: [
+      { parts: [{ icon: "\u{1F338}", count: 2 }], correct: false, balance: "light" },
+      { parts: [{ icon: "\u{1F338}", count: 3 }], correct: true, balance: "equal" },
+      { parts: [{ icon: "\u{1F338}", count: 4 }], correct: false, balance: "heavy" }
+    ]
+  },
+  {
+    id: "balance_s1_09", type: "complete-left",
+    sampleLeft: [{ icon: "\u{1F319}", count: 2 }], sampleRight: [{ icon: "\u{2B50}", count: 3 }],
+    question: "左には、どれを飾る？", targetSide: "left", fixedRight: [{ icon: "\u{2B50}", count: 3 }],
+    choices: [
+      { parts: [{ icon: "\u{1F319}", count: 1 }], correct: false, balance: "light" },
+      { parts: [{ icon: "\u{1F319}", count: 2 }], correct: true, balance: "equal" },
+      { parts: [{ icon: "\u{1F319}", count: 3 }], correct: false, balance: "heavy" }
+    ]
+  },
+  {
+    id: "balance_s1_10", type: "complete-right",
+    sampleLeft: [{ icon: "\u{1F380}", count: 3 }], sampleRight: [{ icon: "\u{1FA77}", count: 2 }],
+    question: "右には、どれを飾る？", targetSide: "right", fixedLeft: [{ icon: "\u{1FA77}", count: 2 }],
+    choices: [
+      { parts: [{ icon: "\u{1F380}", count: 2 }], correct: false, balance: "light" },
+      { parts: [{ icon: "\u{1F380}", count: 3 }], correct: true, balance: "equal" },
+      { parts: [{ icon: "\u{1F380}", count: 4 }], correct: false, balance: "heavy" }
+    ]
+  }
+];
+
+const balanceWorkshopStage2Questions = [
+  {
+    id: "balance_s2_01",
+    leftItems: [
+      { type: "star", icon: "\u{2B50}" },
+      { type: "flower", icon: "\u{1F338}" }
+    ],
+    rightItems: [
+      { type: "gem", icon: "\u{1F48E}" },
+      { type: "flower", icon: "\u{1F338}" }
+    ],
+    removableType: "flower",
+    removableCount: 1
+  },
+  {
+    id: "balance_s2_02",
+    leftItems: [
+      { type: "ribbon", icon: "\u{1F380}" },
+      { type: "moon", icon: "\u{1F319}" }
+    ],
+    rightItems: [
+      { type: "heart", icon: "\u{1FA77}" },
+      { type: "heart", icon: "\u{1FA77}" },
+      { type: "moon", icon: "\u{1F319}" }
+    ],
+    removableType: "moon",
+    removableCount: 1
+  },
+  {
+    id: "balance_s2_03",
+    leftItems: [
+      { type: "star", icon: "\u{2B50}" },
+      { type: "flower", icon: "\u{1F338}" },
+      { type: "flower", icon: "\u{1F338}" }
+    ],
+    rightItems: [
+      { type: "gem", icon: "\u{1F48E}" },
+      { type: "flower", icon: "\u{1F338}" },
+      { type: "flower", icon: "\u{1F338}" }
+    ],
+    removableType: "flower",
+    removableCount: 2
+  },
+  {
+    id: "balance_s2_04",
+    leftItems: [{ type: "star", icon: "\u{2B50}" }, { type: "flower", icon: "\u{1F338}" }],
+    rightItems: [{ type: "gem", icon: "\u{1F48E}" }, { type: "flower", icon: "\u{1F338}" }],
+    removableType: "flower",
+    removableCount: 1
+  },
+  {
+    id: "balance_s2_05",
+    leftItems: [{ type: "ribbon", icon: "\u{1F380}" }, { type: "moon", icon: "\u{1F319}" }],
+    rightItems: [{ type: "heart", icon: "\u{1FA77}" }, { type: "heart", icon: "\u{1FA77}" }, { type: "moon", icon: "\u{1F319}" }],
+    removableType: "moon",
+    removableCount: 1
+  },
+  {
+    id: "balance_s2_06",
+    leftItems: [{ type: "gem", icon: "\u{1F48E}" }, { type: "flower", icon: "\u{1F338}" }, { type: "flower", icon: "\u{1F338}" }],
+    rightItems: [{ type: "star", icon: "\u{2B50}" }, { type: "flower", icon: "\u{1F338}" }, { type: "flower", icon: "\u{1F338}" }],
+    removableType: "flower",
+    removableCount: 2
+  },
+  {
+    id: "balance_s2_07",
+    leftItems: [{ type: "present", icon: "\u{1F381}" }, { type: "star", icon: "\u{2B50}" }],
+    rightItems: [{ type: "ribbon", icon: "\u{1F380}" }, { type: "ribbon", icon: "\u{1F380}" }, { type: "star", icon: "\u{2B50}" }],
+    removableType: "star",
+    removableCount: 1
+  },
+  {
+    id: "balance_s2_08",
+    leftItems: [{ type: "moon", icon: "\u{1F319}" }, { type: "moon", icon: "\u{1F319}" }, { type: "gem", icon: "\u{1F48E}" }],
+    rightItems: [{ type: "flower", icon: "\u{1F338}" }, { type: "flower", icon: "\u{1F338}" }, { type: "flower", icon: "\u{1F338}" }, { type: "gem", icon: "\u{1F48E}" }],
+    removableType: "gem",
+    removableCount: 1
+  },
+  {
+    id: "balance_s2_09",
+    leftItems: [{ type: "heart", icon: "\u{1FA77}" }, { type: "ribbon", icon: "\u{1F380}" }, { type: "ribbon", icon: "\u{1F380}" }],
+    rightItems: [{ type: "star", icon: "\u{2B50}" }, { type: "ribbon", icon: "\u{1F380}" }, { type: "ribbon", icon: "\u{1F380}" }],
+    removableType: "ribbon",
+    removableCount: 2
+  },
+  {
+    id: "balance_s2_10",
+    leftItems: [{ type: "present", icon: "\u{1F381}" }, { type: "flower", icon: "\u{1F338}" }],
+    rightItems: [{ type: "gem", icon: "\u{1F48E}" }, { type: "gem", icon: "\u{1F48E}" }, { type: "gem", icon: "\u{1F48E}" }, { type: "flower", icon: "\u{1F338}" }],
+    removableType: "flower",
+    removableCount: 1
+  }
+];
+
+const balanceWorkshopStage3Questions = [
+  {
+    id: "balance_s3_01",
+    targetItem: { type: "present", icon: "\u{1F381}", name: "プレゼント" },
+    comparisonItem: { type: "gem", icon: "\u{1F48E}", name: "宝石" },
+    leftItems: [
+      { type: "present", icon: "\u{1F381}" },
+      { type: "gem", icon: "\u{1F48E}" },
+      { type: "gem", icon: "\u{1F48E}" }
+    ],
+    rightItems: [
+      { type: "gem", icon: "\u{1F48E}" },
+      { type: "gem", icon: "\u{1F48E}" },
+      { type: "gem", icon: "\u{1F48E}" },
+      { type: "gem", icon: "\u{1F48E}" },
+      { type: "gem", icon: "\u{1F48E}" }
+    ],
+    removableType: "gem",
+    removableCount: 2,
+    resultCount: 3,
+    resultText: "プレゼントは 宝石3こ分！✨"
+  },
+  {
+    id: "balance_s3_02",
+    targetItem: { type: "star", icon: "\u{2B50}", name: "星" },
+    comparisonItem: { type: "flower", icon: "\u{1F338}", name: "花" },
+    leftItems: [
+      { type: "star", icon: "\u{2B50}" },
+      { type: "flower", icon: "\u{1F338}" },
+      { type: "flower", icon: "\u{1F338}" },
+      { type: "flower", icon: "\u{1F338}" }
+    ],
+    rightItems: [
+      { type: "flower", icon: "\u{1F338}" },
+      { type: "flower", icon: "\u{1F338}" },
+      { type: "flower", icon: "\u{1F338}" },
+      { type: "flower", icon: "\u{1F338}" },
+      { type: "flower", icon: "\u{1F338}" },
+      { type: "flower", icon: "\u{1F338}" },
+      { type: "flower", icon: "\u{1F338}" }
+    ],
+    removableType: "flower",
+    removableCount: 3,
+    resultCount: 4,
+    resultText: "星は 花4こ分！✨"
+  },
+  {
+    id: "balance_s3_03",
+    targetItem: { type: "ribbon", icon: "\u{1F380}", name: "リボン" },
+    comparisonItem: { type: "moon", icon: "\u{1F319}", name: "月" },
+    leftItems: [
+      { type: "ribbon", icon: "\u{1F380}" },
+      { type: "moon", icon: "\u{1F319}" },
+      { type: "moon", icon: "\u{1F319}" }
+    ],
+    rightItems: [
+      { type: "moon", icon: "\u{1F319}" },
+      { type: "moon", icon: "\u{1F319}" },
+      { type: "moon", icon: "\u{1F319}" },
+      { type: "moon", icon: "\u{1F319}" },
+      { type: "moon", icon: "\u{1F319}" },
+      { type: "moon", icon: "\u{1F319}" }
+    ],
+    removableType: "moon",
+    removableCount: 2,
+    resultCount: 4,
+    resultText: "リボンは 月4こ分！✨"
+  },
+  {
+    id: "balance_s3_04",
+    targetItem: { type: "gem", icon: "\u{1F48E}", name: "宝石" }, comparisonItem: { type: "flower", icon: "\u{1F338}", name: "花" },
+    leftItems: [{ type: "gem", icon: "\u{1F48E}" }, { type: "flower", icon: "\u{1F338}" }, { type: "flower", icon: "\u{1F338}" }],
+    rightItems: [{ type: "flower", icon: "\u{1F338}" }, { type: "flower", icon: "\u{1F338}" }, { type: "flower", icon: "\u{1F338}" }, { type: "flower", icon: "\u{1F338}" }, { type: "flower", icon: "\u{1F338}" }, { type: "flower", icon: "\u{1F338}" }],
+    removableType: "flower", removableCount: 2, resultCount: 4, resultText: "宝石は 花4こ分！✨"
+  },
+  {
+    id: "balance_s3_05",
+    targetItem: { type: "ribbon", icon: "\u{1F380}", name: "リボン" }, comparisonItem: { type: "star", icon: "\u{2B50}", name: "星" },
+    leftItems: [{ type: "ribbon", icon: "\u{1F380}" }, { type: "star", icon: "\u{2B50}" }, { type: "star", icon: "\u{2B50}" }, { type: "star", icon: "\u{2B50}" }],
+    rightItems: [{ type: "star", icon: "\u{2B50}" }, { type: "star", icon: "\u{2B50}" }, { type: "star", icon: "\u{2B50}" }, { type: "star", icon: "\u{2B50}" }, { type: "star", icon: "\u{2B50}" }, { type: "star", icon: "\u{2B50}" }, { type: "star", icon: "\u{2B50}" }, { type: "star", icon: "\u{2B50}" }],
+    removableType: "star", removableCount: 3, resultCount: 5, resultText: "リボンは 星5こ分！✨"
+  },
+  {
+    id: "balance_s3_06",
+    targetItem: { type: "present", icon: "\u{1F381}", name: "プレゼント" }, comparisonItem: { type: "moon", icon: "\u{1F319}", name: "月" },
+    leftItems: [{ type: "present", icon: "\u{1F381}" }, { type: "moon", icon: "\u{1F319}" }],
+    rightItems: [{ type: "moon", icon: "\u{1F319}" }, { type: "moon", icon: "\u{1F319}" }, { type: "moon", icon: "\u{1F319}" }, { type: "moon", icon: "\u{1F319}" }],
+    removableType: "moon", removableCount: 1, resultCount: 3, resultText: "プレゼントは 月3こ分！✨"
+  },
+  {
+    id: "balance_s3_07",
+    targetItem: { type: "star", icon: "\u{2B50}", name: "星" }, comparisonItem: { type: "gem", icon: "\u{1F48E}", name: "宝石" },
+    leftItems: [{ type: "star", icon: "\u{2B50}" }, { type: "gem", icon: "\u{1F48E}" }, { type: "gem", icon: "\u{1F48E}" }],
+    rightItems: [{ type: "gem", icon: "\u{1F48E}" }, { type: "gem", icon: "\u{1F48E}" }, { type: "gem", icon: "\u{1F48E}" }, { type: "gem", icon: "\u{1F48E}" }, { type: "gem", icon: "\u{1F48E}" }],
+    removableType: "gem", removableCount: 2, resultCount: 3, resultText: "星は 宝石3こ分！✨"
+  },
+  {
+    id: "balance_s3_08",
+    targetItem: { type: "heart", icon: "\u{1FA77}", name: "ハート" }, comparisonItem: { type: "flower", icon: "\u{1F338}", name: "花" },
+    leftItems: [{ type: "heart", icon: "\u{1FA77}" }, { type: "flower", icon: "\u{1F338}" }, { type: "flower", icon: "\u{1F338}" }, { type: "flower", icon: "\u{1F338}" }],
+    rightItems: [{ type: "flower", icon: "\u{1F338}" }, { type: "flower", icon: "\u{1F338}" }, { type: "flower", icon: "\u{1F338}" }, { type: "flower", icon: "\u{1F338}" }, { type: "flower", icon: "\u{1F338}" }, { type: "flower", icon: "\u{1F338}" }, { type: "flower", icon: "\u{1F338}" }],
+    removableType: "flower", removableCount: 3, resultCount: 4, resultText: "ハートは 花4こ分！✨"
+  },
+  {
+    id: "balance_s3_09",
+    targetItem: { type: "moon", icon: "\u{1F319}", name: "月" }, comparisonItem: { type: "ribbon", icon: "\u{1F380}", name: "リボン" },
+    leftItems: [{ type: "moon", icon: "\u{1F319}" }, { type: "ribbon", icon: "\u{1F380}" }, { type: "ribbon", icon: "\u{1F380}" }],
+    rightItems: [{ type: "ribbon", icon: "\u{1F380}" }, { type: "ribbon", icon: "\u{1F380}" }, { type: "ribbon", icon: "\u{1F380}" }, { type: "ribbon", icon: "\u{1F380}" }, { type: "ribbon", icon: "\u{1F380}" }, { type: "ribbon", icon: "\u{1F380}" }],
+    removableType: "ribbon", removableCount: 2, resultCount: 4, resultText: "月は リボン4こ分！✨"
+  },
+  {
+    id: "balance_s3_10",
+    targetItem: { type: "flower", icon: "\u{1F338}", name: "花" }, comparisonItem: { type: "star", icon: "\u{2B50}", name: "星" },
+    leftItems: [{ type: "flower", icon: "\u{1F338}" }, { type: "star", icon: "\u{2B50}" }, { type: "star", icon: "\u{2B50}" }, { type: "star", icon: "\u{2B50}" }, { type: "star", icon: "\u{2B50}" }],
+    rightItems: [{ type: "star", icon: "\u{2B50}" }, { type: "star", icon: "\u{2B50}" }, { type: "star", icon: "\u{2B50}" }, { type: "star", icon: "\u{2B50}" }, { type: "star", icon: "\u{2B50}" }, { type: "star", icon: "\u{2B50}" }, { type: "star", icon: "\u{2B50}" }, { type: "star", icon: "\u{2B50}" }, { type: "star", icon: "\u{2B50}" }],
+    removableType: "star", removableCount: 4, resultCount: 5, resultText: "花は 星5こ分！✨"
+  }
+];
+
+const balanceWorkshopStage4Questions = [
+  {
+    id: "balance_s4_01",
+    initialLeft: [{ icon: "\u{1F338}", count: 2 }],
+    initialRight: [{ icon: "\u{2B50}", count: 1 }],
+    options: [
+      {
+        leftChange: { action: "add", parts: [{ icon: "\u{1F380}", count: 1 }] },
+        rightChange: { action: "add", parts: [{ icon: "\u{1F380}", count: 1 }] },
+        correctState: "kept"
+      },
+      {
+        leftChange: { action: "add", parts: [{ icon: "\u{1F380}", count: 1 }] },
+        rightChange: { action: "add", parts: [] },
+        correctState: "broken"
+      },
+      {
+        leftChange: { action: "add", parts: [] },
+        rightChange: { action: "add", parts: [{ icon: "\u{1F380}", count: 1 }] },
+        correctState: "broken"
+      }
+    ]
+  },
+  {
+    id: "balance_s4_02",
+    initialLeft: [{ icon: "\u{1F48E}", count: 1 }, { icon: "\u{1F338}", count: 1 }],
+    initialRight: [{ icon: "\u{2B50}", count: 1 }, { icon: "\u{1F338}", count: 1 }],
+    options: [
+      {
+        leftChange: { action: "remove", parts: [{ icon: "\u{1F338}", count: 1 }] },
+        rightChange: { action: "remove", parts: [{ icon: "\u{1F338}", count: 1 }] },
+        correctState: "kept"
+      },
+      {
+        leftChange: { action: "remove", parts: [{ icon: "\u{1F338}", count: 1 }] },
+        rightChange: { action: "remove", parts: [] },
+        correctState: "broken"
+      },
+      {
+        leftChange: { action: "remove", parts: [] },
+        rightChange: { action: "remove", parts: [{ icon: "\u{1F338}", count: 1 }] },
+        correctState: "broken"
+      }
+    ]
+  },
+  {
+    id: "balance_s4_03",
+    relationSample: {
+      left: [{ icon: "\u{1F338}", count: 2 }],
+      right: [{ icon: "\u{2B50}", count: 1 }]
+    },
+    initialLeft: [{ icon: "\u{1F48E}", count: 1 }],
+    initialRight: [{ icon: "\u{1F380}", count: 1 }],
+    options: [
+      {
+        leftChange: { action: "add", parts: [{ icon: "\u{1F338}", count: 2 }] },
+        rightChange: { action: "add", parts: [{ icon: "\u{2B50}", count: 1 }] },
+        correctState: "kept"
+      },
+      {
+        leftChange: { action: "add", parts: [{ icon: "\u{1F338}", count: 1 }] },
+        rightChange: { action: "add", parts: [{ icon: "\u{2B50}", count: 1 }] },
+        correctState: "broken"
+      },
+      {
+        leftChange: { action: "add", parts: [{ icon: "\u{2B50}", count: 1 }] },
+        rightChange: { action: "add", parts: [{ icon: "\u{1F338}", count: 2 }] },
+        correctState: "kept"
+      }
+    ]
+  },
+  {
+    id: "balance_s4_04",
+    initialLeft: [{ icon: "\u{1F380}", count: 1 }], initialRight: [{ icon: "\u{1FA77}", count: 2 }],
+    options: [
+      { leftChange: { action: "add", parts: [{ icon: "\u{1F48E}", count: 1 }] }, rightChange: { action: "add", parts: [{ icon: "\u{1F48E}", count: 1 }] }, correctState: "kept" },
+      { leftChange: { action: "add", parts: [{ icon: "\u{1F48E}", count: 1 }] }, rightChange: { action: "add", parts: [] }, correctState: "broken" },
+      { leftChange: { action: "add", parts: [] }, rightChange: { action: "add", parts: [{ icon: "\u{1F48E}", count: 1 }] }, correctState: "broken" }
+    ]
+  },
+  {
+    id: "balance_s4_05",
+    initialLeft: [{ icon: "\u{1F381}", count: 1 }, { icon: "\u{1F319}", count: 1 }], initialRight: [{ icon: "\u{2B50}", count: 1 }, { icon: "\u{1F319}", count: 1 }],
+    options: [
+      { leftChange: { action: "remove", parts: [{ icon: "\u{1F319}", count: 1 }] }, rightChange: { action: "remove", parts: [{ icon: "\u{1F319}", count: 1 }] }, correctState: "kept" },
+      { leftChange: { action: "remove", parts: [{ icon: "\u{1F319}", count: 1 }] }, rightChange: { action: "remove", parts: [] }, correctState: "broken" },
+      { leftChange: { action: "remove", parts: [] }, rightChange: { action: "remove", parts: [{ icon: "\u{1F319}", count: 1 }] }, correctState: "broken" }
+    ]
+  },
+  {
+    id: "balance_s4_06",
+    relationSample: { left: [{ icon: "\u{1F48E}", count: 2 }], right: [{ icon: "\u{1F380}", count: 1 }] },
+    initialLeft: [{ icon: "\u{2B50}", count: 1 }], initialRight: [{ icon: "\u{1F381}", count: 1 }],
+    options: [
+      { leftChange: { action: "add", parts: [{ icon: "\u{1F48E}", count: 2 }] }, rightChange: { action: "add", parts: [{ icon: "\u{1F380}", count: 1 }] }, correctState: "kept" },
+      { leftChange: { action: "add", parts: [{ icon: "\u{1F380}", count: 1 }] }, rightChange: { action: "add", parts: [{ icon: "\u{1F48E}", count: 2 }] }, correctState: "kept" },
+      { leftChange: { action: "add", parts: [{ icon: "\u{1F48E}", count: 1 }] }, rightChange: { action: "add", parts: [{ icon: "\u{1F380}", count: 1 }] }, correctState: "broken" }
+    ]
+  },
+  {
+    id: "balance_s4_07",
+    initialLeft: [{ icon: "\u{1F319}", count: 2 }], initialRight: [{ icon: "\u{1F338}", count: 3 }],
+    options: [
+      { leftChange: { action: "add", parts: [{ icon: "\u{2B50}", count: 1 }] }, rightChange: { action: "add", parts: [] }, correctState: "broken" },
+      { leftChange: { action: "add", parts: [{ icon: "\u{2B50}", count: 1 }] }, rightChange: { action: "add", parts: [{ icon: "\u{2B50}", count: 1 }] }, correctState: "kept" },
+      { leftChange: { action: "add", parts: [] }, rightChange: { action: "add", parts: [{ icon: "\u{2B50}", count: 1 }] }, correctState: "broken" }
+    ]
+  },
+  {
+    id: "balance_s4_08",
+    initialLeft: [{ icon: "\u{1F380}", count: 1 }, { icon: "\u{1F338}", count: 2 }], initialRight: [{ icon: "\u{1F48E}", count: 1 }, { icon: "\u{1F338}", count: 2 }],
+    options: [
+      { leftChange: { action: "remove", parts: [{ icon: "\u{1F338}", count: 2 }] }, rightChange: { action: "remove", parts: [{ icon: "\u{1F338}", count: 2 }] }, correctState: "kept" },
+      { leftChange: { action: "remove", parts: [{ icon: "\u{1F338}", count: 2 }] }, rightChange: { action: "remove", parts: [{ icon: "\u{1F338}", count: 1 }] }, correctState: "broken" },
+      { leftChange: { action: "remove", parts: [{ icon: "\u{1F338}", count: 1 }] }, rightChange: { action: "remove", parts: [{ icon: "\u{1F338}", count: 2 }] }, correctState: "broken" }
+    ]
+  },
+  {
+    id: "balance_s4_09",
+    relationSample: { left: [{ icon: "\u{1FA77}", count: 3 }], right: [{ icon: "\u{1F319}", count: 2 }] },
+    initialLeft: [{ icon: "\u{1F381}", count: 1 }], initialRight: [{ icon: "\u{1F380}", count: 1 }],
+    options: [
+      { leftChange: { action: "add", parts: [{ icon: "\u{1FA77}", count: 2 }] }, rightChange: { action: "add", parts: [{ icon: "\u{1F319}", count: 2 }] }, correctState: "broken" },
+      { leftChange: { action: "add", parts: [{ icon: "\u{1FA77}", count: 3 }] }, rightChange: { action: "add", parts: [{ icon: "\u{1F319}", count: 2 }] }, correctState: "kept" },
+      { leftChange: { action: "add", parts: [{ icon: "\u{1F319}", count: 2 }] }, rightChange: { action: "add", parts: [{ icon: "\u{1FA77}", count: 3 }] }, correctState: "kept" }
+    ]
+  },
+  {
+    id: "balance_s4_10",
+    initialLeft: [{ icon: "\u{2B50}", count: 1 }, { icon: "\u{1F338}", count: 1 }], initialRight: [{ icon: "\u{1F48E}", count: 1 }, { icon: "\u{1F338}", count: 1 }],
+    options: [
+      { leftChange: { action: "remove", parts: [{ icon: "\u{1F338}", count: 1 }] }, rightChange: { action: "remove", parts: [{ icon: "\u{1F338}", count: 1 }] }, correctState: "kept" },
+      { leftChange: { action: "add", parts: [{ icon: "\u{1F380}", count: 1 }] }, rightChange: { action: "add", parts: [{ icon: "\u{1F380}", count: 1 }] }, correctState: "kept" },
+      { leftChange: { action: "remove", parts: [{ icon: "\u{1F338}", count: 1 }] }, rightChange: { action: "add", parts: [{ icon: "\u{1F380}", count: 1 }] }, correctState: "broken" }
+    ]
+  }
+];
+
+const balanceWorkshopStage5Questions = [
+  {
+    id: "balance_s5_01",
+    mobileLeft: [{ icon: "\u{1F338}", count: 2 }],
+    mobileRight: [{ icon: "\u{2B50}", count: 1 }],
+    choices: [
+      { left: [{ icon: "\u{1F338}", count: 2 }], right: [{ icon: "\u{2B50}", count: 1 }], correct: true },
+      { left: [{ icon: "\u{1F338}", count: 1 }], right: [{ icon: "\u{2B50}", count: 1 }], correct: false },
+      { left: [{ icon: "\u{1F338}", count: 3 }], right: [{ icon: "\u{2B50}", count: 1 }], correct: false }
+    ],
+    prompt: "このモビールを『＝』で表すと？",
+    successText: "ぴったり！✨"
+  },
+  {
+    id: "balance_s5_02",
+    mobileLeft: [{ icon: "\u{1F338}", count: 2 }],
+    mobileRight: [{ icon: "\u{2B50}", count: 1 }],
+    beforeExpression: { left: [{ icon: "\u{1F338}", count: 2 }], right: [{ icon: "\u{2B50}", count: 1 }] },
+    afterMobile: {
+      left: [{ icon: "\u{1F338}", count: 2 }, { icon: "\u{1F380}", count: 1 }],
+      right: [{ icon: "\u{2B50}", count: 1 }, { icon: "\u{1F380}", count: 1 }]
+    },
+    choices: [
+      { left: [{ icon: "\u{1F338}", count: 2 }, { icon: "\u{1F380}", count: 1 }], right: [{ icon: "\u{2B50}", count: 1 }, { icon: "\u{1F380}", count: 1 }], correct: true },
+      { left: [{ icon: "\u{1F338}", count: 2 }, { icon: "\u{1F380}", count: 1 }], right: [{ icon: "\u{2B50}", count: 1 }], correct: false },
+      { left: [{ icon: "\u{1F338}", count: 2 }], right: [{ icon: "\u{2B50}", count: 1 }, { icon: "\u{1F380}", count: 1 }], correct: false }
+    ],
+    prompt: "アレンジしたあとの『＝』はどれ？",
+    successText: "アレンジしても『＝』のまま！✨"
+  },
+  {
+    id: "balance_s5_03",
+    relationSample: {
+      left: [{ icon: "\u{1F338}", count: 2 }],
+      right: [{ icon: "\u{2B50}", count: 1 }]
+    },
+    replacementProblem: {
+      left: [{ icon: "\u{1F380}", count: 1 }, { icon: "\u{2B50}", count: 1 }],
+      right: [{ icon: "\u{1F380}", count: 1 }]
+    },
+    choices: [
+      { parts: [{ icon: "\u{1F338}", count: 2 }], correct: true },
+      { parts: [{ icon: "\u{1F338}", count: 1 }], correct: false },
+      { parts: [{ icon: "\u{1F380}", count: 1 }], correct: false }
+    ],
+    prompt: "この『＝』もぴったりにできるかな？",
+    successText: "ぴったり！✨",
+    successExpression: {
+      left: [{ icon: "\u{2B50}", count: 1 }],
+      right: [{ icon: "\u{1F338}", count: 2 }]
+    }
+  },
+  {
+    id: "balance_s5_04",
+    mobileLeft: [{ icon: "\u{1F48E}", count: 2 }], mobileRight: [{ icon: "\u{1F380}", count: 1 }],
+    choices: [
+      { left: [{ icon: "\u{1F48E}", count: 2 }], right: [{ icon: "\u{1F380}", count: 1 }], correct: true },
+      { left: [{ icon: "\u{1F48E}", count: 1 }], right: [{ icon: "\u{1F380}", count: 1 }], correct: false },
+      { left: [{ icon: "\u{1F48E}", count: 3 }], right: [{ icon: "\u{1F380}", count: 1 }], correct: false }
+    ],
+    prompt: "このモビールを『＝』で表すと？", successText: "ぴったり！✨"
+  },
+  {
+    id: "balance_s5_05",
+    mobileLeft: [{ icon: "\u{1F319}", count: 3 }], mobileRight: [{ icon: "\u{1FA77}", count: 2 }],
+    choices: [
+      { left: [{ icon: "\u{1F319}", count: 3 }], right: [{ icon: "\u{1FA77}", count: 2 }], correct: true },
+      { left: [{ icon: "\u{1F319}", count: 2 }], right: [{ icon: "\u{1FA77}", count: 2 }], correct: false },
+      { left: [{ icon: "\u{1F319}", count: 3 }], right: [{ icon: "\u{1FA77}", count: 1 }], correct: false }
+    ],
+    prompt: "このモビールを『＝』で表すと？", successText: "ぴったり！✨"
+  },
+  {
+    id: "balance_s5_06",
+    mobileLeft: [{ icon: "\u{1F48E}", count: 1 }], mobileRight: [{ icon: "\u{2B50}", count: 1 }],
+    beforeExpression: { left: [{ icon: "\u{1F48E}", count: 1 }], right: [{ icon: "\u{2B50}", count: 1 }] },
+    afterMobile: { left: [{ icon: "\u{1F48E}", count: 1 }, { icon: "\u{1F380}", count: 1 }], right: [{ icon: "\u{2B50}", count: 1 }, { icon: "\u{1F380}", count: 1 }] },
+    choices: [
+      { left: [{ icon: "\u{1F48E}", count: 1 }, { icon: "\u{1F380}", count: 1 }], right: [{ icon: "\u{2B50}", count: 1 }, { icon: "\u{1F380}", count: 1 }], correct: true },
+      { left: [{ icon: "\u{1F48E}", count: 1 }, { icon: "\u{1F380}", count: 1 }], right: [{ icon: "\u{2B50}", count: 1 }], correct: false },
+      { left: [{ icon: "\u{1F48E}", count: 1 }], right: [{ icon: "\u{2B50}", count: 1 }, { icon: "\u{1F380}", count: 1 }], correct: false }
+    ],
+    prompt: "アレンジしたあとの『＝』はどれ？", successText: "アレンジしても『＝』のまま！✨"
+  },
+  {
+    id: "balance_s5_07",
+    mobileLeft: [{ icon: "\u{1F381}", count: 1 }], mobileRight: [{ icon: "\u{1F319}", count: 2 }],
+    beforeExpression: { left: [{ icon: "\u{1F381}", count: 1 }], right: [{ icon: "\u{1F319}", count: 2 }] },
+    afterMobile: { left: [{ icon: "\u{1F381}", count: 1 }, { icon: "\u{1F338}", count: 1 }], right: [{ icon: "\u{1F319}", count: 2 }, { icon: "\u{1F338}", count: 1 }] },
+    choices: [
+      { left: [{ icon: "\u{1F381}", count: 1 }, { icon: "\u{1F338}", count: 1 }], right: [{ icon: "\u{1F319}", count: 2 }, { icon: "\u{1F338}", count: 1 }], correct: true },
+      { left: [{ icon: "\u{1F381}", count: 1 }, { icon: "\u{1F338}", count: 1 }], right: [{ icon: "\u{1F319}", count: 2 }], correct: false },
+      { left: [{ icon: "\u{1F381}", count: 1 }], right: [{ icon: "\u{1F319}", count: 2 }, { icon: "\u{1F338}", count: 1 }], correct: false }
+    ],
+    prompt: "アレンジしたあとの『＝』はどれ？", successText: "アレンジしても『＝』のまま！✨"
+  },
+  {
+    id: "balance_s5_08",
+    mobileLeft: [{ icon: "\u{2B50}", count: 1 }, { icon: "\u{1F338}", count: 3 }], mobileRight: [{ icon: "\u{1F48E}", count: 1 }, { icon: "\u{1F338}", count: 3 }],
+    beforeExpression: { left: [{ icon: "\u{2B50}", count: 1 }, { icon: "\u{1F338}", count: 3 }], right: [{ icon: "\u{1F48E}", count: 1 }, { icon: "\u{1F338}", count: 3 }] },
+    afterMobile: { left: [{ icon: "\u{2B50}", count: 1 }], right: [{ icon: "\u{1F48E}", count: 1 }] },
+    choices: [
+      { left: [{ icon: "\u{2B50}", count: 1 }], right: [{ icon: "\u{1F48E}", count: 1 }], correct: true },
+      { left: [{ icon: "\u{2B50}", count: 1 }, { icon: "\u{1F338}", count: 1 }], right: [{ icon: "\u{1F48E}", count: 1 }], correct: false },
+      { left: [{ icon: "\u{2B50}", count: 1 }], right: [{ icon: "\u{1F48E}", count: 1 }, { icon: "\u{1F338}", count: 1 }], correct: false }
+    ],
+    prompt: "外したあとの『＝』はどれ？", successText: "外しても『＝』のまま！✨"
+  },
+  {
+    id: "balance_s5_09",
+    mobileLeft: [{ icon: "\u{1F380}", count: 1 }, { icon: "\u{1F48E}", count: 2 }], mobileRight: [{ icon: "\u{1FA77}", count: 3 }, { icon: "\u{1F48E}", count: 2 }],
+    beforeExpression: { left: [{ icon: "\u{1F380}", count: 1 }, { icon: "\u{1F48E}", count: 2 }], right: [{ icon: "\u{1FA77}", count: 3 }, { icon: "\u{1F48E}", count: 2 }] },
+    afterMobile: { left: [{ icon: "\u{1F380}", count: 1 }], right: [{ icon: "\u{1FA77}", count: 3 }] },
+    choices: [
+      { left: [{ icon: "\u{1F380}", count: 1 }], right: [{ icon: "\u{1FA77}", count: 3 }], correct: true },
+      { left: [{ icon: "\u{1F380}", count: 1 }], right: [{ icon: "\u{1FA77}", count: 2 }], correct: false },
+      { left: [{ icon: "\u{1F380}", count: 1 }, { icon: "\u{1F48E}", count: 1 }], right: [{ icon: "\u{1FA77}", count: 3 }], correct: false }
+    ],
+    prompt: "外したあとの『＝』はどれ？", successText: "外しても『＝』のまま！✨"
+  },
+  {
+    id: "balance_s5_10",
+    relationSample: { left: [{ icon: "\u{1F48E}", count: 2 }], right: [{ icon: "\u{1F380}", count: 1 }] },
+    replacementProblem: { left: [{ icon: "\u{1F338}", count: 1 }, { icon: "\u{1F380}", count: 1 }], right: [{ icon: "\u{1F338}", count: 1 }] },
+    choices: [
+      { parts: [{ icon: "\u{1F48E}", count: 2 }], correct: true },
+      { parts: [{ icon: "\u{1F48E}", count: 1 }], correct: false },
+      { parts: [{ icon: "\u{1F48E}", count: 3 }], correct: false }
+    ],
+    prompt: "？に入るパーツをえらんで、左右を同じにしよう", successText: "ぴったり！✨",
+    successExpression: { left: [{ icon: "\u{1F380}", count: 1 }], right: [{ icon: "\u{1F48E}", count: 2 }] }
+  }
+];

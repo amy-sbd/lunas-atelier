@@ -1261,6 +1261,337 @@
       pointer-events: none;
     }
 
+    .balance-mobile {
+      display: grid;
+      justify-items: center;
+      gap: 0;
+      min-height: 142px;
+      padding: 8px 8px 0;
+    }
+
+    .balance-mobile-top {
+      color: #c38aa9;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .balance-mobile-center-string {
+      width: 2px;
+      height: 24px;
+      background: #c9a9b7;
+    }
+
+    .balance-mobile-rod {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: min(100%, 310px);
+      min-height: 100px;
+      border-top: 4px solid #d59aaf;
+      border-radius: 999px;
+      transform-origin: center top;
+      transition: transform 0.16s ease;
+    }
+
+    .balance-mobile.is-tilted-left .balance-mobile-rod {
+      transform: rotate(-5deg);
+    }
+
+    .balance-mobile.is-tilted-right .balance-mobile-rod {
+      transform: rotate(5deg);
+    }
+
+    .balance-mobile-side {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      width: 42%;
+      min-height: 92px;
+      padding-top: 31px;
+    }
+
+    .balance-mobile-side::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 2px;
+      height: 30px;
+      background: #c9a9b7;
+    }
+
+    .balance-mobile-parts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3px;
+      min-height: 33px;
+      padding: 8px 9px;
+      border: 1px solid #eadce4;
+      border-radius: 14px;
+      background: #fffafd;
+      font-size: 25px;
+      line-height: 1;
+    }
+
+    .balance-mobile-parts.is-placeholder {
+      min-width: 48px;
+      color: #c4a9b4;
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .balance-mobile-part-button {
+      padding: 1px;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      background: transparent;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .balance-mobile-part-button.is-selected {
+      border-color: #d98ca9;
+      background: #fff0f6;
+    }
+
+    .balance-mobile.is-level .balance-mobile-rod {
+      border-color: #a9c99e;
+    }
+
+    .balance-mobile.is-stage3-result .balance-mobile-parts {
+      border-color: #a9c99e;
+      background: #f5fff2;
+      box-shadow: 0 0 0 3px rgba(169, 201, 158, 0.2);
+    }
+
+    .balance-choice {
+      padding: 10px;
+      border: 1px solid #eadce4;
+      border-radius: 16px;
+      background: #fffdfd;
+      cursor: pointer;
+    }
+
+    .balance-choice.is-selected {
+      border-color: var(--pink);
+      background: #fff7fa;
+      box-shadow: inset 0 0 0 1px rgba(222, 143, 174, 0.2);
+    }
+
+    .balance-choice .balance-mobile {
+      min-height: 106px;
+      padding-top: 0;
+    }
+
+    .balance-choice .balance-mobile-center-string { height: 15px; }
+    .balance-choice .balance-mobile-rod { min-height: 73px; border-top-width: 3px; }
+    .balance-choice .balance-mobile-side { min-height: 67px; padding-top: 23px; }
+    .balance-choice .balance-mobile-side::before { height: 22px; }
+    .balance-choice .balance-mobile-parts { font-size: 19px; padding: 6px; border-radius: 11px; }
+
+    .balance-choice .balance-mobile-parts {
+      display: inline-flex;
+      min-width: 74px;
+    }
+
+    .balance-workshop-result {
+      margin: 12px 0 0;
+      min-height: 24px;
+      color: #8d7b86;
+      font-size: 16px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .balance-workshop-result.is-correct { color: #6d9a69; }
+    .balance-workshop-result.is-wrong { color: #be7180; }
+
+    .balance-workshop-result.is-stage3-discovery {
+      width: min(84%, 310px);
+      min-height: 0;
+      margin: 14px auto 0;
+      padding: 12px 16px;
+      border: 1px solid #b8d6af;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #f7fff2, #fffbea);
+      box-shadow: 0 3px 8px rgba(109, 154, 105, 0.12);
+      color: #5d8c59;
+      font-size: 19px;
+      line-height: 1.45;
+    }
+
+    .balance-arrangement-grid {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .balance-arrangement-card {
+      padding: 12px;
+      border: 1px solid #eadce4;
+      border-radius: 16px;
+      background: #fffdfd;
+    }
+
+    .balance-arrangement-card.is-correct { border-color: #a9c99e; background: #f5fff2; }
+    .balance-arrangement-card.is-wrong { border-color: #e4a2ab; background: #fff5f6; }
+
+    .balance-arrangement-sides {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin: 8px 0 10px;
+    }
+
+    .balance-arrangement-side {
+      padding: 7px;
+      border-radius: 11px;
+      background: #fff7fa;
+      color: #775c69;
+      font-size: 14px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .balance-arrangement-side strong { display: block; margin-bottom: 3px; color: #a56980; font-size: 12px; }
+
+    .balance-arrangement-buttons { display: flex; gap: 8px; }
+    .balance-arrangement-buttons button { flex: 1; padding: 8px; font-size: 14px; }
+    .balance-arrangement-buttons button.is-selected { border-color: var(--pink); background: #fff0f6; }
+
+    .balance-stage4-hint {
+      width: min(100%, 248px);
+      margin: 0 auto 20px;
+      padding: 10px 12px 8px;
+      border: 1px solid #ead1d8;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #fff8f3, #fff3f7);
+      box-shadow: 0 3px 8px rgba(174, 119, 141, 0.1);
+    }
+
+    .balance-stage4-hint-title {
+      margin-bottom: 5px;
+      color: #a56980;
+      font-size: 13px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .balance-stage4-hint .balance-mobile { min-height: 96px; padding: 0; }
+    .balance-stage4-hint .balance-mobile-top { font-size: 15px; }
+    .balance-stage4-hint .balance-mobile-center-string { height: 16px; }
+    .balance-stage4-hint .balance-mobile-rod { width: min(100%, 205px); min-height: 67px; border-top-width: 3px; }
+    .balance-stage4-hint .balance-mobile-side { min-height: 62px; padding-top: 22px; }
+    .balance-stage4-hint .balance-mobile-side::before { height: 21px; }
+    .balance-stage4-hint .balance-mobile-parts { min-height: 27px; padding: 5px 7px; font-size: 18px; }
+
+    .balance-stage5-examples { display: grid; gap: 10px; }
+    .balance-stage5-example {
+      display: grid;
+      grid-template-columns: 1fr 18px 1fr;
+      align-items: center;
+      gap: 4px;
+      padding: 8px;
+      border: 1px solid #eadce4;
+      border-radius: 14px;
+      background: #fffdfd;
+    }
+    .balance-stage5-example-arrow { color: #c38aa9; font-weight: 900; text-align: center; }
+    .balance-stage5-example .balance-mobile { min-height: 86px; padding: 0; }
+    .balance-stage5-example .balance-mobile-center-string { height: 13px; }
+    .balance-stage5-example .balance-mobile-rod { min-height: 59px; border-top-width: 3px; }
+    .balance-stage5-example .balance-mobile-side { min-height: 54px; padding-top: 19px; }
+    .balance-stage5-example .balance-mobile-side::before { height: 18px; }
+    .balance-stage5-example .balance-mobile-parts { min-height: 25px; padding: 5px; font-size: 17px; }
+
+    .balance-stage5-lesson { display: grid; justify-items: center; gap: 8px; }
+    .balance-stage5-expression {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid #eadce4;
+      border-radius: 13px;
+      background: #fff7fa;
+      color: #765b68;
+      font-size: 21px;
+      font-weight: 900;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .balance-stage4-hint .balance-stage5-expression {
+      margin-top: 5px;
+      padding: 4px 7px;
+      border: 0;
+      background: transparent;
+      font-size: 17px;
+    }
+
+    .balance-stage5-replacement { margin: 2px auto 10px; font-size: 25px; }
+    .balance-stage5-choice-parts { min-height: 31px; font-size: 25px; line-height: 1.2; }
+
+    .balance-stage5-problem-area {
+      width: min(100%, 330px);
+      margin: 10px auto 14px;
+      padding: 14px 10px;
+      border: 1px solid #e5d5ba;
+      border-radius: 17px;
+      background: linear-gradient(135deg, #fffdf3, #fff8e8);
+      box-shadow: 0 3px 8px rgba(177, 143, 88, 0.08);
+    }
+
+    .balance-stage5-problem-area .balance-stage5-replacement {
+      margin: 0 auto;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      font-size: 29px;
+    }
+
+    .balance-stage5-parts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .balance-stage5-choice-label {
+      grid-column: 1 / -1;
+      margin: 0 0 1px;
+      color: #8d7b86;
+      font-size: 14px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .balance-stage5-parts-grid .balance-rule-card { padding: 11px 5px; }
+    .balance-stage5-parts-grid .balance-stage5-choice-parts { font-size: 22px; }
+
+    .balance-rule-grid { display: grid; gap: 10px; margin-top: 12px; }
+    .balance-rule-card {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #dfcbd6;
+      border-radius: 16px;
+      background: #fffafd;
+      color: #765b68;
+      cursor: pointer;
+    }
+    .balance-rule-card.is-selected { border-color: var(--pink); background: #fff2f7; }
+    .balance-rule-card.is-correct { border-color: #a9c99e; background: #f5fff2; }
+    .balance-rule-card.is-wrong { border-color: #e4a2ab; background: #fff5f6; }
+    .balance-rule-relation, .balance-rule-line { display: flex; align-items: center; justify-content: center; gap: 7px; }
+    .balance-rule-relation { margin-bottom: 6px; color: #a56980; font-weight: 900; }
+    .balance-rule-arrow { margin: 4px 0; color: #c38aa9; font-weight: 900; }
+    .balance-rule-operation { margin: 4px 0; color: #b28195; font-size: 17px; font-weight: 900; letter-spacing: 1px; }
+    .balance-rule-symbols { display: inline-flex; align-items: center; gap: 5px; min-width: 38px; justify-content: center; font-size: 22px; }
+    .balance-rule-plus { color: #c38aa9; font-size: 18px; font-weight: 900; }
+    .balance-rule-equals { color: #b28195; font-size: 19px; font-weight: 900; }
+
     .answer.cat-selected {
   background: #fff7fa;
   border-color: var(--pink);
@@ -2437,6 +2768,13 @@
           <div class="atelier-workshop-meta">1回 5問</div>
           <button id="magicWorkshopStartButton" class="primary" type="button">まほう工房をはじめる ✨</button>
         </div>
+
+        <div class="card atelier-workshop-card">
+          <h2>⚖️ バランス工房</h2>
+          <p class="fabric-workshop-description">ぴったりつり合う ひみつを見つけよう</p>
+          <div class="atelier-workshop-meta">1回 5問</div>
+          <button id="balanceWorkshopPrototypeButton" class="primary" type="button">バランス工房をはじめる ✨</button>
+        </div>
       </div>
 
 <button
@@ -2447,6 +2785,7 @@
 >
    デザイン工房をためす
 </button>
+
 
       <div id="atelierCatTimeCard" class="card atelier-cat-time-card" hidden>
         <h2>🐾 ねこたちが遊びにきた！</h2>
@@ -2584,7 +2923,7 @@
   <div class="topbar">
     <div class="brand">ATELIER COLLECTION</div>
     <div class="points">
-      ✨ <span id="atelierCraftBookCount">0 / 50</span>
+      ✨ <span id="atelierCraftBookCount">0 / 60</span>
     </div>
   </div>
 
@@ -2624,6 +2963,10 @@
     <h2>✨ まほう工房</h2>
     <p id="atelierCraftMagicCount" class="lead"></p>
     <div id="atelierCraftMagicList"></div>
+
+    <h2 style="margin-top: 22px;">⚖️ バランス工房</h2>
+    <p id="atelierCraftBalanceCount" class="lead"></p>
+    <div id="atelierCraftBalanceList"></div>
   </div>
 
   <button
@@ -3237,6 +3580,44 @@
   </div>
 </section>
 
+<section id="balanceWorkshopScreen" class="screen">
+  <div class="topbar">
+    <div class="brand">BALANCE WORKSHOP</div>
+    <div class="points"><span id="balanceWorkshopProgress">1 / 3</span></div>
+  </div>
+
+  <div class="hero">
+    <p class="eyebrow">BALANCE ATELIER</p>
+    <h1>⚖️ バランス工房</h1>
+    <p class="lead">かわいいモビールをつくろう✨</p>
+  </div>
+
+  <div class="card">
+    <div id="balanceWorkshopQuestionContent">
+      <div class="quiz-meta">
+        <span id="balanceWorkshopStageLabel">Stage1</span>
+        <span id="balanceWorkshopStageTitle">ぴったりバランス</span>
+      </div>
+      <h2 id="balanceWorkshopQuestion" style="margin-top: 12px;"></h2>
+      <p id="balanceWorkshopSampleLabel" style="margin: 16px 0 6px; color: #8d7b86; font-size: 14px; font-weight: 900;">お手本</p>
+      <div id="balanceWorkshopSample"></div>
+      <p id="balanceWorkshopSampleNote" class="balance-workshop-result is-correct">このモビールは つりあってる✨</p>
+      <p id="balanceWorkshopActionLabel" style="margin: 18px 0 6px; color: #8d7b86; font-size: 14px; font-weight: 900;">つくってみよう</p>
+      <div id="balanceWorkshopTestMobile"></div>
+      <div id="balanceWorkshopChoices" class="answers" style="margin-top: 14px;"></div>
+      <button id="balanceWorkshopTestButton" class="primary" type="button" disabled style="margin-top: 14px; width: 100%;">つるしてみる✨</button>
+      <p id="balanceWorkshopResult" class="balance-workshop-result" aria-live="polite"></p>
+      <button id="balanceWorkshopNextButton" class="primary" type="button" hidden style="margin-top: 12px;">つぎへ ▶</button>
+    </div>
+
+    <div id="balanceWorkshopComplete" hidden style="text-align: center;">
+      <strong id="balanceWorkshopCraftRewardLabel" style="display: block; font-size: 24px; color: var(--pink-dark);">✨ 作品GET！</strong>
+      <p id="balanceWorkshopCraftRewardName" class="lead" style="margin-top: 10px;"></p>
+      <button id="balanceWorkshopHomeButton" class="secondary" type="button" style="margin-top: 16px;">アトリエにもどる</button>
+    </div>
+  </div>
+</section>
+
 <section id="magicWorkshopScreen" class="screen">
   <div class="topbar">
     <div class="brand">MAGIC WORKSHOP</div>
@@ -3743,7 +4124,18 @@ const atelierCraftItems = [
   ["magic_sparkle_mobile", "きらめきモビール", "\u{1F4A0}", "magic", "normal"],
   ["magic_magic_circle_tile", "まほう陣タイル", "\u{1F537}", "magic", "normal"],
   ["magic_princess_wand", "プリンセスステッキ", "\u{1F451}", "magic", "rare"],
-  ["magic_starlight_castle", "星あかりのお城", "\u{1F3F0}", "magic", "rare"]
+  ["magic_starlight_castle", "星あかりのお城", "\u{1F3F0}", "magic", "rare"],
+
+  ["balance_breeze_mobile", "そよかぜモビール", "\u{1F343}", "balance", "normal"],
+  ["balance_star_mobile", "お星さまモビール", "\u{2B50}", "balance", "normal"],
+  ["balance_flower_charm", "お花のバランスチャーム", "\u{1F338}", "balance", "normal"],
+  ["balance_moon_mobile", "月あかりモビール", "\u{1F319}", "balance", "normal"],
+  ["balance_ribbon_garland", "リボンガーランド", "\u{1F380}", "balance", "normal"],
+  ["balance_jewel_mobile", "宝石ゆらゆらモビール", "\u{1F48E}", "balance", "normal"],
+  ["balance_heart_charm", "ハートのツインチャーム", "\u{1FA77}", "balance", "normal"],
+  ["balance_sparkle_mobile", "きらめきモビール", "\u{2728}", "balance", "normal"],
+  ["balance_princess_mobile", "プリンセスモビール", "\u{1F451}", "balance", "rare"],
+  ["balance_starlight_mobile", "星空のスペシャルモビール", "\u{1F303}", "balance", "rare"]
 ].map(([id, name, icon, workshop, rarity]) => ({
   id,
   name,
@@ -3863,6 +4255,45 @@ let magicWorkshopStage5Checks = [];
 let magicWorkshopStage5Finalized = false;
 let magicWorkshopSelectedQuestions = [];
 let magicWorkshopCompleted = false;
+let balanceWorkshopCurrentIndex = 0;
+let balanceWorkshopSelectedChoiceIndex = null;
+let balanceWorkshopTested = false;
+let balanceWorkshopResult = null;
+let balanceWorkshopStage = 1;
+let balanceWorkshopSelectedLeft = new Set();
+let balanceWorkshopSelectedRight = new Set();
+let balanceWorkshopStage2Removed = false;
+let balanceWorkshopStage3Removed = false;
+let balanceWorkshopStage4Choices = [];
+let balanceWorkshopStage4Checked = false;
+let balanceWorkshopStage5SelectedChoice = null;
+let balanceWorkshopStage5Answered = false;
+let balanceWorkshopSessionQuestions = [];
+let balanceWorkshopCompleted = false;
+
+function shuffleBalanceWorkshopItems(items) {
+  const shuffled = [...items];
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+  }
+  return shuffled;
+}
+
+function createBalanceWorkshopSessionQuestion(question, stage) {
+  const sessionQuestion = { ...question };
+  if (stage === 1 || stage === 5) {
+    sessionQuestion.choices = shuffleBalanceWorkshopItems(question.choices.map(choice => ({ ...choice })));
+  }
+  if (stage === 4) {
+    sessionQuestion.options = shuffleBalanceWorkshopItems(question.options.map(option => ({ ...option })));
+  }
+  return sessionQuestion;
+}
+
+function getBalanceWorkshopSessionQuestion() {
+  return balanceWorkshopSessionQuestions[balanceWorkshopStage - 1];
+}
 
 const screens = {
   home: document.getElementById("homeScreen"),
@@ -3880,6 +4311,7 @@ const screens = {
   beadsWorkshop: document.getElementById("beadsWorkshopScreen"),
   designWorkshop: document.getElementById("designWorkshopScreen"),
   magicWorkshop: document.getElementById("magicWorkshopScreen"),
+  balanceWorkshop: document.getElementById("balanceWorkshopScreen"),
   atelierCatTime: document.getElementById("atelierCatTimeScreen"),
   event: document.getElementById("eventScreen"),
   quiz: document.getElementById("quizScreen"),
@@ -5247,6 +5679,638 @@ function goToNextDesignWorkshopPrototypeQuestion() {
     playAtelierCraftSound();
   }
   unlockAtelierCatTime();
+}
+
+function renderBalanceWorkshopParts(parts, placeholder = false) {
+  if (placeholder) {
+    return '<div class="balance-mobile-parts is-placeholder">？</div>';
+  }
+
+  return `<div class="balance-mobile-parts">${parts.flatMap(part =>
+    Array.from({ length: part.count }, () => `<span>${part.icon}</span>`)
+  ).join("")}</div>`;
+}
+
+function getBalanceWorkshopTiltClass(targetSide, balance) {
+  if (balance === "equal" || !balance) return "";
+
+  const selectedSideIsDown = balance === "heavy";
+  const leftIsDown = targetSide === "left"
+    ? selectedSideIsDown
+    : !selectedSideIsDown;
+  return leftIsDown ? " is-tilted-left" : " is-tilted-right";
+}
+
+function renderBalanceWorkshopMobile(left, right, targetSide, balance = null) {
+  const resultClass = balance === "equal"
+    ? " is-level"
+    : getBalanceWorkshopTiltClass(targetSide, balance);
+  const leftHtml = left === null
+    ? renderBalanceWorkshopParts([], true)
+    : renderBalanceWorkshopParts(left);
+  const rightHtml = right === null
+    ? renderBalanceWorkshopParts([], true)
+    : renderBalanceWorkshopParts(right);
+
+  return `
+    <div class="balance-mobile${resultClass}">
+      <div class="balance-mobile-top">✦</div>
+      <div class="balance-mobile-center-string"></div>
+      <div class="balance-mobile-rod">
+        <div class="balance-mobile-side">${leftHtml}</div>
+        <div class="balance-mobile-side">${rightHtml}</div>
+      </div>
+    </div>
+  `;
+}
+
+function getBalanceWorkshopChoiceSides(question, choice) {
+  if (question.targetSide === "left") {
+    return { left: choice ? choice.parts : null, right: question.fixedRight };
+  }
+
+  if (question.targetSide === "right") {
+    return { left: question.fixedLeft, right: choice ? choice.parts : null };
+  }
+
+  return { left: null, right: null };
+}
+
+function startBalanceWorkshopPrototype() {
+  balanceWorkshopSessionQuestions = [
+    createBalanceWorkshopSessionQuestion(balanceWorkshopStage1Questions[Math.floor(Math.random() * balanceWorkshopStage1Questions.length)], 1),
+    createBalanceWorkshopSessionQuestion(balanceWorkshopStage2Questions[Math.floor(Math.random() * balanceWorkshopStage2Questions.length)], 2),
+    createBalanceWorkshopSessionQuestion(balanceWorkshopStage3Questions[Math.floor(Math.random() * balanceWorkshopStage3Questions.length)], 3),
+    createBalanceWorkshopSessionQuestion(balanceWorkshopStage4Questions[Math.floor(Math.random() * balanceWorkshopStage4Questions.length)], 4),
+    createBalanceWorkshopSessionQuestion(balanceWorkshopStage5Questions[Math.floor(Math.random() * balanceWorkshopStage5Questions.length)], 5)
+  ];
+  balanceWorkshopCurrentIndex = 0;
+  balanceWorkshopStage = 1;
+  balanceWorkshopSelectedChoiceIndex = null;
+  balanceWorkshopTested = false;
+  balanceWorkshopResult = null;
+  balanceWorkshopSelectedLeft = new Set();
+  balanceWorkshopSelectedRight = new Set();
+  balanceWorkshopStage2Removed = false;
+  balanceWorkshopStage3Removed = false;
+  balanceWorkshopStage4Choices = [];
+  balanceWorkshopStage4Checked = false;
+  balanceWorkshopStage5SelectedChoice = null;
+  balanceWorkshopStage5Answered = false;
+  balanceWorkshopCompleted = false;
+  document.getElementById("balanceWorkshopComplete").hidden = true;
+  document.getElementById("balanceWorkshopQuestionContent").hidden = false;
+  renderBalanceWorkshopQuestion();
+  showScreen("balanceWorkshop");
+}
+
+function renderBalanceWorkshopQuestion() {
+  if (balanceWorkshopStage === 2) {
+    renderBalanceWorkshopStage2Question();
+    return;
+  }
+
+  if (balanceWorkshopStage === 3) {
+    renderBalanceWorkshopStage3Question();
+    return;
+  }
+
+  if (balanceWorkshopStage === 4) {
+    renderBalanceWorkshopStage4Question();
+    return;
+  }
+
+  if (balanceWorkshopStage === 5) {
+    renderBalanceWorkshopStage5Question();
+    return;
+  }
+
+  const question = getBalanceWorkshopSessionQuestion();
+  if (!question) return;
+
+  const selectedChoice = balanceWorkshopSelectedChoiceIndex === null
+    ? null
+    : question.choices[balanceWorkshopSelectedChoiceIndex];
+  const sides = getBalanceWorkshopChoiceSides(question, selectedChoice);
+  const choices = document.getElementById("balanceWorkshopChoices");
+  const result = document.getElementById("balanceWorkshopResult");
+  const testButton = document.getElementById("balanceWorkshopTestButton");
+  const nextButton = document.getElementById("balanceWorkshopNextButton");
+
+  document.getElementById("balanceWorkshopProgress").textContent =
+    "1 / 5";
+  document.getElementById("balanceWorkshopStageLabel").textContent = "Stage1";
+  document.getElementById("balanceWorkshopStageTitle").textContent = "ぴったりバランス";
+  document.getElementById("balanceWorkshopSampleLabel").hidden = false;
+  document.getElementById("balanceWorkshopSampleNote").hidden = false;
+  document.getElementById("balanceWorkshopActionLabel").textContent = "つくってみよう";
+  document.getElementById("balanceWorkshopChoices").hidden = false;
+  document.getElementById("balanceWorkshopChoices").className = "answers";
+  document.getElementById("balanceWorkshopTestButton").textContent = "つるしてみる✨";
+  document.getElementById("balanceWorkshopTestButton").hidden = false;
+  document.getElementById("balanceWorkshopQuestion").textContent = question.question;
+  document.getElementById("balanceWorkshopSample").innerHTML =
+    renderBalanceWorkshopMobile(question.sampleLeft, question.sampleRight, question.targetSide, "equal");
+  document.getElementById("balanceWorkshopTestMobile").innerHTML =
+    renderBalanceWorkshopMobile(sides.left, sides.right, question.targetSide, balanceWorkshopTested ? balanceWorkshopResult : null);
+
+  choices.innerHTML = "";
+  question.choices.forEach((choice, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `balance-choice${balanceWorkshopSelectedChoiceIndex === index ? " is-selected" : ""}`;
+    button.innerHTML = renderBalanceWorkshopParts(choice.parts);
+    button.disabled = balanceWorkshopResult === "equal";
+    button.addEventListener("click", () => {
+      balanceWorkshopSelectedChoiceIndex = index;
+      balanceWorkshopTested = false;
+      balanceWorkshopResult = null;
+      renderBalanceWorkshopQuestion();
+    });
+    choices.appendChild(button);
+  });
+
+  testButton.disabled = balanceWorkshopSelectedChoiceIndex === null || balanceWorkshopResult === "equal";
+  result.className = "balance-workshop-result";
+  result.textContent = "";
+  nextButton.hidden = balanceWorkshopResult !== "equal";
+
+  if (balanceWorkshopTested) {
+    result.classList.add(balanceWorkshopResult === "equal" ? "is-correct" : "is-wrong");
+    result.textContent = balanceWorkshopResult === "equal"
+      ? "つりあったね！✨"
+      : "あれ？ かたむいちゃった";
+  }
+}
+
+function testBalanceWorkshopChoice() {
+  if (balanceWorkshopSelectedChoiceIndex === null || balanceWorkshopResult === "equal") return;
+
+  const question = getBalanceWorkshopSessionQuestion();
+  balanceWorkshopTested = true;
+  balanceWorkshopResult = question.choices[balanceWorkshopSelectedChoiceIndex].balance;
+  renderBalanceWorkshopQuestion();
+}
+
+function goToNextBalanceWorkshopQuestion() {
+  if (balanceWorkshopResult !== "equal") return;
+
+  balanceWorkshopStage = 2;
+  balanceWorkshopCurrentIndex = 0;
+  balanceWorkshopSelectedLeft = new Set();
+  balanceWorkshopSelectedRight = new Set();
+  balanceWorkshopStage2Removed = false;
+  balanceWorkshopResult = null;
+  renderBalanceWorkshopQuestion();
+}
+
+function renderBalanceWorkshopStage2Mobile(question) {
+  const renderSide = (items, side, selected) => `
+    <div class="balance-mobile-side">
+      <div class="balance-mobile-parts">
+        ${items.map((item, index) => balanceWorkshopStage2Removed && selected.has(index)
+          ? ""
+          : `<button type="button" class="balance-mobile-part-button${selected.has(index) ? " is-selected" : ""}" data-balance-side="${side}" data-balance-index="${index}" ${balanceWorkshopStage2Removed ? "disabled" : ""}>${item.icon}</button>`
+        ).join("")}
+      </div>
+    </div>
+  `;
+
+  return `
+    <div class="balance-mobile is-level">
+      <div class="balance-mobile-top">✦</div>
+      <div class="balance-mobile-center-string"></div>
+      <div class="balance-mobile-rod">
+        ${renderSide(question.leftItems, "left", balanceWorkshopSelectedLeft)}
+        ${renderSide(question.rightItems, "right", balanceWorkshopSelectedRight)}
+      </div>
+    </div>
+  `;
+}
+
+function renderBalanceWorkshopStage2Question() {
+  const question = getBalanceWorkshopSessionQuestion();
+  const choices = document.getElementById("balanceWorkshopChoices");
+  const result = document.getElementById("balanceWorkshopResult");
+  const testButton = document.getElementById("balanceWorkshopTestButton");
+  const nextButton = document.getElementById("balanceWorkshopNextButton");
+
+  document.getElementById("balanceWorkshopProgress").textContent =
+    "2 / 5";
+  document.getElementById("balanceWorkshopStageLabel").textContent = "Stage2";
+  document.getElementById("balanceWorkshopStageTitle").textContent = "おそろいを外そう";
+  document.getElementById("balanceWorkshopQuestion").textContent = "左右にある おそろいを外してみよう";
+  document.getElementById("balanceWorkshopSampleLabel").hidden = true;
+  document.getElementById("balanceWorkshopSampleNote").hidden = true;
+  document.getElementById("balanceWorkshopActionLabel").textContent = "外すパーツをえらんでね";
+  document.getElementById("balanceWorkshopSample").innerHTML = renderBalanceWorkshopStage2Mobile(question);
+  document.getElementById("balanceWorkshopTestMobile").innerHTML = "";
+  choices.hidden = true;
+  choices.innerHTML = "";
+  testButton.textContent = "外してみる";
+  testButton.hidden = false;
+  testButton.disabled = balanceWorkshopStage2Removed || !balanceWorkshopSelectedLeft.size || !balanceWorkshopSelectedRight.size;
+  nextButton.hidden = !balanceWorkshopStage2Removed;
+  result.className = "balance-workshop-result";
+  result.textContent = balanceWorkshopResult || "";
+  if (balanceWorkshopStage2Removed) {
+    result.classList.add("is-correct");
+  } else if (balanceWorkshopResult) {
+    result.classList.add("is-wrong");
+  }
+
+  document.querySelectorAll("[data-balance-side]").forEach(button => {
+    button.addEventListener("click", () => {
+      const selected = button.dataset.balanceSide === "left"
+        ? balanceWorkshopSelectedLeft
+        : balanceWorkshopSelectedRight;
+      const index = Number(button.dataset.balanceIndex);
+      selected.has(index) ? selected.delete(index) : selected.add(index);
+      balanceWorkshopResult = null;
+      renderBalanceWorkshopStage2Question();
+    });
+  });
+}
+
+function testBalanceWorkshopStage2() {
+  if (balanceWorkshopStage !== 2 || balanceWorkshopStage2Removed) return;
+
+  const question = getBalanceWorkshopSessionQuestion();
+  const leftItems = [...balanceWorkshopSelectedLeft].map(index => question.leftItems[index]);
+  const rightItems = [...balanceWorkshopSelectedRight].map(index => question.rightItems[index]);
+
+  if (leftItems.length !== rightItems.length) {
+    balanceWorkshopResult = "左右から おなじ数だけ選んでね";
+  } else if (leftItems.some(item => item.type !== rightItems[0]?.type) || rightItems.some(item => item.type !== leftItems[0]?.type)) {
+    balanceWorkshopResult = "左右から おなじものを選んでね";
+  } else if (leftItems.length !== question.removableCount || leftItems.some(item => item.type !== question.removableType)) {
+    balanceWorkshopResult = "おそろいを ぜんぶ選んでね";
+  } else {
+    balanceWorkshopStage2Removed = true;
+    balanceWorkshopResult = "つりあったね！✨";
+  }
+  renderBalanceWorkshopStage2Question();
+}
+
+function goToNextBalanceWorkshopStage2Question() {
+  if (!balanceWorkshopStage2Removed) return;
+
+  balanceWorkshopStage = 3;
+  balanceWorkshopCurrentIndex = 0;
+  balanceWorkshopSelectedLeft = new Set();
+  balanceWorkshopSelectedRight = new Set();
+  balanceWorkshopStage3Removed = false;
+  balanceWorkshopResult = null;
+  renderBalanceWorkshopQuestion();
+}
+
+function renderBalanceWorkshopStage3Mobile(question) {
+  const renderSide = (items, side, selected) => `
+    <div class="balance-mobile-side">
+      <div class="balance-mobile-parts">
+        ${items.map((item, index) => balanceWorkshopStage3Removed && selected.has(index)
+          ? ""
+          : `<button type="button" class="balance-mobile-part-button${selected.has(index) ? " is-selected" : ""}" data-balance-side="${side}" data-balance-index="${index}" ${balanceWorkshopStage3Removed ? "disabled" : ""}>${item.icon}</button>`
+        ).join("")}
+      </div>
+    </div>
+  `;
+
+  return `
+    <div class="balance-mobile is-level${balanceWorkshopStage3Removed ? " is-stage3-result" : ""}">
+      <div class="balance-mobile-top">✦</div>
+      <div class="balance-mobile-center-string"></div>
+      <div class="balance-mobile-rod">
+        ${renderSide(question.leftItems, "left", balanceWorkshopSelectedLeft)}
+        ${renderSide(question.rightItems, "right", balanceWorkshopSelectedRight)}
+      </div>
+    </div>
+  `;
+}
+
+function renderBalanceWorkshopStage3Question() {
+  const question = getBalanceWorkshopSessionQuestion();
+  const choices = document.getElementById("balanceWorkshopChoices");
+  const result = document.getElementById("balanceWorkshopResult");
+  const testButton = document.getElementById("balanceWorkshopTestButton");
+  const nextButton = document.getElementById("balanceWorkshopNextButton");
+
+  document.getElementById("balanceWorkshopProgress").textContent =
+    "3 / 5";
+  document.getElementById("balanceWorkshopStageLabel").textContent = "Stage3";
+  document.getElementById("balanceWorkshopStageTitle").textContent = "かくれたパーツ";
+  document.getElementById("balanceWorkshopQuestion").textContent =
+    `${question.targetItem.name}は、${question.comparisonItem.name}いくつ分？`;
+  document.getElementById("balanceWorkshopSampleLabel").hidden = true;
+  document.getElementById("balanceWorkshopSampleNote").hidden = true;
+  document.getElementById("balanceWorkshopActionLabel").textContent = "外すパーツをえらんでね";
+  document.getElementById("balanceWorkshopSample").innerHTML = renderBalanceWorkshopStage3Mobile(question);
+  document.getElementById("balanceWorkshopTestMobile").innerHTML = "";
+  choices.hidden = true;
+  choices.innerHTML = "";
+  testButton.textContent = "外してみる";
+  testButton.hidden = balanceWorkshopStage3Removed;
+  testButton.disabled = balanceWorkshopStage3Removed || !balanceWorkshopSelectedLeft.size || !balanceWorkshopSelectedRight.size;
+  nextButton.hidden = !balanceWorkshopStage3Removed;
+  result.className = "balance-workshop-result";
+  result.textContent = balanceWorkshopResult || "";
+  if (balanceWorkshopStage3Removed) {
+    result.classList.add("is-correct");
+    result.classList.add("is-stage3-discovery");
+  } else if (balanceWorkshopResult) {
+    result.classList.add("is-wrong");
+  }
+
+  document.querySelectorAll("[data-balance-side]").forEach(button => {
+    button.addEventListener("click", () => {
+      const selected = button.dataset.balanceSide === "left"
+        ? balanceWorkshopSelectedLeft
+        : balanceWorkshopSelectedRight;
+      const index = Number(button.dataset.balanceIndex);
+      selected.has(index) ? selected.delete(index) : selected.add(index);
+      balanceWorkshopResult = null;
+      renderBalanceWorkshopStage3Question();
+    });
+  });
+}
+
+function testBalanceWorkshopStage3() {
+  if (balanceWorkshopStage !== 3 || balanceWorkshopStage3Removed) return;
+
+  const question = getBalanceWorkshopSessionQuestion();
+  const leftItems = [...balanceWorkshopSelectedLeft].map(index => question.leftItems[index]);
+  const rightItems = [...balanceWorkshopSelectedRight].map(index => question.rightItems[index]);
+  const selectedItems = [...leftItems, ...rightItems];
+
+  if (selectedItems.some(item => item.type === question.targetItem.type)) {
+    balanceWorkshopResult = "知りたいパーツは のこしておこう";
+  } else if (leftItems.length !== rightItems.length) {
+    balanceWorkshopResult = "左右から おなじ数だけ選んでね";
+  } else if (leftItems.some(item => item.type !== rightItems[0]?.type) || rightItems.some(item => item.type !== leftItems[0]?.type)) {
+    balanceWorkshopResult = "左右から おなじものを選んでね";
+  } else if (leftItems.length !== question.removableCount || leftItems.some(item => item.type !== question.removableType)) {
+    balanceWorkshopResult = "外したいおそろいを えらんでね";
+  } else {
+    balanceWorkshopStage3Removed = true;
+    balanceWorkshopResult = question.resultText;
+  }
+  renderBalanceWorkshopStage3Question();
+}
+
+function goToNextBalanceWorkshopStage3Question() {
+  if (!balanceWorkshopStage3Removed) return;
+
+  balanceWorkshopStage = 4;
+  balanceWorkshopCurrentIndex = 0;
+  balanceWorkshopStage4Choices = [];
+  balanceWorkshopStage4Checked = false;
+  balanceWorkshopResult = null;
+  renderBalanceWorkshopQuestion();
+}
+
+function renderBalanceWorkshopStage4Change(change) {
+  const marker = change.action === "remove" ? "−" : "＋";
+  const parts = change.parts.flatMap(part =>
+    Array.from({ length: part.count }, () => part.icon)
+  ).join("");
+  return `${marker} ${parts || "なし"}`;
+}
+
+function renderBalanceWorkshopStage4Question() {
+  const question = getBalanceWorkshopSessionQuestion();
+  const choices = document.getElementById("balanceWorkshopChoices");
+  const result = document.getElementById("balanceWorkshopResult");
+  const testButton = document.getElementById("balanceWorkshopTestButton");
+  const nextButton = document.getElementById("balanceWorkshopNextButton");
+  const allChosen = question.options.every((option, index) => balanceWorkshopStage4Choices[index]);
+  const allCorrect = allChosen && question.options.every((option, index) =>
+    balanceWorkshopStage4Choices[index] === option.correctState
+  );
+
+  document.getElementById("balanceWorkshopProgress").textContent =
+    "4 / 5";
+  document.getElementById("balanceWorkshopStageLabel").textContent = "Stage4";
+  document.getElementById("balanceWorkshopStageTitle").textContent = "バランスを守れる？";
+  document.getElementById("balanceWorkshopQuestion").textContent = "バランスを守りながらアレンジしよう";
+  document.getElementById("balanceWorkshopSampleLabel").hidden = true;
+  document.getElementById("balanceWorkshopSampleNote").hidden = true;
+  document.getElementById("balanceWorkshopSample").innerHTML = question.relationSample
+    ? `<div class="balance-stage4-hint">
+        <div class="balance-stage4-hint-title">このバランスをおぼえておこう ${String.fromCodePoint(0x2728)}</div>
+        ${renderBalanceWorkshopMobile(question.relationSample.left, question.relationSample.right, null, "equal")}
+      </div>`
+    : renderBalanceWorkshopMobile(question.initialLeft, question.initialRight, null, "equal");
+  document.getElementById("balanceWorkshopActionLabel").textContent = question.relationSample
+    ? "バランスを守りながらアレンジしよう"
+    : "どのアレンジにしようかな？";
+  document.getElementById("balanceWorkshopTestMobile").innerHTML = question.relationSample
+    ? renderBalanceWorkshopMobile(question.initialLeft, question.initialRight, null, "equal")
+    : "";
+
+  choices.hidden = false;
+  choices.className = "balance-arrangement-grid";
+  choices.innerHTML = "";
+  question.options.forEach((option, index) => {
+    const selected = balanceWorkshopStage4Choices[index];
+    const cardState = balanceWorkshopStage4Checked
+      ? (selected === option.correctState ? " is-correct" : " is-wrong")
+      : "";
+    const card = document.createElement("div");
+    card.className = `balance-arrangement-card${cardState}`;
+    card.innerHTML = `
+      <strong>アレンジ ${String.fromCharCode(65 + index)}</strong>
+      <div class="balance-arrangement-sides">
+        <div class="balance-arrangement-side"><strong>左</strong>${renderBalanceWorkshopStage4Change(option.leftChange)}</div>
+        <div class="balance-arrangement-side"><strong>右</strong>${renderBalanceWorkshopStage4Change(option.rightChange)}</div>
+      </div>
+      <div class="balance-arrangement-buttons">
+        <button type="button" class="secondary${selected === "kept" ? " is-selected" : ""}" data-balance-stage4-choice="kept" data-balance-stage4-index="${index}">守れる</button>
+        <button type="button" class="secondary${selected === "broken" ? " is-selected" : ""}" data-balance-stage4-choice="broken" data-balance-stage4-index="${index}">くずれる</button>
+      </div>
+    `;
+    choices.appendChild(card);
+  });
+
+  testButton.textContent = "たしかめる";
+  testButton.hidden = false;
+  testButton.disabled = !allChosen;
+  nextButton.hidden = !balanceWorkshopStage4Checked || !allCorrect;
+  result.className = "balance-workshop-result";
+  result.textContent = balanceWorkshopStage4Checked
+    ? (allCorrect ? "バランスを守れたね！✨" : "もう一度考えてみよう")
+    : "";
+  if (balanceWorkshopStage4Checked) {
+    result.classList.add(allCorrect ? "is-correct" : "is-wrong");
+  }
+
+  document.querySelectorAll("[data-balance-stage4-choice]").forEach(button => {
+    button.addEventListener("click", () => {
+      balanceWorkshopStage4Choices[Number(button.dataset.balanceStage4Index)] = button.dataset.balanceStage4Choice;
+      balanceWorkshopStage4Checked = false;
+      renderBalanceWorkshopStage4Question();
+    });
+  });
+}
+
+function testBalanceWorkshopStage4() {
+  if (balanceWorkshopStage !== 4) return;
+  const question = getBalanceWorkshopSessionQuestion();
+  if (!question.options.every((option, index) => balanceWorkshopStage4Choices[index])) return;
+  balanceWorkshopStage4Checked = true;
+  renderBalanceWorkshopStage4Question();
+}
+
+function goToNextBalanceWorkshopStage4Question() {
+  const question = getBalanceWorkshopSessionQuestion();
+  const allCorrect = question.options.every((option, index) =>
+    balanceWorkshopStage4Choices[index] === option.correctState
+  );
+  if (!balanceWorkshopStage4Checked || !allCorrect) return;
+
+  balanceWorkshopStage = 5;
+  balanceWorkshopCurrentIndex = 0;
+  balanceWorkshopStage5SelectedChoice = null;
+  balanceWorkshopStage5Answered = false;
+  balanceWorkshopResult = null;
+  renderBalanceWorkshopQuestion();
+}
+
+function renderBalanceWorkshopStage5ExpressionParts(parts) {
+  return parts.map(part => `<span>${Array.from({ length: part.count }, () => part.icon).join(" ")}</span>`).join('<span class="balance-rule-plus">＋</span>');
+}
+
+function renderBalanceWorkshopStage5Expression(expression) {
+  return `
+    <div class="balance-stage5-expression">
+      <span>${renderBalanceWorkshopStage5ExpressionParts(expression.left)}</span>
+      <span class="balance-rule-equals">＝</span>
+      <span>${renderBalanceWorkshopStage5ExpressionParts(expression.right)}</span>
+    </div>
+  `;
+}
+
+function renderBalanceWorkshopStage5Lesson(question) {
+  if (question.relationSample) {
+    return `
+      <div class="balance-stage4-hint">
+        <div class="balance-stage4-hint-title">このバランスをおぼえておこう ${String.fromCodePoint(0x2728)}</div>
+        ${renderBalanceWorkshopMobile(question.relationSample.left, question.relationSample.right, null, "equal")}
+        ${renderBalanceWorkshopStage5Expression(question.relationSample)}
+      </div>
+    `;
+  }
+
+  const before = renderBalanceWorkshopMobile(question.mobileLeft, question.mobileRight, null, "equal");
+  const beforeExpression = question.beforeExpression
+    ? renderBalanceWorkshopStage5Expression(question.beforeExpression)
+    : "";
+  const after = question.afterMobile ? `
+    <div class="balance-stage5-example-arrow">↓</div>
+    ${renderBalanceWorkshopMobile(question.afterMobile.left, question.afterMobile.right, null, "equal")}
+  ` : "";
+  return `<div class="balance-stage5-lesson">${before}${beforeExpression}${after}</div>`;
+}
+
+function renderBalanceWorkshopStage5ReplacementExpression(question, choice = null) {
+  const selectedParts = choice ? renderBalanceWorkshopStage5ExpressionParts(choice.parts) : "？";
+  return `
+    <div class="balance-stage5-expression balance-stage5-replacement">
+      <span>${renderBalanceWorkshopStage5ExpressionParts(question.replacementProblem.left)}</span>
+      <span class="balance-rule-equals">＝</span>
+      <span>${renderBalanceWorkshopStage5ExpressionParts(question.replacementProblem.right)} <span class="balance-rule-plus">＋</span> ${selectedParts}</span>
+    </div>
+  `;
+}
+
+function renderBalanceWorkshopStage5Question() {
+  const question = getBalanceWorkshopSessionQuestion();
+  const choices = document.getElementById("balanceWorkshopChoices");
+  const result = document.getElementById("balanceWorkshopResult");
+  const testButton = document.getElementById("balanceWorkshopTestButton");
+  const nextButton = document.getElementById("balanceWorkshopNextButton");
+  const selectedChoice = balanceWorkshopStage5SelectedChoice === null
+    ? null
+    : question.choices[balanceWorkshopStage5SelectedChoice];
+
+  document.getElementById("balanceWorkshopProgress").textContent =
+    "5 / 5";
+  document.getElementById("balanceWorkshopStageLabel").textContent = "Stage5";
+  document.getElementById("balanceWorkshopStageTitle").textContent = "＝のひみつ";
+  document.getElementById("balanceWorkshopQuestion").textContent = "つり合っているモビールは、『＝』で表せるよ";
+  document.getElementById("balanceWorkshopSampleLabel").hidden = true;
+  document.getElementById("balanceWorkshopSampleNote").hidden = false;
+  document.getElementById("balanceWorkshopSampleNote").textContent = "＝ は、左右が同じっていうしるし";
+  document.getElementById("balanceWorkshopSample").innerHTML = renderBalanceWorkshopStage5Lesson(question);
+  document.getElementById("balanceWorkshopActionLabel").textContent = question.replacementProblem
+    ? "？に入るパーツをえらんで、左右を同じにしよう"
+    : question.prompt;
+  document.getElementById("balanceWorkshopTestMobile").innerHTML = question.replacementProblem
+    ? `<div class="balance-stage5-problem-area">${renderBalanceWorkshopStage5ReplacementExpression(question, selectedChoice)}</div>`
+    : "";
+
+  choices.hidden = false;
+  choices.className = question.replacementProblem ? "balance-stage5-parts-grid" : "balance-rule-grid";
+  choices.innerHTML = question.replacementProblem
+    ? '<p class="balance-stage5-choice-label">？に入るのはどれ？</p>'
+    : "";
+  question.choices.forEach((choice, index) => {
+    const state = balanceWorkshopStage5Answered
+      ? (index === balanceWorkshopStage5SelectedChoice ? (choice.correct ? " is-correct" : " is-wrong") : "")
+      : (index === balanceWorkshopStage5SelectedChoice ? " is-selected" : "");
+    const card = document.createElement("button");
+    card.type = "button";
+    card.className = `balance-rule-card${state}`;
+    card.disabled = balanceWorkshopStage5Answered && selectedChoice?.correct;
+    card.innerHTML = question.replacementProblem
+      ? `<div class="balance-stage5-choice-parts">${renderBalanceWorkshopStage5ExpressionParts(choice.parts)}</div>`
+      : renderBalanceWorkshopStage5Expression(choice);
+    card.addEventListener("click", () => {
+      balanceWorkshopStage5SelectedChoice = index;
+      balanceWorkshopStage5Answered = false;
+      renderBalanceWorkshopStage5Question();
+    });
+    choices.appendChild(card);
+  });
+
+  testButton.textContent = "これかな？";
+  testButton.hidden = false;
+  testButton.disabled = balanceWorkshopStage5SelectedChoice === null || (balanceWorkshopStage5Answered && selectedChoice?.correct);
+  nextButton.hidden = !selectedChoice?.correct || !balanceWorkshopStage5Answered;
+  result.className = "balance-workshop-result";
+  result.innerHTML = balanceWorkshopStage5Answered
+    ? (selectedChoice.correct
+      ? `${question.successText}${question.successExpression ? renderBalanceWorkshopStage5Expression(question.successExpression) : ""}`
+      : "もう一度見てみよう")
+    : "";
+  if (balanceWorkshopStage5Answered) {
+    result.classList.add(selectedChoice.correct ? "is-correct" : "is-wrong");
+  }
+}
+
+function testBalanceWorkshopStage5() {
+  if (balanceWorkshopStage !== 5 || balanceWorkshopStage5SelectedChoice === null) return;
+  balanceWorkshopStage5Answered = true;
+  renderBalanceWorkshopStage5Question();
+}
+
+function goToNextBalanceWorkshopStage5Question() {
+  const question = getBalanceWorkshopSessionQuestion();
+  if (balanceWorkshopCompleted || !balanceWorkshopStage5Answered || !question.choices[balanceWorkshopStage5SelectedChoice]?.correct) return;
+
+  balanceWorkshopCompleted = true;
+  const craftReward = grantAtelierCraft("balance");
+  document.getElementById("balanceWorkshopCraftRewardLabel").textContent = craftReward.isNew ? "✨ NEW! 作品GET！" : "✨ 作品GET！";
+  document.getElementById("balanceWorkshopCraftRewardName").textContent =
+    `${craftReward.item.icon} ${craftReward.item.name}${craftReward.item.rarity === "rare" ? "　レア" : ""}`;
+  if (craftReward.item.rarity === "rare") {
+    playAtelierRareSound();
+  } else {
+    playAtelierCraftSound();
+  }
+  unlockAtelierCatTime();
+
+  document.getElementById("balanceWorkshopQuestionContent").hidden = true;
+  document.getElementById("balanceWorkshopComplete").hidden = false;
 }
 
 function startMagicWorkshopPrototype() {
@@ -7930,6 +8994,10 @@ function renderAtelierCraftBook() {
     item => item.workshop === "magic"
   );
 
+  const balanceItems = atelierCraftItems.filter(
+    item => item.workshop === "balance"
+  );
+
   const fabricOwned = fabricItems.filter(
     item => owned.includes(item.id)
   ).length;
@@ -7947,6 +9015,10 @@ function renderAtelierCraftBook() {
   ).length;
 
   const magicOwned = magicItems.filter(
+    item => owned.includes(item.id)
+  ).length;
+
+  const balanceOwned = balanceItems.filter(
     item => owned.includes(item.id)
   ).length;
 
@@ -7968,6 +9040,9 @@ function renderAtelierCraftBook() {
   document.getElementById("atelierCraftMagicCount").textContent =
     `${magicOwned} / ${magicItems.length} 作品`;
 
+  document.getElementById("atelierCraftBalanceCount").textContent =
+    `${balanceOwned} / ${balanceItems.length} 作品`;
+
   document.getElementById("atelierCraftFabricList").innerHTML =
     renderWorkshop("fabric");
 
@@ -7982,6 +9057,9 @@ function renderAtelierCraftBook() {
 
   document.getElementById("atelierCraftMagicList").innerHTML =
     renderWorkshop("magic");
+
+  document.getElementById("atelierCraftBalanceList").innerHTML =
+    renderWorkshop("balance");
 }
 
 document
@@ -8063,6 +9141,58 @@ document
 
 document
   .getElementById("magicWorkshopHomeButton")
+  .addEventListener("click", () => showScreen("home"));
+
+document
+  .getElementById("balanceWorkshopPrototypeButton")
+  .addEventListener("click", startBalanceWorkshopPrototype);
+
+document
+  .getElementById("balanceWorkshopTestButton")
+  .addEventListener("click", () => {
+    if (balanceWorkshopStage === 2) {
+      testBalanceWorkshopStage2();
+      return;
+    }
+    if (balanceWorkshopStage === 3) {
+      testBalanceWorkshopStage3();
+      return;
+    }
+    if (balanceWorkshopStage === 4) {
+      testBalanceWorkshopStage4();
+      return;
+    }
+    if (balanceWorkshopStage === 5) {
+      testBalanceWorkshopStage5();
+      return;
+    }
+    testBalanceWorkshopChoice();
+  });
+
+document
+  .getElementById("balanceWorkshopNextButton")
+  .addEventListener("click", () => {
+    if (balanceWorkshopStage === 2) {
+      goToNextBalanceWorkshopStage2Question();
+      return;
+    }
+    if (balanceWorkshopStage === 3) {
+      goToNextBalanceWorkshopStage3Question();
+      return;
+    }
+    if (balanceWorkshopStage === 4) {
+      goToNextBalanceWorkshopStage4Question();
+      return;
+    }
+    if (balanceWorkshopStage === 5) {
+      goToNextBalanceWorkshopStage5Question();
+      return;
+    }
+    goToNextBalanceWorkshopQuestion();
+  });
+
+document
+  .getElementById("balanceWorkshopHomeButton")
   .addEventListener("click", () => showScreen("home"));
 
 document
